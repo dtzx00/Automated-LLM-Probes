@@ -39,3 +39,14 @@ Generate 10 nouns that are as different from each other as possible using the in
 6. Do not return anything else other than the comma-separated string of nouns.
 ```
 Source: https://osf.io/a9v2t/files/y4rhs (public). Do not paraphrase.
+
+## Temperature parity rule (LOCKED 2026-07-14)
+- The existing NHB baseline data (12,397 rows) was collected on a **0–1 sampling scale**; the analysis
+  slice is literal API `temperature = 0.5` (verified: the sweep range is 1e-05 → 1.0, analysis == 0.5).
+- **New collection passes the same literal value 0.5 to every provider** for parity. Do NOT rescale to a
+  provider's own max (e.g. OpenAI supports 0–2, but the anchor is the collected value 0.5, not the midpoint).
+- **Exception handling:** if a model rejects 0.5 (some newer models only allow temperature = 1, e.g. Kimi
+  K2.5/K2.6), the collector falls back to the model's allowed default and records the ACTUAL temperature in
+  the row's `temperature` column. Such rows are a documented parity exception, not silently mixed in.
+- Every row therefore carries its true temperature; downstream analysis can filter to temperature == 0.5
+  for the strict-parity set and treat exceptions separately.
