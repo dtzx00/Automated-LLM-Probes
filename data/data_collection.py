@@ -177,11 +177,12 @@ def generate(model_name, api_model, provider, n, out_csv, meta, dry_run=False, s
         }
         made += 1
         rows.append(row)
+        if not dry_run:
+            write_rows(out_csv, [row])   # incremental flush: durable per-row
         if dry_run:
             print(json.dumps({k:row[k] for k in ("model_name","provider","temperature_effective","parse_status","api_request_id","response_id","system_fingerprint","total_tokens","latency_ms",*NOUN_COLS)}, ensure_ascii=False))
             return rows
         time.sleep(pace)
-    write_rows(out_csv, rows)
     print(f"[{provider}/{api_model}] wrote {len(rows)} rows -> {out_csv}")
     return rows
 
