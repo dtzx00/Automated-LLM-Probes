@@ -12,8 +12,8 @@ Design rules (locked 2026-07-14 with Dawei):
 import pandas as pd
 from pathlib import Path
 
-RAW = Path("data/raw")
-OUT = Path("data/processed"); OUT.mkdir(parents=True, exist_ok=True)
+RAW = Path("raw")
+OUT = Path("processed"); OUT.mkdir(parents=True, exist_ok=True)
 
 NOUNS = [f"noun_{i}" for i in range(10)]
 
