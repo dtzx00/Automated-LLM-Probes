@@ -73,6 +73,7 @@ PROVIDERS = {
     "qwen":      {"fn": openai_compatible("https://dashscope.aliyuncs.com/compatible-mode/v1", "QWEN_API_KEY"), "env": "QWEN_API_KEY"},
     "moonshot":  {"fn": openai_compatible("https://api.moonshot.ai/v1", "MOONSHOT_API_KEY"), "env": "MOONSHOT_API_KEY"},
     "openrouter":{"fn": openai_compatible("https://openrouter.ai/api/v1", "QWEN_API_KEY"), "env": "QWEN_API_KEY"},
+    "hunyuan":   {"fn": openai_compatible("https://api.hunyuan.cloud.tencent.com/v1", "HUNYUAN_API_KEY"), "env": "HUNYUAN_API_KEY"},
 }
 
 def parse_nouns(text):
