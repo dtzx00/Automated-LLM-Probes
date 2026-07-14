@@ -23,8 +23,18 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 BASELINE_PROMPT = (HERE / "baseline_prompt.txt").read_text().strip()
-TEMPERATURE = 0.5
-TARGET_N_PER_MODEL = 1000
+# Per-provider MIDPOINT temperature (option 1, locked 2026-07-14 with Dawei):
+# sample every model at the middle of its allowed range so models are comparable.
+PROVIDER_TEMP_RANGE = {
+    "openai": (0, 2), "xai": (0, 2), "deepseek": (0, 2), "qwen": (0, 2), "hunyuan": (0, 2),
+    "anthropic": (0, 1), "moonshot": (0, 1), "openrouter": (0, 2),
+}
+def provider_midpoint(provider):
+    lo, hi = PROVIDER_TEMP_RANGE.get(provider, (0, 2))
+    return (lo + hi) / 2
+
+TEMPERATURE = 0.5           # legacy default (retained for reference only)
+TARGET_N_PER_MODEL = 500
 NOUN_COLS = [f"noun_{i}" for i in range(10)]
 
 # ---- provider adapters: model_name -> raw completion text ----------------------------------
@@ -90,11 +100,11 @@ def score_dat(nouns):
     return ""  # dat_score filled by the scoring pass, matching NHB dat_new
 
 
-def call_with_temp(fn, api_model, key):
+def call_with_temp(fn, api_model, key, target_temp):
     """Try temp 0.5 for parity. If the model rejects it (some models only allow temp 1),
     fall back to temp 1.0 and record the actual temperature used, so provenance is honest."""
     try:
-        return fn(api_model, key, TEMPERATURE), TEMPERATURE
+        return fn(api_model, key, target_temp), target_temp
     except urllib.error.HTTPError as e:
         try:
             body = e.read().decode()
@@ -108,13 +118,14 @@ def call_with_temp(fn, api_model, key):
 def generate(model_name, api_model, provider, n, out_csv, dry_run=False, sleep=0.3, max_retries=4):
     prov = PROVIDERS[provider]
     key = os.environ.get(prov["env"])
+    target_temp = provider_midpoint(provider)
     if not key:
         sys.exit(f"Missing env key {prov['env']} for provider {provider}")
     fn = prov["fn"]
     rows, attempts = [], 0
     while len(rows) < n:
         try:
-            raw, temp_used = call_with_temp(fn, api_model, key)
+            raw, temp_used = call_with_temp(fn, api_model, key, target_temp)
         except urllib.error.HTTPError as e:
             attempts += 1
             msg = e.read().decode()[:200]
