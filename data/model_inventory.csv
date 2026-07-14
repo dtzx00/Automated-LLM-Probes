@@ -1,0 +1,41 @@
+#,model,year,region,reasoning,existing_sample_size
+1,GPT-3.5-Turbo,2022,Western,No,750
+2,Llama-2-70b,2023,Western,No,750
+3,GPT-4.0-Turbo,2023,Western,No,750
+4,Claude-3-Haiku,2024,Western,No,750
+5,Claude-3-Opus,2024,Western,No,750
+6,Claude-3.5-Sonnet,2024,Western,No,750
+7,GPT-4o,2024,Western,No,750
+8,Ernie-4.0-8k,2024,Eastern,No,750
+9,DeepSeek-R1,2025,Eastern,Yes,750
+10,Claude-Opus-4.1,2025,Western,No,515
+11,Claude-Sonnet-4,2025,Western,No,515
+12,Deepseek-Chat,2025,Eastern,No,515
+13,Kimi-k2,2025,Eastern,No,515
+14,Llama4-Scout,2025,Western,No,515
+15,Llama4-Maverick,2025,Western,No,514
+16,Qwen-Max,2025,Eastern,No,515
+17,Qwen-Turbo,2025,Eastern,No,515
+18,Grok-Code-Fast,2025,Western,No,478
+19,GPT-5,2025,Western,Yes,550
+20,GPT-5-Mini,2025,Western,Yes,500
+21,o3,2025,Western,Yes,0
+22,Claude Opus 4.7,2025,Western,Yes,0
+23,Grok 4,2025,Western,Yes,0
+24,DeepSeek R2,2025,Eastern,Yes,0
+25,Qwen3.7 Max,2025,Eastern,Yes,0
+26,Hunyuan T1,2025,Eastern,Yes,0
+27,GPT-5.4,2025,Western,No,0
+28,Doubao Seed 2.0 Pro,2025,Eastern,Yes,0
+29,Claude Sonnet 4,2025,Western,No,0
+30,Grok 3,2025,Western,No,0
+31,GPT-5.6 Sol,2026,Western,Yes,0
+32,GPT-5.5,2026,Western,Yes,0
+33,Claude Fable 5,2026,Western,Yes,0
+34,Claude Sonnet 5,2026,Western,No,0
+35,Claude Opus 4.8,2026,Western,Yes,0
+36,Grok 4.5,2026,Western,Yes,0
+37,DeepSeek V4 Pro,2026,Eastern,Yes,0
+38,Qwen4 Max,2026,Eastern,Yes,0
+39,Kimi K2.6,2026,Eastern,Yes,0
+40,Hunyuan Hy3,2026,Eastern,No,0
