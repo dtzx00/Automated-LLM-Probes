@@ -24,18 +24,16 @@
 23,Grok 4,2025,Western,Yes,0
 24,DeepSeek R2,2025,Eastern,Yes,0
 25,Qwen3.7 Max,2025,Eastern,Yes,0
-26,Hunyuan T1,2025,Eastern,Yes,0
-27,GPT-5.4,2025,Western,No,0
-28,Doubao Seed 2.0 Pro,2025,Eastern,Yes,0
-29,Claude Sonnet 4,2025,Western,No,0
-30,Grok 3,2025,Western,No,0
-31,GPT-5.6 Sol,2026,Western,Yes,0
-32,GPT-5.5,2026,Western,Yes,0
-33,Claude Fable 5,2026,Western,Yes,0
-34,Claude Sonnet 5,2026,Western,No,0
-35,Claude Opus 4.8,2026,Western,Yes,0
-36,Grok 4.5,2026,Western,Yes,0
-37,DeepSeek V4 Pro,2026,Eastern,Yes,0
-38,Qwen4 Max,2026,Eastern,Yes,0
-39,Kimi K2.6,2026,Eastern,Yes,0
-40,Hunyuan Hy3,2026,Eastern,No,0
+26,GPT-5.4,2025,Western,No,0
+27,GLM-5,2025,Eastern,No,0
+28,Claude Sonnet 4,2025,Western,No,0
+29,GPT-5.6 Sol,2026,Western,Yes,0
+30,GPT-5.5,2026,Western,Yes,0
+31,Claude Fable 5,2026,Western,Yes,0
+32,Claude Sonnet 5,2026,Western,No,0
+33,Claude Opus 4.8,2026,Western,Yes,0
+34,Grok 4.5,2026,Western,Yes,0
+35,DeepSeek V4 Pro,2026,Eastern,Yes,0
+36,Qwen4 Max,2026,Eastern,Yes,0
+37,Kimi K2.6,2026,Eastern,Yes,0
+38,Hunyuan Hy3,2026,Eastern,No,0
