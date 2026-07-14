@@ -122,6 +122,7 @@ def parse_nouns(text):
     t = text.replace("\n", ",")
     parts = [p.strip().strip('".').strip() for p in t.split(",")]
     parts = [p for p in parts if p and not p[0].isdigit()]
+    parts = [p.lower() for p in parts]  # case-normalize parsed nouns (raw_response_text stays verbatim)
     return parts[:10] if len(parts) >= 10 else None
 
 def call_once(provider, key, api_model, target_temp, seed):
