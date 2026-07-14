@@ -28,39 +28,39 @@ TARGET_N_PER_MODEL = 1000
 NOUN_COLS = [f"noun_{i}" for i in range(10)]
 
 # ---- provider adapters: model_name -> raw completion text ----------------------------------
-def _post(url, headers, body, timeout=90):
+def _post(url, headers, body, timeout=180):
     req = urllib.request.Request(url, data=json.dumps(body).encode(), headers=headers)
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return json.load(r)
 
-def openai_chat(api_model, key):
+def openai_chat(api_model, key, temperature=TEMPERATURE):
     d = _post("https://api.openai.com/v1/chat/completions",
               {"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
               {"model": api_model, "messages": [{"role": "user", "content": BASELINE_PROMPT}],
-               "temperature": TEMPERATURE})
+               "temperature": temperature})
     return d["choices"][0]["message"]["content"].strip()
 
-def anthropic_chat(api_model, key):
+def anthropic_chat(api_model, key, temperature=TEMPERATURE):
     d = _post("https://api.anthropic.com/v1/messages",
               {"x-api-key": key, "anthropic-version": "2023-06-01", "Content-Type": "application/json"},
-              {"model": api_model, "max_tokens": 200, "temperature": TEMPERATURE,
+              {"model": api_model, "max_tokens": 200, "temperature": temperature,
                "messages": [{"role": "user", "content": BASELINE_PROMPT}]})
     return "".join(b.get("text", "") for b in d["content"]).strip()
 
-def xai_chat(api_model, key):
+def xai_chat(api_model, key, temperature=TEMPERATURE):
     d = _post("https://api.x.ai/v1/chat/completions",
               {"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
               {"model": api_model, "messages": [{"role": "user", "content": BASELINE_PROMPT}],
-               "temperature": TEMPERATURE})
+               "temperature": temperature})
     return d["choices"][0]["message"]["content"].strip()
 
 # OpenAI-compatible endpoints (DeepSeek, Qwen/DashScope, Moonshot/Kimi, etc.)
 def openai_compatible(base_url, env_key):
-    def _fn(api_model, key):
+    def _fn(api_model, key, temperature=TEMPERATURE):
         d = _post(f"{base_url}/chat/completions",
                   {"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
                   {"model": api_model, "messages": [{"role": "user", "content": BASELINE_PROMPT}],
-                   "temperature": TEMPERATURE})
+                   "temperature": temperature})
         return d["choices"][0]["message"]["content"].strip()
     _fn.env_key = env_key
     return _fn
@@ -86,6 +86,22 @@ def score_dat(nouns):
     this collector dependency-free; store nouns now, score in 01_build/scoring pass."""
     return ""  # dat_score filled by the scoring pass, matching NHB dat_new
 
+
+def call_with_temp(fn, api_model, key):
+    """Try temp 0.5 for parity. If the model rejects it (some models only allow temp 1),
+    fall back to temp 1.0 and record the actual temperature used, so provenance is honest."""
+    try:
+        return fn(api_model, key, TEMPERATURE), TEMPERATURE
+    except urllib.error.HTTPError as e:
+        try:
+            body = e.read().decode()
+        except Exception:
+            body = getattr(e, "_body", "") or ""
+        if e.code == 400 and "temperature" in body.lower():
+            return fn(api_model, key, 1.0), 1.0
+        # re-raise as a plain error carrying the body so upstream handling is stable
+        raise RuntimeError(f"HTTP {e.code}: {body[:200]}")
+
 def generate(model_name, api_model, provider, n, out_csv, dry_run=False, sleep=0.3, max_retries=4):
     prov = PROVIDERS[provider]
     key = os.environ.get(prov["env"])
@@ -95,20 +111,25 @@ def generate(model_name, api_model, provider, n, out_csv, dry_run=False, sleep=0
     rows, attempts = [], 0
     while len(rows) < n:
         try:
-            raw = fn(api_model, key)
+            raw, temp_used = call_with_temp(fn, api_model, key)
         except urllib.error.HTTPError as e:
             attempts += 1
             msg = e.read().decode()[:200]
             if e.code == 429 and attempts <= max_retries:
                 time.sleep(min(2 ** attempts, 30)); continue
             sys.exit(f"[{provider}/{api_model}] HTTP {e.code}: {msg}")
+        except RuntimeError as e:
+            attempts += 1
+            if '429' in str(e) and attempts <= max_retries:
+                time.sleep(min(2 ** attempts, 30)); continue
+            sys.exit(f"[{provider}/{api_model}] {e}")
         nouns = parse_nouns(raw)
         if not nouns:
             attempts += 1
             if attempts > n + max_retries:
                 sys.exit(f"[{provider}/{api_model}] too many unparseable responses")
             continue
-        rows.append({"model_name": model_name, "batch": "collect_2026", "temperature": TEMPERATURE,
+        rows.append({"model_name": model_name, "batch": "collect_2026", "temperature": temp_used,
                      "source_file": out_csv.name, "dat_score": score_dat(nouns),
                      **{c: nouns[i] for i, c in enumerate(NOUN_COLS)}})
         if dry_run:
