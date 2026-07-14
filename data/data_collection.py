@@ -1,30 +1,32 @@
 """
-data_collection.py — generate machine DAT responses to standardize every model to n=1000 @ temp 0.5.
+data_collection.py — generate machine DAT responses with FULL open-science provenance.
 
 BASELINE PROMPT: verbatim `baseline_prompt_1` from the NHB divergent-creativity OSF
 (osf.io/a9v2t -> studies_prompts.ipynb, Study 1a/1b). Loaded from data/baseline_prompt.txt.
-Do NOT paraphrase — it must match the existing 12,397 rows exactly.
+Do NOT paraphrase.
 
-Parity contract (must match existing temp-0.5 rows):
-  - prompt      : baseline_prompt.txt (verbatim)
-  - temperature : 0.5
-  - output cols : model_name, batch, temperature, source_file, dat_score, noun_0..noun_9
-Appends new rows to data/raw/topup_<provider>.csv, then re-run 01_build_temp05_dataset.py.
+TEMPERATURE: per-provider MIDPOINT (option 1, locked 2026-07-14). 0-2 providers -> 1.0;
+0-1 providers -> 0.5. Recorded per row (requested + effective + range). If a model forces
+its own temperature, the row records what was actually used.
 
-Providers are pluggable. Each returns the raw text completion for BASELINE_PROMPT @ temp 0.5.
-API keys are read from env at runtime (never hard-coded, never logged).
+Each generation writes ONE raw row with full provenance (timestamps, api request/response ids,
+system fingerprint, finish reason, token usage, prompt sha256, raw response text, parsed nouns).
+DAT scoring is a SEPARATE later pass; dat_score stays blank here.
+
+Keys read from env at runtime; never hard-coded, never written to disk.
 
 Usage:
-  python data_collection.py --model gpt-4o --provider openai --n 10 [--dry-run]
-  python data_collection.py --from-inventory model_inventory.csv   # top-up every model to TARGET_N
+  python data_collection.py --model "GPT-4o" --api-model gpt-4o-2024-08-06 --provider openai --n 5 [--dry-run]
+  python data_collection.py --from-inventory data/model_id_mapping.csv --n 500   # full run
 """
-import argparse, csv, json, os, sys, time, urllib.request, urllib.error
+import argparse, csv, hashlib, json, os, subprocess, sys, time, urllib.request, urllib.error
+from datetime import datetime, timezone
 from pathlib import Path
 
 HERE = Path(__file__).parent
 BASELINE_PROMPT = (HERE / "baseline_prompt.txt").read_text().strip()
-# Per-provider MIDPOINT temperature (option 1, locked 2026-07-14 with Dawei):
-# sample every model at the middle of its allowed range so models are comparable.
+PROMPT_SHA256 = hashlib.sha256(BASELINE_PROMPT.encode()).hexdigest()
+
 PROVIDER_TEMP_RANGE = {
     "openai": (0, 2), "xai": (0, 2), "deepseek": (0, 2), "qwen": (0, 2), "hunyuan": (0, 2),
     "anthropic": (0, 1), "moonshot": (0, 1), "openrouter": (0, 2),
@@ -32,123 +34,153 @@ PROVIDER_TEMP_RANGE = {
 def provider_midpoint(provider):
     lo, hi = PROVIDER_TEMP_RANGE.get(provider, (0, 2))
     return (lo + hi) / 2
+def temp_range_str(provider):
+    lo, hi = PROVIDER_TEMP_RANGE.get(provider, (0, 2))
+    return f"{lo}-{hi}"
 
-TEMPERATURE = 0.5           # legacy default (retained for reference only)
 TARGET_N_PER_MODEL = 500
 NOUN_COLS = [f"noun_{i}" for i in range(10)]
 
-# ---- provider adapters: model_name -> raw completion text ----------------------------------
-def _post(url, headers, body, timeout=180):
+FIELDS = ["record_id","model_name","api_model_requested","api_model_returned","provider",
+          "endpoint_base","batch","region","reasoning","model_year",
+          "temperature_requested","temperature_effective","temp_range_used","seed",
+          "request_timestamp_utc","response_timestamp_utc","latency_ms",
+          "api_request_id","response_id","system_fingerprint","finish_reason",
+          "prompt_tokens","completion_tokens","total_tokens","prompt_sha256",
+          "raw_response_text","parse_status","n_nouns_parsed"] + NOUN_COLS + ["dat_score","collector_version"]
+
+def _collector_version():
+    try:
+        return "git:" + subprocess.check_output(["git","-C",str(HERE),"rev-parse","--short","HEAD"],text=True).strip()
+    except Exception:
+        return "git:unknown"
+COLLECTOR_VERSION = _collector_version()
+
+def _now():
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
+
+# ---- low-level POST that returns (parsed_json, response_headers) --------------------------
+def _post_full(url, headers, body, timeout=180):
     req = urllib.request.Request(url, data=json.dumps(body).encode(), headers=headers)
     with urllib.request.urlopen(req, timeout=timeout) as r:
-        return json.load(r)
+        raw = r.read()
+        return json.loads(raw), dict(r.headers)
 
-def openai_chat(api_model, key, temperature=TEMPERATURE):
-    d = _post("https://api.openai.com/v1/chat/completions",
-              {"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
-              {"model": api_model, "messages": [{"role": "user", "content": BASELINE_PROMPT}],
-               "temperature": temperature})
-    return d["choices"][0]["message"]["content"].strip()
+# ---- provider adapters: return a normalized dict of everything we log ---------------------
+def _openai_like(base, key, api_model, temperature, seed=None, extra_headers=None):
+    headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
+    if extra_headers: headers.update(extra_headers)
+    body = {"model": api_model, "messages": [{"role":"user","content":BASELINE_PROMPT}], "temperature": temperature}
+    if seed is not None: body["seed"] = seed
+    d, h = _post_full(f"{base}/chat/completions", headers, body)
+    ch = (d.get("choices") or [{}])[0]
+    usage = d.get("usage") or {}
+    return {
+        "text": (ch.get("message") or {}).get("content","").strip(),
+        "api_model_returned": d.get("model",""),
+        "response_id": d.get("id",""),
+        "system_fingerprint": d.get("system_fingerprint",""),
+        "finish_reason": ch.get("finish_reason",""),
+        "prompt_tokens": usage.get("prompt_tokens",""),
+        "completion_tokens": usage.get("completion_tokens",""),
+        "total_tokens": usage.get("total_tokens",""),
+        "api_request_id": h.get("x-request-id") or h.get("x-amzn-requestid") or h.get("request-id",""),
+        "endpoint_base": base,
+    }
 
-def anthropic_chat(api_model, key, temperature=TEMPERATURE):
-    d = _post("https://api.anthropic.com/v1/messages",
-              {"x-api-key": key, "anthropic-version": "2023-06-01", "Content-Type": "application/json"},
-              {"model": api_model, "max_tokens": 200, "temperature": temperature,
-               "messages": [{"role": "user", "content": BASELINE_PROMPT}]})
-    return "".join(b.get("text", "") for b in d["content"]).strip()
+def _anthropic(base, key, api_model, temperature, seed=None):
+    headers = {"x-api-key": key, "anthropic-version":"2023-06-01", "Content-Type":"application/json"}
+    body = {"model": api_model, "max_tokens":200, "temperature":temperature,
+            "messages":[{"role":"user","content":BASELINE_PROMPT}]}
+    d, h = _post_full(f"{base}/messages", headers, body)
+    usage = d.get("usage") or {}
+    return {
+        "text": "".join(b.get("text","") for b in d.get("content",[])).strip(),
+        "api_model_returned": d.get("model",""),
+        "response_id": d.get("id",""),
+        "system_fingerprint": "",
+        "finish_reason": d.get("stop_reason",""),
+        "prompt_tokens": usage.get("input_tokens",""),
+        "completion_tokens": usage.get("output_tokens",""),
+        "total_tokens": (usage.get("input_tokens",0) or 0)+(usage.get("output_tokens",0) or 0),
+        "api_request_id": h.get("request-id",""),
+        "endpoint_base": base,
+    }
 
-def xai_chat(api_model, key, temperature=TEMPERATURE):
-    d = _post("https://api.x.ai/v1/chat/completions",
-              {"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
-              {"model": api_model, "messages": [{"role": "user", "content": BASELINE_PROMPT}],
-               "temperature": temperature})
-    return d["choices"][0]["message"]["content"].strip()
-
-# OpenAI-compatible endpoints (DeepSeek, Qwen/DashScope, Moonshot/Kimi, etc.)
-def openai_compatible(base_url, env_key):
-    def _fn(api_model, key, temperature=TEMPERATURE):
-        d = _post(f"{base_url}/chat/completions",
-                  {"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
-                  {"model": api_model, "messages": [{"role": "user", "content": BASELINE_PROMPT}],
-                   "temperature": temperature})
-        return d["choices"][0]["message"]["content"].strip()
-    _fn.env_key = env_key
-    return _fn
-
+# provider -> (callable(base,key,api_model,temperature,seed), base_url, env_key, supports_seed)
 PROVIDERS = {
-    "openai":    {"fn": openai_chat,    "env": "OPENAI_API_KEY"},
-    "anthropic": {"fn": anthropic_chat, "env": "ANTHROPIC_API_KEY"},
-    "xai":       {"fn": xai_chat,       "env": "XAI_API_KEY"},
-    "deepseek":  {"fn": openai_compatible("https://api.deepseek.com/v1", "DEEPSEEK_API_KEY"), "env": "DEEPSEEK_API_KEY"},
-    "qwen":      {"fn": openai_compatible("https://dashscope.aliyuncs.com/compatible-mode/v1", "QWEN_API_KEY"), "env": "QWEN_API_KEY"},
-    "moonshot":  {"fn": openai_compatible("https://api.moonshot.ai/v1", "MOONSHOT_API_KEY"), "env": "MOONSHOT_API_KEY"},
-    "openrouter":{"fn": openai_compatible("https://openrouter.ai/api/v1", "QWEN_API_KEY"), "env": "QWEN_API_KEY"},
-    "hunyuan":   {"fn": openai_compatible("https://tokenhub.tencentmaas.com/v1", "HUNYUAN_API_KEY"), "env": "HUNYUAN_API_KEY"},
-    "doubao":    {"fn": openai_compatible("https://ark.cn-beijing.volces.com/api/v3", "DOUBAO_API_KEY"), "env": "DOUBAO_API_KEY"},
+    "openai":    (lambda k,m,t,s: _openai_like("https://api.openai.com/v1", k, m, t, s), "OPENAI_API_KEY", True),
+    "anthropic": (lambda k,m,t,s: _anthropic("https://api.anthropic.com/v1", k, m, t, s), "ANTHROPIC_API_KEY", False),
+    "xai":       (lambda k,m,t,s: _openai_like("https://api.x.ai/v1", k, m, t, None), "XAI_API_KEY", False),
+    "deepseek":  (lambda k,m,t,s: _openai_like("https://api.deepseek.com/v1", k, m, t, s), "DEEPSEEK_API_KEY", True),
+    "qwen":      (lambda k,m,t,s: _openai_like("https://dashscope.aliyuncs.com/compatible-mode/v1", k, m, t, s), "QWEN_API_KEY", True),
+    "hunyuan":   (lambda k,m,t,s: _openai_like("https://tokenhub.tencentmaas.com/v1", k, m, t, None), "HUNYUAN_API_KEY", False),
+    "moonshot":  (lambda k,m,t,s: _openai_like("https://api.moonshot.ai/v1", k, m, t, None), "MOONSHOT_API_KEY", False),
 }
 
 def parse_nouns(text):
-    """Parse the comma-separated response into exactly 10 nouns; return None if not parseable."""
     t = text.replace("\n", ",")
     parts = [p.strip().strip('".').strip() for p in t.split(",")]
     parts = [p for p in parts if p and not p[0].isdigit()]
     return parts[:10] if len(parts) >= 10 else None
 
-def score_dat(nouns):
-    """DAT score = mean pairwise semantic distance (GloVe). Deferred to the scoring step to keep
-    this collector dependency-free; store nouns now, score in 01_build/scoring pass."""
-    return ""  # dat_score filled by the scoring pass, matching NHB dat_new
-
-
-def call_with_temp(fn, api_model, key, target_temp):
-    """Try temp 0.5 for parity. If the model rejects it (some models only allow temp 1),
-    fall back to temp 1.0 and record the actual temperature used, so provenance is honest."""
+def call_once(provider, key, api_model, target_temp, seed):
+    """Call at target_temp; on a temperature-rejection 400, retry with no seed at temp 1.0
+    (some models only allow their own default). Returns (payload_dict, temp_used)."""
+    fn = PROVIDERS[provider][0]
     try:
-        return fn(api_model, key, target_temp), target_temp
+        return fn(key, api_model, target_temp, seed if PROVIDERS[provider][2] else None), target_temp
     except urllib.error.HTTPError as e:
-        try:
-            body = e.read().decode()
-        except Exception:
-            body = getattr(e, "_body", "") or ""
+        body = ""
+        try: body = e.read().decode()
+        except Exception: pass
         if e.code == 400 and "temperature" in body.lower():
-            return fn(api_model, key, 1.0), 1.0
-        # re-raise as a plain error carrying the body so upstream handling is stable
+            return fn(key, api_model, 1.0, None), 1.0
         raise RuntimeError(f"HTTP {e.code}: {body[:200]}")
 
-def generate(model_name, api_model, provider, n, out_csv, dry_run=False, sleep=0.3, max_retries=4):
-    prov = PROVIDERS[provider]
-    key = os.environ.get(prov["env"])
+def generate(model_name, api_model, provider, n, out_csv, meta, dry_run=False, seed_base=1000, pace=0.25, max_retries=5):
+    env_key = PROVIDERS[provider][1]
+    key = os.environ.get(env_key)
+    if not key: sys.exit(f"Missing env key {env_key} for provider {provider}")
     target_temp = provider_midpoint(provider)
-    if not key:
-        sys.exit(f"Missing env key {prov['env']} for provider {provider}")
-    fn = prov["fn"]
-    rows, attempts = [], 0
-    while len(rows) < n:
+    rows, made, attempts = [], 0, 0
+    while made < n:
+        seed = seed_base + made
+        req_ts = _now(); t0 = time.time()
         try:
-            raw, temp_used = call_with_temp(fn, api_model, key, target_temp)
-        except urllib.error.HTTPError as e:
-            attempts += 1
-            msg = e.read().decode()[:200]
-            if e.code == 429 and attempts <= max_retries:
-                time.sleep(min(2 ** attempts, 30)); continue
-            sys.exit(f"[{provider}/{api_model}] HTTP {e.code}: {msg}")
+            payload, temp_used = call_once(provider, key, api_model, target_temp, seed)
         except RuntimeError as e:
             attempts += 1
-            if '429' in str(e) and attempts <= max_retries:
-                time.sleep(min(2 ** attempts, 30)); continue
+            if "429" in str(e) and attempts <= max_retries:
+                time.sleep(min(2**attempts, 30)); continue
             sys.exit(f"[{provider}/{api_model}] {e}")
-        nouns = parse_nouns(raw)
-        if not nouns:
-            attempts += 1
-            if attempts > n + max_retries:
-                sys.exit(f"[{provider}/{api_model}] too many unparseable responses")
-            continue
-        rows.append({"model_name": model_name, "batch": "collect_2026", "temperature": temp_used,
-                     "source_file": out_csv.name, "dat_score": score_dat(nouns),
-                     **{c: nouns[i] for i, c in enumerate(NOUN_COLS)}})
+        resp_ts = _now(); latency = int((time.time()-t0)*1000)
+        nouns = parse_nouns(payload["text"])
+        status = "ok" if nouns else "failed"
+        row = {
+            "record_id": "", "model_name": model_name, "api_model_requested": api_model,
+            "api_model_returned": payload.get("api_model_returned",""), "provider": provider,
+            "endpoint_base": payload.get("endpoint_base",""), "batch": "collect_2026_midpoint",
+            "region": meta.get("region",""), "reasoning": meta.get("reasoning",""),
+            "model_year": meta.get("year",""),
+            "temperature_requested": target_temp, "temperature_effective": temp_used,
+            "temp_range_used": temp_range_str(provider), "seed": seed if PROVIDERS[provider][2] else "",
+            "request_timestamp_utc": req_ts, "response_timestamp_utc": resp_ts, "latency_ms": latency,
+            "api_request_id": payload.get("api_request_id",""), "response_id": payload.get("response_id",""),
+            "system_fingerprint": payload.get("system_fingerprint",""), "finish_reason": payload.get("finish_reason",""),
+            "prompt_tokens": payload.get("prompt_tokens",""), "completion_tokens": payload.get("completion_tokens",""),
+            "total_tokens": payload.get("total_tokens",""), "prompt_sha256": PROMPT_SHA256,
+            "raw_response_text": payload["text"], "parse_status": status,
+            "n_nouns_parsed": len(nouns) if nouns else 0,
+            **{c:(nouns[i] if nouns else "") for i,c in enumerate(NOUN_COLS)},
+            "dat_score": "", "collector_version": COLLECTOR_VERSION,
+        }
+        made += 1
+        rows.append(row)
         if dry_run:
-            print(json.dumps(rows[-1], ensure_ascii=False)); return rows
-        time.sleep(sleep)
+            print(json.dumps({k:row[k] for k in ("model_name","provider","temperature_effective","parse_status","api_request_id","response_id","system_fingerprint","total_tokens","latency_ms",*NOUN_COLS)}, ensure_ascii=False))
+            return rows
+        time.sleep(pace)
     write_rows(out_csv, rows)
     print(f"[{provider}/{api_model}] wrote {len(rows)} rows -> {out_csv}")
     return rows
@@ -158,22 +190,20 @@ def write_rows(out_csv, rows):
     out_csv.parent.mkdir(parents=True, exist_ok=True)
     exists = out_csv.exists()
     with open(out_csv, "a", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=["model_name","batch","temperature","source_file","dat_score"]+NOUN_COLS)
+        w = csv.DictWriter(f, fieldnames=FIELDS)
         if not exists: w.writeheader()
         w.writerows(rows)
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", help="canonical model_name (as in model_inventory.csv)")
-    ap.add_argument("--api-model", help="provider's API model id (defaults to --model)")
-    ap.add_argument("--provider", choices=list(PROVIDERS))
-    ap.add_argument("--n", type=int, default=10)
-    ap.add_argument("--dry-run", action="store_true", help="one call, print, don't write")
-    args = ap.parse_args()
-    if not (args.model and args.provider):
-        sys.exit("need --model and --provider (or extend for --from-inventory batch mode)")
-    out = HERE / "raw" / f"topup_{args.provider}.csv"
-    generate(args.model, args.api_model or args.model, args.provider, args.n, out, dry_run=args.dry_run)
+    ap.add_argument("--model"); ap.add_argument("--api-model"); ap.add_argument("--provider", choices=list(PROVIDERS))
+    ap.add_argument("--n", type=int, default=5); ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--region", default=""); ap.add_argument("--reasoning", default=""); ap.add_argument("--year", default="")
+    a = ap.parse_args()
+    if not (a.model and a.provider): sys.exit("need --model and --provider")
+    out = HERE / "raw" / f"topup_{a.provider}.csv"
+    meta = {"region": a.region, "reasoning": a.reasoning, "year": a.year}
+    generate(a.model, a.api_model or a.model, a.provider, a.n, out, meta, dry_run=a.dry_run)
 
 if __name__ == "__main__":
     main()
