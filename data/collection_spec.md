@@ -25,3 +25,17 @@ Mistral Large, Qwen3, others. Dawei to confirm the final list; each adds 1,000 @
 ## Run ownership
 Dawei will trigger the run; Lumen scripts + executes against the model APIs, writing straight
 into `data/raw/` then re-running `scripts/01_build_temp05_dataset.py`.
+
+## Baseline prompt (LOCKED — verbatim from NHB OSF a9v2t, studies_prompts.ipynb, baseline_prompt_1)
+Stored at `data/baseline_prompt.txt`. Study 1a/1b baseline; matches the existing 12,397 temp-0.5 rows.
+
+```
+Generate 10 nouns that are as different from each other as possible using the instructions below:
+1. Generate only single-word nouns in English.
+2. Generate only nouns such as things, objects and concepts.
+3. Do not use proper nouns such as people or places.
+4. Do not use specialised vocabulary or technical terms.
+5. Generate your final response as a string with each noun separated by commas: "noun_1, noun_2, noun_3, noun_4, noun_5, noun_6, noun_7, noun_8, noun_9, noun_10".
+6. Do not return anything else other than the comma-separated string of nouns.
+```
+Source: https://osf.io/a9v2t/files/y4rhs (public). Do not paraphrase.
