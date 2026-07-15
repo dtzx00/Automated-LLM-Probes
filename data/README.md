@@ -1,16 +1,5 @@
 # Machine DAT Data Collection — `data/`
 
-This folder collects **machine (LLM) responses to the Divergent Association Task (DAT)** with full
-open-science provenance, so they are directly comparable to the human DAT rows and to the existing
-temperature-0.5 legacy data. Each generation = one model producing 10 maximally-different nouns.
-
-**Reference paper:** Wang, Huang, Shen & Uzzi (2025), *Nature Human Behaviour*,
-doi:10.1038/s41562-025-02331-1. Prompt is taken verbatim from its OSF repo (osf.io/a9v2t).
-
----
-
-## What's in this folder
-
 | File | What it is |
 |---|---|
 | **`models.csv`** | **The single source of truth for the model grid.** One row per model: identity, provider, api id, region/reasoning tags, legacy sample count, and live collection stats (n, parse rate, latency, tokens, window, status). Replaces the old `model_id_mapping.csv` / `model_inventory.csv` / `model_inventory_final.csv` / `model_summary.csv`. |
@@ -58,8 +47,8 @@ Generate 10 nouns that are as different from each other as possible using the in
 - **Region label:** `Western` / `Eastern` = model origin; all prompts are in English.
 - **Noun parsing:** parsed nouns are lowercase-normalized; `raw_response_text` is kept verbatim.
 - **DAT scoring:** deferred to data cleaning (`dat_score` stays blank during collection).
-- **DAT Scorer:** use Olson et al. 2021 (github.com/jayolson/divergent-association-task).
-- **Slow models ignored** Gemini models and many GLM models are slow, so they are ignored.
+- **DAT scorer:** use Olson et al. 2021 (github.com/jayolson/divergent-association-task).
+- **Slow models:** Gemini models and many GLM models are slow, so they are ignored.
 
 ---
 
