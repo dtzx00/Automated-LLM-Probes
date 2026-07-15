@@ -3,11 +3,11 @@
 ## btb_individual_augpair.csv
 BTB human DAT data from `lucas23wong/btb-data-analysis` (`data/clean/master_user_sessions.csv`).
 
-**Filter:** complete cases only — users who completed BOTH the individual AND the augmented-pair exercise (non-empty `individual_word_1` and `augmented_pair_word_1`).
+**Filter:** superset (m:m) — users with individual words OR augmented-pair words (not required to have both).
 - Master users: 1,861
 - Have individual words: 1,454
 - Have augpair words: 1,259
-- **Complete (both): 1,072** -> this file
+- **Superset (individual OR augpair): 1,647** -> this file (both=1,072; individual-only=382; augpair-only=193)
 
 **Columns kept (58):**
 - Demographics/meta: user_id, class_session, gender, race_ethnicity, age, english_comfort, education, consent, major, newsletter, language, email, region, program_type
