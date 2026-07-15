@@ -2236,3 +2236,810 @@ I think this is good. Let me finalize.
 </think>
 chair, dolphin, mountain, music, bread, storm, shadow, puzzle, journey, silence",ok,10,<think>,the user wants 10 nouns that are maximally different from each other. they should be:,objects,or concepts,everyday words,i need to think about different categories to maximize diversity:,- living things (not people): animal,- natural objects: mountain,river,ocean,,git:34c7dab
 ,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:18:45.034Z,2026-07-15T02:19:01.094Z,16060,,7922de8b-c82d-49a3-bf92-4ace8e05fd1f,,stop,179,884,1063,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"umbrella, river, dream, silence, puzzle, garden, horizon, clock, laughter, rainbow",ok,10,umbrella,river,dream,silence,puzzle,garden,horizon,clock,laughter,rainbow,,git:34c7dab
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:19:17.402Z,2026-07-15T02:19:23.495Z,6093,,63f0f520-b7d3-4553-ba66-aa57ad1baeae,,stop,314,340,654,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. Let me think about different categories to maximize diversity:
+- Things/objects: chair, mountain
+- Concepts: freedom, time
+- Animals: but user said things/objects/concepts, so maybe avoid animals
+- Natural things: water, fire
+- Abstract: music, silence
+- Concrete: book, mirror
+
+Let me pick 10 very different ones:
+1. chair (furniture/object)
+2. mountain (natural landform)
+3. freedom (abstract concept)
+4. music (abstract concept)
+5. mirror (object)
+6. shadow (phenomenon)
+7. ocean (natural thing)
+8. laughter (abstract/phenomenon)
+9. clock (object/instrument)
+10. river (natural thing)
+
+Wait, I should avoid having too many from the same category. Let me check:
+- chair, mirror, clock - objects (but different types)
+- mountain, ocean, river - natural things
+- freedom, music, laughter - abstract concepts
+- shadow - phenomenon
+
+Let me reconsider to make them more diverse:
+1. chair (furniture)
+2. mountain (geography)
+3. freedom (abstract concept)
+4. music (art form)
+5. mirror (object)
+6. shadow (phenomenon)
+7. ocean (body of water)
+8. laughter (emotion/phenomenon)
+9. clock (timepiece)
+10. journey (abstract concept/event)
+
+This seems like a good diverse set. Let me finalize it.
+</think>
+chair, mountain, freedom, music, mirror, shadow, ocean, laughter, clock, journey",ok,10,<think>,the user wants 10 nouns that are as different from each other as possible. let me think about different categories to maximize diversity:,- things/objects: chair,mountain,- concepts: freedom,time,- animals: but user said things/objects/concepts,so maybe avoid animals,- natural things: water,fire,,git:3cae4a2
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:19:23.496Z,2026-07-15T02:19:29.677Z,6181,,f07fd266-4d89-47cf-b926-f8eb9e4de375,,stop,314,286,600,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 single-word English nouns that are as different from each other as possible. They should be common, non-technical things/objects/concepts. No proper nouns. Let me think of diverse categories:
+
+1. Furniture: chair
+2. Nature: mountain
+3. Food: bread
+4. Body part: hand
+5. Vehicle: bicycle
+6. Color (concept): crimson - hmm, maybe too specific. Let's use ""shadow"" as a concept.
+7. Music/instrument: guitar
+8. Time concept: sunset - or just ""hour""
+9. Animal - but animal is a common noun, that should be fine: butterfly
+10. Abstract: freedom
+
+Let me make them more diverse:
+- chair (furniture)
+- mountain (geographical feature)
+- bread (food)
+- hand (body part)
+- bicycle (vehicle)
+- guitar (instrument)
+- butterfly (animal)
+- candle (household object)
+- thunder (natural phenomenon)
+- laughter (abstract concept)
+
+These span furniture, geography, food, body, transport, music, nature, household, weather, emotion - quite diverse.
+
+Let me check: all single words, all common nouns, no proper nouns, no technical terms. Good.
+
+Format: just the comma-separated string, nothing else.
+</think>
+chair, mountain, bread, hand, bicycle, guitar, butterfly, candle, thunder, laughter",ok,10,<think>,the user wants 10 single-word english nouns that are as different from each other as possible. they should be common,non-technical things/objects/concepts. no proper nouns. let me think of diverse categories:,"maybe too specific. let's use ""shadow"" as a concept",that should be fine: butterfly,let me make them more diverse:,- chair (furniture),- mountain (geographical feature),- bread (food),- hand (body part),,git:3cae4a2
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:19:29.677Z,2026-07-15T02:19:35.706Z,6028,,f0bbf29e-94d3-40cd-b285-a88726f9ed6f,,stop,314,274,588,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. Constraints:
+1. Single-word English nouns
+2. Things, objects, concepts (not actions/verbs)
+3. No proper nouns (no people or places)
+4. No specialized/technical terms
+5. Output as comma-separated string
+6. Only return the string
+
+Let me think of 10 highly diverse nouns covering different categories:
+- Abstract concept: freedom
+- Natural thing: mountain
+- Animal: elephant
+- Furniture: chair
+- Tool: hammer
+- Emotion: joy
+- Food: bread
+- Time concept: century
+- Object: mirror
+- Weather: storm
+
+Let me make them more diverse:
+- freedom (abstract)
+- mountain (nature/landform)
+- elephant (animal)
+- chair (furniture)
+- mirror (object)
+- bread (food)
+- silence (abstract/sound-related)
+- hammer (tool)
+- river (nature)
+- childhood (abstract/time)
+
+That covers: abstract concept, landform, animal, furniture, object, food, auditory abstract, tool, water feature, life stage. Pretty diverse.
+
+Let me check all are single words, no proper nouns, no technical terms. All good.
+</think>
+freedom, mountain, elephant, chair, mirror, bread, silence, hammer, river, childhood",ok,10,<think>,the user wants 10 nouns that are as different from each other as possible. constraints:,objects,concepts (not actions/verbs),let me think of 10 highly diverse nouns covering different categories:,- abstract concept: freedom,- natural thing: mountain,- animal: elephant,- furniture: chair,- tool: hammer,,git:3cae4a2
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:19:35.706Z,2026-07-15T02:19:43.875Z,8168,,d4f045ee-fb0b-4e93-a737-494a771aaed5,,stop,314,352,666,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. Let me think about different categories to maximize diversity:
+
+- Things/objects
+- Concepts
+- Different sizes, materials, functions
+
+Let me brainstorm a wide variety:
+- clock (object, time-related)
+- freedom (concept)
+- mountain (natural feature)
+- melody (abstract, sound)
+- ladder (object, tool)
+- justice (concept)
+- ocean (nature)
+- pillow (household object)
+- courage (concept/abstract)
+- telescope (tool/technology)
+
+Let me reconsider for more diversity - mixing concrete objects, abstract concepts, natural things, man-made things, different senses:
+
+- shadow (abstract/visual)
+- laughter (concept/sound)
+- ocean (nature, large)
+- button (small object)
+- journey (concept, time)
+- pyramid (structure)
+- whisper (sound)
+- thread (material)
+- gravity (physics concept)
+- lantern (object)
+
+Hmm, gravity might be too technical. Let me replace:
+- mystery (concept)
+- clock (object, time)
+
+Let me finalize:
+1. clock - man-made object, time
+2. freedom - abstract concept
+3. mountain - natural, large
+4. melody - sound/music concept
+5. ladder - man-made tool
+6. ocean - natural, water
+7. pillow - household object
+8. courage - abstract concept/emotion
+9. shadow - visual/abstract
+10. journey - concept/time
+
+These cover: man-made vs natural, large vs small, concrete vs abstract, different senses, different categories. Good diversity.
+</think>
+clock, freedom, mountain, melody, ladder, ocean, pillow, courage, shadow, journey",ok,10,<think>,the user wants 10 nouns that are as different from each other as possible. let me think about different categories to maximize diversity:,- things/objects,- concepts,- different sizes,materials,functions,let me brainstorm a wide variety:,- clock (object,time-related),,git:3cae4a2
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:19:18.403Z,2026-07-15T02:19:46.806Z,28402,,47e3ab1a-36ed-4dec-ace9-672b78bad84e,,stop,179,1539,1718,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"river, bicycle, lamp, melody, justice, shadow, umbrella, brick, laughter, imagination",ok,10,river,bicycle,lamp,melody,justice,shadow,umbrella,brick,laughter,imagination,,git:3cae4a2
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:19:43.876Z,2026-07-15T02:19:50.113Z,6237,,d97589b1-c7c3-4f70-8455-7183980f4da7,,stop,314,329,643,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. Let me think about categories and pick diverse nouns:
+- Things/objects (concrete)
+- Concepts (abstract)
+
+Let me brainstorm diverse categories:
+1. Furniture - chair
+2. Weather/natural phenomenon - thunderstorm
+3. Emotion/abstract - happiness
+4. Food - bread
+5. Clothing - jacket
+6. Music - melody
+7. Animal product - feather
+8. Tool - hammer
+9. Light - lantern
+10. Time concept - yesterday (no, that's an adverb typically)
+
+Let me revise:
+1. Chair (furniture, indoor object)
+2. Ocean (body of water, natural)
+3. Music (abstract, auditory)
+4. Bread (food, consumable)
+5. Mirror (object, reflective)
+6. Garden (place/outdoor space - hmm, might be borderline)
+7. Courage (abstract, moral)
+8. Clock (object, time-keeping)
+9. Feather (natural object, light)
+10. Mystery (abstract concept)
+
+Wait, ""garden"" might be okay as a thing/space. Let me make sure all are different categories:
+- Chair - furniture
+- Ocean - nature/geography
+- Music - abstract art
+- Bread - food
+- Mirror - household object
+- Garden - outdoor space
+- Courage - abstract virtue
+- Clock - instrument
+- Feather - natural object
+- Mystery - abstract concept
+
+These are quite diverse. Let me finalize.
+</think>
+chair, ocean, music, bread, mirror, garden, courage, clock, feather, mystery",ok,10,<think>,the user wants 10 nouns that are as different from each other as possible. let me think about categories and pick diverse nouns:,- things/objects (concrete),- concepts (abstract),let me brainstorm diverse categories:,that's an adverb typically),let me revise:,indoor object),natural),auditory),,git:3cae4a2
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:19:50.113Z,2026-07-15T02:19:55.496Z,5382,,480afaf0-e5fe-4944-957e-e39075ec7afc,,stop,314,266,580,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. They must be:
+1. Single-word English nouns
+2. Things, objects, or concepts
+3. Not proper nouns
+4. Not specialized/technical terms
+5. Output as comma-separated string
+
+Let me think of 10 very different nouns covering different categories:
+- Furniture: chair
+- Emotion/abstract: freedom
+- Food: bread
+- Tool: hammer
+- Weather concept: thunderstorm
+- Body part: hand
+- Plant: tree
+- Vehicle: bicycle
+- Music/sound: melody
+- Time: sunrise
+
+These are quite different from each other - covering furniture, abstract concepts, food, tools, weather, anatomy, nature, transportation, auditory concepts, and astronomical/temporal phenomena.
+
+Let me verify:
+- chair (object)
+- freedom (concept)
+- bread (food/object)
+- hammer (tool)
+- thunderstorm (natural phenomenon)
+- hand (body part)
+- tree (plant)
+- bicycle (vehicle)
+- melody (abstract/sound concept)
+- sunrise (event/phenomenon)
+
+These are all common, non-technical, non-proper nouns. Good diversity.
+</think>
+chair, freedom, bread, hammer, thunderstorm, hand, tree, bicycle, melody, sunrise",ok,10,<think>,the user wants 10 nouns that are as different from each other as possible. they must be:,objects,or concepts,let me think of 10 very different nouns covering different categories:,- furniture: chair,- emotion/abstract: freedom,- food: bread,- tool: hammer,- weather concept: thunderstorm,,git:3cae4a2
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:19:55.497Z,2026-07-15T02:20:01.573Z,6076,,18f709d2-1679-4f8e-bb94-edc7a52b42c3,,stop,314,333,647,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. Let me think about categories to maximize diversity:
+- A natural thing (like a plant or rock)
+- A man-made object
+- A body part
+- A concept/abstract
+- A food
+- A clothing item
+- A vehicle
+- An animal (but the instruction says things, objects and concepts - animals might be borderline, let me reconsider)
+- A tool
+- A furniture item
+
+Wait, the instructions say ""things, objects and concepts"" - so abstract concepts are okay but maybe not animals. Let me stick to objects, things, and concepts.
+
+Let me brainstorm:
+1. mountain (natural thing)
+2. chair (furniture)
+3. freedom (concept)
+4. bread (food)
+5. guitar (instrument/object)
+6. window (part of building)
+7. sandal (clothing)
+8. candle (object)
+9. happiness (concept)
+10. umbrella (object)
+
+Let me make these as different as possible:
+1. mountain - natural landform
+2. chair - furniture
+3. freedom - abstract concept
+4. bread - food
+5. guitar - musical instrument
+6. umbrella - tool/object
+7. pillow - household item
+8. shadow - phenomenon/concept
+9. journey - concept/experience
+10. clock - object measuring time
+
+These span very different categories: nature, furniture, abstract concepts, food, music, weather, household, phenomena, experiences, time-keeping.
+</think>
+mountain, chair, freedom, bread, guitar, umbrella, pillow, shadow, journey, clock",ok,10,<think>,the user wants 10 nouns that are as different from each other as possible. let me think about categories to maximize diversity:,- a natural thing (like a plant or rock),- a man-made object,- a body part,- a concept/abstract,- a food,- a clothing item,- a vehicle,- an animal (but the instruction says things,,git:3cae4a2
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:20:01.573Z,2026-07-15T02:20:09.087Z,7514,,4c18ef2f-3481-4f03-a839-f9a62f986d10,,stop,314,409,723,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. Let me think about what makes nouns ""different"":
+- Different categories (abstract vs concrete)
+- Different senses (visual, auditory, tactile, etc.)
+- Different sizes (tiny to huge)
+- Different materials (organic, inorganic, etc.)
+- Different functions
+- Different origins (natural, man-made)
+- Different time periods (ancient, modern)
+
+Let me brainstorm diverse nouns:
+1. galaxy (huge, cosmic, natural)
+2. whisper (sound, abstract, ephemeral)
+3. feather (light, organic, tactile)
+4. puzzle (mental, concept, interactive)
+5. ocean (vast, natural, liquid)
+6. hammer (tool, man-made, solid)
+7. shadow (visual, ephemeral, abstract)
+8. bread (food, organic, daily)
+9. melody (sound, abstract, artistic)
+10. compass (tool, man-made, navigational)
+
+Let me make sure these are all common, non-technical, single-word nouns that aren't proper nouns. All check out.
+
+Let me try to make them even more diverse:
+- Different scale: galaxy (cosmic), grain (tiny)
+- Different senses: whisper (sound), shadow (visual)
+- Different states: breeze (gas), ice (solid)
+- Different origins: cave (natural), clock (man-made)
+- Different categories: emotion (abstract), tool (concrete)
+
+New list:
+1. galaxy (cosmic, vast)
+2. whisper (sound, intangible)
+3. feather (light, organic)
+4. puzzle (mental, concept)
+5. ocean (water, vast)
+6. hammer (tool, solid)
+7. shadow (visual, ephemeral)
+8. bread (food, organic)
+9. melody (sound, abstract)
+10. clock (time, man-made)
+
+These feel diverse enough. Let me finalize.
+</think>
+galaxy, whisper, feather, puzzle, ocean, hammer, shadow, bread, melody, clock",ok,10,<think>,"the user wants 10 nouns that are as different from each other as possible. let me think about what makes nouns ""different"":",- different categories (abstract vs concrete),- different senses (visual,auditory,tactile,etc.),- different sizes (tiny to huge),- different materials (organic,inorganic,,git:3cae4a2
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:20:09.088Z,2026-07-15T02:20:15.347Z,6258,,04c09f6b-9daa-43df-a3f4-f70417190b2f,,stop,314,331,645,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. Let me think about different categories to maximize diversity:
+
+1. A natural/physical thing
+2. A man-made object
+3. An abstract concept
+4. A food item
+5. A body part
+6. A tool
+7. An animal (thing/concept? maybe a creature noun)
+8. A furniture item
+9. A weather/natural phenomenon
+10. An emotion or feeling
+
+Wait, the instructions say ""things, objects and concepts"" - so abstract concepts are okay. But emotions are abstract. Let me reconsider.
+
+Let me think of very different categories:
+- Furniture
+- Vehicle
+- Food
+- Clothing
+- Body part
+- Building/structure
+- Weather phenomenon
+- Music/instrument
+- Container
+- Abstract concept
+
+Let me pick:
+1. chair (furniture)
+2. bicycle (vehicle)
+3. bread (food)
+4. jacket (clothing)
+5. shoulder (body part)
+6. castle (building)
+7. rainbow (weather/phenomenon)
+8. violin (musical instrument)
+9. basket (container)
+10. freedom (abstract concept)
+
+These cover very different semantic categories. Let me check the rules:
+1. Single-word English nouns ✓
+2. Things, objects, concepts ✓
+3. No proper nouns ✓
+4. No specialized/technical terms ✓
+5. Comma-separated string ✓
+6. Nothing else ✓
+
+Good to go.
+</think>
+chair, bicycle, bread, jacket, shoulder, castle, rainbow, violin, basket, freedom",ok,10,<think>,the user wants 10 nouns that are as different from each other as possible. let me think about different categories to maximize diversity:,wait,"the instructions say ""things","objects and concepts"" - so abstract concepts are okay. but emotions are abstract. let me reconsider",let me think of very different categories:,- furniture,- vehicle,- food,- clothing,,git:3cae4a2
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:20:15.347Z,2026-07-15T02:20:19.788Z,4440,,9cd1418a-7a2c-4d39-92eb-8279ebede591,,stop,314,242,556,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 English single-word nouns that are very different from each other. They should be:
+1. Single-word nouns
+2. Things, objects, concepts (not actions/verbs)
+3. Not proper nouns (no people or places)
+4. Not specialized/technical terms
+5. Final output as comma-separated string
+6. Nothing else in response
+
+Let me think of 10 very different nouns spanning different categories:
+- Furniture: chair
+- Abstract concept: freedom
+- Nature: mountain
+- Food: bread
+- Tool: hammer
+- Body part: hand
+- Weather: rain
+- Animal (as concept): cat
+- Time: century
+- Building: house
+
+Let me make them more diverse:
+- chair (furniture)
+- freedom (abstract concept)
+- mountain (geography/landform)
+- bread (food)
+- hammer (tool)
+- rain (weather)
+- song (art/audio)
+- shadow (light concept)
+- ocean (water)
+- memory (mental concept)
+
+These are pretty different from each other. Let me finalize.
+</think>
+chair, freedom, mountain, bread, hammer, rain, song, shadow, ocean, memory",ok,10,<think>,the user wants 10 english single-word nouns that are very different from each other. they should be:,objects,concepts (not actions/verbs),let me think of 10 very different nouns spanning different categories:,- furniture: chair,- abstract concept: freedom,- nature: mountain,- food: bread,- tool: hammer,,git:3cae4a2
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:19:46.806Z,2026-07-15T02:20:22.000Z,35194,,c63aa8f4-8cea-48ca-862f-109a5e5fa687,,stop,179,2139,2318,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"tree, mountain, river, rainbow, guitar, clock, compass, umbrella, silence, myth",ok,10,tree,mountain,river,rainbow,guitar,clock,compass,umbrella,silence,myth,,git:3cae4a2
+,Qwen3.5-Plus,qwen3.5-plus,qwen3.5-plus,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,No,2026,1.0,1.0,0-2,,2026-07-15T02:19:18.903Z,2026-07-15T02:20:24.603Z,65699,,a7e00467-de64-4992-b1ed-29f15f69724d,,stop,156,3788,3944,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"rock, music, dog, house, book, sky, hammer, anger, road, time",ok,10,rock,music,dog,house,book,sky,hammer,anger,road,time,,git:3cae4a2
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:20:19.789Z,2026-07-15T02:20:28.053Z,8264,,33df0d1e-c0e7-406b-a2be-ac0f3e0b03e6,,stop,314,548,862,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 English nouns that are as different from each other as possible. Let me think about this carefully.
+
+Requirements:
+1. Single-word nouns in English
+2. Things, objects, concepts
+3. No proper nouns (no people or places)
+4. No specialized/technical vocabulary
+5. Comma-separated string format
+6. Nothing else in response
+
+I need to make them as different from each other as possible. So I should pick nouns from very different categories:
+- Physical object
+- Abstract concept
+- Natural phenomenon
+- Food
+- Tool
+- Body part
+- Animal (thing)
+- Weather
+- Emotion
+- Furniture
+- Vehicle
+- Clothing
+
+Let me pick 10 very different ones:
+1. chair (furniture/object)
+2. music (abstract concept)
+3. water (substance/natural)
+4. sun (natural object/celestial)
+5. dog (animal)
+6. happiness (emotion/abstract)
+7. bread (food)
+8. clock (object/tool)
+9. freedom (abstract concept)
+10. mountain (natural feature)
+
+Wait, let me check - these are all common, everyday nouns. None are proper nouns, none are technical. They cover very different categories: furniture, abstract, substance, celestial, animal, emotion, food, time-keeping, abstract, geography.
+
+Actually ""happiness"" and ""freedom"" are both abstract emotions/concepts. Let me swap one.
+
+Let me reconsider:
+1. chair (furniture)
+2. music (abstract/art)
+3. water (substance)
+4. sun (celestial)
+5. dog (animal)
+6. clock (object)
+7. bread (food)
+8. mountain (geography/landform)
+9. laughter (action/sound - hmm, is this a noun? yes)
+10. shadow (phenomenon)
+
+Or maybe:
+1. chair
+2. music
+3. water
+4. sun
+5. dog
+6. clock
+7. bread
+8. mountain
+9. freedom
+10. shadow
+
+Let me make sure these are all very different categories:
+- chair: furniture (human-made object for sitting)
+- music: abstract (sound art)
+- water: liquid substance
+- sun: celestial body / light source
+- dog: animal (living thing)
+- clock: timekeeping device
+- bread: food
+- mountain: geographical landform
+- freedom: abstract political/philosophical concept
+- shadow: optical phenomenon / absence of light
+
+These are quite diverse. Let me finalize.
+</think>
+chair, music, water, sun, dog, clock, bread, mountain, freedom, shadow",ok,10,<think>,the user wants 10 english nouns that are as different from each other as possible. let me think about this carefully,requirements:,objects,concepts,i need to make them as different from each other as possible. so i should pick nouns from very different categories:,- physical object,- abstract concept,- natural phenomenon,- food,,git:3cae4a2
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:20:28.054Z,2026-07-15T02:20:34.930Z,6876,,e057fd54-48c4-4109-8e52-26bb2cdbecea,,stop,314,475,789,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. Let me think about this carefully.
+
+Requirements:
+1. Single-word nouns in English
+2. Things, objects, and concepts (not actions/verbs)
+3. No proper nouns (no people or places)
+4. No specialized or technical vocabulary
+5. Return as comma-separated string
+6. Nothing else in the response
+
+I need to maximize diversity. Let me think of nouns from completely different categories:
+- Furniture
+- Weather phenomenon
+- Body part
+- Food
+- Tool
+- Emotion/abstract concept
+- Animal (general term)
+- Vehicle
+- Color (as a concept)
+- Music (concept)
+
+Let me pick:
+1. chair (furniture)
+2. rain (weather)
+3. hand (body part)
+4. bread (food)
+5. hammer (tool)
+6. joy (emotion)
+7. butterfly (animal - though is butterfly a proper noun? No, it's a common noun for the insect)
+8. bicycle (vehicle)
+9. darkness (abstract concept)
+10. melody (music concept)
+
+Wait, I need to be careful - these should be as different as possible. Let me think about different domains:
+- Physical object (household item)
+- Natural phenomenon
+- Body/anatomy
+- Food/consumable
+- Tool/implement
+- Abstract feeling
+- Living creature
+- Transportation
+- Time concept
+- Color/visual concept
+
+1. pillow (household object)
+2. thunder (weather)
+3. shoulder (body part)
+4. cheese (food)
+5. scissors (tool)
+6. freedom (abstract concept)
+7. dolphin (animal)
+8. train (vehicle)
+9. morning (time concept)
+10. shadow (visual concept)
+
+These seem quite different from each other. Let me finalize this list.
+
+Actually, let me reconsider - ""freedom"" is abstract. ""Joy"" too. Let me mix more concrete and abstract.
+
+1. pillow
+2. thunder
+3. shoulder
+4. cheese
+5. scissors
+6. freedom
+7. dolphin
+8. train
+9. morning
+10. shadow
+
+Yes, these cover very different domains.
+</think>
+pillow, thunder, shoulder, cheese, scissors, freedom, dolphin, train, morning, shadow",ok,10,<think>,the user wants 10 nouns that are as different from each other as possible. let me think about this carefully,requirements:,objects,and concepts (not actions/verbs),i need to maximize diversity. let me think of nouns from completely different categories:,- furniture,- weather phenomenon,- body part,- food,,git:3cae4a2
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:20:22.001Z,2026-07-15T02:20:36.006Z,14005,,87bd22a0-dee4-4882-a05a-ca72d8a4b9f3,,stop,179,843,1022,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"bicycle, cathedral, mirage, symphony, puzzle, cactus, candle, whisper, galaxy, legend",ok,10,bicycle,cathedral,mirage,symphony,puzzle,cactus,candle,whisper,galaxy,legend,,git:3cae4a2
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:20:34.931Z,2026-07-15T02:20:46.550Z,11619,,70b46e13-9eab-41fa-a61e-7479abb1183d,,stop,314,683,997,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. Let me think about this carefully:
+
+1. Single-word nouns in English
+2. Things, objects, and concepts (not actions/verbs)
+3. No proper nouns (no people or places)
+4. No specialized or technical vocabulary
+5. Return as comma-separated string
+6. Nothing else
+
+I need to maximize diversity. Let me think across different categories:
+- Nature/elements: mountain, river, ocean, tree, flower
+- Man-made objects: chair, table, lamp, mirror
+- Abstract concepts: freedom, happiness, memory, dream
+- Food: bread, apple
+- Animals (these are things/objects in broad sense): dog, cat, bird
+- Body parts: hand, eye
+- Time-related: morning, season
+- Weather: thunder, rain
+
+Let me pick 10 that are very different from each other:
+
+1. mountain - natural geographical feature
+2. chair - man-made furniture
+3. melody - auditory concept
+4. shadow - visual phenomenon
+5. bread - food
+6. library - building/place... wait, I should avoid places. Let me think of it as a concept/collection.
+7. journey - abstract concept
+8. mirror - object
+9. flower - natural living thing
+10. thunder - sound/weather
+
+Let me reconsider to make them maximally different:
+- A natural large object (mountain)
+- A small man-made object (chair)
+- An auditory concept (melody)
+- A visual phenomenon (shadow)
+- Food item (bread)
+- An abstract concept (freedom)
+- A tool (hammer)
+- A living thing that's not a person (flower)
+- A time concept (dawn)
+- An emotion/state (laughter) - but this might be borderline as a concept
+
+Let me finalize:
+1. mountain
+2. chair
+3. melody
+4. shadow
+5. bread
+6. freedom
+7. hammer
+8. flower
+9. dawn
+10. memory
+
+These are quite diverse: natural landscape, furniture, sound, light/visual, food, abstract concept, tool, plant, time, mental concept.
+
+Actually, let me reconsider - ""freedom"" and ""memory"" are similar as abstract concepts. Let me swap one.
+
+Try:
+1. mountain - large natural thing
+2. chair - small man-made object
+3. melody - sound
+4. shadow - light phenomenon
+5. bread - food
+6. journey - abstract concept of movement
+7. hammer - tool
+8. flower - living plant
+9. thunder - weather event
+10. clock - time-keeping object
+
+This gives good diversity. Let me check - are all single words? Yes. Are they all things/objects/concepts? Yes. No proper nouns? Yes. Not too technical? Yes.
+
+Actually ""clock"" is a thing, but ""dawn"" is more of a time. Let me think again:
+
+1. mountain
+2. chair
+3. melody
+4. shadow
+5. bread
+6. freedom
+7. hammer
+8. flower
+9. thunder
+10. mirror
+
+I think this is good. Let me finalize.
+</think>
+mountain, chair, melody, shadow, bread, freedom, hammer, flower, thunder, mirror",ok,10,<think>,the user wants 10 nouns that are as different from each other as possible. let me think about this carefully:,objects,and concepts (not actions/verbs),i need to maximize diversity. let me think across different categories:,- nature/elements: mountain,river,ocean,tree,flower,,git:3cae4a2
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:20:46.550Z,2026-07-15T02:20:49.619Z,3068,,6416c9cf-edd2-4290-a5de-582a859fe640,,stop,314,181,495,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 single-word nouns in English that are as different from each other as possible. They should be common nouns (things, objects, concepts), not proper nouns, and not technical/specialized terms. I need to output them as a comma-separated string with no other text.
+
+Let me think of 10 very different categories:
+1. An animal - dog
+2. A building - house
+3. A natural phenomenon - rain
+4. A tool - hammer
+5. An emotion - happiness
+6. A vehicle - bicycle
+7. Food - bread
+8. A body part - hand
+9. A color - blue
+10. A time concept - morning
+
+Let me make sure these are all common, non-technical, and very different from each other.
+</think>
+dog, house, rain, hammer, happiness, bicycle, bread, mountain, music, morning",ok,10,<think>,the user wants 10 single-word nouns in english that are as different from each other as possible. they should be common nouns (things,objects,concepts),not proper nouns,and not technical/specialized terms. i need to output them as a comma-separated string with no other text,let me think of 10 very different categories:,let me make sure these are all common,non-technical,and very different from each other,,git:3cae4a2
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:20:49.619Z,2026-07-15T02:20:57.162Z,7543,,141008ab-88da-411f-86fa-deb3005994c2,,stop,314,418,732,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 single-word English nouns that are as different from each other as possible. They should be common, non-technical, non-proper nouns representing things, objects, or concepts. Let me think of diverse categories:
+
+1. Furniture - chair
+2. Weather - thunderstorm
+3. Emotion - happiness
+4. Tool - hammer
+5. Food - bread
+6. Music - melody
+7. Animal-related - feather
+8. Light - shadow
+9. Container - basket
+10. Time - yesterday... wait, that's more of an adverb/time reference. Let me use ""moment"" or ""century""
+11. Plant - tree
+12. Liquid - water
+
+Let me pick 10 that are maximally different:
+- chair (furniture, object)
+- thunderstorm (weather phenomenon, concept)
+- hammer (tool, object)
+- bread (food, object)
+- melody (music, concept)
+- feather (nature, object)
+- shadow (light concept)
+- basket (container, object)
+- moment (time, concept)
+- laughter (emotion/expression, concept)
+
+These cover: furniture, weather, tool, food, music, nature, physics/light, container, time, emotion. Good diversity.
+
+Wait, I need to check: ""Do not use specialised vocabulary or technical terms"" - thunderstorm might be borderline but it's a common word. Shadow, melody, moment, laughter are all common. Feather, chair, hammer, bread, basket are all common objects. I think this is good.
+
+Let me reconsider for maximum diversity. Could I do better?
+- chair (furniture)
+- thunderstorm (weather)
+- hammer (tool)
+- bread (food)
+- melody (sound/music)
+- feather (nature/biology)
+- shadow (light/optics)
+- basket (container)
+- laughter (emotion/sound)
+- moment (time)
+
+Yes, this is diverse. Let me finalize.
+</think>
+chair, thunderstorm, hammer, bread, melody, feather, shadow, basket, laughter, moment",ok,10,<think>,the user wants 10 single-word english nouns that are as different from each other as possible. they should be common,non-technical,non-proper nouns representing things,objects,or concepts. let me think of diverse categories:,"that's more of an adverb/time reference. let me use ""moment"" or ""century",let me pick 10 that are maximally different:,- chair (furniture,object),,git:3cae4a2
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:20:36.006Z,2026-07-15T02:21:02.648Z,26641,,d4cee84d-6b1b-4ffc-938d-9d6d66d7239d,,stop,179,1261,1440,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, bridge, cloud, dream, engine, forest, glacier, harmony, instrument, journey",ok,10,apple,bridge,cloud,dream,engine,forest,glacier,harmony,instrument,journey,,git:3cae4a2
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:20:57.163Z,2026-07-15T02:21:06.030Z,8867,,e783ca09-7d06-4b2b-805c-b2b57ed208bd,,stop,314,543,857,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+I need to generate 10 nouns that are as different from each other as possible, following the constraints:
+1. Single-word English nouns
+2. Things, objects, concepts (not people/places proper nouns)
+3. No proper nouns
+4. No specialized/technical terms
+5. Output as comma-separated string
+6. Nothing else
+
+Let me think of nouns from very different categories to maximize diversity:
+- Furniture
+- Weather phenomenon
+- Emotion
+- Tool
+- Food
+- Animal (general)
+- Vehicle
+- Music
+- Color
+- Body part
+
+Wait, animal might be okay as a general concept? Let me think... ""animal"" is a common noun, not a proper noun. That should be fine.
+
+Let me try:
+1. chair (furniture/object)
+2. rain (weather/concept)
+3. happiness (emotion/concept)
+4. hammer (tool/object)
+5. bread (food/object)
+6. mountain (natural feature - is this a place? Mountains exist but ""mountain"" is a common noun, not a proper noun. Should be okay.)
+7. song (concept/abstract)
+8. laughter (concept/abstract)
+9. mirror (object)
+10. journey (concept/abstract)
+
+Hmm, let me make them more diverse. Let me try again:
+1. chair
+2. rain
+3. happiness
+4. hammer
+5. bread
+6. elephant (animal - is this okay? The rule says ""things, objects and concepts"" - animals might be borderline. Let me use ""creature"" instead which is more general/concept)
+7. song
+8. mirror
+9. journey
+10. shadow
+
+Let me check: are these all single-word? Yes. Common nouns? Yes. Not technical? Yes. Diverse? Yes - we have furniture, weather, emotion, tool, food, living thing, music, object, concept, visual phenomenon.
+
+Actually, let me reconsider ""elephant"" vs ""creature"". The instructions say ""things, objects and concepts"". An animal is a thing, so it should be fine. But to be safe and more abstract/diverse, ""creature"" works well.
+
+Let me finalize:
+chair, rain, happiness, hammer, bread, creature, song, mirror, journey, shadow
+
+These are quite different from each other - spanning physical objects, weather, emotions, tools, food, living things, music, reflections, experiences, and visual phenomena.
+
+Let me double check no technical terms - all are everyday words. Good.
+</think>
+chair, rain, happiness, hammer, bread, creature, song, mirror, journey, shadow",ok,10,<think>,i need to generate 10 nouns that are as different from each other as possible,following the constraints:,objects,concepts (not people/places proper nouns),let me think of nouns from very different categories to maximize diversity:,- furniture,- weather phenomenon,- emotion,- tool,,git:3cae4a2
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:21:02.648Z,2026-07-15T02:21:13.263Z,10614,,a9065e86-44d4-4b7f-a656-96656223a8e4,,stop,179,635,814,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"chair, galaxy, shadow, happiness, thunder, pencil, bridge, rain, silence, dream",ok,10,chair,galaxy,shadow,happiness,thunder,pencil,bridge,rain,silence,dream,,git:3cae4a2
+,Qwen3.5-Plus,qwen3.5-plus,qwen3.5-plus,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,No,2026,1.0,1.0,0-2,,2026-07-15T02:20:24.603Z,2026-07-15T02:21:23.551Z,58947,,eb6e7d41-1c57-487c-9ddb-bc96af030e92,,stop,156,3330,3486,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"rock, dream, ocean, knife, justice, cloud, table, light, bread, silence",ok,10,rock,dream,ocean,knife,justice,cloud,table,light,bread,silence,,git:3cae4a2
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:21:13.263Z,2026-07-15T02:21:30.378Z,17114,,fb19849c-9868-4e94-bfba-7f8d0222e4cb,,stop,179,943,1122,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"avalanche, bicycle, cathedral, drizzle, eclipse, fountain, gondola, harbor, iguana, kaleidoscope",ok,10,avalanche,bicycle,cathedral,drizzle,eclipse,fountain,gondola,harbor,iguana,kaleidoscope,,git:3cae4a2
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:21:30.378Z,2026-07-15T02:21:48.068Z,17690,,1cdc1191-13f7-42bd-9b6d-a3489f1a281c,,stop,179,976,1155,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, bicycle, cloud, door, elephant, forest, guitar, hammer, iceberg, journey",ok,10,apple,bicycle,cloud,door,elephant,forest,guitar,hammer,iceberg,journey,,git:3cae4a2
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:21:48.069Z,2026-07-15T02:22:06.682Z,18613,,682931f7-cc3f-4a28-899d-5c799a929884,,stop,179,979,1158,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, idea, keyboard, galaxy, toothbrush, happiness, symphony, whisper, lighthouse",ok,10,apple,mountain,idea,keyboard,galaxy,toothbrush,happiness,symphony,whisper,lighthouse,,git:3cae4a2
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:22:06.682Z,2026-07-15T02:22:23.348Z,16665,,a00cb882-4703-4279-be83-fdc7b5e19c68,,stop,179,847,1026,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, symphony, happiness, shadow, clock, bridge, rainbow, bicycle, philosophy",ok,10,apple,mountain,symphony,happiness,shadow,clock,bridge,rainbow,bicycle,philosophy,,git:3cae4a2
+,Qwen3.5-Plus,qwen3.5-plus,qwen3.5-plus,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,No,2026,1.0,1.0,0-2,,2026-07-15T02:21:23.551Z,2026-07-15T02:22:47.825Z,84273,,3b993171-6761-493e-9b6d-b58a6bbc5458,,stop,156,4680,4836,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"water, mountain, dog, time, book, fire, shoe, star, cloud, love",ok,10,water,mountain,dog,time,book,fire,shoe,star,cloud,love,,git:3cae4a2
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:22:23.348Z,2026-07-15T02:22:49.871Z,26522,,b97cedde-407e-4ad5-bfb4-388ab057d1c9,,stop,179,1533,1712,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, bicycle, cloud, diamond, justice, fountain, glacier, horizon, ivory, echo",ok,10,apple,bicycle,cloud,diamond,justice,fountain,glacier,horizon,ivory,echo,,git:3cae4a2
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:22:49.872Z,2026-07-15T02:23:13.614Z,23741,,975e9089-433a-43ca-890c-b46f6b1b128a,,stop,179,1324,1503,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"umbrella, bicycle, river, melody, lighthouse, avalanche, freedom, lantern, silence, puzzle",ok,10,umbrella,bicycle,river,melody,lighthouse,avalanche,freedom,lantern,silence,puzzle,,git:3cae4a2
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:23:13.614Z,2026-07-15T02:23:28.879Z,15265,,cfe0c9a0-1abf-41b2-884a-5b6df1ac47a4,,stop,179,840,1019,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, silence, umbrella, justice, rain, pencil, candle, shadow, harmony, clock",ok,10,mountain,silence,umbrella,justice,rain,pencil,candle,shadow,harmony,clock,,git:3cae4a2
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n50,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-15T02:23:28.879Z,2026-07-15T02:23:44.177Z,15297,,a47a5847-ef8a-4d47-adb8-4e857bf2c39f,,stop,179,978,1157,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"umbrella, mountain, silence, horizon, symphony, garden, puzzle, shadow, clock, whisper",ok,10,umbrella,mountain,silence,horizon,symphony,garden,puzzle,shadow,clock,whisper,,git:3cae4a2

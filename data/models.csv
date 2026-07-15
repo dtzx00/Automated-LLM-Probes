@@ -36,7 +36,7 @@
 35,DeepSeek-V3.2,2026,Eastern,Yes,qwen,deepseek-v3.2,reasoning,0,live
 36,Ernie-4.0-8k,2024,Eastern,No,hunyuan,ernie-4.0-8k,allrounder,750,legacy
 37,Hunyuan-Hy3,2026,Eastern,No,hunyuan,hy3,allrounder,0,live
-38,DeepSeek-V3.2-TH,2026,Eastern,Yes,hunyuan,deepseek-v3.2,reasoning,0,live
+38,MiniMax-M2.5,2025,Eastern,Yes,hunyuan,minimax-m2.5,reasoning,0,live
 39,DeepSeek-V4-Flash-TH,2026,Eastern,No,hunyuan,deepseek-v4-flash,fast,0,live
 40,MiniMax-M3,2025,Eastern,Yes,hunyuan,minimax-m3,reasoning,0,live
 41,MiniMax-M2.7,2025,Eastern,Yes,hunyuan,minimax-m2.7,reasoning,0,live
