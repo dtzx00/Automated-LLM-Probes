@@ -139,7 +139,7 @@ def call_once(provider, key, api_model, target_temp, seed):
             return fn(key, api_model, 1.0, None), 1.0
         raise RuntimeError(f"HTTP {e.code}: {body[:200]}")
 
-def generate(model_name, api_model, provider, n, out_csv, meta, dry_run=False, seed_base=1000, pace=0.25, max_retries=5):
+def generate(model_name, api_model, provider, n, out_csv, meta, dry_run=False, seed_base=1000, pace=0.25, max_retries=5, batch="collect_2026_midpoint"):
     env_key = PROVIDERS[provider][1]
     key = os.environ.get(env_key)
     if not key: sys.exit(f"Missing env key {env_key} for provider {provider}")
@@ -161,7 +161,7 @@ def generate(model_name, api_model, provider, n, out_csv, meta, dry_run=False, s
         row = {
             "record_id": "", "model_name": model_name, "api_model_requested": api_model,
             "api_model_returned": payload.get("api_model_returned",""), "provider": provider,
-            "endpoint_base": payload.get("endpoint_base",""), "batch": "collect_2026_midpoint",
+            "endpoint_base": payload.get("endpoint_base",""), "batch": batch,
             "region": meta.get("region",""), "reasoning": meta.get("reasoning",""),
             "model_year": meta.get("year",""),
             "temperature_requested": target_temp, "temperature_effective": temp_used,
@@ -201,11 +201,13 @@ def main():
     ap.add_argument("--model"); ap.add_argument("--api-model"); ap.add_argument("--provider", choices=list(PROVIDERS))
     ap.add_argument("--n", type=int, default=5); ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--region", default=""); ap.add_argument("--reasoning", default=""); ap.add_argument("--year", default="")
+    ap.add_argument("--batch", default="collect_2026_midpoint"); ap.add_argument("--out-dir", default=str(HERE/"raw"))
     a = ap.parse_args()
     if not (a.model and a.provider): sys.exit("need --model and --provider")
-    out = HERE / "raw" / f"topup_{a.provider}.csv"
+    from pathlib import Path as _P
+    out = _P(a.out_dir) / f"topup_{a.provider}.csv"
     meta = {"region": a.region, "reasoning": a.reasoning, "year": a.year}
-    generate(a.model, a.api_model or a.model, a.provider, a.n, out, meta, dry_run=a.dry_run)
+    generate(a.model, a.api_model or a.model, a.provider, a.n, out, meta, dry_run=a.dry_run, batch=a.batch)
 
 if __name__ == "__main__":
     main()
