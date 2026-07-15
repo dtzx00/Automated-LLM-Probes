@@ -1,9 +1,9 @@
 # human_data/processed/
 
 ## human_dat_all.csv
-Unified human DAT master — all three word-level sources joined into one long table, one row per human DAT response, with a `source` column.
+Unified human DAT master — all three word-level sources joined, one row per human DAT response, with a `source` column.
 
-**Rows: 12,189**
+**Rows: 12,189 | Columns: 36**
 | source | subset | rows |
 |---|---|---|
 | olson_pnas2021 | study2 | 8,572 |
@@ -11,22 +11,16 @@ Unified human DAT master — all three word-level sources joined into one long t
 | btb | augmented_pair | 1,259 |
 | zunyi | dat | 904 |
 
-BTB contributes two rows per relevant user (individual arm + augmented-pair arm are separate DAT responses).
+**Schema (in order):**
+- `response_id`, `source`, `subset`, `dat_score` (blank — re-scored jointly with machine data later)
+- `dat_word_1 .. dat_word_10` — the human's 10 DAT words
+- `machine_word_1 .. machine_word_10` — the AI cue words shown in the augmented-pair exercise (populated for btb/augmented_pair only; blank for pure-human rows)
+- `machine_model_name` — the AI model involved (augmented_pair: the paired model; btb/individual: the model the human competed against; blank for PNAS/Zunyi pure-human)
+- Demographics: `age, gender, country, region, ethnicity, education, major, english_comfort, program_type, multilingual`
+- `extra_json` — source-specific extras (BTB exercise_id/duration/ai_score/original score; Zunyi college/admission_batch/candidate_type/foreign_language)
 
-**Schema:**
-- `response_id` — unique, prefixed by source (pnas_*, btb_*_indiv, btb_*_augpair, zunyi_*)
-- `source` — olson_pnas2021 | btb | zunyi
-- `subset` — study2 | individual | augmented_pair | dat
-- `dat_score` — intentionally BLANK; all sources will be re-scored together with the machine data on one embedding.
-- `noun_0..noun_9` — the 10 DAT words (English; Zunyi words are translations)
-- Demographics (unified, filled where the source carries them): age, gender, country, region, ethnicity, education, major, english_comfort, program_type, multilingual, ai_model
-- `extra_json` — source-specific extras (BTB exercise_id/duration/machine_words/ai_score; Zunyi college/admission_batch/candidate_type/foreign_language)
+**Machine columns coverage:** 1,259 rows (btb augmented_pair) have machine cue words + model; btb individual (1,454) has model name only (competitor), no cue words; PNAS + Zunyi are pure human (both blank).
 
-**Demographic coverage** differs by source (each source only has what it collected):
-- BTB: richest (gender, age, ethnicity, education, major, english_comfort, region, program_type, ai_model)
-- PNAS 2021: age, gender, country, multilingual
-- Zunyi: gender, country(China), province(region), ethnicity, major + extras in extra_json
+**Demographics** are filled per source wherever collected: BTB richest; PNAS = age/gender/country/multilingual; Zunyi = gender/country/province(region)/ethnicity/major.
 
-**Note on scoring:** dat_score left blank on purpose — the joint human+machine re-score happens after machine data consolidation, on a single scorer/embedding. Zunyi words are Chinese-native translated to English; cross-lingual scoring is a re-score-time decision.
-
-_Built 2026-07-15 by Lumen._
+_dat_score blank on purpose — joint human+machine re-score on one embedding after machine consolidation. Zunyi words are Chinese-native, translated to English. Built 2026-07-15 by Lumen._
