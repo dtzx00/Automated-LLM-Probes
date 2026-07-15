@@ -147,7 +147,7 @@ def call_once(provider, key, api_model, target_temp, seed):
             return fn(key, api_model, 1.0, None), 1.0
         raise RuntimeError(f"HTTP {e.code}: {body[:200]}")
 
-def generate(model_name, api_model, provider, n, out_csv, meta, dry_run=False, seed_base=1000, pace=0.25, max_retries=5, batch="collect_2026_midpoint"):
+def generate(model_name, api_model, provider, n, out_csv, meta, dry_run=False, seed_base=1000, pace=0.1, max_retries=5, batch="collect_2026_midpoint"):
     env_key = PROVIDERS[provider][1]
     key = os.environ.get(env_key)
     if not key: sys.exit(f"Missing env key {env_key} for provider {provider}")
@@ -162,7 +162,9 @@ def generate(model_name, api_model, provider, n, out_csv, meta, dry_run=False, s
             attempts += 1
             if "429" in str(e) and attempts <= max_retries:
                 time.sleep(min(2**attempts, 30)); continue
-            sys.exit(f"[{provider}/{api_model}] {e}")
+            # skip-and-flag: do not kill the run; stop this model and report it
+            print(f"SKIP {model_name} ({provider}): {str(e)[:120]}", flush=True)
+            return rows
         resp_ts = _now(); latency = int((time.time()-t0)*1000)
         nouns = parse_nouns(payload["text"])
         status = "ok" if nouns else "failed"
@@ -307,7 +309,7 @@ def collect_one(model_row, n, out_csv, batch, gate, key, stop):
         made += 1
     return name, made-have, "done"
 
-def run_lane(prov, models, n, out_dir, batch, concurrency, min_gap, stop):
+def run_lane(prov, models, n, out_dir, batch, concurrency, min_gap, stop, lane_results=None):
     key = os.environ.get(PROVIDERS[prov][1])
     if not key:
         print(f"LANE {prov}: MISSING KEY {PROVIDERS[prov][1]} — skipped", flush=True); return
@@ -317,18 +319,21 @@ def run_lane(prov, models, n, out_dir, batch, concurrency, min_gap, stop):
     print(f"LANE {prov}: {len(todo)}/{len(models)} models need work (concurrency={concurrency})", flush=True)
     q = queue.Queue()
     for m in todo: q.put(m)
+    results = []
     def worker():
         while not stop.is_set():
             try: m = q.get_nowait()
             except queue.Empty: return
             try:
                 name, got, st = collect_one(m, n, out_csv, batch, gate, key, stop)
+                results.append((name, got, st))
                 print(f"  [{prov}] {name}: +{got} ({st})", flush=True)
             finally:
                 q.task_done()
     ts = [threading.Thread(target=worker, daemon=True) for _ in range(max(1,concurrency))]
     for t in ts: t.start()
     for t in ts: t.join()
+    if lane_results is not None: lane_results.extend(results)
     print(f"LANE DONE: {prov}", flush=True)
 
 
@@ -339,15 +344,24 @@ def run_parallel(models_csv, n, out_dir, batch, concurrency, min_gap, only=None)
     _P(out_dir).mkdir(parents=True, exist_ok=True)
     stop = threading.Event()
     print(f"START {len(lanes)} lanes @ n={n}, concurrency={concurrency}, min-gap={min_gap}s, batch={batch}", flush=True)
+    results = []
     threads=[]
     for prov, models in lanes.items():
-        t = threading.Thread(target=run_lane, args=(prov, models, n, out_dir, batch, concurrency, min_gap, stop), daemon=True)
+        t = threading.Thread(target=run_lane, args=(prov, models, n, out_dir, batch, concurrency, min_gap, stop, results), daemon=True)
         t.start(); threads.append(t)
     try:
         for t in threads: t.join()
     except KeyboardInterrupt:
         stop.set(); print("STOPPING (data already flushed per-row)", flush=True)
+    # skip-and-flag summary: surface any model that errored so it is never silently swapped
+    skipped = [(name, st) for (name, got, st) in results if st.startswith("error")]
     print("ALL LANES COMPLETE", flush=True)
+    if skipped:
+        print("\n=== SKIPPED (errored — NOT collected, NOT swapped) ===", flush=True)
+        for name, st in skipped: print(f"  {name}: {st}", flush=True)
+    else:
+        print("No models skipped — all attempted models collected cleanly.", flush=True)
+    return results
 
 def main():
     ap = argparse.ArgumentParser(description="Collect machine DAT responses. Single-model or --all batch.")

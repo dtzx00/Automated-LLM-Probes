@@ -18,6 +18,17 @@ This will result in total of 55 models = 38 live models collected at n=500 + 17 
 | `processed/` | Consolidated outputs: `machine_all.csv` (one row per generation, stable `record_id`s) and `machine_temp05.csv` (cleaned temp-0.5 analysis set). |
 | `legacy/` | Archived material, not part of active collection: the flat temp-0.5 reference data, and `prior_raw_inputs/` (Anthony's original `average_machine_raw.csv` / `new_machine_baseline.csv` source files, consumed by `data_cleaning.py`). |
 
+
+## Consolidated dataset (2026-07-15)
+All collection batches for the **locked** model list are merged in `raw/` under normalized model names,
+joined on `api_model_id` + `provider` (not display name), so earlier-preview rows for a finalized model
+are preserved rather than lost to a renamed label. Every row keeps its original `batch` tag
+(`collect_2026_midpoint`, `collect_2026_thread2_n10`, `collect_2026_n50`) for provenance. Rows for
+models that are **not** in the locked list (e.g. GLM, and preview-only models like GPT-5.6-Sol) are
+archived under `legacy/pre_lock_nonfinal/`, not deleted. `processed/machine_all.csv` is the consolidated
+one-row-per-generation view of the finalized set.
+
+
 ---
 
 ## Locked design (2026-07-15)
@@ -113,6 +124,8 @@ python data/data_collection.py --parallel --n 500 --concurrency 3 --min-gap 0.5 
 #     between request launches on a single lane (held >=0.5s under any concurrency).
 #   - --only openai,anthropic  restricts to a subset of lanes.
 #   - resumable: skips models already at n; safe to re-run after an interruption.
+#   - skip-and-flag: if a model errors, it is skipped and listed under "SKIPPED" at the end (never swapped).
+#   - inter-call pacing is 0.1s in the serial path; the parallel path spaces launches by --min-gap (>=0.5s/lane).
 
 # serial fallback (no threads): one provider, or all providers serially
 python data/data_collection.py --all --n 500 --provider openai
