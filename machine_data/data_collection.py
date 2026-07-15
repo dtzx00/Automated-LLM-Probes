@@ -283,7 +283,8 @@ def collect_one(model_row, n, out_csv, batch, gate, key, stop):
             msg = str(e)
             transient = ("429" in msg or "timed out" in msg.lower() or "timeout" in msg.lower()
                          or "temporarily" in msg.lower() or "connection" in msg.lower()
-                         or "reset" in msg.lower() or " 500" in msg or " 502" in msg or " 503" in msg or " 504" in msg)
+                         or "reset" in msg.lower() or " 500" in msg or " 502" in msg or " 503" in msg or " 504" in msg
+                         or " 520" in msg or " 521" in msg or " 522" in msg or " 524" in msg)
             if transient:
                 consec_transient = locals().get("consec_transient", 0) + 1
                 if consec_transient <= 8:
