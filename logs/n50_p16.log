@@ -1,0 +1,5 @@
+START 2 lanes @ n=50, concurrency=3, min-gap=0.5s, batch=collect_2026_n50
+LANE moonshot: 1/4 models need work (concurrency=3)
+LANE hunyuan: 1/6 models need work (concurrency=3)
+  [hunyuan] Qwen3.5-Plus: +2 (done)
+LANE DONE: hunyuan

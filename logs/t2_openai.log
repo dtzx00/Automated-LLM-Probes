@@ -1,0 +1,15 @@
+SKIP GPT-3.5-Turbo (openai) already 10
+SKIP GPT-4.0-Turbo (openai) already 10
+SKIP GPT-4o (openai) already 10
+SKIP GPT-5 (openai) already 10
+RUN  GPT-5-Mini (openai) have=0 need=10
+[openai/gpt-5-mini-2025-08-07] wrote 10 rows -> data/raw_thread2/topup_openai.csv
+RUN  o3 (openai) have=0 need=10
+[openai/o3-2025-04-16] wrote 10 rows -> data/raw_thread2/topup_openai.csv
+RUN  GPT-5.4 (openai) have=0 need=10
+[openai/gpt-5.4-2026-03-05] wrote 10 rows -> data/raw_thread2/topup_openai.csv
+RUN  GPT-5.6 Sol (openai) have=0 need=10
+[openai/gpt-5.6-sol] wrote 10 rows -> data/raw_thread2/topup_openai.csv
+RUN  GPT-5.5 (openai) have=0 need=10
+[openai/gpt-5.5-2026-04-23] wrote 10 rows -> data/raw_thread2/topup_openai.csv
+RUN  o4-mini (openai) have=0 need=10

@@ -1,0 +1,3 @@
+RUN  Hunyuan Hy3 (hunyuan) have=0 need=10
+[hunyuan/hy3] wrote 10 rows -> data/raw_thread2/topup_hunyuan.csv
+PROVIDER DONE: hunyuan

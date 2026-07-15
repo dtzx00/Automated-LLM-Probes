@@ -1,0 +1,77 @@
+RUN  GPT-3.5-Turbo (openai) have=0 need=1
+[openai/gpt-3.5-turbo] wrote 1 rows -> /home/user/cnn/data/raw/topup_openai.csv
+RUN  GPT-4.0-Turbo (openai) have=0 need=1
+[openai/gpt-4-turbo-2024-04-09] wrote 1 rows -> /home/user/cnn/data/raw/topup_openai.csv
+RUN  GPT-4o (openai) have=0 need=1
+[openai/gpt-4o-2024-08-06] wrote 1 rows -> /home/user/cnn/data/raw/topup_openai.csv
+RUN  DeepSeek-R1 (qwen) have=0 need=1
+[qwen/deepseek-r1] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  Claude-Opus-4.1 (anthropic) have=0 need=1
+[anthropic/claude-opus-4-1-20250805] wrote 1 rows -> /home/user/cnn/data/raw/topup_anthropic.csv
+RUN  Deepseek-Chat (qwen) have=0 need=1
+[qwen/deepseek-v3] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  Qwen-Max (qwen) have=0 need=1
+[qwen/qwen-max] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  Qwen-Turbo (qwen) have=0 need=1
+[qwen/qwen-turbo] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  GPT-5 (openai) have=0 need=1
+[openai/gpt-5-2025-08-07] wrote 1 rows -> /home/user/cnn/data/raw/topup_openai.csv
+RUN  GPT-5-Mini (openai) have=0 need=1
+[openai/gpt-5-mini-2025-08-07] wrote 1 rows -> /home/user/cnn/data/raw/topup_openai.csv
+RUN  o3 (openai) have=0 need=1
+[openai/o3-2025-04-16] wrote 1 rows -> /home/user/cnn/data/raw/topup_openai.csv
+RUN  Claude Opus 4.7 (anthropic) have=0 need=1
+[anthropic/claude-opus-4-7] wrote 1 rows -> /home/user/cnn/data/raw/topup_anthropic.csv
+RUN  Grok 4 (xai) have=0 need=1
+[xai/grok-4.3] wrote 1 rows -> /home/user/cnn/data/raw/topup_xai.csv
+RUN  DeepSeek R2 (qwen) have=0 need=1
+[qwen/deepseek-v3.2] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  Qwen3.7 Max (qwen) have=0 need=1
+[qwen/qwen3.7-max] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  GPT-5.4 (openai) have=0 need=1
+[openai/gpt-5.4-2026-03-05] wrote 1 rows -> /home/user/cnn/data/raw/topup_openai.csv
+RUN  GLM-5 (qwen) have=0 need=1
+[qwen/glm-5] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  Claude Sonnet 4 (anthropic) have=0 need=1
+[anthropic/claude-sonnet-4-5-20250929] wrote 1 rows -> /home/user/cnn/data/raw/topup_anthropic.csv
+RUN  GPT-5.6 Sol (openai) have=0 need=1
+[openai/gpt-5.6-sol] wrote 1 rows -> /home/user/cnn/data/raw/topup_openai.csv
+RUN  GPT-5.5 (openai) have=0 need=1
+[openai/gpt-5.5-2026-04-23] wrote 1 rows -> /home/user/cnn/data/raw/topup_openai.csv
+RUN  Claude Fable 5 (anthropic) have=0 need=1
+[anthropic/claude-fable-5] wrote 1 rows -> /home/user/cnn/data/raw/topup_anthropic.csv
+RUN  Claude Sonnet 5 (anthropic) have=0 need=1
+[anthropic/claude-sonnet-5] wrote 1 rows -> /home/user/cnn/data/raw/topup_anthropic.csv
+RUN  Claude Opus 4.8 (anthropic) have=0 need=1
+[anthropic/claude-opus-4-8] wrote 1 rows -> /home/user/cnn/data/raw/topup_anthropic.csv
+RUN  Grok 4.5 (xai) have=0 need=1
+[xai/grok-4.5] wrote 1 rows -> /home/user/cnn/data/raw/topup_xai.csv
+RUN  DeepSeek V4 Pro (deepseek) have=0 need=1
+[deepseek/deepseek-v4-pro] wrote 1 rows -> /home/user/cnn/data/raw/topup_deepseek.csv
+RUN  Qwen4 Max (qwen) have=0 need=1
+[qwen/qwen3-max-2026-01-23] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  Kimi K2.6 (qwen) have=0 need=1
+[qwen/kimi-k2.6] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  Hunyuan Hy3 (hunyuan) have=0 need=1
+[hunyuan/hy3] wrote 1 rows -> /home/user/cnn/data/raw/topup_hunyuan.csv
+RUN  GLM-5.1 (qwen) have=0 need=1
+[qwen/glm-5.1] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  GLM-5.2 (qwen) have=0 need=1
+[qwen/glm-5.2] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  DeepSeek V3.2 (qwen) have=0 need=1
+[qwen/deepseek-v3.2] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  DeepSeek V3.1 (qwen) have=0 need=1
+[qwen/deepseek-v3.1] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  Kimi K2.5 (qwen) have=0 need=1
+[qwen/kimi-k2.5] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  Qwen3-235B (qwen) have=0 need=1
+[qwen/qwen3-235b-a22b-instruct-2507] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  Qwen-Plus (qwen) have=0 need=1
+[qwen/qwen-plus] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  GLM-4.7 (qwen) have=0 need=1
+[qwen/glm-4.7] wrote 1 rows -> /home/user/cnn/data/raw/topup_qwen.csv
+RUN  o4-mini (openai) have=0 need=1
+[openai/o4-mini] wrote 1 rows -> /home/user/cnn/data/raw/topup_openai.csv
+RUN  GPT-4.1 (openai) have=0 need=1
+[openai/gpt-4.1] wrote 1 rows -> /home/user/cnn/data/raw/topup_openai.csv
+PROVIDER DONE: all

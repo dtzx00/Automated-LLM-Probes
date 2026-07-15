@@ -1,0 +1,20 @@
+START 7 lanes @ n=50, concurrency=3, min-gap=0.5s, batch=collect_2026_n50
+LANE anthropic: 1/7 models need work (concurrency=3)
+LANE deepseek: 1/2 models need work (concurrency=3)
+LANE xai: 3/4 models need work (concurrency=3)
+LANE qwen: 1/5 models need work (concurrency=3)
+LANE moonshot: 2/4 models need work (concurrency=3)
+LANE hunyuan: 4/6 models need work (concurrency=3)
+LANE openai: 4/10 models need work (concurrency=3)
+FAIL DeepSeek-V3.2-TH (hunyuan): HTTP 400: {"error":{"message":"The model or service ID deepseek-v3.2 does not ex
+  [hunyuan] DeepSeek-V3.2-TH: +0 (error:HTTP 400: {"error":{"message":"The model or service ID deeps)
+  [xai] Grok-4.3: +5 (done)
+  [openai] GPT-5.5: +17 (done)
+  [openai] GPT-4.1-nano: +50 (done)
+  [hunyuan] MiniMax-M3: +16 (done)
+  [xai] Grok-4.5: +14 (done)
+  [anthropic] Claude-Fable-5: +32 (done)
+LANE DONE: anthropic
+  [openai] GPT-5-mini: +23 (done)
+  [deepseek] DeepSeek-V4-Pro: +26 (done)
+LANE DONE: deepseek

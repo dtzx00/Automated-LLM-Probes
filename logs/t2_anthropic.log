@@ -1,0 +1,13 @@
+RUN  Claude-Opus-4.1 (anthropic) have=9 need=1
+[anthropic/claude-opus-4-1-20250805] wrote 1 rows -> data/raw_thread2/topup_anthropic.csv
+RUN  Claude Opus 4.7 (anthropic) have=0 need=10
+[anthropic/claude-opus-4-7] wrote 10 rows -> data/raw_thread2/topup_anthropic.csv
+RUN  Claude Sonnet 4 (anthropic) have=0 need=10
+[anthropic/claude-sonnet-4-5-20250929] wrote 10 rows -> data/raw_thread2/topup_anthropic.csv
+RUN  Claude Fable 5 (anthropic) have=0 need=10
+[anthropic/claude-fable-5] wrote 10 rows -> data/raw_thread2/topup_anthropic.csv
+RUN  Claude Sonnet 5 (anthropic) have=0 need=10
+[anthropic/claude-sonnet-5] wrote 10 rows -> data/raw_thread2/topup_anthropic.csv
+RUN  Claude Opus 4.8 (anthropic) have=0 need=10
+[anthropic/claude-opus-4-8] wrote 10 rows -> data/raw_thread2/topup_anthropic.csv
+PROVIDER DONE: anthropic

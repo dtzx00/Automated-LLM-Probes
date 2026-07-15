@@ -1,0 +1,14 @@
+SKIP GPT-3.5-Turbo (openai) already 10
+SKIP GPT-4.0-Turbo (openai) already 10
+SKIP GPT-4o (openai) already 10
+SKIP GPT-5 (openai) already 10
+SKIP GPT-5-Mini (openai) already 10
+SKIP o3 (openai) already 10
+SKIP GPT-5.4 (openai) already 10
+SKIP GPT-5.6 Sol (openai) already 10
+SKIP GPT-5.5 (openai) already 10
+RUN  o4-mini (openai) have=9 need=1
+[openai/o4-mini] wrote 1 rows -> data/raw_thread2/topup_openai.csv
+RUN  GPT-4.1 (openai) have=0 need=10
+[openai/gpt-4.1] wrote 10 rows -> data/raw_thread2/topup_openai.csv
+PROVIDER DONE: openai

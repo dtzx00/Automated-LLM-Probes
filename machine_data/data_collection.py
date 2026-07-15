@@ -17,7 +17,7 @@ Keys read from env at runtime; never hard-coded, never written to disk.
 
 Usage:
   python data_collection.py --model "GPT-4o" --api-model gpt-4o-2024-08-06 --provider openai --n 5 [--dry-run]
-  python data_collection.py --from-inventory data/models.csv --n 500   # full run
+  python data_collection.py --from-inventory machine_data/models.csv --n 500   # full run
 """
 import argparse, csv, hashlib, json, os, subprocess, sys, time, threading, queue, urllib.request, urllib.error
 from datetime import datetime, timezone

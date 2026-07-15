@@ -1,7 +1,7 @@
 # Human Data
 
 Human DAT sources for the Creativity Networks project, consolidated to match the
-machine-side schema (`../data/processed/machine_temp05.csv` / `machine_all.csv`).
+machine-side schema (`../machine_data/processed/machine_temp05.csv` / `machine_all.csv`).
 
 ## Layout
 - `raw/` — one row per human response, source-tagged, nothing trimmed. Keep-flags carried so any threshold is reproducible.

@@ -25,7 +25,7 @@ joined on `api_model_id` + `provider` (not display name), so earlier-preview row
 are preserved rather than lost to a renamed label. Every row keeps its original `batch` tag
 (`collect_2026_midpoint`, `collect_2026_thread2_n10`, `collect_2026_n50`) for provenance. Rows for
 models that are **not** in the locked list (e.g. GLM, and preview-only models like GPT-5.6-Sol) are
-archived under `legacy/pre_lock_nonfinal/`, not deleted. `processed/machine_all.csv` is the consolidated
+archived under `machine_data/legacy/pre_lock_nonfinal/`, not deleted. `processed/machine_all.csv` is the consolidated
 one-row-per-generation view of the finalized set.
 
 
@@ -115,10 +115,10 @@ DeepSeek/Hunyuan return no `api_request_id`.
 
 ```bash
 # one model, quick sanity check (prints one row, writes nothing)
-python data/data_collection.py --model "GPT-4.1" --api-model gpt-4.1 --provider openai --n 1 --dry-run
+python machine_data/data_collection.py --model "GPT-4.1" --api-model gpt-4.1 --provider openai --n 1 --dry-run
 
 # FULL RUN (recommended): 7 lanes in parallel, 3 runners per lane, 0.5s launch gate per lane
-python data/data_collection.py --parallel --n 500 --concurrency 3 --min-gap 0.5 --batch collect_2026_n500
+python machine_data/data_collection.py --parallel --n 500 --concurrency 3 --min-gap 0.5 --batch collect_2026_n500
 #   - one lane per API key (7 keys -> 7 parallel lanes); rate limits are per key, so lanes never
 #     collide with each other. --concurrency = runners WITHIN each lane; --min-gap = min seconds
 #     between request launches on a single lane (held >=0.5s under any concurrency).
@@ -128,11 +128,11 @@ python data/data_collection.py --parallel --n 500 --concurrency 3 --min-gap 0.5 
 #   - inter-call pacing is 0.1s in the serial path; the parallel path spaces launches by --min-gap (>=0.5s/lane).
 
 # serial fallback (no threads): one provider, or all providers serially
-python data/data_collection.py --all --n 500 --provider openai
-python data/data_collection.py --all --n 500
+python machine_data/data_collection.py --all --n 500 --provider openai
+python machine_data/data_collection.py --all --n 500
 
 # build the cleaned temperature-0.5 analysis dataset
-python data/data_cleaning.py
+python machine_data/data_cleaning.py
 ```
 
 Each row carries: identity + provenance (timestamps, api request/response ids, system fingerprint,

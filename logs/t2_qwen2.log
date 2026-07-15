@@ -1,0 +1,7 @@
+SKIP DeepSeek-R1 (qwen) already 10
+SKIP Deepseek-Chat (qwen) already 10
+SKIP Qwen-Max (qwen) already 10
+SKIP Qwen-Turbo (qwen) already 10
+RUN  DeepSeek R2 (qwen) have=6 need=4
+[qwen/deepseek-v3.2] wrote 4 rows -> data/raw_thread2/topup_qwen.csv
+RUN  Qwen3.7 Max (qwen) have=0 need=10

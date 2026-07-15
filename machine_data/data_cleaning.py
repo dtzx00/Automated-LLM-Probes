@@ -1,7 +1,7 @@
 """
 Build the canonical temp-0.5 machine dataset for all 20 models, with source + temperature
-tags preserved through every step. Reads Anthony's two source machine files (archived in data/legacy/prior_raw_inputs/)
-and emits data/processed/machine_temp05.csv.
+tags preserved through every step. Reads Anthony's two source machine files (archived in machine_data/legacy/prior_raw_inputs/)
+and emits machine_data/processed/machine_temp05.csv.
 
 Design rules (locked 2026-07-14 with Dawei):
 - Analysis uses temperature == 0.5 ONLY. Old 9 models: 'baseline' == 0.5. GPT-5 family: 0.5.
