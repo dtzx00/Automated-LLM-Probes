@@ -14,11 +14,11 @@ doi:10.1038/s41562-025-02331-1. Prompt is taken verbatim from its OSF repo (osf.
 | File | What it is |
 |---|---|
 | **`models.csv`** | **The single source of truth for the model grid.** One row per model: identity, provider, api id, region/reasoning tags, legacy sample count, and live collection stats (n, parse rate, latency, tokens, window, status). Replaces the old `model_id_mapping.csv` / `model_inventory.csv` / `model_inventory_final.csv` / `model_summary.csv`. |
-| `data_collection.py` | The collector. One model at a time, one raw row per generation, full provenance, incremental flush (resumable, no data loss on interruption). Baseline prompt is embedded in-code and verified against the SHA below. |
-| `run_collection.py` | Batch driver. Reads `models.csv`, groups by provider, skips models already at target n. Run per-provider for parallelism. |
-| `processed/machine_all.csv` | Consolidated raw output — one row per generation across all models, with stable `record_id`s. |
-| `raw/`, `raw_thread2/` | Per-provider raw output files as written during collection. |
-| `legacy/` | Old temperature-0.5 reference data (input to comparisons, not re-collected). |
+| `data_collection.py` | **The collection script.** Single model (`--model ... --provider ...`) or full batch (`--all`). One raw row per generation, full provenance, incremental flush, resumable (skips models already at target n). Baseline prompt embedded in-code, verified against the SHA below. |
+| `data_cleaning.py` | **The cleaning/build script.** Builds the canonical temperature-0.5 dataset from the archived source machine files, tagging source + temperature, and writes `processed/machine_temp05.csv` (+ summary). |
+| `raw/` | The one raw output folder — per-provider `topup_<provider>.csv` files written during collection. |
+| `processed/` | Consolidated outputs: `machine_all.csv` (one row per generation, stable `record_id`s) and `machine_temp05.csv` (cleaned temp-0.5 analysis set). |
+| `legacy/` | Archived material, not part of active collection: the flat temp-0.5 reference data, and `prior_raw_inputs/` (Anthony's original `average_machine_raw.csv` / `new_machine_baseline.csv` source files, consumed by `data_cleaning.py`). |
 
 ---
 
@@ -103,11 +103,14 @@ DeepSeek/Hunyuan return no `api_request_id`.
 # one model, quick sanity check (prints one row, writes nothing)
 python data/data_collection.py --model "GPT-4.1" --api-model gpt-4.1 --provider openai --n 1 --dry-run
 
-# a full provider batch to target n (resumable; skips models already at n)
-python data/run_collection.py --n 500 --provider openai --batch collect_2026_parity --out-dir data/raw
+# batch one provider to target n (resumable; skips models already at n)
+python data/data_collection.py --all --n 500 --provider openai
 
-# all providers (serial). For speed, launch one process per provider in parallel.
-python data/run_collection.py --n 500 --batch collect_2026_parity --out-dir data/raw
+# all providers (serial). For speed, launch one process per provider in parallel:
+python data/data_collection.py --all --n 500
+
+# build the cleaned temperature-0.5 analysis dataset
+python data/data_cleaning.py
 ```
 
 Each row carries: identity + provenance (timestamps, api request/response ids, system fingerprint,

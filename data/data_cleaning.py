@@ -1,6 +1,6 @@
 """
 Build the canonical temp-0.5 machine dataset for all 20 models, with source + temperature
-tags preserved through every step. Reads Anthony's two raw machine files (staged in data/raw/)
+tags preserved through every step. Reads Anthony's two source machine files (archived in data/legacy/prior_raw_inputs/)
 and emits data/processed/machine_temp05.csv.
 
 Design rules (locked 2026-07-14 with Dawei):
@@ -12,8 +12,10 @@ Design rules (locked 2026-07-14 with Dawei):
 import pandas as pd
 from pathlib import Path
 
-RAW = Path("raw")
-OUT = Path("processed"); OUT.mkdir(parents=True, exist_ok=True)
+HERE = Path(__file__).parent
+# Anthony's two source machine files live in the archive (legacy/prior_raw_inputs/).
+SRC = HERE / "legacy" / "prior_raw_inputs"
+OUT = HERE / "processed"; OUT.mkdir(parents=True, exist_ok=True)
 
 NOUNS = [f"noun_{i}" for i in range(10)]
 
@@ -36,8 +38,8 @@ def load_new(p):
     df["temperature"] = 0.5
     return df[["model_name", "batch", "temperature", "source_file", "dat_score"] + NOUNS]
 
-old = load_old(RAW / "average_machine_raw.csv")
-new = load_new(RAW / "new_machine_baseline.csv")
+old = load_old(SRC / "average_machine_raw.csv")
+new = load_new(SRC / "new_machine_baseline.csv")
 allm = pd.concat([old, new], ignore_index=True)
 
 allm.to_csv(OUT / "machine_temp05.csv", index=False)

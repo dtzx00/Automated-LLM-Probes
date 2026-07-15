@@ -204,14 +204,45 @@ def write_rows(out_csv, rows):
         if not exists: w.writeheader()
         w.writerows(rows)
 
+def _rows_at(out_dir, provider, model_name):
+    from pathlib import Path as _P
+    f=_P(out_dir)/f"topup_{provider}.csv"
+    if not f.exists(): return 0
+    import csv as _csv
+    return sum(1 for r in _csv.DictReader(open(f)) if r["model_name"]==model_name)
+
+def run_batch(models_csv, n, out_dir, batch, provider=None):
+    """Resumable batch over all live models in models_csv; skips models already at n."""
+    import csv as _csv
+    from pathlib import Path as _P
+    targets=[r for r in _csv.DictReader(open(models_csv)) if (r.get("status") or "").lower().startswith("live")]
+    if provider: targets=[t for t in targets if t["provider"]==provider]
+    for t in targets:
+        prov=t["provider"]; name=t["model"]; api=t["api_model_id"]
+        have=_rows_at(out_dir, prov, name); need=n-have
+        if need<=0:
+            print(f"SKIP {name} ({prov}) already {have}", flush=True); continue
+        print(f"RUN  {name} ({prov}) have={have} need={need}", flush=True)
+        out=_P(out_dir)/f"topup_{prov}.csv"
+        meta={"region":t.get("region",""),"reasoning":t.get("reasoning",""),"year":t.get("year","")}
+        try:
+            generate(name, api or name, prov, need, out, meta, batch=batch)
+        except Exception as e:
+            print(f"FAIL {name} ({prov}): {e}", flush=True)
+    print(f"BATCH DONE: {provider or 'all'}", flush=True)
+
 def main():
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser(description="Collect machine DAT responses. Single-model or --all batch.")
     ap.add_argument("--model"); ap.add_argument("--api-model"); ap.add_argument("--provider", choices=list(PROVIDERS))
     ap.add_argument("--n", type=int, default=5); ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--region", default=""); ap.add_argument("--reasoning", default=""); ap.add_argument("--year", default="")
     ap.add_argument("--batch", default="collect_2026_midpoint"); ap.add_argument("--out-dir", default=str(HERE/"raw"))
+    ap.add_argument("--all", action="store_true", help="batch over all live models in --models (resumable)")
+    ap.add_argument("--models", default=str(HERE/"models.csv"), help="model grid for --all mode")
     a = ap.parse_args()
-    if not (a.model and a.provider): sys.exit("need --model and --provider")
+    if a.all:
+        run_batch(a.models, a.n, a.out_dir, a.batch, provider=a.provider); return
+    if not (a.model and a.provider): sys.exit("need --model and --provider (or --all)")
     from pathlib import Path as _P
     out = _P(a.out_dir) / f"topup_{a.provider}.csv"
     meta = {"region": a.region, "reasoning": a.reasoning, "year": a.year}
