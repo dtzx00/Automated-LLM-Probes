@@ -1,4 +1,4 @@
-# LLM DAT Collection — `data/`
+# Machine Data Collection
 
 ## Model selection — rules of thumb
 The grid in `models.csv` is optimized to the following:
