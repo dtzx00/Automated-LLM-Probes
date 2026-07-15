@@ -1,53 +1,64 @@
-# human_data/processed/
+# processed/
 
 ## human_dat_all.csv
-Unified human DAT master — one row per unique individual, all three sources joined, `source`-tagged.
+The unified human DAT dataset: all three sources joined, **one row per unique respondent**,
+DAT-scored and cleaned. This is the file to analyze.
 
-**Rows: 11,117 unique individuals | Columns: 46**
+**11,117 respondents | 51 columns**
+
 | source | subset | rows |
 |---|---|---|
 | olson_pnas2021 | study2 | 8,572 |
-| btb | both | 1,072 |
+| btb | both (individual + augmented-pair) | 1,072 |
 | btb | individual only | 382 |
-| btb | augmented_pair only | 187 |
+| btb | augmented-pair only | 187 |
 | zunyi | dat | 904 |
 
-**Six column sets (in order):**
-1. `index` — unique per row (source-prefixed). `source`, `subset` are tags; `dat_score` blank (joint re-score later).
-2. `word_1 .. word_10` — individual (solo) human DAT words. All sources fill this.
-3. `cue_model_name` — the AI model in the augmented-pair exercise (BTB augpair only). No model for individual/PNAS/Zunyi.
-4. `cue_1 .. cue_10` — augpair MACHINE (AI cue) words (BTB augpair only).
-5. `augment_1 .. augment_10` — augpair FINAL submitted words (BTB augpair only).
-6. `demo_*` — demographics: demo_age, demo_gender, demo_country, demo_region, demo_ethnicity, demo_education, demo_major, demo_english_comfort, demo_program_type, demo_multilingual.
+## Column groups
+1. **Identifier** — `index` (unique per row), `source`, `subset`.
+2. **Individual words** — `word_1..word_10`: the respondent's solo DAT words. Every source fills this.
+3. **Cue model** — `cue_model_name`: the AI model in the augmented-pair exercise (BTB augmented-pair
+   only; the solo exercise uses no AI).
+4. **Cue words** — `cue_1..cue_10`: the AI's suggested words shown in the augmented-pair exercise
+   (BTB augmented-pair only).
+5. **Augmented words** — `augment_1..augment_10`: the final submitted words in the augmented-pair
+   exercise, i.e. the human's choices after seeing the AI suggestions (BTB augmented-pair only).
+6. **Demographics** — `demo_age, demo_gender, demo_country, demo_region, demo_ethnicity,
+   demo_education, demo_major, demo_english_comfort, demo_program_type, demo_multilingual`. Filled
+   per source wherever that study collected it.
 
-Plus `extra_json` — exercise ids + original platform scores (BTB) / college+admission fields (Zunyi).
+Plus DAT scores and cleaning flags for each word set (see below) and `extra_json` for
+source-specific extras (exercise ids and original platform scores; field-study college/admission fields).
 
-A BTB user who did both exercises carries 30 words: word_* (individual) + cue_* (machine) + augment_* (augpair final).
+A respondent who did both BTB exercises carries 30 words on one row: 10 individual + 10 cue + 10 augmented.
 
-**Notes:** dat_score blank on purpose (re-score with machine data on one embedding). Zunyi words are Chinese-native, translated to English. Lucas's machine words had leaked list-brackets — stripped on ingest, verified clean.
+## DAT scoring
+Scored with Olson's official scorer (mean pairwise cosine distance of the first 7 valid unique
+words, ×100; a response needs at least 7 valid words). The embedding is the validated 100k-word,
+300-dimension GloVe subset used across this project. Validated exact against the scorer's published
+reference examples.
 
-_Built 2026-07-15 by Lumen._
+Three score columns, each beside its word set:
+- `word_dat_score` — individual words (all sources)
+- `cue_dat_score` — augmented-pair AI cue words (BTB)
+- `augment_dat_score` — augmented-pair final words (BTB)
 
+A blank score means fewer than 7 valid words, or a response removed by cleaning (see below) —
+blank, never zero.
 
-## DAT scoring (2026-07-15)
-Scored with Olson's official scorer (github.com/jayolson/divergent-association-task) — mean pairwise cosine distance of the first 7 valid unique words x100, `minimum=7`.
-Embedding: the lab's validated **100k-vocab 300d GloVe** subset (`olson_glove.pickle`, words.txt n glove.840B.300d). Validated against Olson's published examples: low=50.31, avg=77.90, high=95.22, cat-dog=19.83, cat-thimble=87.87 — exact.
+## Cleaning
+Before scoring, a response is removed if it shows a low-effort / list-the-category pattern rather
+than genuine divergent choices. A word set is dropped when it contains either:
+- a run of **three or more consecutive words from one closed category** — numbers, colors, animals,
+  or everyday/household objects (e.g. cup, plate, fork, spoon, knife); or
+- **three or more counting words or function-word fillers** anywhere in the response.
 
-Three score columns, each next to its word set:
-- `word_dat_score` (after word_10) — individual/solo DAT (all sources)
-- `cue_dat_score` (after cue_10) — augpair machine cue words (BTB augpair)
-- `augment_dat_score` (after augment_10) — augpair final submitted words (BTB augpair)
+Applied independently to each word set. A removed response is flagged `word_dropped` /
+`cue_dropped` / `augment_dropped` = 1 and its score is left blank. Kept responses are flagged 0.
 
-**Coverage:** word=10,544 (PNAS 8,549 + BTB 1,097 + Zunyi 898); cue=989; augment=987. Blank = fewer than 7 valid unique words (Olson's minimum). Means: PNAS 78.28, BTB 80.18, Zunyi 78.96 (PNAS matches Olson's published ~78).
+Removed: 170 individual-word responses; 0 cue; 0 augmented. The original words are always retained.
 
-Note: on ~81 PNAS rows where respondents entered sentences/opposites/function words, this subset scores slightly differently from Olson's published `dat` (max ~14; mean abs diff 0.04 overall) because the 100k subset omits some function words the full GloVe includes. Per Dawei, the subset is the scorer of record for cross-source consistency.
-
-
-## Word cleaning (Brian's rule, 2026-07-15)
-Before scoring, a response is DROPPED (whole response, that word set only) if it shows low-effort/gaming patterns, per Brian's judgment:
-- a **consecutive run of >=3 adjacent words** from one closed category: numbers, colors, animals, or environmental/household objects (e.g. cup, plate, fork, spoon, knife); OR
-- **>=3 counting words / function-word fillers** anywhere in the response.
-
-Applied independently to word_/cue_/augment_ sets. Dropped responses get `*_dropped=1` and a blank `*_dat_score` (invalid, not zero). `*_dropped=0` = kept & scored.
-
-**Result:** word dropped=170 (scored 10,384); cue dropped=0 (989); augment dropped=0 (987). Means after cleaning: PNAS 78.47, BTB 80.27, Zunyi 79.02.
+## Notes
+- Field-study words are English translations of Chinese responses.
+- Two large Olson human samples (100k and 750k) are score-only with no words released, so they can't
+  be re-scored or joined at the word level and are excluded.
