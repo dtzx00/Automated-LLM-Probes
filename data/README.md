@@ -56,15 +56,20 @@ Generate 10 nouns that are as different from each other as possible using the in
 
 42 live/collectable models + retired rows whose legacy data stands. Columns:
 
-`#, model, year, region, reasoning, provider, api_model_id, existing_samples_legacy,
-n_collected_new, parse_success_rate, mean_latency_ms, total_tokens, first_ts, last_ts, status`
+`#, model, year, region, reasoning, provider, api_model_id, type, existing_samples_legacy, status`
 
-**Grid revision 2026-07-15** (speed-driven, keeping frontier coverage):
-- **Dropped** the genuine slow choke (10–55 s/call *thinking* variants): `GLM-5.2`, `GLM-4.7`, `Qwen3-235B`.
-- **Added 3 fast Eastern:** `Qwen3-30B-A3B-Instruct` (~1.4 s), `DeepSeek V4-Flash`, `DeepSeek-Chat (native endpoint, ~1.0 s)`.
-- **Added 4 Western:** `Claude Haiku 4.5`, `Claude Opus 4.5`, `Grok 4.20 Reasoning`, `GPT-5.1`.
-- Verified on data: slowness was the *models*, not the DashScope endpoint — `qwen-plus` (1.5 s) and DeepSeek
-  V3.x are fast and were kept; Kimi is slow on its native API too.
+**Grid revision 2026-07-15 (55 models).** Balanced against: ≤1 min/call (GLM dropped entirely, like
+Gemini); lanes roughly even with Western keys heaviest (OpenAI 10, Anthropic 7, Hunyuan/TokenHub 6, Qwen 5,
+xAI 4, Moonshot 4, DeepSeek native 2); a mix of **fast / all-rounder / reasoning** types (12 / 23 / 20);
+**Eastern + Western** (23 / 32); and an era spread across **2022–2026**. All 7 distinct Eastern reasoning
+models are preserved (DeepSeek-V4-Pro, DeepSeek-R1, DeepSeek-V3.2, Qwen3.7-Max, MiniMax-M3, MiniMax-M2.7,
+Kimi-K2.6). 38 models are collected live at n=500; the other 17 are legacy/retired rows whose existing data
+stands (source of the 2022–2024 depth).
+
+**DeepSeek naming convention:** the display name matches the actual API version (`DeepSeek-V4-Pro`,
+`DeepSeek-R1`, `DeepSeek-V3.2`, ...). When the same version is collected on a second key (e.g. TokenHub as
+well as DashScope), the second row carries a lane suffix (`-TH`) so rows stay distinct and honest about
+which endpoint produced them. `type` = fast / allrounder / reasoning.
 
 ---
 
