@@ -21,7 +21,7 @@ def already(provider, model_name, out_dir):
     return sum(1 for r in csv.DictReader(open(f)) if r["model_name"]==model_name)
 def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument("--mapping",default=str(HERE/"model_id_mapping.csv"))
+    ap.add_argument("--mapping",default=str(HERE/"models.csv"))
     ap.add_argument("--n",type=int,default=500)
     ap.add_argument("--provider",help="run only this provider (for parallelism)")
     ap.add_argument("--batch",default="collect_2026_midpoint")

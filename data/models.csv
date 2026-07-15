@@ -1,0 +1,55 @@
+#,model,year,region,reasoning,provider,api_model_id,existing_samples_legacy,n_collected_new,parse_success_rate,mean_latency_ms,total_tokens,first_ts,last_ts,status
+1,GPT-3.5-Turbo,2022,Western,No,openai,gpt-3.5-turbo,750,10,100.0,1463,1642,2026-07-15T00:01:33.738Z,2026-07-15T00:01:49.406Z,live
+2,Llama-2-70b,2023,Western,No,,,750,0,,,,,,RETIRED - no live host on our keys (existing 750 stand)
+3,GPT-4.0-Turbo,2023,Western,No,openai,gpt-4-turbo-2024-04-09,750,10,100.0,2425,1664,2026-07-15T00:01:50.938Z,2026-07-15T00:02:16.650Z,live
+4,Claude-3-Haiku,2024,Western,No,,,750,0,,,,,,RETIRED on Anthropic list (existing 750 stand)
+5,Claude-3-Opus,2024,Western,No,,,750,0,,,,,,RETIRED on Anthropic list (existing 750 stand)
+6,Claude-3.5-Sonnet,2024,Western,No,,,750,0,,,,,,RETIRED on Anthropic list (existing 750 stand)
+7,GPT-4o,2024,Western,No,openai,gpt-4o-2024-08-06,750,10,100.0,1229,1642,2026-07-15T00:02:17.765Z,2026-07-15T00:02:28.089Z,live
+8,Ernie-4.0-8k,2024,Eastern,No,,,750,0,,,,,,no Baidu key (existing 750 stand)
+9,DeepSeek-R1,2025,Eastern,Yes,qwen,deepseek-r1,750,10,100.0,20694,7781,2026-07-15T00:18:31.873Z,2026-07-15T00:21:48.038Z,live via DashScope
+10,Claude-Opus-4.1,2025,Western,No,anthropic,claude-opus-4-1-20250805,515,10,100.0,2773,1859,2026-07-15T00:05:53.736Z,2026-07-15T00:11:37.507Z,live
+11,Claude-Sonnet-4,2025,Western,No,,,515,0,,,,,,RETIRED (only sonnet-4-5/4-6 live); existing 515 stand
+12,Deepseek-Chat,2025,Eastern,No,qwen,deepseek-v3,515,10,100.0,2002,1640,2026-07-15T00:22:01.381Z,2026-07-15T00:22:21.777Z,live via DashScope (v3=chat lineage)
+13,Kimi-k2,2025,Eastern,No,qwen,kimi-k2.5,515,0,,,,,,CLOSEST live (k2 retired); existing 515 stand
+14,Llama4-Scout,2025,Western,No,,,515,0,,,,,,no live Llama host (existing 515 stand)
+15,Llama4-Maverick,2025,Western,No,,,514,0,,,,,,no live Llama host (existing 514 stand)
+16,Qwen-Max,2025,Eastern,No,qwen,qwen-max,515,10,100.0,1612,1672,2026-07-15T00:22:23.974Z,2026-07-15T00:22:40.677Z,live
+17,Qwen-Turbo,2025,Eastern,No,qwen,qwen-turbo,515,10,100.0,1201,1710,2026-07-15T00:22:42.674Z,2026-07-15T00:22:55.783Z,live
+18,Grok-Code-Fast,2025,Western,No,,,478,0,,,,,,RETIRED on xAI (existing 478 stand)
+19,GPT-5,2025,Western,Yes,openai,gpt-5-2025-08-07,550,10,100.0,19854,13444,2026-07-15T00:02:32.628Z,2026-07-15T00:05:19.778Z,live (reasoning: may ignore temp)
+20,GPT-5-Mini,2025,Western,Yes,openai,gpt-5-mini-2025-08-07,500,10,100.0,9131,8632,2026-07-15T00:06:39.666Z,2026-07-15T00:08:04.761Z,live (reasoning: may ignore temp)
+21,o3,2025,Western,Yes,openai,o3-2025-04-16,0,10,100.0,2398,3927,2026-07-15T00:08:13.549Z,2026-07-15T00:08:37.395Z,live (reasoning: ignores temperature)
+22,Claude Opus 4.7,2025,Western,Yes,anthropic,claude-opus-4-7,0,10,100.0,2700,2554,2026-07-15T00:11:40.402Z,2026-07-15T00:12:06.409Z,live
+23,Grok 4,2025,Western,Yes,xai,grok-4.3,0,10,100.0,4957,9869,2026-07-15T00:14:26.398Z,2026-07-15T00:15:11.699Z,live (accepted sub for grok-4)
+24,DeepSeek R2,2025,Eastern,Yes,qwen,deepseek-v3.2,0,10,100.0,1939,1637,2026-07-15T00:22:57.258Z,2026-07-15T00:23:35.287Z,live via DashScope (accepted sub for R2)
+25,Qwen3.7 Max,2025,Eastern,Yes,qwen,qwen3.7-max,0,10,100.0,47527,26439,2026-07-15T00:23:37.475Z,2026-07-15T00:31:36.425Z,live
+26,GPT-5.4,2025,Western,No,openai,gpt-5.4-2026-03-05,0,10,100.0,1143,1664,2026-07-15T00:08:40.101Z,2026-07-15T00:08:51.841Z,live
+27,GLM-5,2025,Eastern,No,qwen,glm-5,0,10,100.0,47598,19839,2026-07-15T00:33:28.256Z,2026-07-15T00:43:56.651Z,live via DashScope (also TokenHub)
+28,Claude Sonnet 4,2025,Western,No,anthropic,claude-sonnet-4-5-20250929,0,10,100.0,1774,1838,2026-07-15T00:12:09.978Z,2026-07-15T00:12:28.274Z,live (accepted sub for sonnet-4.0)
+29,GPT-5.6 Sol,2026,Western,Yes,openai,gpt-5.6-sol,0,10,100.0,4190,2482,2026-07-15T00:08:54.106Z,2026-07-15T00:09:32.857Z,live
+30,GPT-5.5,2026,Western,Yes,openai,gpt-5.5-2026-04-23,0,10,100.0,3590,2898,2026-07-15T00:09:38.577Z,2026-07-15T00:10:12.268Z,live
+31,Claude Fable 5,2026,Western,Yes,anthropic,claude-fable-5,0,10,100.0,5478,2872,2026-07-15T00:12:30.288Z,2026-07-15T00:13:21.576Z,live
+32,Claude Sonnet 5,2026,Western,No,anthropic,claude-sonnet-5,0,10,100.0,2026,2486,2026-07-15T00:13:27.643Z,2026-07-15T00:13:47.805Z,live
+33,Claude Opus 4.8,2026,Western,Yes,anthropic,claude-opus-4-8,0,10,100.0,2364,2431,2026-07-15T00:13:50.477Z,2026-07-15T00:14:11.210Z,live
+34,Grok 4.5,2026,Western,Yes,xai,grok-4.5,0,10,100.0,6454,11528,2026-07-15T00:15:18.538Z,2026-07-15T00:16:18.302Z,live
+35,DeepSeek V4 Pro,2026,Eastern,Yes,deepseek,deepseek-v4-pro,0,10,100.0,6569,5947,2026-07-15T00:16:56.947Z,2026-07-15T00:18:00.195Z,live
+36,Qwen4 Max,2026,Eastern,Yes,qwen,qwen3-max-2026-01-23,0,10,100.0,2727,1671,2026-07-15T00:45:16.606Z,2026-07-15T00:45:44.320Z,live (accepted sub; real 2026 Qwen)
+37,Kimi K2.6,2026,Eastern,Yes,qwen,kimi-k2.6,0,10,100.0,2604,1737,2026-07-15T00:45:46.451Z,2026-07-15T00:46:09.345Z,live via DashScope (temp 0.5 OK here?) - verify
+38,Hunyuan Hy3,2026,Eastern,No,hunyuan,hy3,0,10,100.0,1867,1730,2026-07-15T00:16:25.692Z,2026-07-15T00:16:44.778Z,live via TokenHub
+39,GLM-5.1,2026,Eastern,No,qwen,glm-5.1,0,10,100.0,29315,16968,2026-07-15T00:46:15.071Z,2026-07-15T00:51:03.989Z,live (added)
+40,MiniMax-M3,2026,Eastern,Yes,qwen,MiniMax/MiniMax-M3,0,0,,,,,,needs-activation (DashScope MiniMax not enabled)
+41,MiniMax-M2.5,2025,Eastern,Yes,qwen,MiniMax/MiniMax-M2.5,0,0,,,,,,needs-activation (DashScope MiniMax not enabled)
+42,DeepSeek V3.2,2025,Eastern,No,qwen,deepseek-v3.2,0,0,,,,,,live (added)
+43,DeepSeek V3.1,2025,Eastern,No,qwen,deepseek-v3.1,0,0,,,,,,live (added)
+44,Kimi K2.5,2025,Eastern,No,qwen,kimi-k2.5,0,0,,,,,,live (added)
+45,Qwen-Plus,2025,Eastern,No,qwen,qwen-plus,0,0,,,,,,live (added)
+46,o4-mini,2025,Western,Yes,openai,o4-mini,0,10,100.0,5321,6996,2026-07-15T00:10:17.049Z,2026-07-15T00:11:21.748Z,live (added)
+47,GPT-4.1,2025,Western,No,openai,gpt-4.1,0,10,100.0,774,1640,2026-07-15T00:11:27.146Z,2026-07-15T00:11:36.409Z,live (added)
+48,Qwen3-30B-A3B-Instruct,2025,Eastern,No,qwen,qwen3-30b-a3b-instruct-2507,,0,,,,,,live (added 07-15: fast 1.4s)
+49,DeepSeek V4 Flash,2025,Eastern,No,deepseek,deepseek-v4-flash,,0,,,,,,live (added 07-15: fast)
+50,DeepSeek-Chat (native),2025,Eastern,No,deepseek,deepseek-chat,,0,,,,,,live (added 07-15: native endpoint 1.0s)
+51,Claude Haiku 4.5,2025,Western,No,anthropic,claude-haiku-4-5-20251001,,0,,,,,,live (added 07-15)
+52,Claude Opus 4.5,2025,Western,Yes,anthropic,claude-opus-4-5-20251101,,0,,,,,,live (added 07-15)
+53,Grok 4.20 Reasoning,2026,Western,Yes,xai,grok-4.20-0309-reasoning,,0,,,,,,live (added 07-15)
+54,GPT-5.1,2025,Western,Yes,openai,gpt-5.1-2025-11-13,,0,,,,,,live (added 07-15)

@@ -1,0 +1,113 @@
+# Machine DAT Data Collection — `data/`
+
+This folder collects **machine (LLM) responses to the Divergent Association Task (DAT)** with full
+open-science provenance, so they are directly comparable to the human DAT rows and to the existing
+temperature-0.5 legacy data. Each generation = one model producing 10 maximally-different nouns.
+
+**Reference paper:** Wang, Huang, Shen & Uzzi (2025), *Nature Human Behaviour*,
+doi:10.1038/s41562-025-02331-1. Prompt is taken verbatim from its OSF repo (osf.io/a9v2t).
+
+---
+
+## What's in this folder
+
+| File | What it is |
+|---|---|
+| **`models.csv`** | **The single source of truth for the model grid.** One row per model: identity, provider, api id, region/reasoning tags, legacy sample count, and live collection stats (n, parse rate, latency, tokens, window, status). Replaces the old `model_id_mapping.csv` / `model_inventory.csv` / `model_inventory_final.csv` / `model_summary.csv`. |
+| `data_collection.py` | The collector. One model at a time, one raw row per generation, full provenance, incremental flush (resumable, no data loss on interruption). Baseline prompt is embedded in-code and verified against the SHA below. |
+| `run_collection.py` | Batch driver. Reads `models.csv`, groups by provider, skips models already at target n. Run per-provider for parallelism. |
+| `processed/machine_all.csv` | Consolidated raw output — one row per generation across all models, with stable `record_id`s. |
+| `raw/`, `raw_thread2/` | Per-provider raw output files as written during collection. |
+| `legacy/` | Old temperature-0.5 reference data (input to comparisons, not re-collected). |
+
+---
+
+## Locked design (2026-07-15)
+
+### Baseline prompt (verbatim — do NOT paraphrase)
+Source: https://osf.io/a9v2t/files/y4rhs (`studies_prompts.ipynb`, `baseline_prompt_1`, Study 1a/1b).
+SHA-256: `d03218e72a815ec8...` (asserted at collection time). Matches the existing 12,397 legacy rows.
+
+```
+Generate 10 nouns that are as different from each other as possible using the instructions below:
+1. Generate only single-word nouns in English.
+2. Generate only nouns such as things, objects and concepts.
+3. Do not use proper nouns such as people or places.
+4. Do not use specialised vocabulary or technical terms.
+5. Generate your final response as a string with each noun separated by commas: "noun_1, noun_2, noun_3, noun_4, noun_5, noun_6, noun_7, noun_8, noun_9, noun_10".
+6. Do not return anything else other than the comma-separated string of nouns.
+```
+
+> The exact prompt is embedded in `data_collection.py`; there is no separate `baseline_prompt.txt`.
+
+### Temperature — literal 0.5, everywhere (supersedes per-provider midpoint)
+- The collector requests **temperature = 0.5 from every provider**, for cross-model parity with the
+  legacy temp-0.5 data. This replaces the earlier "per-provider midpoint" rule (which sent OpenAI/xAI etc.
+  at 1.0).
+- Every row records both `temperature_requested` (0.5) and `temperature_effective` (what was actually used).
+- **Exception handling:** if a model rejects 0.5 (some newer models only accept temperature = 1), the
+  collector falls back to the model's allowed default and records the TRUE value. Those rows are a
+  documented parity exception, not silently mixed in.
+- Downstream analysis can filter to `temperature_effective == 0.5` for the strict-parity set and treat
+  exceptions separately.
+
+### Other locked choices
+- **Target n:** 500 per model.
+- **Region label:** `Western` / `Eastern` = model origin; all prompts are in English.
+- **Noun parsing:** parsed nouns are lowercase-normalized; `raw_response_text` is kept verbatim.
+- **DAT scoring:** deferred to a separate later pass (`dat_score` stays blank during collection). Scorer =
+  Olson et al. 2021 (github.com/jayolson/divergent-association-task).
+- **No Google models** in the grid.
+
+---
+
+## The model grid (`models.csv`)
+
+42 live/collectable models + retired rows whose legacy data stands. Columns:
+
+`#, model, year, region, reasoning, provider, api_model_id, existing_samples_legacy,
+n_collected_new, parse_success_rate, mean_latency_ms, total_tokens, first_ts, last_ts, status`
+
+**Grid revision 2026-07-15** (speed-driven, keeping frontier coverage):
+- **Dropped** the genuine slow choke (10–55 s/call *thinking* variants): `GLM-5.2`, `GLM-4.7`, `Qwen3-235B`.
+- **Added 3 fast Eastern:** `Qwen3-30B-A3B-Instruct` (~1.4 s), `DeepSeek V4-Flash`, `DeepSeek-Chat (native endpoint, ~1.0 s)`.
+- **Added 4 Western:** `Claude Haiku 4.5`, `Claude Opus 4.5`, `Grok 4.20 Reasoning`, `GPT-5.1`.
+- Verified on data: slowness was the *models*, not the DashScope endpoint — `qwen-plus` (1.5 s) and DeepSeek
+  V3.x are fast and were kept; Kimi is slow on its native API too.
+
+---
+
+## Provider configuration
+
+| Provider | Env key | Base URL |
+|---|---|---|
+| openai | `OPENAI_API_KEY` | default |
+| anthropic | `ANTHROPIC_API_KEY` | default |
+| xai | `XAI_API_KEY` | default |
+| qwen (DashScope) | `QWEN_API_KEY` | dashscope.aliyuncs.com/compatible-mode/v1 |
+| deepseek | `DEEPSEEK_API_KEY` | api.deepseek.com/v1 |
+| hunyuan (TokenHub) | `HUNYUAN_API_KEY` | tokenhub.tencentmaas.com/v1 |
+| moonshot | `MOONSHOT_API_KEY` | api.moonshot.ai |
+
+Keys are read from env at runtime — never hard-coded, never written to disk.
+Known-benign metadata gaps: Anthropic/Qwen/Hunyuan return no `system_fingerprint`;
+DeepSeek/Hunyuan return no `api_request_id`.
+
+---
+
+## How to run
+
+```bash
+# one model, quick sanity check (prints one row, writes nothing)
+python data/data_collection.py --model "GPT-4.1" --api-model gpt-4.1 --provider openai --n 1 --dry-run
+
+# a full provider batch to target n (resumable; skips models already at n)
+python data/run_collection.py --n 500 --provider openai --batch collect_2026_parity --out-dir data/raw
+
+# all providers (serial). For speed, launch one process per provider in parallel.
+python data/run_collection.py --n 500 --batch collect_2026_parity --out-dir data/raw
+```
+
+Each row carries: identity + provenance (timestamps, api request/response ids, system fingerprint,
+finish reason, token usage, prompt SHA-256), the verbatim `raw_response_text`, `parse_status`, and
+`noun_0..noun_9`. `dat_score` is filled in the separate scoring pass.
