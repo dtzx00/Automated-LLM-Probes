@@ -57,9 +57,9 @@ Generate 10 nouns that are as different from each other as possible using the in
 - **Target n:** 500 per model.
 - **Region label:** `Western` / `Eastern` = model origin; all prompts are in English.
 - **Noun parsing:** parsed nouns are lowercase-normalized; `raw_response_text` is kept verbatim.
-- **DAT scoring:** deferred to a separate later pass (`dat_score` stays blank during collection). Scorer =
-  Olson et al. 2021 (github.com/jayolson/divergent-association-task).
-- **No Google models** in the grid.
+- **DAT scoring:** deferred to data cleaning (`dat_score` stays blank during collection).
+- **DAT Scorer:** use Olson et al. 2021 (github.com/jayolson/divergent-association-task).
+- **Slow models ignored** Gemini models and many GLM models are slow, so they are ignored.
 
 ---
 
