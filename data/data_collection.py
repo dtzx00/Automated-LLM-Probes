@@ -5,12 +5,9 @@ BASELINE PROMPT: verbatim `baseline_prompt_1` from the NHB divergent-creativity 
 (osf.io/a9v2t -> studies_prompts.ipynb, Study 1a/1b). Loaded from data/baseline_prompt.txt.
 Do NOT paraphrase.
 
-TEMPERATURE: literal 0.5 requested from EVERY provider for cross-model parity (locked 2026-07-15,
-supersedes the earlier per-provider-midpoint rule). Every row records temperature_requested=0.5 and
-temperature_effective = the value actually used. If a model rejects 0.5 (some newer models only allow
-temperature=1), the collector falls back to the model's allowed default and records the TRUE value, so
-those rows are a documented parity exception, not silently mixed in. Downstream analysis can filter to
-temperature_effective == 0.5 for the strict-parity set.
+TEMPERATURE: per-provider MIDPOINT (locked 2026-07-14). 0-2 scale providers -> 1.0;
+0-1 scale providers -> 0.5. Recorded per row (requested + effective + range). If a model
+forces its own temperature, the row records what was actually used.
 
 Each generation writes ONE raw row with full provenance (timestamps, api request/response ids,
 system fingerprint, finish reason, token usage, prompt sha256, raw response text, parsed nouns).
@@ -42,9 +39,9 @@ PROVIDER_TEMP_RANGE = {
     "openai": (0, 2), "xai": (0, 2), "deepseek": (0, 2), "qwen": (0, 2), "hunyuan": (0, 2),
     "anthropic": (0, 1), "moonshot": (0, 1), "openrouter": (0, 2),
 }
-PARITY_TEMPERATURE = 0.5  # literal value requested from every provider (locked 2026-07-15)
-def target_temperature(provider):
-    return PARITY_TEMPERATURE
+def provider_midpoint(provider):
+    lo, hi = PROVIDER_TEMP_RANGE.get(provider, (0, 2))
+    return (lo + hi) / 2
 def temp_range_str(provider):
     lo, hi = PROVIDER_TEMP_RANGE.get(provider, (0, 2))
     return f"{lo}-{hi}"
@@ -154,7 +151,7 @@ def generate(model_name, api_model, provider, n, out_csv, meta, dry_run=False, s
     env_key = PROVIDERS[provider][1]
     key = os.environ.get(env_key)
     if not key: sys.exit(f"Missing env key {env_key} for provider {provider}")
-    target_temp = target_temperature(provider)
+    target_temp = provider_midpoint(provider)
     rows, made, attempts = [], 0, 0
     while made < n:
         seed = seed_base + made

@@ -40,16 +40,18 @@ Generate 10 nouns that are as different from each other as possible using the in
 
 > The exact prompt is embedded in `data_collection.py`; there is no separate `baseline_prompt.txt`.
 
-### Temperature — literal 0.5, everywhere (supersedes per-provider midpoint)
-- The collector requests **temperature = 0.5 from every provider**, for cross-model parity with the
-  legacy temp-0.5 data. This replaces the earlier "per-provider midpoint" rule (which sent OpenAI/xAI etc.
-  at 1.0).
-- Every row records both `temperature_requested` (0.5) and `temperature_effective` (what was actually used).
-- **Exception handling:** if a model rejects 0.5 (some newer models only accept temperature = 1), the
-  collector falls back to the model's allowed default and records the TRUE value. Those rows are a
-  documented parity exception, not silently mixed in.
-- Downstream analysis can filter to `temperature_effective == 0.5` for the strict-parity set and treat
-  exceptions separately.
+### Temperature — per-provider midpoint (LOCKED 2026-07-14)
+- The collector requests each provider's **scale midpoint**: providers on a **0–2** scale
+  (OpenAI, xAI, DeepSeek, Qwen, Hunyuan, Moonshot) get **temperature = 1.0**; providers on a **0–1**
+  scale (Anthropic) get **temperature = 0.5**. This is the locked design, chosen so every model runs at
+  the neutral centre of its own supported range rather than at one arbitrary absolute value.
+- Every row records `temperature_requested`, `temperature_effective` (what was actually used), and
+  `temp_range_used` (the provider's scale), so the choice is fully auditable per row.
+- **Exception handling:** if a model rejects the midpoint (some newer models only accept temperature = 1),
+  the collector falls back to the model's allowed default and records the TRUE value. Those rows are a
+  documented exception, not silently mixed in.
+- The legacy temp-0.5 reference data in `legacy/` was collected under the earlier flat-0.5 setting and is
+  kept separate; it is a comparison input, not part of the midpoint collection.
 
 ### Other locked choices
 - **Target n:** 500 per model.
