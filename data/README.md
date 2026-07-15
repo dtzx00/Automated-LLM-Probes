@@ -1,21 +1,19 @@
-# Machine DAT Data Collection — `data/`
+# LLM DAT Collection — `data/`
 
-## Model selection — rules of thumb (locked with Dawei 2026-07-15)
-The grid in `models.csv` is chosen to satisfy all of the following:
-- **≤ 1 minute per call.** Anything slower is dropped: at n=500, >1 min/call means >500 min ≈ **8 h** just for that one model. This is why **GLM and Gemini are dropped entirely** (GLM ran 30–55 s/call).
-- **Roughly even models per API key, with the Western keys heaviest** — more on **OpenAI, Claude (Anthropic), and xAI (Grok)** than on the Eastern keys.
-- **A mix of model *types*:** fast/efficient · all-rounder · reasoning.
-- **A mix of region:** Eastern and Western models.
-- **A mix of era:** 2023 · 2024 · 2025 · 2026 (plus the 2022 baseline), using retired/legacy rows for the older years.
-
-Current grid: **55 rows = 38 live models collected at n=500 + 17 legacy/retired** (existing data stands).
-
+## Model selection — rules of thumb
+The grid in `models.csv` is optimized to the following:
+- **≤ 1 minute per call.** Anything slower is dropped: at n=500, >1 min/call means >500 min ≈ 8 hours per model.
+- **Even models per API key** Roughly 7-9 models per API, slightly more on OpenAI, Claude, and xAI, than on Eastern ones.
+- **Even mix model intelligence** Roughly even mix of efficient · all-rounder · reasoning models. 
+- **Half-half mix by region:** Eastern (mainly Chinese models run using English prompts) and Western (USA) models.
+- **A mix of eras:** 2023 · 2024 · 2025 · 2026 (plus the 2022 baseline), using retired/legacy rows for the older years.
+This will result in total of 55 models = 38 live models collected at n=500 + 17 legacy/retired.
 
 | File | What it is |
 |---|---|
-| **`models.csv`** | **The single source of truth for the model grid.** One row per model: `#, model, year, region, reasoning, provider, api_model_id, type, existing_samples_legacy, status`. Replaces the old `model_id_mapping.csv` / `model_inventory.csv` / `model_inventory_final.csv` / `model_summary.csv`. |
-| `data_collection.py` | **The one collection script.** Single model (`--model ... --provider ...`), serial batch (`--all`), or **7-lane parallel run (`--parallel`)** — one thread per provider key, `--concurrency` runners per lane sharing a **0.5 s launch gate**. One raw row per generation, full provenance, incremental flush, resumable (skips models already at target n). Baseline prompt embedded in-code, verified against the SHA below. |
-| `data_cleaning.py` | **The cleaning/build script.** Builds the canonical temperature-0.5 dataset from the archived source machine files, tagging source + temperature, and writes `processed/machine_temp05.csv` (+ summary). |
+| `models.csv` | One row per model: `#, model, year, region, reasoning, provider, api_model_id, type, existing_samples_legacy, status`. Replaces the old `model_id_mapping.csv` / `model_inventory.csv` / `model_inventory_final.csv` / `model_summary.csv`. |
+| `data_collection.py` | Single model (`--model ... --provider ...`), serial batch (`--all`), or 7-lane parallel run (`--parallel`) — one thread per provider key, `--concurrency` runners per lane sharing a 0.5 s launch gate. One raw row per generation, full provenance, incremental flush, resumable (skips models already at target n). Baseline prompt embedded in-code, verified against the SHA below. |
+| `data_cleaning.py` | Builds the canonical temperature-0.5 dataset from the archived source machine files, tagging source + temperature, and writes `processed/machine_temp05.csv` (+ summary). |
 | `raw/` | The one raw output folder — per-provider `topup_<provider>.csv` files written during collection. |
 | `processed/` | Consolidated outputs: `machine_all.csv` (one row per generation, stable `record_id`s) and `machine_temp05.csv` (cleaned temp-0.5 analysis set). |
 | `legacy/` | Archived material, not part of active collection: the flat temp-0.5 reference data, and `prior_raw_inputs/` (Anthony's original `average_machine_raw.csv` / `new_machine_baseline.csv` source files, consumed by `data_cleaning.py`). |
@@ -47,7 +45,7 @@ Generate 10 nouns that are as different from each other as possible using the in
   the neutral centre of its own supported range rather than at one arbitrary absolute value.
 - Every row records `temperature_requested`, `temperature_effective` (what was actually used), and
   `temp_range_used` (the provider's scale), so the choice is fully auditable per row.
-- **Exception handling:** if a model rejects the midpoint (some newer models only accept temperature = 1),
+- Exception handling: if a model rejects the midpoint (some newer models only accept temperature = 1),
   the collector falls back to the model's allowed default and records the TRUE value. Those rows are a
   documented exception, not silently mixed in.
 - The legacy temp-0.5 reference data in `legacy/` was collected under the earlier flat-0.5 setting and is
