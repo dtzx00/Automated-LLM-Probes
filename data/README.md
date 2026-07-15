@@ -2,8 +2,9 @@
 
 | File | What it is |
 |---|---|
-| **`models.csv`** | **The single source of truth for the model grid.** One row per model: identity, provider, api id, region/reasoning tags, legacy sample count, and live collection stats (n, parse rate, latency, tokens, window, status). Replaces the old `model_id_mapping.csv` / `model_inventory.csv` / `model_inventory_final.csv` / `model_summary.csv`. |
+| **`models.csv`** | **The single source of truth for the model grid.** One row per model: `#, model, year, region, reasoning, provider, api_model_id, type, existing_samples_legacy, status`. Replaces the old `model_id_mapping.csv` / `model_inventory.csv` / `model_inventory_final.csv` / `model_summary.csv`. |
 | `data_collection.py` | **The collection script.** Single model (`--model ... --provider ...`) or full batch (`--all`). One raw row per generation, full provenance, incremental flush, resumable (skips models already at target n). Baseline prompt embedded in-code, verified against the SHA below. |
+| `run_parallel.py` | **The parallel run driver.** 7 lanes (one thread per provider key) run at once; within each lane a small worker pool (`--concurrency`, default 3) shares a **0.5 s launch gate** so no two requests on the same key start less than `--min-gap` seconds apart, even under concurrency. Thread-safe incremental writes, resumable. Reuses `data_collection`. |
 | `data_cleaning.py` | **The cleaning/build script.** Builds the canonical temperature-0.5 dataset from the archived source machine files, tagging source + temperature, and writes `processed/machine_temp05.csv` (+ summary). |
 | `raw/` | The one raw output folder — per-provider `topup_<provider>.csv` files written during collection. |
 | `processed/` | Consolidated outputs: `machine_all.csv` (one row per generation, stable `record_id`s) and `machine_temp05.csv` (cleaned temp-0.5 analysis set). |
@@ -48,13 +49,13 @@ Generate 10 nouns that are as different from each other as possible using the in
 - **Noun parsing:** parsed nouns are lowercase-normalized; `raw_response_text` is kept verbatim.
 - **DAT scoring:** deferred to data cleaning (`dat_score` stays blank during collection).
 - **DAT scorer:** use Olson et al. 2021 (github.com/jayolson/divergent-association-task).
-- **Slow models:** Gemini models and many GLM models are slow, so they are ignored.
+- **Slow models:** Gemini and GLM are dropped entirely — both exceed the ~1 min/call budget (GLM ran 30–55 s/call), which at n=500 would push the run past ~8 h. Excluded from the grid, not merely deprioritized.
 
 ---
 
 ## The model grid (`models.csv`)
 
-42 live/collectable models + retired rows whose legacy data stands. Columns:
+55 rows total: **38 live/collectable models** + 17 retired/legacy rows whose existing data stands. Columns:
 
 `#, model, year, region, reasoning, provider, api_model_id, type, existing_samples_legacy, status`
 
@@ -97,10 +98,16 @@ DeepSeek/Hunyuan return no `api_request_id`.
 # one model, quick sanity check (prints one row, writes nothing)
 python data/data_collection.py --model "GPT-4.1" --api-model gpt-4.1 --provider openai --n 1 --dry-run
 
-# batch one provider to target n (resumable; skips models already at n)
-python data/data_collection.py --all --n 500 --provider openai
+# FULL RUN (recommended): 7 lanes in parallel, 3 runners per lane, 0.5s launch gate per lane
+python data/run_parallel.py --n 500 --concurrency 3 --min-gap 0.5 --batch collect_2026_n500
+#   - one lane per API key (7 keys -> 7 parallel lanes); rate limits are per key, so lanes never
+#     collide with each other. --concurrency = runners WITHIN each lane; --min-gap = min seconds
+#     between request launches on a single lane (held >=0.5s under any concurrency).
+#   - --only openai,anthropic  restricts to a subset of lanes.
+#   - resumable: skips models already at n; safe to re-run after an interruption.
 
-# all providers (serial). For speed, launch one process per provider in parallel:
+# serial fallback (no threads): one provider, or all providers serially
+python data/data_collection.py --all --n 500 --provider openai
 python data/data_collection.py --all --n 500
 
 # build the cleaned temperature-0.5 analysis dataset
