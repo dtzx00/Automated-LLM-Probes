@@ -27,3 +27,17 @@ A BTB user who did both exercises carries 30 words: word_* (individual) + cue_* 
 **Notes:** dat_score blank on purpose (re-score with machine data on one embedding). Zunyi words are Chinese-native, translated to English. Lucas's machine words had leaked list-brackets — stripped on ingest, verified clean.
 
 _Built 2026-07-15 by Lumen._
+
+
+## DAT scoring (2026-07-15)
+Scored with Olson's official scorer (github.com/jayolson/divergent-association-task) — mean pairwise cosine distance of the first 7 valid unique words x100, `minimum=7`.
+Embedding: the lab's validated **100k-vocab 300d GloVe** subset (`olson_glove.pickle`, words.txt n glove.840B.300d). Validated against Olson's published examples: low=50.31, avg=77.90, high=95.22, cat-dog=19.83, cat-thimble=87.87 — exact.
+
+Three score columns, each next to its word set:
+- `word_dat_score` (after word_10) — individual/solo DAT (all sources)
+- `cue_dat_score` (after cue_10) — augpair machine cue words (BTB augpair)
+- `augment_dat_score` (after augment_10) — augpair final submitted words (BTB augpair)
+
+**Coverage:** word=10,544 (PNAS 8,549 + BTB 1,097 + Zunyi 898); cue=989; augment=987. Blank = fewer than 7 valid unique words (Olson's minimum). Means: PNAS 78.28, BTB 80.18, Zunyi 78.96 (PNAS matches Olson's published ~78).
+
+Note: on ~81 PNAS rows where respondents entered sentences/opposites/function words, this subset scores slightly differently from Olson's published `dat` (max ~14; mean abs diff 0.04 overall) because the 100k subset omits some function words the full GloVe includes. Per Dawei, the subset is the scorer of record for cross-source consistency.
