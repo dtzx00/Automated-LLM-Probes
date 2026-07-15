@@ -68,7 +68,7 @@ def _now():
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
 
 # ---- low-level POST that returns (parsed_json, response_headers) --------------------------
-def _post_full(url, headers, body, timeout=180):
+def _post_full(url, headers, body, timeout=300):
     req = urllib.request.Request(url, data=json.dumps(body).encode(), headers=headers)
     with urllib.request.urlopen(req, timeout=timeout) as r:
         raw = r.read()
@@ -281,10 +281,17 @@ def collect_one(model_row, n, out_csv, batch, gate, key, stop):
             payload, temp_used = call_once(prov, key, api, target_temp, seed)
         except Exception as e:
             msg = str(e)
-            if "429" in msg:
-                time.sleep(2.0); continue     # simple backoff; gate already paces us
+            transient = ("429" in msg or "timed out" in msg.lower() or "timeout" in msg.lower()
+                         or "temporarily" in msg.lower() or "connection" in msg.lower()
+                         or "reset" in msg.lower() or " 500" in msg or " 502" in msg or " 503" in msg or " 504" in msg)
+            if transient:
+                consec_transient = locals().get("consec_transient", 0) + 1
+                if consec_transient <= 8:
+                    time.sleep(min(2.0*consec_transient, 15)); continue   # retry, do NOT skip
+            # real error (e.g. HTTP 400/404) or too many transient failures -> skip-and-flag
             print(f"FAIL {name} ({prov}): {msg[:80]}", flush=True)
             return name, made-have, f"error:{msg[:60]}"
+        consec_transient = 0
         resp_ts = _now(); latency = int((time.time()-t0)*1000)
         nouns = parse_nouns(payload["text"]); status = "ok" if nouns else "failed"
         row = {
