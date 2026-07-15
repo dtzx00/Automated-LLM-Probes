@@ -15,11 +15,11 @@ source, and DAT scores computed with one scorer so human and machine numbers are
   individual, DAT-scored and cleaned. This is the file to analyze.
 
 ## Sources
-| Source | What it is | Respondents (with DAT words) |
-|---|---|---|
-| Olson PNAS 2021 (Study 2) | The published open DAT sample, 98 countries | 8,571 |
-| BTB | Our platform: solo (individual) and human+AI (augmented-pair) DAT exercises | 1,641 |
-| Zunyi | Field study, DAT arm, translated to English | 904 |
+| Source | Description | Respondents | DAT Score |
+|---|---|---|---|
+| Olson et al., 2021 (S2) | The published open DAT sample, 98 countries | 8,571 | 78 |
+| Beat The Bot Platform | https://beat-the-bot.com -- individual and augmented-pair exercises | 1,641 | 78 |
+| Zunyi Medical College | Field study, DAT arm, translated to English | 904 | 78 |
 
 ## Scope notes
 - The DAT word lists are the only human word-level data available across these studies. Two large
