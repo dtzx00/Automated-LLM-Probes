@@ -1,10 +1,20 @@
 # Machine DAT Data Collection — `data/`
 
+## Model selection — rules of thumb (locked with Dawei 2026-07-15)
+The grid in `models.csv` is chosen to satisfy all of the following:
+- **≤ 1 minute per call.** Anything slower is dropped: at n=500, >1 min/call means >500 min ≈ **8 h** just for that one model. This is why **GLM and Gemini are dropped entirely** (GLM ran 30–55 s/call).
+- **Roughly even models per API key, with the Western keys heaviest** — more on **OpenAI, Claude (Anthropic), and xAI (Grok)** than on the Eastern keys.
+- **A mix of model *types*:** fast/efficient · all-rounder · reasoning.
+- **A mix of region:** Eastern and Western models.
+- **A mix of era:** 2023 · 2024 · 2025 · 2026 (plus the 2022 baseline), using retired/legacy rows for the older years.
+
+Current grid: **55 rows = 38 live models collected at n=500 + 17 legacy/retired** (existing data stands).
+
+
 | File | What it is |
 |---|---|
 | **`models.csv`** | **The single source of truth for the model grid.** One row per model: `#, model, year, region, reasoning, provider, api_model_id, type, existing_samples_legacy, status`. Replaces the old `model_id_mapping.csv` / `model_inventory.csv` / `model_inventory_final.csv` / `model_summary.csv`. |
-| `data_collection.py` | **The collection script.** Single model (`--model ... --provider ...`) or full batch (`--all`). One raw row per generation, full provenance, incremental flush, resumable (skips models already at target n). Baseline prompt embedded in-code, verified against the SHA below. |
-| `run_parallel.py` | **The parallel run driver.** 7 lanes (one thread per provider key) run at once; within each lane a small worker pool (`--concurrency`, default 3) shares a **0.5 s launch gate** so no two requests on the same key start less than `--min-gap` seconds apart, even under concurrency. Thread-safe incremental writes, resumable. Reuses `data_collection`. |
+| `data_collection.py` | **The one collection script.** Single model (`--model ... --provider ...`), serial batch (`--all`), or **7-lane parallel run (`--parallel`)** — one thread per provider key, `--concurrency` runners per lane sharing a **0.5 s launch gate**. One raw row per generation, full provenance, incremental flush, resumable (skips models already at target n). Baseline prompt embedded in-code, verified against the SHA below. |
 | `data_cleaning.py` | **The cleaning/build script.** Builds the canonical temperature-0.5 dataset from the archived source machine files, tagging source + temperature, and writes `processed/machine_temp05.csv` (+ summary). |
 | `raw/` | The one raw output folder — per-provider `topup_<provider>.csv` files written during collection. |
 | `processed/` | Consolidated outputs: `machine_all.csv` (one row per generation, stable `record_id`s) and `machine_temp05.csv` (cleaned temp-0.5 analysis set). |
@@ -99,7 +109,7 @@ DeepSeek/Hunyuan return no `api_request_id`.
 python data/data_collection.py --model "GPT-4.1" --api-model gpt-4.1 --provider openai --n 1 --dry-run
 
 # FULL RUN (recommended): 7 lanes in parallel, 3 runners per lane, 0.5s launch gate per lane
-python data/run_parallel.py --n 500 --concurrency 3 --min-gap 0.5 --batch collect_2026_n500
+python data/data_collection.py --parallel --n 500 --concurrency 3 --min-gap 0.5 --batch collect_2026_n500
 #   - one lane per API key (7 keys -> 7 parallel lanes); rate limits are per key, so lanes never
 #     collide with each other. --concurrency = runners WITHIN each lane; --min-gap = min seconds
 #     between request launches on a single lane (held >=0.5s under any concurrency).
