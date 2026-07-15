@@ -15,8 +15,8 @@ source, and DAT scores computed with one scorer so human and machine numbers are
   individual, DAT-scored and cleaned. This is the file to analyze.
 
 ## Sources
-| Source | Description | Respondents | DAT Score |
+| Source | Description | Respondents | Mean DAT |
 |---|---|---|---|
-| Olson et al., 2021 (S2) | The published open DAT sample, 98 countries | 8,571 | 78 |
-| Beat The Bot Platform | https://beat-the-bot.com -- individual and augmented-pair exercises | 1,641 | 78 |
-| Zunyi Medical College | Field study, DAT arm, translated to English | 904 | 78 |
+| Olson et al., 2021 (S2) | The published open DAT sample, 98 countries | 8,571 | 78.47 |
+| Beat The Bot Platform | https://beat-the-bot.com -- individual and augmented-pair exercises | 1,641 | 80.27 |
+| Zunyi Medical College | Field study, DAT arm, translated to English | 904 | 79.02 |
