@@ -7,7 +7,7 @@ BTB human DAT data from `lucas23wong/btb-data-analysis` (`data/clean/master_user
 - Master users: 1,861
 - Have individual words: 1,454
 - Have augpair words: 1,259
-- **Superset (individual OR augpair): 1,647** -> this file (both=1,072; individual-only=382; augpair-only=193)
+- **Superset (individual OR augpair): 1,641 -> this file (both=1,072; individual-only=382; augpair-only=187)
 
 **Columns kept (58):**
 - Demographics/meta: user_id, class_session, gender, race_ethnicity, age, english_comfort, education, consent, major, newsletter, language, email, region, program_type
