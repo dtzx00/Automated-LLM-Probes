@@ -32,3 +32,13 @@ Zunyi field-study human DAT from `jingoystat/convergent-creativity` (`study4_cat
 
 _Note: Zunyi DAT responses are Chinese-native; these are English translations. Cross-source scoring on a shared embedding is a re-score-time decision._
 _Built 2026-07-15 by Lumen._
+
+## olson_pnas2021_study2_dat.csv
+Olson et al. 2021 PNAS Study 2 human DAT (OSF kbeq6, `study2.tsv`). The shared human spine across PNAS 2021, Dawei's NHB study, and Olson's Sci Reports 2026 (verified: Sci Reports `Human (8k)` tier is byte-identical — same n=8,572, mean=78.1930, sd=6.7731).
+
+**Kept (DAT + demographics, matching BTB/Zunyi):** id, age, gender, country, multilingual, dat, word.1..10.
+**Dropped:** aut.originality*, problems.* (Alternative Uses + problem-solving tasks — not part of this DAT consolidation).
+
+**Rows:** 8,572 (full published sample, 98 countries; all 10 words present, all scored, no duplicate IDs — nothing trimmed).
+
+_Verified against PNAS 2021 (N=8,572 exact) and Sci Reports 2026 human anchor. Built 2026-07-15 by Lumen._
