@@ -17,3 +17,18 @@ BTB human DAT data from `lucas23wong/btb-data-analysis` (`data/clean/master_user
 **Dropped:** all team_* and augmented_team_* columns.
 
 _Built 2026-07-15 by Lumen. Source commit: lucas23wong/btb-data-analysis main._
+
+## zunyi_dat.csv
+Zunyi field-study human DAT from `jingoystat/convergent-creativity` (`study4_cat_dat_gaokao`), TRANSLATED to English (source: Dawei's `2025_Zunyi_0929_translated_dat.csv`, built from the study's translation cache).
+
+**Kept:** DAT + demographics only.
+- DAT words: dat_1_en .. dat_10_en (English translations; originally administered/scored in Chinese)
+- Demographics: sex_en, ethnicity_en, province_en, major_en, college_en
+- CEE background attributes (kept as demographics, per Dawei): admission_batch_en, candidate_type_en, foreign_language_en
+
+**Dropped:** all CAT, CCAR, LRT, and Gaokao *score/outcome* measures; student name (PII); dat_score (will re-score all sources together with the machine data later).
+
+**Rows:** 904 (dropped 2 fully-empty DAT rows; one row has 9 words, kept pending re-score).
+
+_Note: Zunyi DAT responses are Chinese-native; these are English translations. Cross-source scoring on a shared embedding is a re-score-time decision._
+_Built 2026-07-15 by Lumen._
