@@ -24,3 +24,5 @@ Unified human DAT master — all three word-level sources joined, one row per hu
 **Demographics** are filled per source wherever collected: BTB richest; PNAS = age/gender/country/multilingual; Zunyi = gender/country/province(region)/ethnicity/major.
 
 _dat_score blank on purpose — joint human+machine re-score on one embedding after machine consolidation. Zunyi words are Chinese-native, translated to English. Built 2026-07-15 by Lumen._
+
+**Data-quality note (2026-07-15 fix):** Lucas's master stored `augmented_pair_machine_word_*` as a stringified list, leaking `[` / `]` onto machine_word_1 and machine_word_10 (e.g. `[thought`, `machine]`). Stripped on ingest; all word cells verified bracket-free. The `dat_word_*` (final submitted augpair words) were always clean — they ARE the human/pair's final submission (raw `Student Words`), distinct from the AI cue words in `machine_word_*`.
