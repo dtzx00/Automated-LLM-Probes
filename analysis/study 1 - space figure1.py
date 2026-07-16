@@ -65,9 +65,8 @@ def draw_A(ax):
     Msp=[np.random.choice(a,min(SAMPLE_N,len(a)),replace=False) for a in splits(Ms)]
     groups=["Bottom 10%","Middle 80%","Top 10%"]
     def ci95(a):
-        # 95% percentile interval over 1000 subsamples WITHOUT replacement (size = 80% of group)
-        k=max(2,int(0.8*len(a)))
-        bs=[np.mean(np.random.choice(a,k,replace=False)) for _ in range(1000)]
+        # 95% percentile interval over 1000 nonparametric bootstraps (with replacement, full N)
+        bs=[np.mean(np.random.choice(a,len(a),replace=True)) for _ in range(1000)]
         m=np.mean(a); return np.array([[m-np.percentile(bs,2.5)],[np.percentile(bs,97.5)-m]])
     def stars(p): return "***" if p<1e-3 else "**" if p<1e-2 else "*" if p<0.05 else "ns"
     AS=10; AC="#333333"; w=0.36
@@ -94,23 +93,26 @@ def draw_A(ax):
     ax.set_title("Panel A - Divergent Thinking Score by Split",fontsize=12,weight='bold')
     ax.spines[['top','right']].set_visible(False)
     ax.grid(axis='y',color='#cccccc',linewidth=0.7,alpha=0.8,zorder=0); ax.set_axisbelow(True)
-    note_under_legend(ax,leg,f"n={SAMPLE_N} per group,\nrandom sampled")
+    note_under_legend(ax,leg,f"n={SAMPLE_N} per group\n95% CI, 1000-rep bootstrap")
     sq(ax)
 
 # ---------- Panel B ----------
 def draw_B(ax):
     CAP=500; STEP=5; BREPS=1000
     def rarefy(pop):
-        N=len(pop); xs=list(range(STEP,min(CAP,N)+1,STEP)); ys=[];lo=[];hi=[]
-        for k in xs:
-            c=[]
-            for _ in range(BREPS):
-                idx=np.random.choice(N,k,replace=False)  # without replacement
-                s=set()
-                for i in idx: s.update(pop[i])
-                c.append(len(s))
-            ys.append(np.mean(c));lo.append(np.percentile(c,2.5));hi.append(np.percentile(c,97.5))
-        return xs,np.array(ys),np.array(lo),np.array(hi)
+        pop=[set(a) for a in pop]; N=len(pop); K=min(CAP,N); xs=list(range(STEP,K+1,STEP))
+        curves=np.zeros((BREPS,len(xs)))
+        for r in range(BREPS):
+            boot=np.random.randint(0,N,size=K); seen=set(); vals=[]
+            for pos,i in enumerate(boot):
+                seen|=pop[i]
+                if (pos+1)%STEP==0: vals.append(len(seen))
+            curves[r,:len(vals)]=vals[:len(xs)]
+        # CI OF THE MEAN: percentile of the per-rep curve gives the sampling dist of the mean curve
+        ys=curves.mean(0)
+        se=curves.std(0,ddof=1)/np.sqrt(BREPS)
+        lo=ys-1.96*se; hi=ys+1.96*se   # 95% CI of the mean
+        return xs,ys,lo,hi
     hx,hy,hl,hh=rarefy(Ha[:CAP]); mx,my,ml,mh=rarefy(Ma[:CAP])
     ax.plot(hx,hy,color=HUMAN,lw=2,label="Human"); ax.fill_between(hx,hl,hh,color=HUMAN,alpha=0.25)
     ax.plot(mx,my,color=MACHINE,lw=2,label="Machine"); ax.fill_between(mx,ml,mh,color=MACHINE,alpha=0.25)
@@ -123,22 +125,28 @@ def draw_B(ax):
     leg._legend_box.align='left'
     ax.spines[['top','right']].set_visible(False)
     ax.grid(color='#cccccc',linewidth=0.7,alpha=0.8,zorder=0); ax.set_axisbelow(True)
-    note_under_legend(ax,leg,"top 10%, first 7 words\n500 resp., respondent bootstrap 95% CI")
+    note_under_legend(ax,leg,"top 10%, first 7 words\n95% CI, 1000-rep bootstrap")
     ax.set_xlim(0,CAP+5); sq(ax)
 
 # ---------- Panel C ----------
 def draw_C(ax):
-    CAP=500; REPS=1000
+    CAP=500; REPS=1000; SMOOTH=20
     def new_per(pop):
         pop=[set(a) for a in pop]; N=len(pop); K=min(CAP,N)
-        allr=np.zeros((REPS,K))
+        def roll(a):
+            c=np.cumsum(np.insert(a,0,0)); return (c[SMOOTH:]-c[:-SMOOTH])/SMOOTH
+        rep_curves=[]
         for r in range(REPS):
-            idx=np.random.permutation(N)[:K]  # without replacement (random order)
-            seen=set()
-            for pos,i in enumerate(idx):
-                b=len(seen); seen|=pop[i]; allr[r,pos]=len(seen)-b
-        mean=allr.mean(0); lo=np.percentile(allr,2.5,axis=0); hi=np.percentile(allr,97.5,axis=0)
-        return np.arange(1,K+1),mean,lo,hi
+            boot=np.random.randint(0,N,size=K); seen=set(); marg=np.zeros(K)
+            for pos,i in enumerate(boot):
+                b=len(seen); seen|=pop[i]; marg[pos]=len(seen)-b
+            rep_curves.append(roll(marg))
+        rep_curves=np.array(rep_curves)
+        xs=np.arange(1,K+1)[SMOOTH-1:]
+        mean=rep_curves.mean(0)
+        se=rep_curves.std(0,ddof=1)/np.sqrt(REPS)
+        lo=mean-1.96*se; hi=mean+1.96*se   # 95% CI of the mean
+        return xs,mean,lo,hi
     hx,hy,hlo,hhi=new_per(Ha[:CAP]); mx,my,mlo,mhi=new_per(Ma[:CAP])
     ax.plot(hx,hy,color=HUMAN,lw=1.6,label="Human"); ax.fill_between(hx,hlo,hhi,color=HUMAN,alpha=0.25)
     ax.plot(mx,my,color=MACHINE,lw=1.6,label="Machine"); ax.fill_between(mx,mlo,mhi,color=MACHINE,alpha=0.25)
@@ -151,7 +159,7 @@ def draw_C(ax):
     leg._legend_box.align='left'
     ax.spines[['top','right']].set_visible(False)
     ax.grid(color='#cccccc',linewidth=0.7,alpha=0.8,zorder=0); ax.set_axisbelow(True)
-    ax.text(0.97,0.66,f"n={CAP} per group,\nrandom sampled",transform=ax.transAxes,fontsize=8.5,color='#555',va='top',ha='right')
+    ax.text(0.97,0.66,f"n={CAP} per group\n95% CI, 1000-rep bootstrap",transform=ax.transAxes,fontsize=8.5,color='#555',va='top',ha='right')
     ax.set_xlim(0,CAP+5); ax.set_ylim(0,7.2); sq(ax)
 
 # ---------- Panel D ----------
@@ -185,15 +193,17 @@ def draw_D(ax):
         Hs_=Hsets[L]; Ms_=Msets[L]
         hc=len(set().union(*Hs_)); mc=len(set().union(*Ms_))
         hcnt.append(hc); mcnt.append(mc); ratio.append(hc/mc if mc else np.nan)
-        kH=max(2,int(0.8*NH)); kM=max(2,int(0.8*NM))
         hb=[];mb=[];rb=[]
         for _ in range(REPS):
-            hi_=np.random.choice(NH,kH,replace=False); mi_=np.random.choice(NM,kM,replace=False)  # without replacement
+            hi_=np.random.randint(0,NH,size=NH); mi_=np.random.randint(0,NM,size=NM)  # with replacement, full N
             hu=set().union(*[Hs_[i] for i in hi_]); mu=set().union(*[Ms_[i] for i in mi_])
             hb.append(len(hu)); mb.append(len(mu)); rb.append(len(hu)/len(mu) if mu else np.nan)
-        hlo.append(np.percentile(hb,2.5)); hhi.append(np.percentile(hb,97.5))
-        mlo.append(np.percentile(mb,2.5)); mhi.append(np.percentile(mb,97.5))
-        rlo.append(np.nanpercentile(rb,2.5)); rhi.append(np.nanpercentile(rb,97.5))
+        hb=np.array(hb);mb=np.array(mb);rb=np.array(rb)
+        hse=hb.std(ddof=1)/np.sqrt(len(hb)); mse=mb.std(ddof=1)/np.sqrt(len(mb))
+        hlo.append(hb.mean()-1.96*hse); hhi.append(hb.mean()+1.96*hse)
+        mlo.append(mb.mean()-1.96*mse); mhi.append(mb.mean()+1.96*mse)
+        rse=np.nanstd(rb,ddof=1)/np.sqrt(np.sum(~np.isnan(rb)))
+        rlo.append(np.nanmean(rb)-1.96*rse); rhi.append(np.nanmean(rb)+1.96*rse)
     ax.plot(LEVELS,hcnt,'-o',color=HUMAN,lw=2,ms=6,zorder=3)
     ax.fill_between(LEVELS,hlo,hhi,color=HUMAN,alpha=0.22,zorder=1)
     ax.plot(LEVELS,mcnt,'-o',color=MACHINE,lw=2,ms=6,zorder=3)
@@ -211,7 +221,7 @@ def draw_D(ax):
        Line2D([0],[0],color=MACHINE,marker='o',lw=2,label='Machine')]
     leg=ax.legend(handles=h,loc='upper left',fontsize=10); leg._legend_box.align='left'
     ax.text(0.03,0.72,"Nx = how many more distinct categories\nhumans use than machines at that level",transform=ax.transAxes,fontsize=8,color='#555',va='top')
-    ax.text(0.03,0.63,f"n={SAMPLE_N} per group, random sampled",transform=ax.transAxes,fontsize=8.5,color='#555',va='top')
+    ax.text(0.03,0.63,f"n={SAMPLE_N} per group | 95% CI, 1000-rep bootstrap",transform=ax.transAxes,fontsize=8.5,color='#555',va='top')
     ax.set_ylim(0,max(hcnt)*1.12)
     x0,x1=ax.get_xlim(); y0,y1=ax.get_ylim(); ax.set_aspect(abs(x1-x0)/abs(y1-y0))
 
