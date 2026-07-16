@@ -8,13 +8,13 @@ DAT-scored and cleaned. This is the file to analyze.
 
 | source | subset | rows |
 |---|---|---|
-| olson_pnas2021 | study2 | 8,572 |
-| btb | both (individual + augmented-pair) | 1,072 |
+| olson_pnas2021 — Olson et al. (2021) | study2 | 8,572 |
+| btb — Beat the Bot Platform (2025) | both (individual + augmented-pair) | 1,072 |
 | btb | individual only | 382 |
 | btb | augmented-pair only | 187 |
-| zunyi | dat (2025) | 904 |
-| zunyi2024 | dat | 827 |
-| hsbc2025 | dat | 203 |
+| zunyi — Zunyi Medical University (2025) | dat | 904 |
+| zunyi2024 — Zunyi Medical University (2024) | dat | 827 |
+| hsbc2025 — HSBC AI Ambassador (2025) | dat | 203 |
 
 ## Column groups
 1. **Identifier** — `index` (unique per row), `source`, `subset`.
