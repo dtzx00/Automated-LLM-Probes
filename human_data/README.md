@@ -20,3 +20,5 @@ source, and DAT scores computed with one scorer so human and machine numbers are
 | Olson et al., 2021 (S2) | The published open DAT sample, 98 countries | 8,571 | 78.47 |
 | Beat The Bot Platform | https://beat-the-bot.com -- individual and augmented-pair exercises | 1,641 | 80.27 |
 | Zunyi Medical College | Field study, DAT arm, translated to English | 904 | 79.02 |
+| Zunyi 2024 | Field study cohort (2024), DAT arm | 919 | 78.44 |
+| HSBC 2025 | Corporate workshop cohort, DAT | 203 | 79.02 |
