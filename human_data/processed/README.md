@@ -4,7 +4,7 @@
 The unified human DAT dataset: all three sources joined, **one row per unique respondent**,
 DAT-scored and cleaned. This is the file to analyze.
 
-**12,239 respondents | 51 columns**
+**12,147 respondents | 51 columns**
 
 | source | subset | rows |
 |---|---|---|
@@ -13,7 +13,7 @@ DAT-scored and cleaned. This is the file to analyze.
 | btb | individual only | 382 |
 | btb | augmented-pair only | 187 |
 | zunyi | dat (2025) | 904 |
-| zunyi2024 | dat | 919 |
+| zunyi2024 | dat | 827 |
 | hsbc2025 | dat | 203 |
 
 ## Column groups
