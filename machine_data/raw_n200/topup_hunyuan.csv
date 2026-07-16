@@ -5687,3 +5687,455 @@ Let me check these are all good:
 These cover different categories and are quite diverse. None are proper nouns, none are overly technical.
 </think>
 chair, river, freedom, music, mountain, clock, laughter, bread, shadow, puzzle",ok,10,<think>,the user wants 10 single-word english nouns that are as different from each other as possible. they should be things,objects,or concepts (not proper nouns,not specialized/technical terms). i need to make them as diverse as possible - covering different categories like physical objects,abstract concepts,natural things,man-made things,etc,let me brainstorm diverse nouns:,,git:84973a1
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:08.063Z,2026-07-16T00:37:15.729Z,7665,,3d29c2ac-da59-483e-bcb4-63c9f9ee2e4f,,stop,314,572,886,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. Let me think about what ""different"" means here - they should span different categories: concrete objects, abstract concepts, natural things, human-made things, etc.
+
+Let me brainstorm a wide variety:
+1. chair (furniture/object)
+2. freedom (abstract concept)
+3. ocean (natural feature)
+4. music (art/sound concept)
+5. mountain (natural feature - but similar to ocean)
+6. love (abstract concept - similar to freedom)
+7. computer (technology)
+8. bread (food)
+9. silence (abstract concept)
+10. shadow (natural phenomenon)
+
+Let me try to make them more diverse:
+1. umbrella (object)
+2. justice (abstract concept)
+3. butterfly (animal)
+4. architecture (field/structure)
+5. laughter (concept)
+6. telescope (instrument)
+7. river (natural)
+8. democracy (concept)
+9. pillow (object)
+10. thunder (phenomenon)
+
+Hmm, let me ensure they're all different categories:
+1. chair - furniture
+2. freedom - abstract
+3. ocean - nature/water
+4. music - sound/art
+5. mountain - nature/land
+6. computer - technology
+7. bread - food
+8. silence - abstract
+9. butterfly - animal
+10. telescope - instrument
+
+Actually, let me make them more distinct:
+- chair (furniture)
+- freedom (abstract political concept)
+- ocean (nature - water)
+- music (abstract - art)
+- mountain (nature - landform)
+- computer (technology)
+- bread (food)
+- butterfly (animal)
+- shadow (natural phenomenon)
+- democracy (abstract political concept - but similar to freedom)
+
+Let me try again with more distinct items:
+1. chair
+2. freedom
+3. ocean
+4. music
+5. mountain
+6. computer
+7. bread
+8. butterfly
+9. shadow
+10. democracy
+
+Or maybe:
+1. umbrella
+2. courage
+3. river
+4. painting
+5. desert
+6. smartphone
+7. soup
+8. eagle
+9. moonlight
+10. friendship
+
+Let me go with a really diverse set:
+1. chair (furniture/object)
+2. freedom (abstract concept)
+3. ocean (nature - large body of water)
+4. music (abstract - art form)
+5. mountain (nature - landform)
+6. computer (technology)
+7. bread (food)
+8. butterfly (animal)
+9. shadow (natural phenomenon)
+10. laughter (abstract - emotion/expression)
+
+This is fairly diverse. Let me finalize this list.
+</think>
+chair, freedom, ocean, music, mountain, computer, bread, butterfly, shadow, laughter",ok,10,<think>,"the user wants 10 nouns that are as different from each other as possible. let me think about what ""different"" means here - they should span different categories: concrete objects",abstract concepts,natural things,human-made things,etc,let me brainstorm a wide variety:,let me try to make them more diverse:,hmm,let me ensure they're all different categories:,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:07.562Z,2026-07-16T00:37:18.233Z,10671,,595cce07-117c-470a-9e7b-ff51febfa0cc,,stop,179,677,856,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, bicycle, cloud, dragon, eclipse, feather, glacier, harp, igloo, journey",ok,10,apple,bicycle,cloud,dragon,eclipse,feather,glacier,harp,igloo,journey,,git:37fb62e
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:15.729Z,2026-07-16T00:37:22.203Z,6473,,097985e2-cdab-4fd7-b673-e5a75146dc89,,stop,314,334,648,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. They need to be:
+1. Single-word English nouns
+2. Things, objects, concepts
+3. Not proper nouns (no people/places)
+4. Not specialized or technical vocabulary
+5. Output as comma-separated string
+
+Let me think of 10 very different nouns from various categories:
+- Natural: river, mountain
+- Animal-related: feather
+- Food: bread
+- Abstract: freedom
+- Object: chair
+- Body part: hand
+- Weather: thunder
+- Time: morning
+- Music: melody
+- Light: shadow
+
+Let me make sure these are all distinct categories and not too similar. Let me revise to maximize difference:
+
+- river (nature/geography - water feature)
+- feather (nature/animal)
+- bread (food)
+- chair (furniture/object)
+- freedom (abstract concept)
+- thunder (weather/sound)
+- shadow (light concept)
+- ladder (tool/object)
+- whisper (sound)
+- mirror (object)
+
+These cover different categories: nature, animal, food, furniture, abstract, weather, light, tool, sound, reflection. Good diversity.
+
+Let me double check each is a single-word common noun:
+- river ✓
+- feather ✓
+- bread ✓
+- chair ✓
+- freedom ✓
+- thunder ✓
+- shadow ✓
+- ladder ✓
+- whisper ✓ (it's a noun for a soft sound)
+- mirror ✓
+
+These are all common everyday words, not technical.
+</think>
+river, feather, bread, chair, freedom, thunder, shadow, ladder, whisper, mirror",ok,10,<think>,the user wants 10 nouns that are as different from each other as possible. they need to be:,objects,concepts,let me think of 10 very different nouns from various categories:,- natural: river,mountain,- animal-related: feather,- food: bread,- abstract: freedom,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:08.563Z,2026-07-16T00:37:23.057Z,14493,,01733461-49c9-4c85-8900-eeb24ecb0591,,stop,179,691,870,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, river, whisper, shadow, lantern, puzzle, shelter, mirage, compass, story",ok,10,apple,river,whisper,shadow,lantern,puzzle,shelter,mirage,compass,story,,git:37fb62e
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:22.203Z,2026-07-16T00:37:27.973Z,5769,,c3569c1e-626a-4826-b658-ea05eb6acec9,,stop,314,359,673,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 single-word nouns that are as different from each other as possible. They should be:
+1. Single-word English nouns
+2. Things, objects, or concepts
+3. No proper nouns
+4. No specialized or technical terms
+5. Output as comma-separated string
+6. Nothing else
+
+Let me think of 10 nouns that are maximally different from each other. I should aim for diversity across different categories:
+
+- Concrete objects: chair, book
+- Natural things: tree, river
+- Abstract concepts: freedom, courage
+- Body parts: hand
+- Food: bread
+- Weather: thunder
+- Time: moment
+- Emotions: joy
+
+Let me try to make them very diverse:
+
+1. chair (furniture/object)
+2. freedom (abstract concept)
+3. thunder (natural phenomenon/sound)
+4. bread (food)
+5. river (natural geographic feature)
+6. shadow (visual phenomenon)
+7. music (art form)
+8. memory (cognitive concept)
+9. ladder (tool/object)
+10. courage (abstract virtue)
+
+These seem quite diverse - covering objects, abstract concepts, natural phenomena, food, tools, etc.
+
+Let me double-check:
+- chair ✓ (concrete object)
+- freedom ✓ (abstract concept)
+- thunder ✓ (natural phenomenon)
+- bread ✓ (food)
+- river ✓ (natural feature)
+- shadow ✓ (visual phenomenon)
+- music ✓ (art form)
+- memory ✓ (cognitive concept)
+- ladder ✓ (tool)
+- courage ✓ (abstract virtue)
+
+All single words, all common English, no proper nouns, no technical terms. They span very different semantic categories.
+</think>
+chair, freedom, thunder, bread, river, shadow, music, memory, ladder, courage",ok,10,<think>,the user wants 10 single-word nouns that are as different from each other as possible. they should be:,objects,or concepts,let me think of 10 nouns that are maximally different from each other. i should aim for diversity across different categories:,- concrete objects: chair,book,- natural things: tree,river,- abstract concepts: freedom,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:18.234Z,2026-07-16T00:37:29.886Z,11652,,bfe2cc0c-89a8-48ca-9660-8bbbf2dbcdfa,,stop,179,819,998,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"tree, book, cloud, song, joy, stone, river, star, dog, peace",ok,10,tree,book,cloud,song,joy,stone,river,star,dog,peace,,git:37fb62e
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:27.973Z,2026-07-16T00:37:33.916Z,5942,,441b6e63-33a2-471d-a7c9-ace8575a7dea,,stop,314,357,671,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 single-word English nouns that are as different from each other as possible. Let me think about this carefully:
+
+1. Single-word nouns in English
+2. Things, objects, and concepts
+3. No proper nouns (no people or places)
+4. No specialized/technical vocabulary
+5. Just common, everyday words
+6. Output as comma-separated string
+
+I need to maximize diversity across different categories:
+- Physical objects
+- Abstract concepts
+- Natural things
+- Man-made things
+- Living things
+- Etc.
+
+Let me brainstorm 10 very different nouns:
+1. Cloud (natural, atmospheric)
+2. Chair (man-made furniture)
+3. Music (abstract concept)
+4. River (geographical feature)
+5. Mirror (man-made object)
+6. Freedom (abstract concept)
+7. Bread (food)
+8. Telescope (instrument)
+9. Silence (abstract concept)
+10. Mountain (natural feature)
+
+Wait, ""mountain"" and ""river"" are somewhat similar (both geographical). Let me reconsider.
+
+Let me try for more diversity:
+1. Cloud (atmospheric)
+2. Chair (furniture)
+3. Music (abstract)
+4. Bread (food)
+5. Mirror (object)
+6. Telescope (instrument)
+7. Freedom (abstract)
+8. Ocean (nature)
+9. Candle (object)
+10. Laughter (abstract action/feeling)
+
+These cover:
+- Natural phenomena (cloud, ocean)
+- Furniture (chair)
+- Abstract concepts (music, freedom, laughter)
+- Food (bread)
+- Man-made objects (mirror, telescope, candle)
+
+That's pretty diverse. Let me finalize.
+</think>
+cloud, chair, music, bread, mirror, telescope, freedom, ocean, candle, laughter",ok,10,<think>,the user wants 10 single-word english nouns that are as different from each other as possible. let me think about this carefully:,objects,and concepts,everyday words,i need to maximize diversity across different categories:,- physical objects,- abstract concepts,- natural things,- man-made things,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:23.057Z,2026-07-16T00:37:36.252Z,13195,,f3c532c7-64fb-45cc-8e37-fad27048f744,,stop,179,605,784,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"bicycle, imagination, glacier, whisper, puzzle, symphony, cloud, philosophy, lantern, magnet",ok,10,bicycle,imagination,glacier,whisper,puzzle,symphony,cloud,philosophy,lantern,magnet,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:29.887Z,2026-07-16T00:37:38.433Z,8546,,4ce4bab3-f118-4a3b-b7dd-c51e699c839f,,stop,179,475,654,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, chair, sky, dream, justice, mountain, water, music, time, light",ok,10,apple,chair,sky,dream,justice,mountain,water,music,time,light,,git:37fb62e
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:33.916Z,2026-07-16T00:37:38.602Z,4685,,61aec7cb-fb62-49b9-9a8d-dc6ec91cec50,,stop,314,270,584,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 single-word nouns that are as different from each other as possible. They should be:
+- Things, objects, concepts
+- Not proper nouns
+- Not specialized/technical terms
+- Output as comma-separated string
+
+Let me think of diverse categories:
+1. Furniture - chair
+2. Weather - thunderstorm
+3. Emotion - happiness
+4. Clothing - sweater
+5. Food - bread
+6. Tool - hammer
+7. Music - melody
+8. Nature - mountain
+9. Time - century
+10. Abstract - freedom
+
+Let me make sure these are all different categories and simple words.
+
+chair, thunderstorm, happiness, sweater, bread, hammer, melody, mountain, century, freedom
+
+All single words, common usage, different categories. Let me verify:
+- chair: object/furniture
+- thunderstorm: weather/natural phenomenon
+- happiness: emotion/concept
+- sweater: clothing
+- bread: food
+- hammer: tool
+- melody: music/concept
+- mountain: geographical feature
+- century: time concept
+- freedom: abstract concept
+
+These are quite diverse. Let me make sure none are technical terms. All seem like common everyday words.
+</think>
+chair, thunderstorm, happiness, sweater, bread, hammer, melody, mountain, century, freedom",ok,10,<think>,the user wants 10 single-word nouns that are as different from each other as possible. they should be:,- things,objects,concepts,- not proper nouns,- not specialized/technical terms,- output as comma-separated string,let me think of diverse categories:,let me make sure these are all different categories and simple words,,git:37fb62e
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:38.934Z,2026-07-16T00:37:43.289Z,4354,,bafcf9f9-ade6-475a-a916-f6c5db67a39f,,stop,314,309,623,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 single-word English nouns that are as different from each other as possible. Let me think about diverse categories:
+- Things/objects: chair, mountain, river, book
+- Concepts: freedom, justice, love, time
+- Abstract concepts: silence, music, memory, dream
+- Natural elements: sun, ocean, tree, flower
+- Food: bread, apple
+- Animals: dog, cat
+- Body parts: hand, eye
+
+I need to ensure they are as different as possible. Let me pick from very different domains:
+
+1. chair (furniture/physical object)
+2. mountain (geography/landform)
+3. silence (abstract concept)
+4. river (geography/water)
+5. book (physical object/medium)
+6. freedom (abstract concept)
+7. bread (food)
+8. music (art/concept)
+9. clock (physical object/time)
+10. shadow (phenomenon)
+
+Let me make sure none are proper nouns and they're all simple, common nouns. Let me check:
+- chair ✓
+- mountain ✓
+- silence ✓
+- river ✓
+- book ✓
+- freedom ✓
+- bread ✓
+- music ✓
+- clock ✓
+- shadow ✓
+
+These are all quite different from each other - covering furniture, geography, abstract concepts, physical objects, food, art, time-telling devices, and natural phenomena.
+</think>
+chair, mountain, silence, river, book, freedom, bread, music, clock, shadow",ok,10,<think>,the user wants 10 single-word english nouns that are as different from each other as possible. let me think about diverse categories:,- things/objects: chair,mountain,river,book,- concepts: freedom,justice,love,time,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:36.252Z,2026-07-16T00:37:45.970Z,9717,,84687e22-69ed-4f7b-8f76-ff13f9e75521,,stop,179,506,685,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, piano, whisper, sunrise, blanket, quartz, suitcase, glacier, candle, dinosaur",ok,10,mountain,piano,whisper,sunrise,blanket,quartz,suitcase,glacier,candle,dinosaur,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:38.433Z,2026-07-16T00:37:49.744Z,11310,,1459eb18-8523-44be-8135-498e53734f4f,,stop,179,711,890,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"river, guitar, happiness, door, rain, memory, mirror, time, sky, seed",ok,10,river,guitar,happiness,door,rain,memory,mirror,time,sky,seed,,git:37fb62e
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:43.289Z,2026-07-16T00:37:49.963Z,6674,,99963a06-7de8-45cd-b510-74552fa7a276,,stop,314,393,707,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+I need to generate 10 nouns that are as different from each other as possible, following the rules:
+1. Single-word English nouns
+2. Things, objects, concepts
+3. No proper nouns (no people, places, brands, etc.)
+4. No specialized or technical terms
+5. Output as comma-separated string only
+
+Let me think of 10 highly distinct categories:
+
+1. Object/physical thing: chair
+2. Natural phenomenon: lightning
+3. Abstract concept: freedom
+4. Body part: shoulder
+5. Food: bread
+6. Animal (general): bird
+7. Material: wood
+8. Vehicle: bicycle
+9. Emotion: happiness
+10. Time period: century
+
+Let me check for diversity:
+- chair: furniture, physical object, indoor
+- lightning: natural phenomenon, weather
+- freedom: abstract concept
+- shoulder: body part
+- bread: food
+- bird: animal
+- wood: material
+- bicycle: vehicle
+- happiness: emotion
+- century: time period
+
+These cover very different semantic domains. All are common, simple words. No proper nouns. No technical terms. Single words.
+
+Let me double-check ""century"" - is it a thing/object/concept? It could be considered a concept or time period. The rules say ""things, objects and concepts"" so time concepts should be fine.
+
+Actually, ""bicycle"" might be a bit specific but it's a common object. 
+""Shoulder"" is a body part - is that a thing? Yes, body parts are things.
+
+Let me verify none are proper nouns - all are common nouns.
+None are technical terms - all are everyday vocabulary.
+
+Final check: chair, lightning, freedom, shoulder, bread, bird, wood, bicycle, happiness, century
+
+These are maximally diverse.
+</think>
+chair, lightning, freedom, shoulder, bread, bird, wood, bicycle, happiness, century",ok,10,<think>,i need to generate 10 nouns that are as different from each other as possible,following the rules:,objects,concepts,places,brands,etc.),let me think of 10 highly distinct categories:,let me check for diversity:,,git:37fb62e
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:50.245Z,2026-07-16T00:37:55.995Z,5750,,740dc6db-14bc-4eac-ae49-19a7844be83e,,stop,314,360,674,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 single-word English nouns that are as different from each other as possible. They should be common nouns (things, objects, concepts), not proper nouns, not technical terms.
+
+Let me think of 10 very different categories:
+1. A vehicle
+2. A food
+3. An emotion
+4. A natural phenomenon
+5. A tool
+6. A piece of furniture
+7. A clothing item
+8. A musical instrument
+9. A building
+10. An animal
+
+Let me pick specific words:
+1. bicycle (vehicle/transportation)
+2. bread (food)
+3. happiness (emotion)
+4. thunder (natural phenomenon)
+5. hammer (tool)
+6. chair (furniture)
+7. jacket (clothing)
+8. piano (musical instrument)
+9. cathedral (building)
+10. elephant (animal)
+
+These are all quite different from each other. Let me verify they meet the criteria:
+- Single-word: yes
+- Things/objects/concepts: yes
+- Not proper nouns: yes
+- Not specialized/technical: yes (these are all common words)
+
+Let me make them even more diverse by thinking about different domains:
+1. bicycle - transportation
+2. bread - food
+3. happiness - abstract concept/emotion
+4. thunder - natural phenomenon
+5. hammer - tool
+6. chair - furniture
+7. jacket - clothing
+8. piano - musical instrument
+9. cathedral - architecture/building
+10. elephant - animal
+
+This covers transportation, food, emotion, nature, tools, furniture, clothing, music, architecture, and animals. Very diverse.
+</think>
+bicycle, bread, happiness, thunder, hammer, chair, jacket, piano, cathedral, elephant",ok,10,<think>,the user wants 10 single-word english nouns that are as different from each other as possible. they should be common nouns (things,objects,concepts),not proper nouns,not technical terms,let me think of 10 very different categories:,let me pick specific words:,these are all quite different from each other. let me verify they meet the criteria:,- single-word: yes,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:49.744Z,2026-07-16T00:38:13.054Z,23309,,36b14b95-6181-4a30-aeb8-79ea08d2aa09,,stop,179,1692,1871,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"chair, bicycle, rain, mountain, sun, dream, silence, memory, chocolate, dog",ok,10,chair,bicycle,rain,mountain,sun,dream,silence,memory,chocolate,dog,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:38:13.054Z,2026-07-16T00:38:23.031Z,9976,,cace55d8-f8b8-46fd-96ec-1dfe2adc3d8c,,stop,179,642,821,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, happiness, book, chair, river, rain, idea, car, light",ok,10,apple,mountain,happiness,book,chair,river,rain,idea,car,light,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:37:45.970Z,2026-07-16T00:38:27.510Z,41539,,f9dea86a-29f8-4324-b254-b22c7026afbb,,stop,179,2373,2552,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"whale, star, rain, mountain, book, computer, automobile, happiness, justice, dream",ok,10,whale,star,rain,mountain,book,computer,automobile,happiness,justice,dream,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:38:23.031Z,2026-07-16T00:38:33.198Z,10167,,545ab41e-7140-4d11-8991-006c9987f36c,,stop,179,710,889,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, laughter, book, chair, river, idea, shadow, clock, rain",ok,10,apple,mountain,laughter,book,chair,river,idea,shadow,clock,rain,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:38:27.510Z,2026-07-16T00:38:36.910Z,9399,,8d8ae2dd-2ad8-461e-9f41-a8b06785b167,,stop,179,561,740,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"umbrella, rainbow, silence, basketball, compass, philosophy, moonlight, bicycle, laughter, candle",ok,10,umbrella,rainbow,silence,basketball,compass,philosophy,moonlight,bicycle,laughter,candle,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:38:33.198Z,2026-07-16T00:38:49.304Z,16106,,6e7d1b41-f884-4f27-8d1b-356b57076efc,,stop,179,1004,1183,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, happiness, clock, river, silence, book, shadow, fire, shoe, music",ok,10,mountain,happiness,clock,river,silence,book,shadow,fire,shoe,music,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:38:36.910Z,2026-07-16T00:38:55.459Z,18548,,8ce598ff-238b-4fb2-906d-b65a3f83ce7c,,stop,179,981,1160,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"tree, guitar, brick, cloud, umbrella, puzzle, horizon, dream, silence, candle",ok,10,tree,guitar,brick,cloud,umbrella,puzzle,horizon,dream,silence,candle,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:38:49.305Z,2026-07-16T00:38:59.397Z,10092,,b1f77b61-94e9-42ce-9c8f-981a0e7efecd,,stop,179,674,853,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"tree, book, rain, courage, silence, mirror, bicycle, umbrella, lantern, friendship",ok,10,tree,book,rain,courage,silence,mirror,bicycle,umbrella,lantern,friendship,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:38:59.397Z,2026-07-16T00:39:08.053Z,8656,,3c4649f8-c1f6-41e6-8ec2-ffaf98495315,,stop,179,563,742,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"tree, guitar, happiness, moon, river, shoe, thought, sunlight, clock, memory",ok,10,tree,guitar,happiness,moon,river,shoe,thought,sunlight,clock,memory,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:38:55.459Z,2026-07-16T00:39:13.578Z,18118,,16d69118-9d9c-43ea-936d-0f28e60d79ec,,stop,179,1054,1233,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"river, umbrella, justice, elephant, guitar, clock, storm, mirror, garden, whisper",ok,10,river,umbrella,justice,elephant,guitar,clock,storm,mirror,garden,whisper,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:39:08.054Z,2026-07-16T00:39:17.918Z,9864,,7e867a74-007b-4cf5-9f51-e500f12ba672,,stop,179,608,787,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, happiness, clock, river, silence, guitar, shadow, library, rain",ok,10,apple,mountain,happiness,clock,river,silence,guitar,shadow,library,rain,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:39:13.578Z,2026-07-16T00:39:26.007Z,12428,,21d1cc8b-08ef-4f0f-9921-bc78096be427,,stop,179,799,978,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"river, mountain, candle, whisper, laughter, umbrella, clock, shadow, bread, melody",ok,10,river,mountain,candle,whisper,laughter,umbrella,clock,shadow,bread,melody,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:39:17.918Z,2026-07-16T00:39:33.158Z,15239,,5cb71a88-659c-4b80-9f68-2ded04babd35,,stop,179,943,1122,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, chair, river, dream, guitar, justice, shadow, rain, book, mountain",ok,10,apple,chair,river,dream,guitar,justice,shadow,rain,book,mountain,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:39:26.007Z,2026-07-16T00:39:37.060Z,11053,,69cd6f6a-5aa8-4d71-9991-14bd2c8f2532,,stop,179,642,821,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, clock, piano, umbrella, bicycle, cloud, memory, harmony, mystery",ok,10,apple,mountain,clock,piano,umbrella,bicycle,cloud,memory,harmony,mystery,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:39:33.158Z,2026-07-16T00:39:42.045Z,8887,,ef591e38-18fd-456f-ac39-73a469a5eda7,,stop,179,655,834,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"chair, sunrise, friendship, mountain, book, silence, rain, idea, mirror, song",ok,10,chair,sunrise,friendship,mountain,book,silence,rain,idea,mirror,song,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:39:42.046Z,2026-07-16T00:39:53.769Z,11722,,961b2be0-3d76-4e1f-8ce2-286397a1f382,,stop,179,723,902,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, book, mountain, music, happiness, rain, shadow, idea, door, clock",ok,10,apple,book,mountain,music,happiness,rain,shadow,idea,door,clock,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:39:37.060Z,2026-07-16T00:39:53.957Z,16896,,1265e81a-cdb7-4d9a-9b46-432f1fa9cd16,,stop,179,962,1141,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"tree, river, umbrella, laughter, justice, symphony, bicycle, whisper, sunset, philosophy",ok,10,tree,river,umbrella,laughter,justice,symphony,bicycle,whisper,sunset,philosophy,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:39:53.769Z,2026-07-16T00:40:00.936Z,7167,,f0749f30-d3d7-47ff-b3a1-4966c67e9107,,stop,179,462,641,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"river, chair, idea, fire, shadow, music, planet, bread, clock, rain",ok,10,river,chair,idea,fire,shadow,music,planet,bread,clock,rain,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:40:00.937Z,2026-07-16T00:40:13.276Z,12339,,90eb74ec-d0fb-4699-b313-0f9ffe574494,,stop,179,821,1000,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, river, book, chair, rain, silence, light, fire, time, dream",ok,10,mountain,river,book,chair,rain,silence,light,fire,time,dream,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:39:54.269Z,2026-07-16T00:40:21.410Z,27140,,af7777a6-926f-431f-aa19-9e9425ebaf12,,stop,179,1657,1836,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, bridge, cloud, diamond, engine, forest, glacier, horizon, island, journal",ok,10,apple,bridge,cloud,diamond,engine,forest,glacier,horizon,island,journal,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:40:21.410Z,2026-07-16T00:40:33.370Z,11960,,791e0422-ac68-4dcd-85a7-c97a9551ff9b,,stop,179,607,786,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, clock, rain, idea, mountain, silence, music, book, sorrow, cloud",ok,10,apple,clock,rain,idea,mountain,silence,music,book,sorrow,cloud,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:40:13.276Z,2026-07-16T00:40:36.895Z,23619,,1adbccfe-f70f-4611-bfc9-93f19580c962,,stop,179,1707,1886,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"stone, rain, lamp, mirror, bird, dream, silence, justice, music, freedom",ok,10,stone,rain,lamp,mirror,bird,dream,silence,justice,music,freedom,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:40:33.371Z,2026-07-16T00:40:43.626Z,10255,,0da100ce-d705-4a35-a0f2-e2bf57a9c488,,stop,179,531,710,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cloud, horizon, labyrinth, echo, lantern, cascade, ember, blueprint, mosaic, whisper",ok,10,cloud,horizon,labyrinth,echo,lantern,cascade,ember,blueprint,mosaic,whisper,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:40:36.896Z,2026-07-16T00:41:01.353Z,24457,,6167e5e3-3e80-4481-ba9a-d3d4a1278ad1,,stop,179,1644,1823,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, bicycle, silence, galaxy, gravity, pencil, happiness, whisper, memory, bread",ok,10,mountain,bicycle,silence,galaxy,gravity,pencil,happiness,whisper,memory,bread,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:40:43.626Z,2026-07-16T00:41:03.356Z,19730,,091c8a67-d09c-4118-9205-aa064fd8f65e,,stop,179,1064,1243,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, umbrella, bicycle, clock, mountain, shadow, happiness, silence, revolution, galaxy",ok,10,apple,umbrella,bicycle,clock,mountain,shadow,happiness,silence,revolution,galaxy,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:41:03.357Z,2026-07-16T00:41:20.955Z,17597,,c3ba3ec7-fef9-45da-8f50-99fff89fe5ca,,stop,179,963,1142,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, happiness, clock, river, silence, umbrella, shadow, friendship, bicycle",ok,10,apple,mountain,happiness,clock,river,silence,umbrella,shadow,friendship,bicycle,,git:37fb62e
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:41:01.354Z,2026-07-16T00:41:25.393Z,24039,,ea26614c-c7d2-4969-afdf-6e5da36d84fb,,stop,179,1624,1803,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"shadow, flame, river, whisper, memory, clock, mountain, bicycle, laughter, rain",ok,10,shadow,flame,river,whisper,memory,clock,mountain,bicycle,laughter,rain,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:41:20.955Z,2026-07-16T00:41:31.290Z,10335,,bfc133bb-1200-4e6d-9825-4897c5c996fa,,stop,179,620,799,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, happiness, clock, rainbow, guitar, pencil, candle, butterfly, universe",ok,10,apple,mountain,happiness,clock,rainbow,guitar,pencil,candle,butterfly,universe,,git:37fb62e
+,MiniMax-M2.7,minimax-m2.7,minimax-m2.7,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:41:31.291Z,2026-07-16T00:41:46.591Z,15300,,d354ac8d-a111-42f5-87d4-2b85060ec7b1,,stop,179,991,1170,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"carrot, moon, rainbow, clock, dream, whisper, bridge, piano, forest, silence",ok,10,carrot,moon,rainbow,clock,dream,whisper,bridge,piano,forest,silence,,git:37fb62e
