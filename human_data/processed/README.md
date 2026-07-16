@@ -4,7 +4,7 @@
 The unified human DAT dataset: all sources joined, **one row per respondent**, DAT-scored and
 cleaned. This is the file to analyze.
 
-**12,147 respondents | 51 columns**
+**12,147 respondents | 52 columns**
 
 | source code | display name | subset | rows |
 |---|---|---|---|
@@ -19,7 +19,7 @@ cleaned. This is the file to analyze.
 The `source` column in the CSV holds the short code; the display name is for write-ups.
 
 ## Column groups
-1. **Identifier** — `index` (unique per row), `source`, `subset`.
+1. **Identifier** — `index` (unique per row), `source`, `subset`, `collection_date` (data-collection timestamp; filled for Zunyi 2024 + HSBC 2025 from their CollectionDate, blank for sources that did not record one).
 2. **Individual words** — `word_1..word_10`: the respondent's solo DAT words. Every source fills this.
 3. **Cue model** — `cue_model_name`: the AI model in the augmented-pair exercise (Beat the Bot
    augmented-pair only; the solo exercise uses no AI).
