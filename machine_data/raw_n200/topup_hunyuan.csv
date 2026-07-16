@@ -1,0 +1,1053 @@
+record_id,model_name,api_model_requested,api_model_returned,provider,endpoint_base,batch,region,reasoning,model_year,temperature_requested,temperature_effective,temp_range_used,seed,request_timestamp_utc,response_timestamp_utc,latency_ms,api_request_id,response_id,system_fingerprint,finish_reason,prompt_tokens,completion_tokens,total_tokens,prompt_sha256,raw_response_text,parse_status,n_nouns_parsed,noun_0,noun_1,noun_2,noun_3,noun_4,noun_5,noun_6,noun_7,noun_8,noun_9,dat_score,collector_version
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:15:57.896Z,2026-07-16T00:15:59.977Z,2081,,d147abc0-a3c2-4495-a351-128921c17925,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, idea, spoon, cat, book, freedom, cloud, shoe, music",ok,10,apple,mountain,idea,spoon,cat,book,freedom,cloud,shoe,music,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:15:58.897Z,2026-07-16T00:16:01.846Z,2949,,e0bb271f-6121-43e9-8838-03b3eea0a6de,,stop,144,200,344,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"sky, rock, idea, song, tree, chair, water, shadow, dream, coin",ok,10,sky,rock,idea,song,tree,chair,water,shadow,dream,coin,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:15:59.977Z,2026-07-16T00:16:01.966Z,1989,,3c3cab1c-59a3-4590-8be7-d856aa992ab9,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"book, mountain, spoon, freedom, cloud, dog, clock, idea, river, shoe",ok,10,book,mountain,spoon,freedom,cloud,dog,clock,idea,river,shoe,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:02.347Z,2026-07-16T00:16:04.380Z,2033,,e03a4886-8024-473c-a864-dbaf69a2a942,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"chair, happiness, river, book, cloud, apple, freedom, hammer, star, silence",ok,10,chair,happiness,river,book,cloud,apple,freedom,hammer,star,silence,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:01.846Z,2026-07-16T00:16:05.116Z,3270,,a36a6b37-c4c1-4090-bcd1-409aa94a177e,,stop,144,256,400,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"happiness, rock, book, tree, cloud, idea, chair, water, time, mountain",ok,10,happiness,rock,book,tree,cloud,idea,chair,water,time,mountain,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:04.380Z,2026-07-16T00:16:06.353Z,1972,,8611d1ff-c39f-472b-a021-cb6b7cb328b6,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, spoon, cloud, idea, cat, book, sadness, hammer",ok,10,apple,mountain,freedom,spoon,cloud,idea,cat,book,sadness,hammer,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:06.353Z,2026-07-16T00:16:08.437Z,2083,,bd470ca6-c2d4-43ba-8df7-2e3adb3b7153,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"banana, mountain, clock, freedom, spoon, cloud, dog, book, sadness, hammer",ok,10,banana,mountain,clock,freedom,spoon,cloud,dog,book,sadness,hammer,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:15:58.396Z,2026-07-16T00:16:09.542Z,11146,,9b5fc076-1abf-45c2-a587-16facb09a9c6,,stop,179,799,978,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, river, book, rain, chair, shadow, laughter, silence, justice, bread",ok,10,mountain,river,book,rain,chair,shadow,laughter,silence,justice,bread,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:05.117Z,2026-07-16T00:16:09.612Z,4495,,a8b8d09b-a4c2-4142-b58f-d4dbb84d0297,,stop,144,359,503,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"rock, freedom, flower, mountain, grain, time, joy, chair, water, echo",ok,10,rock,freedom,flower,mountain,grain,time,joy,chair,water,echo,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:08.437Z,2026-07-16T00:16:10.354Z,1917,,924bf3bc-44f1-4040-b9fa-fdb9814e8abc,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, elephant, dream, spoon, ocean, book, silence",ok,10,apple,mountain,freedom,clock,elephant,dream,spoon,ocean,book,silence,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:10.043Z,2026-07-16T00:16:12.397Z,2353,,fc205922-9cdd-403f-9982-0ae47704d98f,,stop,144,157,301,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cloud, book, joy, mountain, tree, chair, time, water, dog, stone",ok,10,cloud,book,joy,mountain,tree,chair,time,water,dog,stone,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:10.544Z,2026-07-16T00:16:12.683Z,2139,,d22e05d5-2ef7-4a4b-9010-7158c3f4a6fb,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, spoon, cloud, book, sadness, chair, ocean, idea",ok,10,apple,mountain,freedom,spoon,cloud,book,sadness,chair,ocean,idea,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:12.898Z,2026-07-16T00:16:14.753Z,1855,,daa9bdba-6e90-488f-a3ab-0e04a51154b8,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, anger, chair, dream",ok,10,apple,mountain,freedom,clock,dog,book,ocean,anger,chair,dream,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:12.397Z,2026-07-16T00:16:15.031Z,2633,,54f6743d-2c40-4d32-ad49-c880f86f2b67,,stop,144,191,335,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"table, love, mountain, idea, tree, cat, water, time, song, wind",ok,10,table,love,mountain,idea,tree,cat,water,time,song,wind,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:14.753Z,2026-07-16T00:16:16.640Z,1887,,eeefbebb-87e8-4657-bc28-75938536c1cc,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, idea, spoon, sadness",ok,10,apple,mountain,freedom,clock,dog,book,ocean,idea,spoon,sadness,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:16.641Z,2026-07-16T00:16:18.461Z,1821,,2bcbbed0-15e9-4fb2-afed-bfc8f362baea,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, book, clock, ocean, chair, sadness, star, dog",ok,10,apple,mountain,freedom,book,clock,ocean,chair,sadness,star,dog,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:18.462Z,2026-07-16T00:16:20.395Z,1933,,626d626e-117a-4e18-9fe1-dde33f137bdf,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, idea, spoon, sadness",ok,10,apple,mountain,freedom,clock,dog,book,ocean,idea,spoon,sadness,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:15.253Z,2026-07-16T00:16:20.854Z,5600,,2ce88937-64ca-4b40-a3a3-16f057516da1,,stop,144,321,465,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, apple, joy, table, wind, thought, stone, music, river, fire",ok,10,mountain,apple,joy,table,wind,thought,stone,music,river,fire,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:20.395Z,2026-07-16T00:16:22.348Z,1952,,d8afa2b0-2696-47d2-a556-0966f1303e7a,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, spoon, clock, sadness, book, river, chair, dream",ok,10,apple,mountain,freedom,spoon,clock,sadness,book,river,chair,dream,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:22.348Z,2026-07-16T00:16:24.253Z,1905,,8a1e30a2-e657-4e8d-b707-1868a66ca4aa,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, spoon, dream, clock, ocean, book, anger, shoe",ok,10,apple,mountain,freedom,spoon,dream,clock,ocean,book,anger,shoe,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:16:09.543Z,2026-07-16T00:16:24.707Z,15164,,ef21876d-03ee-441d-b2b8-cfbdb269f9c7,,stop,179,1182,1361,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"breeze, mirror, silence, journey, lantern, canyon, feather, clock, riddle, laughter",ok,10,breeze,mirror,silence,journey,lantern,canyon,feather,clock,riddle,laughter,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:20.896Z,2026-07-16T00:16:25.414Z,4518,,79ac7ee4-bb79-40b5-808a-5017208b4a78,,stop,144,394,538,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"love, mountain, bicycle, fire, tree, idea, water, building, cloud, sound",ok,10,love,mountain,bicycle,fire,tree,idea,water,building,cloud,sound,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:16:24.253Z,2026-07-16T00:16:26.144Z,1890,,e3fd54bf-a8f2-42dd-9c32-05f25cac550d,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, idea, spoon, cloud, dog, book, shadow, river, clock",ok,10,apple,mountain,idea,spoon,cloud,dog,book,shadow,river,clock,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:20:29.234Z,2026-07-16T00:20:31.402Z,2167,,a6411b9a-6032-4762-af98-585f21c4c8a4,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, spoon, dream, bicycle, cloud, anger, book, shadow",ok,10,apple,mountain,freedom,spoon,dream,bicycle,cloud,anger,book,shadow,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:32.113Z,2026-07-16T00:22:34.231Z,2118,,30fc2fbd-1ef7-40c5-9b63-c35db898efac,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, anger, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,anger,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:34.231Z,2026-07-16T00:22:36.149Z,1918,,e1393f3a-3294-4c1c-8690-babf299f2058,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cat, mountain, spoon, dream, book, cloud, hammer, freedom, apple, river",ok,10,cat,mountain,spoon,dream,book,cloud,hammer,freedom,apple,river,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:32.613Z,2026-07-16T00:22:37.106Z,4492,,b860bbf6-92f5-4be2-8c1d-a2320a6a3fbc,,stop,144,350,494,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cloud, freedom, rock, laughter, bridge, milk, flower, mountain, idea, rain",ok,10,cloud,freedom,rock,laughter,bridge,milk,flower,mountain,idea,rain,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:36.149Z,2026-07-16T00:22:38.077Z,1927,,95f12d66-3469-4a64-bc9c-4f5cabff6587,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, anger, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,anger,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:38.077Z,2026-07-16T00:22:40.209Z,2131,,e770a967-629a-4acf-ad92-79a332f13e01,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, spoon, dream, clock, ocean, book, sadness, chair",ok,10,apple,mountain,freedom,spoon,dream,clock,ocean,book,sadness,chair,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:37.106Z,2026-07-16T00:22:40.731Z,3624,,c0efa8b5-8b5b-4f5e-a601-a177636e9f9a,,stop,144,322,466,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, idea, spoon, cloud, fear, tree, water, book, stone, music",ok,10,mountain,idea,spoon,cloud,fear,tree,water,book,stone,music,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:40.209Z,2026-07-16T00:22:42.163Z,1954,,740145f8-e817-4831-9984-2427ac34cdf3,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, anger, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,anger,chair,star,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:22:31.612Z,2026-07-16T00:22:43.735Z,12123,,10f26a79-2a8c-49ca-8c41-9c71ca8bfdaf,,stop,179,820,999,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, bicycle, cloud, dragon, echo, feather, garden, hammer, ivory, lantern",ok,10,apple,bicycle,cloud,dragon,echo,feather,garden,hammer,ivory,lantern,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:42.163Z,2026-07-16T00:22:44.058Z,1894,,c246dddc-1f9b-43f7-8796-682f182ac727,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"banana, mountain, clock, freedom, dog, book, ocean, chair, sadness, star",ok,10,banana,mountain,clock,freedom,dog,book,ocean,chair,sadness,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:44.236Z,2026-07-16T00:22:46.219Z,1983,,6d48c29f-6b46-4f64-816e-82a4f07e147a,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, anger, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,anger,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:46.219Z,2026-07-16T00:22:48.233Z,2014,,1c851f26-c319-42f9-a57a-74d4ec07750c,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, anger, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,anger,chair,star,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:40.731Z,2026-07-16T00:22:50.012Z,9280,,effd943a-e7ef-4f18-ac06-253988f9a3c7,,stop,144,818,962,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"ocean, sadness, chair, cloud, apple, bridge, stone, hammer, flower, music",ok,10,ocean,sadness,chair,cloud,apple,bridge,stone,hammer,flower,music,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:48.234Z,2026-07-16T00:22:50.152Z,1917,,84b87804-318a-4843-b613-f53531a3b567,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, anger, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,anger,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:50.512Z,2026-07-16T00:22:52.546Z,2033,,2f2ce780-ccc1-4ba4-b469-b94e749e7327,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, anger, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,anger,chair,star,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:50.012Z,2026-07-16T00:22:52.957Z,2945,,3f830bb9-bfe7-45b4-874d-880599a5bb13,,stop,144,247,391,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cloud, book, freedom, mountain, pencil, ocean, joy, tree, chair, star",ok,10,cloud,book,freedom,mountain,pencil,ocean,joy,tree,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:52.546Z,2026-07-16T00:22:54.701Z,2154,,ba3c085d-6a12-489f-937f-889e46936223,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, anger, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,anger,chair,star,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:53.047Z,2026-07-16T00:22:55.883Z,2836,,8424e2ab-2f69-4767-ba90-6da496969291,,stop,144,266,410,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cloud, tree, spoon, joy, rock, idea, river, chair, cat, bread",ok,10,cloud,tree,spoon,joy,rock,idea,river,chair,cat,bread,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:54.701Z,2026-07-16T00:22:56.745Z,2043,,279fb520-121b-48e4-9a97-91aca947295b,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, anger, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,anger,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:56.745Z,2026-07-16T00:22:58.748Z,2002,,26fbc7b0-2364-48d5-9f2d-339cf1ca3200,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"banana, mountain, clock, freedom, dog, book, ocean, chair, sadness, star",ok,10,banana,mountain,clock,freedom,dog,book,ocean,chair,sadness,star,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:22:43.736Z,2026-07-16T00:22:59.856Z,16120,,8afc48b0-d02e-4400-a37a-01790387df79,,stop,179,1144,1323,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, laughter, silence, rain, book, hammer, dream, shadow, time",ok,10,apple,mountain,laughter,silence,rain,book,hammer,dream,shadow,time,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:55.883Z,2026-07-16T00:23:00.507Z,4624,,ae57cd1f-e102-4cd0-837c-654917685228,,stop,144,421,565,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"stone, idea, cloud, tree, music, book, fire, water, time, animal",ok,10,stone,idea,cloud,tree,music,book,fire,water,time,animal,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:22:58.748Z,2026-07-16T00:23:00.742Z,1994,,db12388b-3964-4785-a22f-28b7317931a8,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, anger, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,anger,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:01.008Z,2026-07-16T00:23:02.907Z,1899,,3cffffe5-bfa9-4180-bde4-228e7892aa9e,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"banana, mountain, clock, freedom, dog, book, ocean, chair, anger, star",ok,10,banana,mountain,clock,freedom,dog,book,ocean,chair,anger,star,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:00.508Z,2026-07-16T00:23:03.356Z,2848,,8b69bc96-358c-42f3-92c8-21b9a3b03669,,stop,144,180,324,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, happiness, clock, wind, sand, thought, river, book, shadow, dream",ok,10,mountain,happiness,clock,wind,sand,thought,river,book,shadow,dream,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:02.908Z,2026-07-16T00:23:05.071Z,2162,,c41501d3-aa09-45be-a2d0-b2fbe23ceda9,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, anger, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,anger,chair,star,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:03.408Z,2026-07-16T00:23:06.622Z,3213,,36c8a6a1-43c4-495c-b9db-46e6c25cbfc5,,stop,144,290,434,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, whisper, spoon, galaxy, laughter, brick, thunder, silk, dust, clock",ok,10,mountain,whisper,spoon,galaxy,laughter,brick,thunder,silk,dust,clock,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:05.071Z,2026-07-16T00:23:07.236Z,2165,,774b06be-c58f-417a-9a95-f731d6a12c15,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, anger, chair, dream",ok,10,apple,mountain,freedom,clock,dog,book,ocean,anger,chair,dream,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:07.237Z,2026-07-16T00:23:09.217Z,1980,,57d352b4-b66b-45ae-a37f-7a893cc4e065,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"banana, mountain, freedom, spoon, clock, sadness, book, ocean, chair, idea",ok,10,banana,mountain,freedom,spoon,clock,sadness,book,ocean,chair,idea,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:06.622Z,2026-07-16T00:23:11.051Z,4429,,545bab0c-4be8-4efd-82f1-9ee7744a2b2c,,stop,144,340,484,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cloud, justice, spoon, horse, fire, smile, stone, song, bottle, memory",ok,10,cloud,justice,spoon,horse,fire,smile,stone,song,bottle,memory,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:09.218Z,2026-07-16T00:23:11.185Z,1966,,d4433591-c1f1-467a-b037-f1f63676d904,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cat, mountain, idea, spoon, cloud, freedom, book, river, chair, happiness",ok,10,cat,mountain,idea,spoon,cloud,freedom,book,river,chair,happiness,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:11.551Z,2026-07-16T00:23:13.466Z,1915,,c4953aaa-7bdd-473d-ab6f-902fa9012220,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, spoon, dream, clock, ocean, book, sadness, chair",ok,10,apple,mountain,freedom,spoon,dream,clock,ocean,book,sadness,chair,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:13.467Z,2026-07-16T00:23:15.336Z,1869,,c7bddd16-0338-4be4-a3cb-3fff6e5d524e,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"banana, mountain, clock, freedom, spoon, elephant, dream, book, rain, chair",ok,10,banana,mountain,clock,freedom,spoon,elephant,dream,book,rain,chair,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:11.051Z,2026-07-16T00:23:15.911Z,4859,,e023f4d8-9ded-45f5-bcdf-10b5e46f5607,,stop,144,511,655,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"air, book, shadow, time, fire, plant, mountain, love, music, stone",ok,10,air,book,shadow,time,fire,plant,mountain,love,music,stone,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:15.336Z,2026-07-16T00:23:17.332Z,1996,,39744562-8005-4e39-b4f4-99e2f4e51c17,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cat, mountain, idea, spoon, clock, freedom, apple, ship, song, darkness",ok,10,cat,mountain,idea,spoon,clock,freedom,apple,ship,song,darkness,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:22:59.856Z,2026-07-16T00:23:17.904Z,18047,,241595f0-93d3-47c0-8b0e-59c3239deec7,,stop,179,1205,1384,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"tree, book, bicycle, rain, light, music, freedom, memory, tool, food",ok,10,tree,book,bicycle,rain,light,music,freedom,memory,tool,food,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:17.333Z,2026-07-16T00:23:19.264Z,1931,,cfd30955-c629-414b-b96b-4c2cbdc9c0b3,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cloud, spoon, freedom, cat, mountain, idea, book, sugar, sadness, wheel",ok,10,cloud,spoon,freedom,cat,mountain,idea,book,sugar,sadness,wheel,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:15.911Z,2026-07-16T00:23:19.890Z,3978,,d5e43e72-2105-4832-873c-4842c0196f18,,stop,144,411,555,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cat, mountain, idea, book, water, happiness, tree, cloud, knife, clock",ok,10,cat,mountain,idea,book,water,happiness,tree,cloud,knife,clock,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:19.264Z,2026-07-16T00:23:21.335Z,2070,,fe9c6951-f533-4f4a-8c58-82f489a781e7,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, spoon, dream, bicycle, cloud, anger, book, clock",ok,10,apple,mountain,freedom,spoon,dream,bicycle,cloud,anger,book,clock,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:19.890Z,2026-07-16T00:23:23.294Z,3404,,2cf7b890-7987-4415-8c59-0eda80c16368,,stop,144,316,460,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, teardrop, freedom, bicycle, thunder, book, cloud, laughter, pencil, ocean",ok,10,mountain,teardrop,freedom,bicycle,thunder,book,cloud,laughter,pencil,ocean,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:21.335Z,2026-07-16T00:23:23.322Z,1987,,26c00ff7-b6d2-4800-a458-08561dde3073,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, idea, spoon, cloud",ok,10,apple,mountain,freedom,clock,dog,book,ocean,idea,spoon,cloud,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:23.795Z,2026-07-16T00:23:25.873Z,2077,,80eec511-8a4e-4749-a8e7-f97d36c093a1,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, idea, spoon, storm, book, dog, clock, freedom, shadow",ok,10,apple,mountain,idea,spoon,storm,book,dog,clock,freedom,shadow,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:23.294Z,2026-07-16T00:23:26.322Z,3027,,c7b80520-532b-4c47-87f0-320ce0dabd1b,,stop,144,290,434,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"joy, mountain, pencil, rain, thought, dog, apple, chair, fire, dream",ok,10,joy,mountain,pencil,rain,thought,dog,apple,chair,fire,dream,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:23:17.904Z,2026-07-16T00:23:27.238Z,9333,,5d3d76fe-f314-4ef4-a67c-08ae55d520ab,,stop,179,652,831,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cat, mountain, happiness, chair, river, dream, laughter, library, sunlight, silence",ok,10,cat,mountain,happiness,chair,river,dream,laughter,library,sunlight,silence,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:25.873Z,2026-07-16T00:23:27.800Z,1927,,7870dd54-5f78-4f9d-b2c8-cf8acfc93e56,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, river, idea, chair, cloud, music, stone",ok,10,apple,mountain,freedom,clock,river,idea,chair,cloud,music,stone,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:27.801Z,2026-07-16T00:23:29.869Z,2068,,49722f86-b1e8-4447-b231-9eb31bb1c733,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, anger, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,anger,chair,star,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:26.373Z,2026-07-16T00:23:31.372Z,4998,,5a598847-d11d-4e82-9f18-c16fa0731ace,,stop,144,501,645,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"time, sand, courage, tree, wheel, water, fear, house, wind, book",ok,10,time,sand,courage,tree,wheel,water,fear,house,wind,book,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:29.869Z,2026-07-16T00:23:31.853Z,1983,,e6fa2acb-a49e-4d4b-8d5c-ba26dc527ada,,stop,153,21,174,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sorrow, chair, starlight",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sorrow,chair,starlight,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:31.872Z,2026-07-16T00:23:33.763Z,1891,,95162975-4f55-449d-a8d4-491e9a4de702,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cat, mountain, idea, spoon, clock, freedom, tree, book, water, sadness",ok,10,cat,mountain,idea,spoon,clock,freedom,tree,book,water,sadness,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:33.764Z,2026-07-16T00:23:35.753Z,1989,,1b558eef-c333-4f3b-864f-3322e0ddc37a,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, cloud, spoon, happiness, shoe",ok,10,apple,mountain,freedom,clock,dog,book,cloud,spoon,happiness,shoe,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:31.372Z,2026-07-16T00:23:35.824Z,4451,,ac419b00-88ec-469a-9c46-168765d966bc,,stop,144,323,467,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, idea, hammer, water, cloud, river, chair, happiness, star",ok,10,apple,mountain,idea,hammer,water,cloud,river,chair,happiness,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:35.754Z,2026-07-16T00:23:37.676Z,1922,,b9ee2651-1642-420c-b37f-7e50afb87fa5,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, chair, sadness, song",ok,10,apple,mountain,freedom,clock,dog,book,ocean,chair,sadness,song,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:23:27.238Z,2026-07-16T00:23:38.446Z,11208,,ed5b6520-9c71-43f9-b5c7-9800a3987d14,,stop,179,858,1037,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"stone, rain, idea, chair, music, happiness, forest, clock, mirror, shadow",ok,10,stone,rain,idea,chair,music,happiness,forest,clock,mirror,shadow,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:37.676Z,2026-07-16T00:23:39.500Z,1824,,3e995295-3a57-4b3e-b7b0-5a3249f26f74,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cat, mountain, idea, spoon, freedom, cloud, book, sadness, tree, clock",ok,10,cat,mountain,idea,spoon,freedom,cloud,book,sadness,tree,clock,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:39.501Z,2026-07-16T00:23:41.350Z,1849,,65854701-cfaf-4d31-9c10-02e2aece3a2f,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"book, mountain, idea, spoon, cloud, dog, song, apple, freedom, clock",ok,10,book,mountain,idea,spoon,cloud,dog,song,apple,freedom,clock,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:41.351Z,2026-07-16T00:23:43.298Z,1947,,db24dbf5-c3c1-406f-b572-b930484d371f,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, idea, book, dog, clock, ocean, freedom, chair, music",ok,10,apple,mountain,idea,book,dog,clock,ocean,freedom,chair,music,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:43.298Z,2026-07-16T00:23:45.225Z,1926,,d2d82e36-43b1-4a74-ac44-ce321c84b5c4,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cat, mountain, idea, spoon, freedom, cloud, book, sadness, tree, clock",ok,10,cat,mountain,idea,spoon,freedom,cloud,book,sadness,tree,clock,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:36.254Z,2026-07-16T00:23:45.524Z,9269,,eed4255c-8a98-4a28-a77f-a56195b7581e,,stop,144,573,717,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"rock, freedom, bird, river, chair, storm, ice, sound, joy, truth",ok,10,rock,freedom,bird,river,chair,storm,ice,sound,joy,truth,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:45.225Z,2026-07-16T00:23:47.167Z,1941,,8900d105-3b9c-4b99-abfd-6a73762cf697,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:47.167Z,2026-07-16T00:23:49.052Z,1884,,58dc4506-745b-4ff2-b824-487434972db0,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:23:38.447Z,2026-07-16T00:23:50.000Z,11553,,2617ae3a-fe2b-4cdf-a8c5-b344c043867e,,stop,179,749,928,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, river, door, shadow, music, happiness, silence, fire, book",ok,10,apple,mountain,river,door,shadow,music,happiness,silence,fire,book,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:49.052Z,2026-07-16T00:23:51.043Z,1990,,6b92a8cd-80fd-4c0c-930d-d35acb56adb4,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:45.725Z,2026-07-16T00:23:51.814Z,6088,,b7091479-1d0d-45b2-b161-74da95749385,,stop,144,587,731,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, book, joy, cloud, tree, idea, clock, child, river, fire",ok,10,mountain,book,joy,cloud,tree,idea,clock,child,river,fire,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:51.043Z,2026-07-16T00:23:53.043Z,1999,,b000ef02-e4b8-444e-a22d-4c7f91b66794,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:53.043Z,2026-07-16T00:23:55.045Z,2001,,8434cedf-64f1-4262-bd75-6dee6b19af20,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:55.045Z,2026-07-16T00:23:56.934Z,1889,,5cb2b7a9-3d28-47a4-82db-f45e41a6dceb,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cat, mountain, idea, spoon, freedom, cloud, book, sadness, tree, clock",ok,10,cat,mountain,idea,spoon,freedom,cloud,book,sadness,tree,clock,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:56.934Z,2026-07-16T00:23:58.884Z,1949,,a217b059-e057-4b37-b665-fe91623aaaec,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:58.884Z,2026-07-16T00:24:00.856Z,1971,,e87c19a0-01aa-41b9-9b9f-24dc8a1d488e,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:23:51.815Z,2026-07-16T00:24:02.013Z,10198,,ca883395-76dd-482e-b7bd-a064830ee430,,stop,144,810,954,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, sadness, triangle, thunder, clock, whisper, castle, ice, dream, engine",ok,10,mountain,sadness,triangle,thunder,clock,whisper,castle,ice,dream,engine,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:23:50.001Z,2026-07-16T00:24:02.632Z,12631,,396a7bc8-91f0-4c45-b3d6-65a8756128b0,,stop,179,927,1106,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"tree, chair, idea, happiness, river, car, book, cloud, music, time",ok,10,tree,chair,idea,happiness,river,car,book,cloud,music,time,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:00.856Z,2026-07-16T00:24:03.027Z,2171,,3f9e9f49-e9d0-4e13-aab0-1a2457181e45,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:03.132Z,2026-07-16T00:24:05.136Z,2004,,20980821-8212-4450-9ee3-9c9b42d5293d,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:02.013Z,2026-07-16T00:24:05.364Z,3351,,4d31809b-fe36-416b-b163-e19926039894,,stop,144,220,364,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"tree, idea, water, bicycle, happiness, mountain, book, fire, cloud, music",ok,10,tree,idea,water,bicycle,happiness,mountain,book,fire,cloud,music,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:05.137Z,2026-07-16T00:24:07.036Z,1899,,62df12aa-1219-4f9a-892c-9e681f1c367e,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:07.036Z,2026-07-16T00:24:08.933Z,1897,,a5900898-2880-4af8-9f23-a65595763cc5,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:08.933Z,2026-07-16T00:24:10.972Z,2038,,a02c6bd6-31e5-423e-b167-14cb9d155405,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:10.972Z,2026-07-16T00:24:12.921Z,1949,,e131cba7-75a7-4e35-af27-3f962bee8367,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cat, mountain, idea, spoon, freedom, cloud, book, sadness, tree, clock",ok,10,cat,mountain,idea,spoon,freedom,cloud,book,sadness,tree,clock,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:05.637Z,2026-07-16T00:24:12.957Z,7320,,28d16eaa-c326-411e-ac15-1399279b9a9c,,stop,144,677,821,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, idea, water, time, tree, cloud, book, sound, stone, wind",ok,10,mountain,idea,water,time,tree,cloud,book,sound,stone,wind,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:12.921Z,2026-07-16T00:24:15.008Z,2086,,2b203d07-355a-4206-8b79-3c57ca7cf048,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:24:02.632Z,2026-07-16T00:24:15.895Z,13263,,afc64e1e-c513-47aa-93ad-7809127f8b42,,stop,179,892,1071,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, thought, rain, lamp, mountain, laughter, breeze, clock, silence, feather",ok,10,apple,thought,rain,lamp,mountain,laughter,breeze,clock,silence,feather,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:15.008Z,2026-07-16T00:24:17.131Z,2123,,4bd07f36-23ba-421d-a809-051d082c4927,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"chair, happiness, apple, mountain, clock, freedom, dog, book, ocean, idea",ok,10,chair,happiness,apple,mountain,clock,freedom,dog,book,ocean,idea,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:13.422Z,2026-07-16T00:24:17.550Z,4128,,015d8d1f-b003-4cfa-91f4-78f743263692,,stop,144,270,414,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, atom, dream, pencil, elephant, storm, laughter, brick, river, shadow",ok,10,mountain,atom,dream,pencil,elephant,storm,laughter,brick,river,shadow,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:17.132Z,2026-07-16T00:24:19.034Z,1902,,1ade050b-39bc-4251-a6b2-0868223867e7,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:19.034Z,2026-07-16T00:24:20.959Z,1924,,0945d1e2-73ae-4271-858c-3b0a044239e0,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"banana, mountain, clock, freedom, dog, book, ocean, chair, sadness, star",ok,10,banana,mountain,clock,freedom,dog,book,ocean,chair,sadness,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:20.960Z,2026-07-16T00:24:22.798Z,1838,,0e80832c-bec2-4e0d-af3d-a539fd414b6e,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:22.799Z,2026-07-16T00:24:24.763Z,1964,,7e4bd9be-0daa-4749-be61-feff8597b1d9,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"banana, mountain, freedom, spoon, cloud, idea, cat, book, sadness, hammer",ok,10,banana,mountain,freedom,spoon,cloud,idea,cat,book,sadness,hammer,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:17.632Z,2026-07-16T00:24:25.295Z,7662,,6f216a70-3895-494a-b718-5ce25c9c94ca,,stop,144,537,681,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cloud, melody, stone, dream, river, house, hope, fire, wheel, seed",ok,10,cloud,melody,stone,dream,river,house,hope,fire,wheel,seed,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:24.764Z,2026-07-16T00:24:26.682Z,1918,,4d0bb755-3703-41d3-adca-be08a8e9d0bb,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"banana, mountain, clock, freedom, dog, book, ocean, chair, happiness, spoon",ok,10,banana,mountain,clock,freedom,dog,book,ocean,chair,happiness,spoon,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:25.295Z,2026-07-16T00:24:28.390Z,3095,,9672457c-4148-450d-9c42-0e26fd67d7e9,,stop,144,222,366,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"tree, idea, water, happiness, stone, time, book, fire, breath, shadow",ok,10,tree,idea,water,happiness,stone,time,book,fire,breath,shadow,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:26.683Z,2026-07-16T00:24:28.574Z,1891,,acf4aa5d-f417-487c-86e2-ee369952090a,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:28.891Z,2026-07-16T00:24:30.755Z,1864,,42760a4b-4128-4f58-9648-86315be163d9,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"chair, happiness, apple, mountain, clock, freedom, dog, book, ocean, idea",ok,10,chair,happiness,apple,mountain,clock,freedom,dog,book,ocean,idea,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:24:15.896Z,2026-07-16T00:24:31.902Z,16005,,3f718e33-6fbd-4c72-9ebb-171bf2c023be,,stop,179,1038,1217,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"river, book, idea, chair, sunrise, music, snow, justice, mirror, whisper",ok,10,river,book,idea,chair,sunrise,music,snow,justice,mirror,whisper,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:28.390Z,2026-07-16T00:24:32.595Z,4205,,fbcbc861-b9b9-4f5b-ac4f-a007efefd1e7,,stop,144,352,496,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"stone, picture, wind, idea, fire, water, joy, shadow, bread, silence",ok,10,stone,picture,wind,idea,fire,water,joy,shadow,bread,silence,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:30.756Z,2026-07-16T00:24:32.731Z,1975,,b1bd8064-18bc-4236-adaa-976bf3c097f1,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:33.096Z,2026-07-16T00:24:35.012Z,1915,,53bf7b59-8168-4d23-9755-10c0bc467937,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:35.012Z,2026-07-16T00:24:36.874Z,1861,,9549dc0f-c764-48bb-a493-6a6cf4558a90,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cat, mountain, idea, spoon, freedom, cloud, book, sadness, tree, clock",ok,10,cat,mountain,idea,spoon,freedom,cloud,book,sadness,tree,clock,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:32.596Z,2026-07-16T00:24:37.932Z,5336,,10ac5101-97b2-4cf4-bd56-ad92603ba98f,,stop,144,423,567,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, whisper, fire, engine, river, cloud, happiness, stone, plant, sunrise",ok,10,mountain,whisper,fire,engine,river,cloud,happiness,stone,plant,sunrise,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:36.874Z,2026-07-16T00:24:38.874Z,2000,,a395fa29-8ec9-4e5c-9844-be32c0912ca4,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cloud, spoon, freedom, cat, mountain, idea, book, sugar, clock, sadness",ok,10,cloud,spoon,freedom,cat,mountain,idea,book,sugar,clock,sadness,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:38.875Z,2026-07-16T00:24:40.771Z,1895,,e7378e03-749e-466c-b528-08a3d13d7aa7,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, ocean, idea, book, spoon, silence",ok,10,apple,mountain,freedom,clock,dog,ocean,idea,book,spoon,silence,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:40.771Z,2026-07-16T00:24:42.702Z,1931,,c51e397c-b937-4b6a-901a-5205fdd79631,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, spoon, galaxy",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,spoon,galaxy,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:42.703Z,2026-07-16T00:24:44.662Z,1959,,53f6d8da-cc78-4726-bf3a-b5301fd47b31,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, elephant, dream, spoon, cloud, justice, shoe",ok,10,apple,mountain,freedom,clock,elephant,dream,spoon,cloud,justice,shoe,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:24:31.902Z,2026-07-16T00:24:44.820Z,12917,,c0986c3a-c37e-49eb-82b3-bcfe3b229934,,stop,179,915,1094,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, friendship, book, chair, light, silence, journey, music, sky",ok,10,apple,mountain,friendship,book,chair,light,silence,journey,music,sky,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:37.933Z,2026-07-16T00:24:45.311Z,7378,,14bf9fba-f1bd-4e70-9fbe-11d1b0bd0865,,stop,144,737,881,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"stone, shadow, tree, sound, time, water, wind, cloud, book, fire",ok,10,stone,shadow,tree,sound,time,water,wind,cloud,book,fire,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:44.662Z,2026-07-16T00:24:46.655Z,1992,,5e91b889-c6cb-4086-8a3c-8f2a31a32540,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cat, mountain, spoon, dream, book, cloud, hammer, freedom, apple, river",ok,10,cat,mountain,spoon,dream,book,cloud,hammer,freedom,apple,river,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:45.663Z,2026-07-16T00:24:48.511Z,2847,,c462c361-bb07-4639-a958-a1eed6fd072c,,stop,144,191,335,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, happiness, airplane, book, time, tree, water, dream, house, freedom",ok,10,mountain,happiness,airplane,book,time,tree,water,dream,house,freedom,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:46.655Z,2026-07-16T00:24:48.574Z,1918,,f9e30cd9-ecb7-49d6-9248-03dddb0d6cee,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, spoon, dream, cat, book, ocean, clock, sadness",ok,10,apple,mountain,freedom,spoon,dream,cat,book,ocean,clock,sadness,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:49.012Z,2026-07-16T00:24:51.038Z,2025,,c6c0384d-45cf-4b1c-bcfa-ee6a2df72f11,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dream, shoe, ocean, anger, book, star",ok,10,apple,mountain,freedom,clock,dream,shoe,ocean,anger,book,star,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:48.511Z,2026-07-16T00:24:51.834Z,3323,,696a6cb5-b4a3-4a3f-b567-606ffd046279,,stop,144,247,391,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, sadness, book, water, tree, stone, idea, wind, chair, cloud",ok,10,mountain,sadness,book,water,tree,stone,idea,wind,chair,cloud,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:51.038Z,2026-07-16T00:24:53.049Z,2011,,9cf23365-8780-4532-ae70-b131c47eec0f,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"book, mountain, idea, spoon, cloud, dog, freedom, chair, river, happiness",ok,10,book,mountain,idea,spoon,cloud,dog,freedom,chair,river,happiness,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:53.050Z,2026-07-16T00:24:55.060Z,2010,,6491ff12-27d3-4ea3-bb12-9b43d7ea7301,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cloud, spoon, freedom, dog, mountain, book, sadness, apple, clock, idea",ok,10,cloud,spoon,freedom,dog,mountain,book,sadness,apple,clock,idea,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:55.060Z,2026-07-16T00:24:57.087Z,2027,,dc7e034a-926e-4f9b-bdd5-a45c3a903b8c,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, happiness, spoon, clock, freedom, dog, book, ocean, idea",ok,10,apple,mountain,happiness,spoon,clock,freedom,dog,book,ocean,idea,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:51.835Z,2026-07-16T00:24:57.539Z,5704,,d0619e02-fd06-4549-8f93-78e0355d88db,,stop,144,386,530,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"sand, thunder, courage, pencil, river, dream, flame, window, fog, smile",ok,10,sand,thunder,courage,pencil,river,dream,flame,window,fog,smile,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:57.088Z,2026-07-16T00:24:58.907Z,1819,,851c17f1-b92b-4215-a436-a3208afa9e95,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"chair, happiness, apple, mountain, clock, freedom, dog, book, ocean, idea",ok,10,chair,happiness,apple,mountain,clock,freedom,dog,book,ocean,idea,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:58.908Z,2026-07-16T00:25:00.849Z,1940,,09f6c5f1-b490-48eb-9028-247d1b15b653,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:24:45.163Z,2026-07-16T00:25:00.942Z,15778,,602af630-1392-4d37-bce1-9d6717596cc5,,stop,179,1126,1305,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, happiness, chair, rain, clock, book, music, shadow, dream",ok,10,apple,mountain,happiness,chair,rain,clock,book,music,shadow,dream,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:24:57.588Z,2026-07-16T00:25:00.970Z,3382,,e80c934e-2b3f-4f0d-9397-656c4c0d2207,,stop,144,197,341,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"ocean, microphone, happiness, brick, feather, galaxy, pencil, sorrow, volcano, clock",ok,10,ocean,microphone,happiness,brick,feather,galaxy,pencil,sorrow,volcano,clock,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:00.849Z,2026-07-16T00:25:02.900Z,2051,,d266d81b-936d-46fb-86a9-58b6da6323d8,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:02.901Z,2026-07-16T00:25:04.841Z,1939,,aa190fef-19f8-4b78-820a-f8f7fcda455d,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:04.841Z,2026-07-16T00:25:06.894Z,2052,,1a6bda0a-adb7-4138-a32e-405ad4596637,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"book, mountain, love, spoon, cloud, idea, dog, clock, ocean, fear",ok,10,book,mountain,love,spoon,cloud,idea,dog,clock,ocean,fear,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:01.850Z,2026-07-16T00:25:07.806Z,5955,,ed370b3d-0a7d-44a4-95e0-136c25afd378,,stop,144,467,611,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"tree, mountain, water, freedom, fire, book, hunger, music, shadow, time",ok,10,tree,mountain,water,freedom,fire,book,hunger,music,shadow,time,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:06.894Z,2026-07-16T00:25:08.859Z,1964,,883a5cbe-666a-4594-86e6-f2443fbfa973,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, spoon, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,spoon,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:08.859Z,2026-07-16T00:25:10.813Z,1953,,72b967a9-b136-4b26-b88a-90df2f9ccd16,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, anger, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,anger,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:10.813Z,2026-07-16T00:25:12.819Z,2005,,6b9ac896-d525-46cf-846a-c33a047fea7a,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, spoon, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,spoon,star,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:25:01.349Z,2026-07-16T00:25:13.887Z,12537,,8e505d1d-1f4b-48ed-acc5-4e2da78ed3dc,,stop,179,869,1048,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, idea, clock, rain, shoe, fire, music, shadow, book",ok,10,apple,mountain,idea,clock,rain,shoe,fire,music,shadow,book,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:12.819Z,2026-07-16T00:25:14.915Z,2095,,ab649390-f3a1-41b0-82b9-1c7588753d11,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cloud, spoon, freedom, cat, mountain, idea, book, sugar, clock, sadness",ok,10,cloud,spoon,freedom,cat,mountain,idea,book,sugar,clock,sadness,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:07.806Z,2026-07-16T00:25:15.043Z,7236,,c49988c1-1d16-41c3-97d4-2112698eb82d,,stop,144,645,789,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"idea, mountain, spoon, wind, cat, apple, love, window, cloud, journey",ok,10,idea,mountain,spoon,wind,cat,apple,love,window,cloud,journey,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:14.915Z,2026-07-16T00:25:16.912Z,1996,,af2fd9b8-d046-447a-9412-0a325bdda8e8,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, chair, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,chair,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:16.912Z,2026-07-16T00:25:18.826Z,1914,,9281681b-68b1-4626-8141-0570baf43f26,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"banana, mountain, clock, freedom, dog, book, ocean, chair, sadness, star",ok,10,banana,mountain,clock,freedom,dog,book,ocean,chair,sadness,star,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:15.416Z,2026-07-16T00:25:19.067Z,3651,,b69de5ad-9489-40f7-8c50-d0c427cf4272,,stop,144,341,485,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"joy, mountain, book, river, tree, stone, wind, song, dream, clock",ok,10,joy,mountain,book,river,tree,stone,wind,song,dream,clock,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:18.827Z,2026-07-16T00:25:20.782Z,1955,,39217c7f-fb79-41ac-91e9-1240de813a7e,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, freedom, clock, dog, book, ocean, sadness, spoon, star",ok,10,apple,mountain,freedom,clock,dog,book,ocean,sadness,spoon,star,,git:676e6de
+,Hunyuan-Hy3,hy3,hy3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:20.783Z,2026-07-16T00:25:22.703Z,1920,,7e7677a0-b180-4451-a45f-2fe7a8035d87,,stop,153,20,173,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cat, mountain, idea, spoon, freedom, book, cloud, chair, sadness, apple",ok,10,cat,mountain,idea,spoon,freedom,book,cloud,chair,sadness,apple,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:19.327Z,2026-07-16T00:25:22.733Z,3405,,b0033f2b-700a-467a-af05-fc40e807e567,,stop,144,317,461,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cloud, laughter, bridge, thunder, pencil, grass, shadow, courage, bottle, flame",ok,10,cloud,laughter,bridge,thunder,pencil,grass,shadow,courage,bottle,flame,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:25:13.888Z,2026-07-16T00:25:24.413Z,10525,,457ddae6-ecda-4f80-b997-0d1f80a59ee1,,stop,179,677,856,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"stone, rain, idea, music, lamp, bird, thought, forest, fire, shadow",ok,10,stone,rain,idea,music,lamp,bird,thought,forest,fire,shadow,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:23.205Z,2026-07-16T00:25:25.979Z,2773,,201a5752-24cc-4bb7-a62a-b9f9ef647dfc,,stop,144,223,367,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, freedom, mountain, song, cloud, stone, time, fire, book, love",ok,10,apple,freedom,mountain,song,cloud,stone,time,fire,book,love,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:25:22.705Z,2026-07-16T00:25:27.706Z,5001,,9d2a95e8-76b3-4dee-93c2-dfda11ec6379,,stop,314,368,682,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 single-word English nouns that are as different from each other as possible. Constraints:
+1. Single-word nouns in English
+2. Things, objects, and concepts
+3. No proper nouns (no people or places)
+4. No specialized vocabulary or technical terms
+5. Format: ""noun_1, noun_2, ..., noun_10""
+6. Nothing else in the response
+
+Let me think of 10 nouns that cover a wide semantic range:
+- chair (furniture/physical object)
+- music (abstract concept/sound)
+- water (natural substance/liquid)
+- book (object/artifact)
+- happiness (abstract concept/emotion)
+- mountain (natural feature/landform)
+- clock (tool/device)
+- friendship (abstract concept/relationship)
+- bread (food)
+- shadow (phenomenon/visual)
+
+These are quite different from each other. Let me check:
+- chair: physical, furniture, indoor
+- music: abstract, auditory, artistic
+- water: substance, liquid, essential
+- book: physical, cultural, intellectual
+- happiness: abstract, emotional, mental
+- mountain: natural, geographical, physical
+- clock: man-made, temporal, mechanical
+- friendship: abstract, relational, social
+- bread: food, edible, cultural
+- shadow: visual, natural phenomenon, ephemeral
+
+These cover: physical objects, abstract concepts, natural elements, man-made items, emotions, relationships, food, phenomena. Good diversity.
+
+All are common, everyday English words. None are proper nouns. All are single words.
+
+Format: ""chair, music, water, book, happiness, mountain, clock, friendship, bread, shadow""
+</think>
+chair, music, water, book, happiness, mountain, clock, friendship, bread, shadow",ok,10,<think>,the user wants 10 single-word english nouns that are as different from each other as possible. constraints:,objects,and concepts,noun_2,noun_10,let me think of 10 nouns that cover a wide semantic range:,- chair (furniture/physical object),- music (abstract concept/sound),- water (natural substance/liquid),,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:25.980Z,2026-07-16T00:25:33.489Z,7509,,7a012fa3-653f-4099-bf8d-814b45f4df76,,stop,144,749,893,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"air, stone, joy, mountain, whisper, shadow, fire, ocean, thought, clock",ok,10,air,stone,joy,mountain,whisper,shadow,fire,ocean,thought,clock,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:33.490Z,2026-07-16T00:25:36.864Z,3374,,032fb2c6-474f-4736-9c9f-2f9d0e0efcfc,,stop,144,188,332,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"happiness, chair, fire, freedom, dog, mountain, moment, painting, apple, hammer",ok,10,happiness,chair,fire,freedom,dog,mountain,moment,painting,apple,hammer,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:25:27.706Z,2026-07-16T00:25:37.733Z,10026,,433fe825-0379-4ac7-925c-5ae28b304b91,,stop,314,781,1095,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. Let me think about this carefully:
+
+1. Single-word English nouns
+2. Things, objects, concepts
+3. No proper nouns (no people or places)
+4. No specialized/technical terms
+5. Just the comma-separated string
+6. Nothing else
+
+I need to maximize diversity. Let me think of different categories:
+- Physical objects
+- Abstract concepts
+- Natural things
+- Man-made things
+- Living/non-living
+- Different sizes, materials, purposes
+
+Let me brainstorm a list:
+- chair (furniture, man-made)
+- music (abstract concept, auditory)
+- ocean (natural, large)
+- clock (time, man-made)
+- tree (nature, living)
+- friendship (abstract, social)
+- thunderstorm (weather, natural)
+- bicycle (transportation, man-made)
+- memory (abstract, mental)
+- shadow (light-related, natural)
+
+Let me check these are all different:
+- chair - physical, furniture, indoor, man-made, solid
+- music - abstract, auditory
+- ocean - physical, natural, large, water
+- clock - physical, time, man-made, mechanical
+- tree - physical, natural, living, plant
+- friendship - abstract, social, emotion
+- thunderstorm - natural phenomenon, weather, auditory/visual
+- bicycle - physical, man-made, transportation
+- memory - abstract, mental, temporal
+- shadow - physical phenomenon, light, visual
+
+These cover many different categories. Let me make sure none are proper nouns or technical terms. ""Thunderstorm"" might be slightly technical but it's a common word. Let me consider alternatives... ""storm"" could work but thunderstorm is fine, it's a common word.
+
+Actually let me reconsider for more diversity:
+- chair (furniture)
+- music (sound/abstract)
+- ocean (water/nature)
+- clock (time/device)
+- tree (plant)
+- friendship (emotion/abstract)
+- bicycle (vehicle)
+- shadow (light phenomenon)
+- pillow (household item)
+- journey (concept/experience)
+
+Hmm, let me think about this more carefully to maximize difference:
+- chair - physical object, furniture, man-made, indoor
+- music - abstract, auditory
+- ocean - physical, natural, water, vast
+- clock - physical, time, mechanical
+- tree - physical, natural, living
+- friendship - abstract, social
+- shadow - physical, light-based
+- pillow - physical, soft, man-made
+- journey - abstract, temporal
+- laughter - abstract, sound, emotion
+
+Actually, I want to ensure maximum diversity. Let me try another set:
+- chair (furniture)
+- music (sound)
+- ocean (water)
+- clock (time)
+- tree (plant)
+- shadow (light)
+- friendship (emotion)
+- thunderstorm (weather)
+- bicycle (vehicle)
+- memory (mental)
+
+I think this set is good. Let me go with something like:
+""chair, music, ocean, clock, tree, shadow, friendship, thunderstorm, bicycle, memory""
+
+Or maybe I should swap some. Let me think of a final list:
+
+Categories represented:
+1. Furniture: chair
+2. Art/auditory: music
+3. Geography/water: ocean
+4. Time/device: clock
+5. Botany: tree
+6. Light: shadow
+7. Emotion: friendship
+8. Weather: thunderstorm
+9. Transportation: bicycle
+10. Mental: memory
+
+This is a good diverse set. Final answer:
+""chair, music, ocean, clock, tree, shadow, friendship, thunderstorm, bicycle, memory""
+</think>
+chair, music, ocean, clock, tree, shadow, friendship, thunderstorm, bicycle, memory",ok,10,<think>,the user wants 10 nouns that are as different from each other as possible. let me think about this carefully:,objects,concepts,i need to maximize diversity. let me think of different categories:,- physical objects,- abstract concepts,- natural things,- man-made things,- living/non-living,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:25:24.413Z,2026-07-16T00:25:39.230Z,14816,,43f0cc6d-5cb9-469b-8dc4-818fb6b27b99,,stop,179,1037,1216,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"tree, hammer, happiness, music, bread, cloud, book, mountain, ocean, fire",ok,10,tree,hammer,happiness,music,bread,cloud,book,mountain,ocean,fire,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:36.865Z,2026-07-16T00:25:41.126Z,4261,,41ce40e2-9aaa-41e7-b96f-9c267af33ea4,,stop,144,410,554,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cloud, dream, hammer, river, anger, milk, star, song, brick, shadow",ok,10,cloud,dream,hammer,river,anger,milk,star,song,brick,shadow,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:25:37.733Z,2026-07-16T00:25:42.303Z,4569,,08208270-610b-4a2d-ae17-f1b84ef8378c,,stop,314,307,621,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 single-word English nouns that are:
+1. Single words
+2. Things, objects, concepts (not actions/verbs)
+3. Not proper nouns (no people or places)
+4. Not specialized or technical terms
+5. Output as comma-separated string
+6. Nothing else
+
+I need to make them as different from each other as possible. Let me think of nouns from very different categories:
+
+- Furniture
+- Nature
+- Food
+- Body parts
+- Abstract concepts
+- Tools
+- Clothing
+- Music
+- Weather
+- Time
+
+Let me pick:
+1. chair (furniture/object)
+2. mountain (nature/landform)
+3. bread (food)
+4. shoulder (body part)
+5. freedom (abstract concept)
+6. hammer (tool)
+7. sock (clothing)
+8. melody (music/sound)
+9. thunder (weather)
+10. century (time)
+
+Let me double-check these are all common, non-technical, non-proper nouns.
+
+- chair: yes
+- mountain: yes
+- bread: yes
+- shoulder: yes
+- freedom: yes
+- hammer: yes
+- sock: yes
+- melody: yes (though could be considered slightly technical in music, it's common enough)
+- thunder: yes
+- century: yes
+
+These are all quite different from each other across categories. Let me finalize.
+</think>
+chair, mountain, bread, shoulder, freedom, hammer, sock, melody, thunder, century",ok,10,<think>,the user wants 10 single-word english nouns that are:,objects,concepts (not actions/verbs),i need to make them as different from each other as possible. let me think of nouns from very different categories:,- furniture,- nature,- food,- body parts,- abstract concepts,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:41.126Z,2026-07-16T00:25:45.775Z,4649,,578e639a-bff2-443e-9aa8-9384f692d7dd,,stop,144,386,530,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, idea, spoon, thunder, butterfly, clock, sorrow, brick, cloud, whisper",ok,10,mountain,idea,spoon,thunder,butterfly,clock,sorrow,brick,cloud,whisper,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:25:42.303Z,2026-07-16T00:25:46.990Z,4687,,920d79f6-43f3-4a33-9a20-73c42c691c64,,stop,314,256,570,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+I need to generate 10 single-word nouns that are things, objects, or concepts. They should be as different from each other as possible. No proper nouns, no specialized/technical terms. Let me brainstorm diverse categories:
+
+1. Furniture: chair
+2. Weather: rain
+3. Emotion: happiness
+4. Food: bread
+5. Vehicle: bicycle
+6. Music: melody
+7. Time: morning
+8. Nature: river
+9. Body part: hand
+10. Tool: hammer
+
+Let me make sure these are all common, non-technical nouns representing different concepts. Let me check if ""morning"" is too time-related or could be considered different enough. I think it works.
+
+Actually, let me try to maximize diversity:
+- chair (furniture/physical object)
+- rain (weather phenomenon)
+- happiness (emotion/concept)
+- bread (food)
+- bicycle (transportation/physical object)
+- melody (sound/music concept)
+- river (nature/geography)
+- hammer (tool)
+- paper (material)
+- shadow (visual phenomenon)
+
+These are quite different from each other. Let me finalize.
+</think>
+chair, rain, happiness, bread, bicycle, melody, river, hammer, paper, shadow",ok,10,<think>,i need to generate 10 single-word nouns that are things,objects,or concepts. they should be as different from each other as possible. no proper nouns,no specialized/technical terms. let me brainstorm diverse categories:,let me make sure these are all common,"non-technical nouns representing different concepts. let me check if ""morning"" is too time-related or could be considered different enough. i think it works",actually,let me try to maximize diversity:,- chair (furniture/physical object),,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:45.775Z,2026-07-16T00:25:49.074Z,3298,,dfed77de-8db9-40c4-b06b-250ab51b3b12,,stop,144,326,470,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"happiness, mountain, key, tree, ocean, book, dream, fire, house, time",ok,10,happiness,mountain,key,tree,ocean,book,dream,fire,house,time,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:25:46.991Z,2026-07-16T00:25:53.314Z,6323,,1843c7e5-1fdc-4c85-aeac-63b0fa92d350,,stop,314,471,785,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 English single-word nouns that are:
+1. Things, objects, or concepts (not proper nouns, no people/places)
+2. Not specialized/technical vocabulary
+3. As different from each other as possible (diverse categories)
+4. Returned as a comma-separated string
+
+Let me brainstorm 10 nouns from very different categories:
+
+1. Table - furniture/object
+2. Music - concept (abstract)
+3. River - geographical feature (natural)
+4. Butterfly - animal
+5. Telescope - instrument
+6. Rainbow - natural phenomenon
+7. Pillow - household item
+8. Democracy - political concept
+9. Volcano - geological feature
+10. Library - building/institution
+
+Wait, ""library"" might be considered a place. Let me reconsider. Buildings/places might not fit ""things, objects and concepts"" well. Let me swap it.
+
+10. Compass - tool/navigation
+
+Or:
+10. Scent - sensory/abstract
+
+Let me make sure they're truly different:
+1. Table (furniture)
+2. Music (abstract concept)
+3. Butterfly (animal/insect)
+4. Telescope (scientific instrument)
+5. Rainbow (natural phenomenon/visual)
+6. Pillow (household object)
+7. Democracy (political concept)
+8. Volcano (geological feature)
+9. Compass (navigation tool)
+10. Scent or Mirror or Shoe
+
+Let me pick ""mirror"" - it's a reflective object.
+
+Actually, let me make them more diverse:
+1. Table (furniture)
+2. Music (sound/concept)
+3. Butterfly (creature)
+4. Telescope (instrument)
+5. Rainbow (phenomenon)
+6. Pillow (soft object)
+7. Democracy (idea)
+8. Volcano (natural feature)
+9. Compass (tool)
+10. Mirror (reflective object)
+
+These cover: furniture, abstract sound, living creature, scientific instrument, visual phenomenon, soft object, political idea, geological feature, navigation tool, reflective object. Pretty diverse.
+
+Let me also consider: chair, song, bird, microscope, sunset, blanket, freedom, mountain, map, glass
+
+I think my list is good. Let me finalize.
+</think>
+table, music, butterfly, telescope, rainbow, pillow, democracy, volcano, compass, mirror",ok,10,<think>,the user wants 10 english single-word nouns that are:,objects,or concepts (not proper nouns,no people/places),let me brainstorm 10 nouns from very different categories:,wait,"library"" might be considered a place. let me reconsider. buildings/places might not fit ""things","objects and concepts"" well. let me swap it",or:,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:49.074Z,2026-07-16T00:25:53.767Z,4692,,c557da24-71d5-4a38-8762-9265d6b4096b,,stop,144,460,604,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"love, rock, sky, idea, water, tree, table, time, sound, shadow",ok,10,love,rock,sky,idea,water,tree,table,time,sound,shadow,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:53.815Z,2026-07-16T00:25:57.627Z,3811,,e190320f-6d56-40b0-a892-e2a08d179f97,,stop,144,199,343,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, happiness, book, rain, child, dog, song, fire, stone",ok,10,apple,mountain,happiness,book,rain,child,dog,song,fire,stone,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:25:53.315Z,2026-07-16T00:25:57.786Z,4471,,d44c412b-267c-41e9-b8b3-3636cab318dc,,stop,314,286,600,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 single-word English nouns that are:
+1. Only single-word nouns in English
+2. Things, objects, and concepts
+3. Not proper nouns (no people or places)
+4. Not specialized or technical terms
+5. Formatted as comma-separated string
+
+I need to make them as different from each other as possible. Let me think of diverse categories:
+- Furniture
+- Food
+- Weather
+- Tool
+- Clothing
+- Music
+- Light
+- Emotion/abstract
+- Container
+- Time
+
+Let me pick: chair, bread, storm, hammer, jacket, melody, lantern, courage, basket, morning
+
+Let me verify these are all common, non-technical, single-word nouns:
+- chair: object (furniture) ✓
+- bread: object (food) ✓
+- storm: concept/natural phenomenon ✓
+- hammer: object (tool) ✓
+- jacket: object (clothing) ✓
+- melody: concept (music) ✓
+- lantern: object (light source) ✓
+- courage: concept (emotion) ✓
+- basket: object (container) ✓
+- morning: concept (time) ✓
+
+All seem good. Let me double-check they're not proper nouns and are common words. Yes, all are.
+</think>
+chair, bread, storm, hammer, jacket, melody, lantern, courage, basket, morning",ok,10,<think>,the user wants 10 single-word english nouns that are:,objects,and concepts,i need to make them as different from each other as possible. let me think of diverse categories:,- furniture,- food,- weather,- tool,- clothing,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:25:57.627Z,2026-07-16T00:26:00.458Z,2831,,9eed1c96-55e6-44b7-bee9-8eaa5cd337c8,,stop,144,199,343,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"love, tree, rock, idea, clock, water, bird, book, fire, peace",ok,10,love,tree,rock,idea,clock,water,bird,book,fire,peace,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:26:00.459Z,2026-07-16T00:26:02.321Z,1862,,b14f21c9-c4b0-4d47-9c1c-f9442bd90928,,stop,144,114,258,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"spoon, tree, idea, cloud, book, fire, water, rock, time, smile",ok,10,spoon,tree,idea,cloud,book,fire,water,rock,time,smile,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:25:58.127Z,2026-07-16T00:26:04.859Z,6731,,35219b66-1703-4838-a3f7-f5cb535ebb38,,stop,314,301,615,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 single-word nouns that are as different from each other as possible. They should be common, non-technical, not proper nouns, and represent things/objects/concepts. I need to maximize semantic distance between them.
+
+Let me think of diverse categories:
+- Emotion/abstract: freedom, silence
+- Physical object: mirror, candle
+- Nature: mountain, river
+- Food: bread
+- Time concept: dawn
+- Sound: music
+- Tool: hammer
+- Clothing: scarf
+- Furniture: chair
+- Animal... wait, animals might be okay but let me think of more diverse things
+
+Let me try to cover vastly different semantic domains:
+1. Mirror (object, reflective)
+2. Silence (abstract, auditory absence)
+3. Mountain (nature, geography)
+4. Laughter (abstract, sound/emotion)
+5. Bread (food)
+6. Shadow (abstract/visual phenomenon)
+7. Journey (abstract concept)
+8. Candle (object, light)
+9. Memory (abstract, mental)
+10. Ocean (nature, water)
+
+These span: reflective objects, auditory absence, geography, emotions/sounds, food, visual phenomena, temporal/spatial concepts, light sources, mental states, water bodies. Very diverse.
+
+Let me double-check all are single words, common, non-technical, not proper nouns. Yes, all good.
+</think>
+mirror, silence, mountain, laughter, bread, shadow, journey, candle, memory, ocean",ok,10,<think>,the user wants 10 single-word nouns that are as different from each other as possible. they should be common,non-technical,not proper nouns,and represent things/objects/concepts. i need to maximize semantic distance between them,let me think of diverse categories:,- emotion/abstract: freedom,silence,- physical object: mirror,candle,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:26:02.322Z,2026-07-16T00:26:06.933Z,4611,,f3ee32b8-7ec3-4bca-90d7-9891849e6e64,,stop,144,307,451,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cloud, freedom, stone, hunger, music, wheel, fear, river, memory, flame",ok,10,cloud,freedom,stone,hunger,music,wheel,fear,river,memory,flame,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:26:04.860Z,2026-07-16T00:26:09.994Z,5134,,fd757c0f-a036-4834-9d8c-bc4e06e304a2,,stop,314,333,647,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 single-word English nouns that are things, objects, or concepts. They need to be as different from each other as possible. No proper nouns (people/places), no specialized/technical terms. Output as comma-separated string.
+
+Let me think of 10 very different nouns covering different categories:
+- furniture: chair
+- vehicle: bicycle
+- emotion: happiness (concept)
+- weather: rain (concept/thing)
+- clothing: jacket
+- food: bread
+- animal (thing): butterfly
+- tool: hammer
+- light: lamp
+- music: melody (concept)
+
+These are all distinct categories: furniture, vehicle, emotion, weather, clothing, food, insect, tool, lighting, music. That seems diverse enough.
+
+Wait, ""happiness"" is an abstract concept - the instructions say things, objects and concepts. Concepts are allowed.
+
+Let me reconsider to make them more diverse:
+1. chair (furniture)
+2. bicycle (vehicle)
+3. rain (weather/natural)
+4. jacket (clothing)
+5. bread (food)
+6. butterfly (insect)
+7. hammer (tool)
+8. lamp (lighting object)
+9. melody (music concept)
+10. book (reading object)
+
+These cover: furniture, transportation, weather, clothing, food, nature/animal, tool, lighting, abstract art, literature. Very diverse.
+
+Actually let me make sure none are technical. ""Melody"" is fairly common. ""Butterfly"" is common. All look good.
+</think>
+chair, bicycle, rain, jacket, bread, butterfly, hammer, lamp, melody, book",ok,10,<think>,the user wants 10 single-word english nouns that are things,objects,or concepts. they need to be as different from each other as possible. no proper nouns (people/places),no specialized/technical terms. output as comma-separated string,let me think of 10 very different nouns covering different categories:,- furniture: chair,- vehicle: bicycle,- emotion: happiness (concept),- weather: rain (concept/thing),,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:26:06.933Z,2026-07-16T00:26:10.827Z,3893,,d09ddea7-b19a-4c42-a7c2-d22d44fa6cbb,,stop,144,383,527,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, happiness, book, water, time, dog, cloud, freedom, stone, tree",ok,10,mountain,happiness,book,water,time,dog,cloud,freedom,stone,tree,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:26:10.827Z,2026-07-16T00:26:14.826Z,3998,,c88cdc06-52c1-4ee9-9f8c-c1632a5f769c,,stop,144,245,389,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"chair, freedom, water, happiness, mountain, time, tree, book, dream, lightning",ok,10,chair,freedom,water,happiness,mountain,time,tree,book,dream,lightning,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:25:39.230Z,2026-07-16T00:26:16.557Z,37327,,15055aad-1020-461c-aa72-070d279e31af,,stop,179,2570,2749,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"chair, river, rain, guitar, silence, dream, book, mountain, shadow, whisper",ok,10,chair,river,rain,guitar,silence,dream,book,mountain,shadow,whisper,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:26:09.995Z,2026-07-16T00:26:17.575Z,7580,,de49ab72-505c-42a0-9eda-2984393a7df2,,stop,314,547,861,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. Let me think about different categories of nouns to maximize diversity:
+
+1. Things/objects
+2. Concepts
+3. Different concrete vs abstract
+
+Let me try to pick from very different semantic domains:
+- Music (concept)
+- Furniture (thing)
+- Weather (concept)
+- Vehicle (thing)
+- Emotion (concept)
+- Food (thing)
+- Time (concept)
+- Body part (thing)
+- Color (concept)
+- Animal (thing) - wait, animals might be too specific? They're not proper nouns, they're common nouns. But ""dog"" is a living thing. Let me think if that counts as ""things, objects, concepts."" Animals are living things but still common nouns.
+
+Let me try:
+1. melody (concept/music)
+2. chair (object/furniture)
+3. storm (concept/weather)
+4. bicycle (object/vehicle)
+5. happiness (concept/emotion)
+6. bread (object/food)
+7. century (concept/time)
+8. shoulder (object/body part)
+9. crimson (concept/color)
+10. ocean (object/geography)
+
+Wait, ""ocean"" might be considered a thing. Let me check - it's a common noun, not a proper noun. It's a large body of water. That should be fine.
+
+Actually, let me reconsider - the instruction says ""things, objects and concepts"" so I should make sure I have a mix.
+
+Let me finalize:
+1. melody - abstract concept (music)
+2. chair - physical object
+3. thunderstorm - concept/weather
+4. bicycle - physical object
+5. joy - abstract concept (emotion)
+6. bread - physical object (food)
+7. century - abstract concept (time)
+8. shoulder - body part
+9. crimson - concept (color)
+10. ocean - physical thing
+
+Hmm, ""thunderstorm"" might be considered a hyphenated/compound word. Let me use ""storm"" instead.
+
+Also, let me make sure none are technical/specialized vocabulary. All of these are common everyday words.
+
+Final list:
+melody, chair, storm, bicycle, joy, bread, century, shoulder, crimson, ocean
+
+Let me double-check the diversity:
+- melody: music/sound
+- chair: furniture
+- storm: weather
+- bicycle: transportation
+- joy: emotion
+- bread: food
+- century: time
+- shoulder: body
+- crimson: color
+- ocean: nature/geography
+
+Good diversity across categories!
+</think>
+melody, chair, storm, bicycle, joy, bread, century, shoulder, crimson, ocean",ok,10,<think>,the user wants 10 nouns that are as different from each other as possible. let me think about different categories of nouns to maximize diversity:,let me try to pick from very different semantic domains:,- music (concept),- furniture (thing),- weather (concept),- vehicle (thing),- emotion (concept),- food (thing),- time (concept),,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:26:14.826Z,2026-07-16T00:26:18.303Z,3477,,6fca882e-7f64-486f-9d49-d8ca2c23ceca,,stop,144,267,411,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"air, sorrow, hammer, river, star, breeze, fabric, memory, table, shadow",ok,10,air,sorrow,hammer,river,star,breeze,fabric,memory,table,shadow,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:26:17.576Z,2026-07-16T00:26:23.559Z,5982,,da45d74c-f7e3-4012-938c-0e94b5ce1096,,stop,314,373,687,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 diverse single-word nouns that are:
+1. Single-word English nouns
+2. Things, objects, or concepts
+3. Not proper nouns (no people or places)
+4. Not specialized/technical terms
+5. Returned as a comma-separated string
+6. Nothing else in the response
+
+Let me think of 10 very different nouns spanning different categories:
+- chair (object/furniture)
+- music (concept)
+- river (nature)
+- book (object)
+- happiness (abstract concept)
+- bicycle (object/vehicle)
+- mountain (nature/place-ish but also a thing)
+- shadow (concept/thing)
+- clock (object)
+- laughter (concept/abstract)
+
+Wait, ""mountain"" might be considered a place. Let me reconsider. Mountains are physical objects/things, not really places in the proper noun sense. I think it's fine.
+
+Let me try to make them as different as possible:
+- chair (furniture, indoor)
+- ocean (nature, water)
+- book (written material)
+- music (abstract, sound)
+- bicycle (vehicle, transportation)
+- shadow (abstract/visual phenomenon)
+- clock (time-keeping device)
+- laughter (emotion/sound)
+- bread (food)
+- justice (abstract concept)
+
+These are quite diverse: furniture, nature, written material, sound, transportation, visual phenomenon, time, emotion, food, abstract concept.
+
+Let me make sure none are proper nouns. All good. None are highly technical terms.
+
+Final list: chair, ocean, book, music, bicycle, shadow, clock, laughter, bread, justice
+
+These are all single words, common nouns, things/objects/concepts, not proper nouns, not technical terms.
+</think>
+chair, ocean, book, music, bicycle, shadow, clock, laughter, bread, justice",ok,10,<think>,the user wants 10 diverse single-word nouns that are:,objects,or concepts,let me think of 10 very different nouns spanning different categories:,- chair (object/furniture),- music (concept),- river (nature),- book (object),- happiness (abstract concept),,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:26:18.304Z,2026-07-16T00:26:26.956Z,8652,,4b504cea-987c-40e6-a7d0-3afe0aaa434a,,stop,144,621,765,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, spoon, happiness, river, triangle, dog, cloud, music, fire, time",ok,10,mountain,spoon,happiness,river,triangle,dog,cloud,music,fire,time,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:26:16.558Z,2026-07-16T00:26:28.016Z,11458,,12fc7b1a-f903-4d48-b6a8-e12e92a7fb73,,stop,179,780,959,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, happiness, book, chair, rain, shadow, fire, music, time",ok,10,apple,mountain,happiness,book,chair,rain,shadow,fire,music,time,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:26:23.559Z,2026-07-16T00:26:29.027Z,5467,,02ae7bb6-f563-44c0-9ba0-3e7b28b2fa94,,stop,314,304,618,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. Let me think about categories and pick words that are maximally diverse:
+
+1. Things/objects
+2. Concepts
+3. Abstract ideas
+4. Natural objects
+5. Man-made objects
+6. Different sensory associations
+7. Different sizes
+8. Different contexts
+
+Let me brainstorm:
+- Emotion (concept)
+- Furniture (category/object)
+- Water (natural substance)
+- Music (concept)
+- Mountain (natural object)
+- Mirror (man-made object)
+- Freedom (abstract concept)
+- Butterfly (living thing)
+- Telescope (man-made tool)
+- Memory (abstract concept)
+
+Let me make them more diverse and ensure they're simple words:
+- joy (emotion/abstract)
+- chair (furniture/object)
+- ocean (nature)
+- rhythm (concept)
+- shadow (natural phenomenon)
+- bridge (structure)
+- curiosity (abstract/emotion)
+- feather (small natural object)
+- clock (man-made object)
+- silence (abstract)
+
+These are quite different from each other - different categories, different scales, different contexts. Let me check the rules:
+1. Single-word nouns ✓
+2. Things, objects, concepts ✓
+3. No proper nouns ✓
+4. No specialized/technical terms ✓
+5. Comma-separated ✓
+6. Only the string ✓
+
+Good, this works.
+</think>
+joy, chair, ocean, rhythm, shadow, bridge, curiosity, feather, clock, silence",ok,10,<think>,the user wants 10 nouns that are as different from each other as possible. let me think about categories and pick words that are maximally diverse:,let me brainstorm:,- emotion (concept),- furniture (category/object),- water (natural substance),- music (concept),- mountain (natural object),- mirror (man-made object),- freedom (abstract concept),,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:26:26.957Z,2026-07-16T00:26:30.308Z,3350,,ddd2c2d7-3b04-422f-a9a8-8d8d7502abdd,,stop,144,244,388,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"tree, mountain, love, book, water, time, fire, cloud, hand, peace",ok,10,tree,mountain,love,book,water,time,fire,cloud,hand,peace,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:26:30.308Z,2026-07-16T00:26:34.192Z,3884,,c0364013-eb8e-4adb-ac64-29fe5c2cf48b,,stop,144,344,488,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"rock, tree, cloud, idea, song, water, fire, mountain, sadness, clock",ok,10,rock,tree,cloud,idea,song,water,fire,mountain,sadness,clock,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:26:29.027Z,2026-07-16T00:26:35.644Z,6617,,d57418b9-5227-4315-bc8e-12e6158a401e,,stop,314,456,770,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 single-word nouns that are as different from each other as possible. They should be:
+- Things, objects, or concepts
+- Not proper nouns (no people or places)
+- Not specialized/technical vocabulary
+- Common English words
+- Returned as a comma-separated string
+
+Let me think of 10 very different nouns:
+
+1. Book (object)
+2. Happiness (concept/abstract)
+3. Ocean (natural feature - but this is a thing)
+4. Chair (furniture)
+5. Music (abstract concept)
+6. Mountain (natural feature)
+7. Clock (object)
+8. Freedom (abstract concept)
+9. Cloud (natural thing)
+10. Telephone (object)
+
+Wait, the instructions say ""no proper nouns such as people or places"" - ocean and mountain are common nouns for things, not proper nouns referring to specific places, so they should be fine.
+
+Let me make them more diverse:
+1. Book (man-made object, reading)
+2. Happiness (abstract emotion)
+3. Mountain (natural landform)
+4. Clock (time-related object)
+5. Music (art form)
+6. Ocean (natural water body)
+7. Chair (furniture)
+8. Freedom (political concept)
+9. Cloud (weather phenomenon)
+10. Laughter (action/abstract)
+
+Actually, ""laughter"" might be a bit specific. Let me think again.
+
+How about:
+1. Book
+2. Happiness
+3. Mountain
+4. Clock
+5. Music
+6. Ocean
+7. Chair
+8. Justice
+9. Cloud
+10. Shadow
+
+These are all quite different from each other. Let me verify:
+- Book: man-made object for reading
+- Happiness: abstract emotion
+- Mountain: natural landform
+- Clock: time-measuring device
+- Music: auditory art
+- Ocean: large water body
+- Chair: furniture
+- Justice: moral/political concept
+- Cloud: atmospheric phenomenon
+- Shadow: absence of light
+
+Yes, these are quite diverse. All are common English nouns, none are proper nouns, none are overly technical.
+</think>
+book, happiness, mountain, clock, music, ocean, chair, justice, cloud, shadow",ok,10,<think>,the user wants 10 single-word nouns that are as different from each other as possible. they should be:,- things,objects,or concepts,- not proper nouns (no people or places),- not specialized/technical vocabulary,- common english words,- returned as a comma-separated string,let me think of 10 very different nouns:,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:26:34.193Z,2026-07-16T00:26:37.005Z,2811,,d3022dbc-e05f-4588-ad2f-662d1b0f165a,,stop,144,216,360,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"water, mountain, joy, table, dog, idea, fire, music, wheel, cloud",ok,10,water,mountain,joy,table,dog,idea,fire,music,wheel,cloud,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:26:35.645Z,2026-07-16T00:26:40.119Z,4474,,d923e03a-4531-4a75-be30-c11acd417b31,,stop,314,263,577,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. Let me think about different categories:
+- Nature/elements: water, fire, earth
+- Objects: chair, book, clock
+- Concepts: freedom, justice, love
+- Animals: dog, cat, bird
+- Food: bread, apple
+- Body parts: hand, eye
+- Weather: rain, snow
+- Music: melody, song
+- Tools: hammer, knife
+- Clothing: shirt, hat
+
+Let me pick 10 that are very different from each other in category and concept:
+
+1. water (element/liquid)
+2. chair (furniture/object)
+3. freedom (abstract concept)
+4. music (abstract art)
+5. dog (animal)
+6. bread (food)
+7. mirror (object)
+8. laughter (abstract concept/action)
+9. mountain (natural formation)
+10. clock (object/instrument)
+
+Let me make sure these are all simple, common nouns, not proper nouns, not technical terms. All are single words. All represent things, objects, or concepts.
+
+I think this list works well. Let me return just the comma-separated string.
+</think>
+water, chair, freedom, music, dog, bread, mirror, laughter, mountain, clock",ok,10,<think>,the user wants 10 nouns that are as different from each other as possible. let me think about different categories:,- nature/elements: water,fire,earth,- objects: chair,book,clock,- concepts: freedom,justice,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:26:37.005Z,2026-07-16T00:26:40.836Z,3830,,2ca14952-19a9-4197-91c2-c5892028a522,,stop,144,420,564,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"time, water, book, tree, mountain, music, fire, love, stone, cloud",ok,10,time,water,book,tree,mountain,music,fire,love,stone,cloud,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:26:40.836Z,2026-07-16T00:26:44.273Z,3437,,644ada81-3c02-4f0b-b654-3f2b5bab0680,,stop,144,257,401,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"stone, idea, water, tree, love, machine, time, sound, dream, mountain",ok,10,stone,idea,water,tree,love,machine,time,sound,dream,mountain,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:26:40.120Z,2026-07-16T00:26:46.194Z,6074,,7d93fa60-0c84-4c6e-9827-fe6266b769f2,,stop,314,321,635,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 English single-word nouns that are:
+- Things, objects, or concepts
+- Not proper nouns (no people/places)
+- Not specialized/technical terms
+- As different from each other as possible
+- Output as comma-separated string
+
+Let me think of 10 very different nouns covering different categories:
+- chair (furniture)
+- music (abstract concept)
+- river (natural feature)
+- apple (food)
+- dream (abstract)
+- computer (device)
+- happiness (emotion)
+- mountain (natural feature)
+- book (object)
+- silence (abstract)
+
+Wait, I should make them as different as possible. Let me pick from diverse categories:
+- chair (furniture)
+- thunder (weather/sound)
+- pyramid (structure)
+- ocean (geographical feature)
+- clock (instrument)
+- whisper (sound/action)
+- courage (abstract quality)
+- telescope (instrument) - might be too technical
+- bread (food)
+- shadow (phenomenon)
+
+Let me refine:
+- chair (furniture/object)
+- thunder (weather phenomenon)
+- pyramid (structure)
+- ocean (body of water)
+- clock (device)
+- courage (abstract virtue)
+- bread (food)
+- shadow (optical phenomenon)
+- melody (abstract/sound)
+- forest (natural environment)
+
+These are quite diverse. Let me make sure none are too technical. ""Telescope"" might be borderline but clock should be fine. Let me finalize.
+</think>
+chair, thunder, pyramid, ocean, clock, courage, bread, shadow, melody, forest",ok,10,<think>,the user wants 10 english single-word nouns that are:,- things,objects,or concepts,- not proper nouns (no people/places),- not specialized/technical terms,- as different from each other as possible,- output as comma-separated string,let me think of 10 very different nouns covering different categories:,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:26:28.016Z,2026-07-16T00:26:46.901Z,18884,,9735faf3-3e07-474b-89dd-100a31006ec0,,stop,179,1422,1601,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"bird, rain, fire, stone, song, book, sky, time, love, light",ok,10,bird,rain,fire,stone,song,book,sky,time,love,light,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:26:44.274Z,2026-07-16T00:26:48.310Z,4036,,5e4ff557-1c9c-42bb-9cb3-31d6b68c0973,,stop,144,417,561,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, happiness, book, water, tree, idea, chair, cloud, knife, stone",ok,10,mountain,happiness,book,water,tree,idea,chair,cloud,knife,stone,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:26:48.310Z,2026-07-16T00:26:50.957Z,2646,,5a662f5e-6e41-4e90-9e81-6b0e32aa6787,,stop,144,215,359,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, ocean, freedom, hammer, mountain, laughter, clock, sun, book, dream",ok,10,apple,ocean,freedom,hammer,mountain,laughter,clock,sun,book,dream,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:26:46.194Z,2026-07-16T00:26:53.850Z,7655,,74c760b0-c780-48fc-a9ab-53aabe50afac,,stop,314,513,827,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 single-word English nouns that are as different from each other as possible. Let me think about different categories to maximize diversity:
+- Things/objects (concrete)
+- Concepts (abstract)
+- Different sizes, materials, functions
+- Different domains: nature, household, emotions, science (but not too technical), everyday life
+
+Let me brainstorm a wide variety:
+1. Ocean (nature/large body of water)
+2. Melody (abstract/music)
+3. Pillow (household object)
+4. Thunder (natural phenomenon)
+5. Friendship (abstract concept)
+6. Telescope (instrument)
+7. Butterfly (animal/insect)
+8. Courage (abstract quality)
+9. Lantern (light source/object)
+10. Mountain (geographical feature/nature)
+
+Let me check:
+- All single-word? Yes
+- All nouns? Yes
+- No proper nouns? Yes
+- Not too technical? ""Telescope"" might be borderline but it's common enough. Let me swap it.
+- Things, objects, concepts? Yes mix of all
+
+Let me try again with more variety and simpler words:
+1. Ocean
+2. Pillow
+3. Thunder
+4. Butterfly
+5. Courage
+6. Lantern
+7. Mountain
+8. Silence
+9. Mirror
+10. River
+
+These are quite different from each other - nature, emotions, objects, abstract concepts, animals, etc.
+
+Let me verify each:
+- Ocean: thing (large body of water)
+- Pillow: object (household)
+- Thunder: phenomenon/concept
+- Butterfly: animal
+- Courage: abstract concept
+- Lantern: object (light)
+- Mountain: thing (geographical)
+- Silence: abstract concept
+- Mirror: object
+- River: thing (nature)
+
+All are simple, common English words. None are technical. None are proper nouns. They cover different categories well.
+
+Actually, let me make them even more diverse to ensure they are ""as different as possible"":
+- Different sizes: ocean (huge), pillow (small)
+- Different materials: pillow (fabric), mountain (rock), mirror (glass)
+- Different domains: nature, home, abstract, animal
+- Living/non-living: butterfly (living), pillow (non-living)
+
+This list seems good. Let me finalize:
+Ocean, Pillow, Thunder, Butterfly, Courage, Lantern, Mountain, Silence, Mirror, River
+</think>
+Ocean, Pillow, Thunder, Butterfly, Courage, Lantern, Mountain, Silence, Mirror, River",ok,10,<think>,the user wants 10 single-word english nouns that are as different from each other as possible. let me think about different categories to maximize diversity:,- things/objects (concrete),- concepts (abstract),- different sizes,materials,functions,- different domains: nature,household,emotions,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:26:50.957Z,2026-07-16T00:26:54.405Z,3447,,d2aad4a2-850e-4afd-a672-a97cb117ad49,,stop,144,365,509,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, dream, river, music, window, love, stone, cloud, chair, wind",ok,10,mountain,dream,river,music,window,love,stone,cloud,chair,wind,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:26:46.901Z,2026-07-16T00:26:56.541Z,9639,,4c9323f6-9eee-4e1c-85f3-089426e99c5e,,stop,179,644,823,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, mountain, river, book, chair, star, idea, cloud, music, shadow",ok,10,apple,mountain,river,book,chair,star,idea,cloud,music,shadow,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:26:54.405Z,2026-07-16T00:26:57.186Z,2781,,50d18095-2bc2-4fac-9957-51c43fcdfdf6,,stop,144,203,347,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"love, rock, sky, book, dream, fire, wind, flower, time, mountain",ok,10,love,rock,sky,book,dream,fire,wind,flower,time,mountain,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:26:57.187Z,2026-07-16T00:27:00.752Z,3564,,3ce49cea-a3e2-4f0c-9684-3f9bd7fa9fbf,,stop,144,330,474,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"tree, idea, ocean, spoon, cloud, fear, bridge, fire, song, coin",ok,10,tree,idea,ocean,spoon,cloud,fear,bridge,fire,song,coin,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:26:53.851Z,2026-07-16T00:27:02.244Z,8392,,1a31cc1e-cb2b-4cc0-af6f-79c3d7c9272d,,stop,314,580,894,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 single-word English nouns that are as different from each other as possible. They should be:
+- Common nouns (things, objects, concepts)
+- Not proper nouns (no people, places)
+- Not specialized/technical terms
+- Things, objects, concepts
+
+Let me brainstorm a wide variety of nouns across different categories:
+- Furniture: chair, table
+- Nature: tree, river, mountain
+- Abstract: freedom, justice, love
+- Food: bread, apple
+- Body parts: hand, eye
+- Weather: storm, rainbow
+- Tools: hammer, knife
+- Clothing: shirt, shoe
+- Music: melody, song
+- Time: moment, century
+- Buildings: house, tower
+- Animals: dog, cat (wait, these are living things - the user said things, objects, concepts, but animals are living creatures. Let me re-read... ""nouns such as things, objects and concepts"" - I think animals might be borderline. Let me be safe and avoid them or include them as they are common nouns. Actually, ""things, objects and concepts"" suggests non-living, but let me include a few living things to be diverse... actually, to be safe, I'll focus on objects and concepts.)
+
+Let me think about maximum diversity:
+1. chair (furniture/physical object)
+2. music (abstract concept)
+3. mountain (geological feature)
+4. laughter (abstract/phenomenon)
+5. bread (food object)
+6. shadow (phenomenon)
+7. library (building/institution)
+8. puzzle (object/concept)
+9. ocean (geographical feature)
+10. memory (abstract concept)
+
+Let me check these:
+- All single words: yes
+- All common nouns: yes
+- Not proper nouns: yes
+- Not too technical: yes, these are all common words
+- Things, objects, concepts: yes, mixed
+
+Actually, let me reconsider some:
+- ""library"" could be seen as an institution rather than a thing/object, but it's a common noun
+- ""shadow"" is good - it's a phenomenon
+- ""laughter"" is an abstract noun
+
+Let me make them more diverse:
+1. chair
+2. mountain
+3. melody
+4. bread
+5. shadow
+6. ocean
+7. puzzle
+8. freedom
+9. rainbow
+10. diary
+
+These cover:
+- Furniture: chair
+- Nature/landscape: mountain, ocean, rainbow
+- Music/sound: melody
+- Food: bread
+- Phenomenon: shadow, rainbow
+- Object/game: puzzle
+- Abstract concept: freedom
+- Object/writing: diary
+
+That's pretty diverse. Let me finalize.
+</think>
+chair, mountain, melody, bread, shadow, ocean, puzzle, freedom, rainbow, diary",ok,10,<think>,the user wants 10 single-word english nouns that are as different from each other as possible. they should be:,- common nouns (things,objects,concepts),- not proper nouns (no people,places),- not specialized/technical terms,- things,objects,,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:27:00.752Z,2026-07-16T00:27:04.329Z,3576,,7cae516a-e524-4044-be2c-3ae64e0db30d,,stop,144,319,463,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"cloud, idea, spoon, mountain, music, fire, book, time, tree, stone",ok,10,cloud,idea,spoon,mountain,music,fire,book,time,tree,stone,,git:676e6de
+,MiniMax-M2.5,minimax-m2.5,minimax-m2.5,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:26:56.541Z,2026-07-16T00:27:07.059Z,10518,,fff2dafc-9c5c-46f9-948f-a9c1d31b1146,,stop,179,742,921,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, chair, rain, happiness, book, shadow, mountain, idea, shoe, planet",ok,10,apple,chair,rain,happiness,book,shadow,mountain,idea,shoe,planet,,git:676e6de
+,MiniMax-M3,minimax-m3,minimax-m3,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,Yes,2025,1.0,1.0,0-2,,2026-07-16T00:27:02.244Z,2026-07-16T00:27:07.828Z,5583,,a453bc2e-fc31-4078-aa96-8f3caaff555d,,stop,314,279,593,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"<think>
+The user wants 10 nouns that are as different from each other as possible. Let me think about diverse categories:
+
+1. Something from nature (not a person or place)
+2. Something man-made/object
+3. An abstract concept
+4. Something from a different domain
+
+Let me brainstorm:
+- tree (nature, plant)
+- chair (object, furniture)
+- freedom (abstract concept)
+- music (abstract concept, art)
+- water (element, nature)
+- book (object, media)
+- laughter (abstract, emotion)
+- shadow (natural phenomenon)
+- puzzle (object, game)
+- temperature (abstract, science concept)
+
+Wait, ""temperature"" might be a bit technical. Let me reconsider.
+
+- tree
+- chair
+- freedom
+- music
+- water
+- book
+- laughter
+- shadow
+- puzzle
+- warmth (or sleep, or courage)
+
+These are quite different from each other - covering nature, objects, abstract concepts, phenomena, emotions, activities.
+
+Let me finalize: tree, chair, freedom, music, water, book, laughter, shadow, puzzle, courage
+
+These are diverse - plant, furniture, political concept, art form, liquid, written work, emotion, light phenomenon, game, virtue. Good spread.
+</think>
+tree, chair, freedom, music, water, book, laughter, shadow, puzzle, courage",ok,10,<think>,the user wants 10 nouns that are as different from each other as possible. let me think about diverse categories:,let me brainstorm:,- tree (nature,plant),- chair (object,furniture),- freedom (abstract concept),- music (abstract concept,art),,git:676e6de
+,DeepSeek-V4-Flash-TH,deepseek-v4-flash,deepseek-v4-flash,hunyuan,https://tokenhub.tencentmaas.com/v1,collect_2026_n200,Eastern,No,2026,1.0,1.0,0-2,,2026-07-16T00:27:04.329Z,2026-07-16T00:27:08.575Z,4245,,6a8d3388-58ef-463d-8292-f2e625df5652,,stop,144,387,531,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"moon, joy, rock, breeze, story, wall, color, flower, river, shadow",ok,10,moon,joy,rock,breeze,story,wall,color,flower,river,shadow,,git:676e6de
