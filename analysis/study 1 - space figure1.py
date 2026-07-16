@@ -1,0 +1,193 @@
+import csv, pickle, numpy as np, random
+from scipy import stats
+from wordfreq import zipf_frequency
+from nltk.corpus import wordnet as wn
+import matplotlib; matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from matplotlib.patches import Patch
+from matplotlib.lines import Line2D
+csv.field_size_limit(10**9); random.seed(42); np.random.seed(42)
+
+# ---------- shared data prep ----------
+GLOVE=pickle.load(open("/home/user/repro/models/glove_validated.pickle","rb"))
+def valid(w):
+    w=str(w).strip().lower(); return w if (w and w in GLOVE) else None
+def load(p,enc='utf-8-sig'):
+    with open(p,newline='',encoding=enc,errors='replace') as f: return list(csv.DictReader(f))
+WCOLS=[f"word_{i}" for i in range(1,11)]
+H=load("/home/user/human_data_scored.csv"); M=load("/home/user/machine_data_merged.csv")
+def rws(rows,k):
+    o=[]
+    for r in rows:
+        ws=[r[c] for c in WCOLS]; s=r.get(k,'')
+        try:s=float(s)
+        except:s=None
+        o.append((ws,s))
+    return o
+Hd=[(w,s) for w,s in rws(H,'word_dat_score') if s is not None]
+Md=[(w,s) for w,s in rws(M,'dat_score') if s is not None]
+Hs=np.array([s for _,s in Hd]); Ms=np.array([s for _,s in Md])
+def top10(d):
+    t=np.percentile([s for _,s in d],90); return [w for w,s in d if s>=t]
+Ht=top10(Hd); Mt=top10(Md)
+def first7(ws):
+    o=[];seen=set()
+    for w in ws:
+        v=valid(w)
+        if v is None or v in seen: continue
+        seen.add(v);o.append(v)
+        if len(o)>=7:break
+    return o
+Ha=[first7(ws) for ws in Ht if len(first7(ws))==7]
+Ma=[first7(ws) for ws in Mt if len(first7(ws))==7]
+SAMPLE_N=500
+random.shuffle(Ha); random.shuffle(Ma)
+HaS=Ha[:SAMPLE_N]; MaS=Ma[:SAMPLE_N]
+
+HUMAN="#5E348B"; MACHINE="#3CB7B0"; RATIO="#c0762e"
+def darken(hexc,f=0.64):
+    hexc=hexc.lstrip('#'); r,g,b=[int(hexc[i:i+2],16) for i in (0,2,4)]
+    return (r*f/255,g*f/255,b*f/255)
+HUMAN_D=darken(HUMAN); MACHINE_D=darken(MACHINE)
+def sq(ax):
+    x0,x1=ax.get_xlim(); y0,y1=ax.get_ylim(); ax.set_aspect(abs(x1-x0)/abs(y1-y0))
+def note_under_legend(ax,leg,txt):
+    ax.figure.canvas.draw()
+    bb=leg.get_window_extent().transformed(ax.transAxes.inverted())
+    ax.text(bb.x0+0.008, bb.y0-0.02, txt, transform=ax.transAxes, fontsize=8.5, color='#555', va='top', ha='left')
+
+# ---------- Panel A ----------
+def draw_A(ax):
+    def splits(ss):
+        lo,hi=np.percentile(ss,10),np.percentile(ss,90)
+        return [ss[ss<=lo],ss[(ss>lo)&(ss<hi)],ss[ss>=hi]]
+    Hsp=[np.random.choice(a,min(SAMPLE_N,len(a)),replace=False) for a in splits(Hs)]
+    Msp=[np.random.choice(a,min(SAMPLE_N,len(a)),replace=False) for a in splits(Ms)]
+    groups=["Bottom 10%","Middle 80%","Top 10%"]
+    def ci95(a): return 1.96*np.std(a,ddof=1)/np.sqrt(len(a))
+    def stars(p): return "***" if p<1e-3 else "**" if p<1e-2 else "*" if p<0.05 else "ns"
+    AS=10; AC="#333333"; w=0.36
+    for i in range(3):
+        h=Hsp[i]; m=Msp[i]
+        ax.bar(i-w/2,h.mean(),w,color=HUMAN,alpha=0.85,zorder=2)
+        ax.bar(i+w/2,m.mean(),w,color=MACHINE,alpha=0.85,zorder=2)
+        def jit(v,c): return c+np.random.uniform(-w/2.6,w/2.6,len(v)),v
+        jx,jv=jit(h,i-w/2); ax.scatter(jx,jv,s=12,facecolors='none',edgecolors=HUMAN_D,alpha=0.36,linewidths=0.6,zorder=3)
+        jx,jv=jit(m,i+w/2); ax.scatter(jx,jv,s=12,facecolors='none',edgecolors=MACHINE_D,alpha=0.36,linewidths=0.6,zorder=3)
+        ax.errorbar(i-w/2,h.mean(),yerr=ci95(h),color='black',capsize=4,lw=1.4,zorder=5)
+        ax.errorbar(i+w/2,m.mean(),yerr=ci95(m),color='black',capsize=4,lw=1.4,zorder=5)
+        t,p=stats.ttest_ind(h,m,equal_var=False); diff=m.mean()-h.mean()
+        ytop=max(h.mean(),m.mean())+9
+        ax.plot([i-w/2,i-w/2,i+w/2,i+w/2],[ytop-1.5,ytop,ytop,ytop-1.5],color='black',lw=1.1,zorder=5)
+        ax.text(i,ytop+0.3,stars(p),ha='center',va='bottom',fontsize=AS,color=AC,zorder=6)
+        ax.text(i,ytop+3.0,f"{diff:+.1f}",ha='center',va='bottom',fontsize=AS,weight='bold',color=AC,zorder=6)
+        ax.text(i-w/2,ytop-3.2,f"{h.mean():.1f}",ha='center',va='top',fontsize=AS,weight='bold',color=AC,zorder=6)
+        ax.text(i+w/2,ytop-3.2,f"{m.mean():.1f}",ha='center',va='top',fontsize=AS,weight='bold',color=AC,zorder=6)
+    ax.set_xticks(range(3)); ax.set_xticklabels(groups,fontsize=11)
+    ax.set_ylabel("Divergent thinking score",fontsize=11); ax.set_ylim(60,105)
+    leg=ax.legend(handles=[Patch(color=HUMAN,label='Human'),Patch(color=MACHINE,label='Machine')],loc='upper left',fontsize=10)
+    leg._legend_box.align='left'
+    ax.set_title("Panel A - Divergent Thinking Score by Split",fontsize=12,weight='bold')
+    ax.spines[['top','right']].set_visible(False)
+    ax.grid(axis='y',color='#cccccc',linewidth=0.7,alpha=0.8,zorder=0); ax.set_axisbelow(True)
+    note_under_legend(ax,leg,f"n={SAMPLE_N} per group,\nrandom sampled")
+    sq(ax)
+
+# ---------- Panel B ----------
+def draw_B(ax):
+    CAP=500; STEP=5; BREPS=250
+    def rarefy(pop):
+        N=len(pop); xs=list(range(STEP,min(CAP,N)+1,STEP)); ys=[];lo=[];hi=[]
+        for k in xs:
+            c=[]
+            for _ in range(BREPS):
+                idx=np.random.randint(0,N,size=k); s=set()
+                for i in idx: s.update(pop[i])
+                c.append(len(s))
+            ys.append(np.mean(c));lo.append(np.percentile(c,2.5));hi.append(np.percentile(c,97.5))
+        return xs,np.array(ys),np.array(lo),np.array(hi)
+    hx,hy,hl,hh=rarefy(Ha[:CAP]); mx,my,ml,mh=rarefy(Ma[:CAP])
+    ax.plot(hx,hy,color=HUMAN,lw=2,label="Human"); ax.fill_between(hx,hl,hh,color=HUMAN,alpha=0.25)
+    ax.plot(mx,my,color=MACHINE,lw=2,label="Machine"); ax.fill_between(mx,ml,mh,color=MACHINE,alpha=0.25)
+    ax.text(0.60,0.30,"Distinct words @500:",transform=ax.transAxes,fontsize=9.5,color="#333",va="top",weight="bold")
+    ax.text(0.60,0.245,f"Human  {int(round(hy[-1]))}",transform=ax.transAxes,fontsize=10,color=HUMAN,va="top",weight="bold")
+    ax.text(0.60,0.19,f"Machine  {int(round(my[-1]))}",transform=ax.transAxes,fontsize=10,color=MACHINE,va="top",weight="bold")
+    ax.set_xlabel("Sampled responses",fontsize=11); ax.set_ylabel("Cumulative distinct words",fontsize=11)
+    ax.set_title("Panel B - Cumulative Distinct Words",fontsize=12,weight='bold')
+    leg=ax.legend(handles=[Patch(color=HUMAN,label='Human'),Patch(color=MACHINE,label='Machine')],loc='upper left',fontsize=10)
+    leg._legend_box.align='left'
+    ax.spines[['top','right']].set_visible(False)
+    ax.grid(color='#cccccc',linewidth=0.7,alpha=0.8,zorder=0); ax.set_axisbelow(True)
+    note_under_legend(ax,leg,"top 10%, first 7 words\n500 resp., respondent bootstrap 95% CI")
+    ax.set_xlim(0,CAP+5); sq(ax)
+
+# ---------- Panel C ----------
+def draw_C(ax):
+    CAP=500; REPS=200
+    def new_per(pop):
+        pop=[set(a) for a in pop]; N=len(pop); K=min(CAP,N)
+        allr=np.zeros((REPS,K))
+        for r in range(REPS):
+            order=np.random.permutation(N)[:K]; seen=set()
+            for pos,i in enumerate(order):
+                b=len(seen); seen|=pop[i]; allr[r,pos]=len(seen)-b
+        return np.arange(1,K+1),allr.mean(0),allr.std(0,ddof=1)/np.sqrt(REPS)
+    hx,hy,hs_=new_per(Ha[:CAP]); mx,my,ms_=new_per(Ma[:CAP])
+    ax.plot(hx,hy,color=HUMAN,lw=1.6,label="Human"); ax.fill_between(hx,hy-1.96*hs_,hy+1.96*hs_,color=HUMAN,alpha=0.25)
+    ax.plot(mx,my,color=MACHINE,lw=1.6,label="Machine"); ax.fill_between(mx,my-1.96*ms_,my+1.96*ms_,color=MACHINE,alpha=0.25)
+    ax.text(0.58,0.95,"New words @500:",transform=ax.transAxes,fontsize=9.5,color="#333",va="top",weight="bold")
+    ax.text(0.58,0.895,f"Human  {hy[-1]:.2f}",transform=ax.transAxes,fontsize=10,color=HUMAN,va="top",weight="bold")
+    ax.text(0.58,0.84,f"Machine  {my[-1]:.2f}",transform=ax.transAxes,fontsize=10,color=MACHINE,va="top",weight="bold")
+    ax.set_xlabel("Sampled responses",fontsize=11); ax.set_ylabel("New distinct words added",fontsize=11)
+    ax.set_title("Panel C - New Words per Sampled Response",fontsize=12,weight='bold')
+    leg=ax.legend(handles=[Patch(color=HUMAN,label='Human'),Patch(color=MACHINE,label='Machine')],loc='upper right',fontsize=10)
+    leg._legend_box.align='left'
+    ax.spines[['top','right']].set_visible(False)
+    ax.grid(color='#cccccc',linewidth=0.7,alpha=0.8,zorder=0); ax.set_axisbelow(True)
+    ax.text(0.97,0.66,f"n={CAP} per group,\nrandom sampled",transform=ax.transAxes,fontsize=8.5,color='#555',va='top',ha='right')
+    ax.set_xlim(0,CAP+5); ax.set_ylim(0,7.2); sq(ax)
+
+# ---------- Panel D ----------
+def draw_D(ax):
+    LEVELS=list(range(1,9))
+    def cats_at(words,level):
+        cats=set()
+        for w in words:
+            ss=wn.synsets(w,pos=wn.NOUN)
+            if not ss: continue
+            paths=ss[0].hypernym_paths()
+            if not paths: continue
+            p=paths[0]; cats.add(p[min(level,len(p)-1)].name())
+        return cats
+    Hw=[w for a in HaS for w in a]; Mw=[w for a in MaS for w in a]
+    hcnt=[];mcnt=[];ratio=[]
+    for L in LEVELS:
+        hc=len(cats_at(Hw,L)); mc=len(cats_at(Mw,L)); hcnt.append(hc);mcnt.append(mc);ratio.append(hc/mc if mc else np.nan)
+    ax.plot(LEVELS,hcnt,'-o',color=HUMAN,lw=2,ms=6,zorder=3)
+    ax.plot(LEVELS,mcnt,'-o',color=MACHINE,lw=2,ms=6,zorder=3)
+    ax.set_xlabel("WordNet category depth (level)",fontsize=11); ax.set_ylabel("Distinct WordNet categories",fontsize=11)
+    ax.set_title("Panel D - Categorical Diversity",fontsize=12,weight='bold')
+    ax.spines[['top']].set_visible(False)
+    ax.grid(color='#cccccc',linewidth=0.7,alpha=0.8,zorder=0); ax.set_axisbelow(True)
+    ax2=ax.twinx()
+    ax2.plot(LEVELS,ratio,'--s',color=RATIO,lw=1.8,ms=5,zorder=4)
+    ax2.axhline(1,color='gray',ls=':',lw=1)
+    for L,r in zip(LEVELS,ratio): ax2.annotate(f"{r:.1f}x",(L,r),textcoords="offset points",xytext=(0,7),ha='center',fontsize=8,color=RATIO)
+    ax2.set_ylabel("Ratio (Human / Machine)",fontsize=11,color=RATIO); ax2.tick_params(axis='y',labelcolor=RATIO)
+    ax2.set_ylim(0,max([r for r in ratio if not np.isnan(r)])+1.2); ax2.spines[['top']].set_visible(False)
+    h=[Line2D([0],[0],color=HUMAN,marker='o',lw=2,label='Human (count)'),
+       Line2D([0],[0],color=MACHINE,marker='o',lw=2,label='Machine (count)'),
+       Line2D([0],[0],color=RATIO,marker='s',ls='--',lw=1.8,label='Ratio (H/M)')]
+    leg=ax.legend(handles=h,loc='upper left',fontsize=9); leg._legend_box.align='left'
+    ax.text(0.03,0.72,f"n={SAMPLE_N} per group,\nrandom sampled",transform=ax.transAxes,fontsize=8.5,color='#555',va='top')
+    x0,x1=ax.get_xlim(); y0,y1=ax.get_ylim(); ax.set_aspect(abs(x1-x0)/abs(y1-y0))
+
+# ---------- assemble ----------
+fig,axes=plt.subplots(2,2,figsize=(16,16))
+draw_A(axes[0,0]); draw_B(axes[0,1]); draw_C(axes[1,0]); draw_D(axes[1,1])
+for a,lab in zip(axes.flat,["A","B","C","D"]):
+    a.text(-0.02,1.06,lab,transform=a.transAxes,fontsize=20,weight='bold',va='top',ha='left')
+fig.suptitle("Figure 1 - Combinatoric Space: Human vs Machine (latest data)",fontsize=18,weight='bold',y=0.995)
+fig.tight_layout(rect=[0,0,1,0.98])
+fig.savefig("/home/user/figure1_composite.png",dpi=130,bbox_inches='tight'); plt.close(fig)
+print("Figure 1 (true subplots) done")
