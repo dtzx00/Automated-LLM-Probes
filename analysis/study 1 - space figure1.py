@@ -191,17 +191,18 @@ def draw_D(ax):
     hlo=[];hhi=[];mlo=[];mhi=[];rlo=[];rhi=[]
     for L in LEVELS:
         Hs_=Hsets[L]; Ms_=Msets[L]
-        hc=len(set().union(*Hs_)); mc=len(set().union(*Ms_))
-        hcnt.append(hc); mcnt.append(mc); ratio.append(hc/mc if mc else np.nan)
         hb=[];mb=[];rb=[]
         for _ in range(REPS):
             hi_=np.random.randint(0,NH,size=NH); mi_=np.random.randint(0,NM,size=NM)  # with replacement, full N
             hu=set().union(*[Hs_[i] for i in hi_]); mu=set().union(*[Ms_[i] for i in mi_])
             hb.append(len(hu)); mb.append(len(mu)); rb.append(len(hu)/len(mu) if mu else np.nan)
         hb=np.array(hb);mb=np.array(mb);rb=np.array(rb)
+        # PLOT the bootstrap mean so the line is the center of its own CI (distinct-count is not an average,
+        # so the full-sample count sits above the bootstrap mean -> use the bootstrap estimate consistently)
+        hc=hb.mean(); mc=mb.mean(); hcnt.append(hc); mcnt.append(mc); ratio.append(np.nanmean(rb))
         hse=hb.std(ddof=1)/np.sqrt(len(hb)); mse=mb.std(ddof=1)/np.sqrt(len(mb))
-        hlo.append(hb.mean()-1.96*hse); hhi.append(hb.mean()+1.96*hse)
-        mlo.append(mb.mean()-1.96*mse); mhi.append(mb.mean()+1.96*mse)
+        hlo.append(hc-1.96*hse); hhi.append(hc+1.96*hse)
+        mlo.append(mc-1.96*mse); mhi.append(mc+1.96*mse)
         rse=np.nanstd(rb,ddof=1)/np.sqrt(np.sum(~np.isnan(rb)))
         rlo.append(np.nanmean(rb)-1.96*rse); rhi.append(np.nanmean(rb)+1.96*rse)
     ax.plot(LEVELS,hcnt,'-o',color=HUMAN,lw=2,ms=6,zorder=3)
