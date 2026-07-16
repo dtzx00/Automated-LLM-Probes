@@ -68,6 +68,8 @@ Zunyi 2025 9, Zunyi 2024 14). Cue: 0. Augmented: 0.
 
 ## Notes
 - Field-study words (Zunyi 2024/2025) are English translations of Chinese responses.
+- Zunyi Medical University (2025) `demo_age` is set to 18 for all rows: this cohort are all university freshmen, so age was not collected per-person but is known by cohort.
+
 - Respondents who submitted no words (empty response) are not in the master — dropped as
   non-completion, not as a cleaning flag.
 - Two large Olson human samples (100k and 750k) are score-only with no words released, so they
