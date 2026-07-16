@@ -165,21 +165,21 @@ def draw_D(ax):
         hc=len(cats_at(Hw,L)); mc=len(cats_at(Mw,L)); hcnt.append(hc);mcnt.append(mc);ratio.append(hc/mc if mc else np.nan)
     ax.plot(LEVELS,hcnt,'-o',color=HUMAN,lw=2,ms=6,zorder=3)
     ax.plot(LEVELS,mcnt,'-o',color=MACHINE,lw=2,ms=6,zorder=3)
+    # print the ratio (how many x more categories humans use) above each human point, black
+    for L,hc,r in zip(LEVELS,hcnt,ratio):
+        if not np.isnan(r):
+            ax.annotate(f"{r:.1f}x",(L,hc),textcoords="offset points",xytext=(0,9),ha='center',
+                        fontsize=9,weight='bold',color="#333333",zorder=6)
     ax.set_xlabel("WordNet category depth (level)",fontsize=11); ax.set_ylabel("Distinct WordNet categories",fontsize=11)
     ax.set_title("Panel D - Categorical Diversity",fontsize=12,weight='bold')
-    ax.spines[['top']].set_visible(False)
+    ax.spines[['top','right']].set_visible(False)
     ax.grid(color='#cccccc',linewidth=0.7,alpha=0.8,zorder=0); ax.set_axisbelow(True)
-    ax2=ax.twinx()
-    ax2.plot(LEVELS,ratio,'--s',color=RATIO,lw=1.8,ms=5,zorder=4)
-    ax2.axhline(1,color='gray',ls=':',lw=1)
-    for L,r in zip(LEVELS,ratio): ax2.annotate(f"{r:.1f}x",(L,r),textcoords="offset points",xytext=(0,7),ha='center',fontsize=8,color=RATIO)
-    ax2.set_ylabel("Ratio (Human / Machine)",fontsize=11,color=RATIO); ax2.tick_params(axis='y',labelcolor=RATIO)
-    ax2.set_ylim(0,max([r for r in ratio if not np.isnan(r)])+1.2); ax2.spines[['top']].set_visible(False)
-    h=[Line2D([0],[0],color=HUMAN,marker='o',lw=2,label='Human (count)'),
-       Line2D([0],[0],color=MACHINE,marker='o',lw=2,label='Machine (count)'),
-       Line2D([0],[0],color=RATIO,marker='s',ls='--',lw=1.8,label='Ratio (H/M)')]
-    leg=ax.legend(handles=h,loc='upper left',fontsize=9); leg._legend_box.align='left'
-    ax.text(0.03,0.72,f"n={SAMPLE_N} per group,\nrandom sampled",transform=ax.transAxes,fontsize=8.5,color='#555',va='top')
+    h=[Line2D([0],[0],color=HUMAN,marker='o',lw=2,label='Human'),
+       Line2D([0],[0],color=MACHINE,marker='o',lw=2,label='Machine')]
+    leg=ax.legend(handles=h,loc='upper left',fontsize=10); leg._legend_box.align='left'
+    ax.text(0.03,0.72,"Nx = how many more distinct categories\nhumans use than machines at that level",transform=ax.transAxes,fontsize=8,color='#555',va='top')
+    ax.text(0.03,0.63,f"n={SAMPLE_N} per group, random sampled",transform=ax.transAxes,fontsize=8.5,color='#555',va='top')
+    ax.set_ylim(0,max(hcnt)*1.12)
     x0,x1=ax.get_xlim(); y0,y1=ax.get_ylim(); ax.set_aspect(abs(x1-x0)/abs(y1-y0))
 
 # ---------- assemble ----------
