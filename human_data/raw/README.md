@@ -32,3 +32,17 @@ Field-study DAT arm, translated to English from the source study.
 - Dropped: all non-DAT measures and personal names.
 - Note: responses were originally given in Chinese; these are English translations. Cross-language
   scoring is handled at the consolidation step.
+
+## Zunyi Medical University (2024) and HSBC AI Ambassador (2025)
+These two sources arrived together in a later consolidated collection file (a multi-cohort export)
+rather than as standalone raw files, so they are not stored as separate CSVs in `raw/`. They were
+mapped into the master schema and merged directly:
+
+- **Zunyi Medical University (2024)** — field-study cohort, DAT arm, English-translated. 827
+  respondents kept (rows with no words were dropped as non-completion). Extra cohort fields (GPA,
+  college-entrance score, and similar) are preserved in `extra_json`.
+- **HSBC AI Ambassador (2025)** — corporate AI-ambassador programme cohort, DAT. 203 respondents.
+
+Both were de-duplicated against the existing master before merging; rows already present from other
+cohorts in the same export were skipped. Zunyi Medical University (2025) was **not** re-imported from
+this file — the existing `zunyi` copy is authoritative.
