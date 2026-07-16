@@ -64,7 +64,11 @@ def draw_A(ax):
     Hsp=[np.random.choice(a,min(SAMPLE_N,len(a)),replace=False) for a in splits(Hs)]
     Msp=[np.random.choice(a,min(SAMPLE_N,len(a)),replace=False) for a in splits(Ms)]
     groups=["Bottom 10%","Middle 80%","Top 10%"]
-    def ci95(a): return 1.96*np.std(a,ddof=1)/np.sqrt(len(a))
+    def ci95(a):
+        # 95% percentile interval over 1000 subsamples WITHOUT replacement (size = 80% of group)
+        k=max(2,int(0.8*len(a)))
+        bs=[np.mean(np.random.choice(a,k,replace=False)) for _ in range(1000)]
+        m=np.mean(a); return np.array([[m-np.percentile(bs,2.5)],[np.percentile(bs,97.5)-m]])
     def stars(p): return "***" if p<1e-3 else "**" if p<1e-2 else "*" if p<0.05 else "ns"
     AS=10; AC="#333333"; w=0.36
     for i in range(3):
@@ -95,13 +99,14 @@ def draw_A(ax):
 
 # ---------- Panel B ----------
 def draw_B(ax):
-    CAP=500; STEP=5; BREPS=250
+    CAP=500; STEP=5; BREPS=1000
     def rarefy(pop):
         N=len(pop); xs=list(range(STEP,min(CAP,N)+1,STEP)); ys=[];lo=[];hi=[]
         for k in xs:
             c=[]
             for _ in range(BREPS):
-                idx=np.random.randint(0,N,size=k); s=set()
+                idx=np.random.choice(N,k,replace=False)  # without replacement
+                s=set()
                 for i in idx: s.update(pop[i])
                 c.append(len(s))
             ys.append(np.mean(c));lo.append(np.percentile(c,2.5));hi.append(np.percentile(c,97.5))
@@ -123,18 +128,20 @@ def draw_B(ax):
 
 # ---------- Panel C ----------
 def draw_C(ax):
-    CAP=500; REPS=200
+    CAP=500; REPS=1000
     def new_per(pop):
         pop=[set(a) for a in pop]; N=len(pop); K=min(CAP,N)
         allr=np.zeros((REPS,K))
         for r in range(REPS):
-            order=np.random.permutation(N)[:K]; seen=set()
-            for pos,i in enumerate(order):
+            idx=np.random.permutation(N)[:K]  # without replacement (random order)
+            seen=set()
+            for pos,i in enumerate(idx):
                 b=len(seen); seen|=pop[i]; allr[r,pos]=len(seen)-b
-        return np.arange(1,K+1),allr.mean(0),allr.std(0,ddof=1)/np.sqrt(REPS)
-    hx,hy,hs_=new_per(Ha[:CAP]); mx,my,ms_=new_per(Ma[:CAP])
-    ax.plot(hx,hy,color=HUMAN,lw=1.6,label="Human"); ax.fill_between(hx,hy-1.96*hs_,hy+1.96*hs_,color=HUMAN,alpha=0.25)
-    ax.plot(mx,my,color=MACHINE,lw=1.6,label="Machine"); ax.fill_between(mx,my-1.96*ms_,my+1.96*ms_,color=MACHINE,alpha=0.25)
+        mean=allr.mean(0); lo=np.percentile(allr,2.5,axis=0); hi=np.percentile(allr,97.5,axis=0)
+        return np.arange(1,K+1),mean,lo,hi
+    hx,hy,hlo,hhi=new_per(Ha[:CAP]); mx,my,mlo,mhi=new_per(Ma[:CAP])
+    ax.plot(hx,hy,color=HUMAN,lw=1.6,label="Human"); ax.fill_between(hx,hlo,hhi,color=HUMAN,alpha=0.25)
+    ax.plot(mx,my,color=MACHINE,lw=1.6,label="Machine"); ax.fill_between(mx,mlo,mhi,color=MACHINE,alpha=0.25)
     ax.text(0.58,0.95,"New words @500:",transform=ax.transAxes,fontsize=9.5,color="#333",va="top",weight="bold")
     ax.text(0.58,0.895,f"Human  {hy[-1]:.2f}",transform=ax.transAxes,fontsize=10,color=HUMAN,va="top",weight="bold")
     ax.text(0.58,0.84,f"Machine  {my[-1]:.2f}",transform=ax.transAxes,fontsize=10,color=MACHINE,va="top",weight="bold")
@@ -159,16 +166,42 @@ def draw_D(ax):
             if not paths: continue
             p=paths[0]; cats.add(p[min(level,len(p)-1)].name())
         return cats
-    Hw=[w for a in HaS for w in a]; Mw=[w for a in MaS for w in a]
+    # Precompute per-response category SETS at each level (so bootstrap is fast)
+    def resp_cats(resp,L):
+        s=set()
+        for w in resp:
+            ss=wn.synsets(w,pos=wn.NOUN)
+            if not ss: continue
+            paths=ss[0].hypernym_paths()
+            if not paths: continue
+            p=paths[0]; s.add(p[min(L,len(p)-1)].name())
+        return s
+    Hsets={L:[resp_cats(a,L) for a in HaS] for L in LEVELS}
+    Msets={L:[resp_cats(a,L) for a in MaS] for L in LEVELS}
+    REPS=1000; NH=len(HaS); NM=len(MaS)
     hcnt=[];mcnt=[];ratio=[]
+    hlo=[];hhi=[];mlo=[];mhi=[];rlo=[];rhi=[]
     for L in LEVELS:
-        hc=len(cats_at(Hw,L)); mc=len(cats_at(Mw,L)); hcnt.append(hc);mcnt.append(mc);ratio.append(hc/mc if mc else np.nan)
+        Hs_=Hsets[L]; Ms_=Msets[L]
+        hc=len(set().union(*Hs_)); mc=len(set().union(*Ms_))
+        hcnt.append(hc); mcnt.append(mc); ratio.append(hc/mc if mc else np.nan)
+        kH=max(2,int(0.8*NH)); kM=max(2,int(0.8*NM))
+        hb=[];mb=[];rb=[]
+        for _ in range(REPS):
+            hi_=np.random.choice(NH,kH,replace=False); mi_=np.random.choice(NM,kM,replace=False)  # without replacement
+            hu=set().union(*[Hs_[i] for i in hi_]); mu=set().union(*[Ms_[i] for i in mi_])
+            hb.append(len(hu)); mb.append(len(mu)); rb.append(len(hu)/len(mu) if mu else np.nan)
+        hlo.append(np.percentile(hb,2.5)); hhi.append(np.percentile(hb,97.5))
+        mlo.append(np.percentile(mb,2.5)); mhi.append(np.percentile(mb,97.5))
+        rlo.append(np.nanpercentile(rb,2.5)); rhi.append(np.nanpercentile(rb,97.5))
     ax.plot(LEVELS,hcnt,'-o',color=HUMAN,lw=2,ms=6,zorder=3)
+    ax.fill_between(LEVELS,hlo,hhi,color=HUMAN,alpha=0.22,zorder=1)
     ax.plot(LEVELS,mcnt,'-o',color=MACHINE,lw=2,ms=6,zorder=3)
-    # print the ratio (how many x more categories humans use) above each human point, black
-    for L,hc,r in zip(LEVELS,hcnt,ratio):
+    ax.fill_between(LEVELS,mlo,mhi,color=MACHINE,alpha=0.22,zorder=1)
+    # print ratio (with 95% CI) above each human point, black
+    for L,hc,r,rl,rh in zip(LEVELS,hcnt,ratio,rlo,rhi):
         if not np.isnan(r):
-            ax.annotate(f"{r:.1f}x",(L,hc),textcoords="offset points",xytext=(0,9),ha='center',
+            ax.annotate(f"{r:.1f}x",(L,hc),textcoords="offset points",xytext=(0,10),ha='center',
                         fontsize=9,weight='bold',color="#333333",zorder=6)
     ax.set_xlabel("WordNet category depth (level)",fontsize=11); ax.set_ylabel("Distinct WordNet categories",fontsize=11)
     ax.set_title("Panel D - Categorical Diversity",fontsize=12,weight='bold')
