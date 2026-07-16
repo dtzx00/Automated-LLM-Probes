@@ -164,7 +164,7 @@ def draw_C(ax):
 
 # ---------- Panel D ----------
 def draw_D(ax):
-    LEVELS=list(range(1,9))
+    LEVELS=list(range(1,11))
     def cats_at(words,level):
         cats=set()
         for w in words:
