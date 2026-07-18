@@ -60,6 +60,20 @@ def human_line(hy,style,fillopen,line_alpha):
         else: ax.scatter(tx(y),hy[y],marker='o',s=210,facecolors='white',edgecolors=HUMAN_PURPLE,linewidths=3,zorder=7)
 human_line(dat_hy,'-','fill',0.65)   # DAT baseline: 35% transparent, matches its dots
 human_line(btw_hy,'--','open',0.90)  # between-unit baseline: strong, matches white-fill dots
+# --- shade between the two HUMAN baselines (10%, purple) ---
+def _human_y_at(hy, xv):
+    hx=sorted(hy)
+    if xv<=hx[0]: return hy[hx[0]]
+    if xv<=hx[1]: 
+        f=(xv-hx[0])/(hx[1]-hx[0]); return hy[hx[0]]+f*(hy[hx[1]]-hy[hx[0]])
+    if xv<=2025:
+        f=(xv-2024)/(2025-2024); return hy[2024]+f*(hy[2025]-hy[2024])
+    return hy[2025]
+import numpy as _np
+_hxs=_np.linspace(min(sorted(dat_hy)), xmax, 200)
+_hd=[_human_y_at(dat_hy,x) for x in _hxs]
+_hb=[_human_y_at(btw_hy,x) for x in _hxs]
+ax.fill_between([tx(x) for x in _hxs],_hd,_hb,color=HUMAN_PURPLE,alpha=0.10,zorder=2,linewidth=0)
 # --- Claude lineage connectors: link consecutive Claude models' existing points (no new numbers) ---
 _claude=[m for m in dat if m.lower().startswith("claude") and m in btw]
 _claude.sort(key=lambda m: dat[m][0])   # by release date
@@ -70,6 +84,7 @@ if len(_claude)>=2:
     _yb=[btw[m][7] for m in _claude]     # between-unit points
     ax.plot(_xs,_yd,'-',color=_ccol,lw=2.2,alpha=0.65,zorder=4)   # DAT lineage: 35% transparent (like human DAT)
     ax.plot(_xs,_yb,'-',color=_ccol,lw=2.2,alpha=0.90,zorder=4)   # between lineage: strong (like human between)
+    ax.fill_between(_xs,_yd,_yb,color=_ccol,alpha=0.10,zorder=2,linewidth=0)  # shade gap 10%
 # human connectors: same gradient pattern as models (faded at DAT end -> strong at between end)
 for _y in sorted(set(dat_hy)&set(btw_hy)):
     _segs,_cols=grad_segments(tx(_y),dat_hy[_y],btw_hy[_y],HUMAN_PURPLE,GRAD_TO)
