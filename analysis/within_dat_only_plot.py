@@ -28,13 +28,13 @@ fig,ax=plt.subplots(figsize=(16,9))
 # markers: filled = DAT only
 for m in models:
     x=dat[m][0]; p=dat[m][4]; intel=dat[m][5]; col=PROV_COLOR.get(p,'#888')
-    ax.scatter(tx(x),dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=0.50,zorder=6,edgecolors='white',linewidths=1.1)
+    ax.scatter(tx(x),dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=1.0,zorder=6,edgecolors='white',linewidths=1.1)
 
 # human DAT baseline: single solid flat line (same as combined)
 _havg=json.load(open("human_avg.json"))
 HUMAN_DAT_AVG=_havg["human_dat_mean"]
 _xL,_xR=tx(xmin),tx(xmax)
-ax.plot([_xL,_xR],[HUMAN_DAT_AVG,HUMAN_DAT_AVG],'-',color=HUMAN_PURPLE,lw=2.4,alpha=0.50,zorder=5)
+ax.plot([_xL,_xR],[HUMAN_DAT_AVG,HUMAN_DAT_AVG],'-',color=HUMAN_PURPLE,lw=2.4,alpha=1.0,zorder=5)
 ax.annotate(f"Human DAT (avg {HUMAN_DAT_AVG:.1f})",(tx(2025-0.5/12),HUMAN_DAT_AVG),textcoords="offset points",xytext=(0,-14),ha='center',fontsize=12,weight='bold',color=HUMAN_PURPLE)
 
 # lineage connectors: DAT solid @0.50 only (no between-unit, no shaded gap)
@@ -43,7 +43,7 @@ def _lineage_connectors(prefix, color):
     ms.sort(key=lambda m: dat[m][0])
     if len(ms)<2: return
     _xs=[tx(dat[m][0]) for m in ms]; _yd=[dat[m][7] for m in ms]
-    ax.plot(_xs,_yd,'-',color=color,lw=2.2,alpha=0.50,zorder=4)
+    ax.plot(_xs,_yd,'-',color=color,lw=2.2,alpha=1.0,zorder=4)
 _lineage_connectors("claude", PROV_COLOR['anthropic'])
 _lineage_connectors("gpt",    PROV_COLOR['openai'])
 
