@@ -48,7 +48,7 @@ for m in models:
 for m in models:
     x=dat[m][0]; p=dat[m][4]; intel=dat[m][5]; col=PROV_COLOR.get(p,'#888')
     ax.scatter(tx(x),dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=0.50,zorder=6,edgecolors='white',linewidths=1.1)
-    ax.scatter(tx(x),btw[m][7],marker=MARK[intel],s=SIZE[intel]*0.9,facecolors='none',edgecolors=col,linewidths=2.6,zorder=6)
+    ax.scatter(tx(x),btw[m][7],marker=MARK[intel],s=SIZE[intel]*0.9,facecolors='white',edgecolors=col,linewidths=2.6,zorder=6)
 # human baselines: DAT filled dashed, between open dashed
 def human_line(hy,style,fillopen):
     hx=sorted(hy)
@@ -57,9 +57,13 @@ def human_line(hy,style,fillopen):
     ax.plot([tx(2025),tx(xmax)],[hy[2025],hy[2025]],'--',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=0.9)
     for y in hx:
         if fillopen=='fill': ax.scatter(tx(y),hy[y],marker='o',s=210,color=HUMAN_PURPLE,zorder=7,edgecolors='white',linewidths=1.2)
-        else: ax.scatter(tx(y),hy[y],marker='o',s=210,facecolors='none',edgecolors=HUMAN_PURPLE,linewidths=3,zorder=7)
+        else: ax.scatter(tx(y),hy[y],marker='o',s=210,facecolors='white',edgecolors=HUMAN_PURPLE,linewidths=3,zorder=7)
 human_line(dat_hy,'-','fill')
 human_line(btw_hy,'--','open')
+# human connectors: same gradient pattern as models (faded at DAT end -> strong at between end)
+for _y in sorted(set(dat_hy)&set(btw_hy)):
+    _segs,_cols=grad_segments(tx(_y),dat_hy[_y],btw_hy[_y],HUMAN_PURPLE,GRAD_TO)
+    ax.add_collection(LineCollection(_segs,colors=_cols,linewidths=4.2,zorder=4))
 ax.annotate("Human DAT",(tx(2025),dat_hy[2025]),textcoords="offset points",xytext=(8,-20),fontsize=13,weight='bold',color=HUMAN_PURPLE)
 ax.annotate("Human between-unit",(tx(2025),btw_hy[2025]),textcoords="offset points",xytext=(8,10),fontsize=13,weight='bold',color=HUMAN_PURPLE)
 
@@ -83,7 +87,7 @@ provs=sorted({dat[m][4] for m in models})
 prov_h=[Line2D([0],[0],marker='o',ls='none',color=PROV_COLOR.get(p,'#888'),ms=12,label=p) for p in provs]
 intel_h=[Line2D([0],[0],marker=MARK[t],ls='none',color='#555',ms=13,label=t) for t in ['efficient','all-rounder','hybrid','reasoning']]
 metric_h=[Line2D([0],[0],marker='o',ls='none',color='#555',ms=12,label='Within (DAT) = filled'),
-          Line2D([0],[0],marker='o',ls='none',markerfacecolor='none',markeredgecolor='#555',markeredgewidth=2.4,ms=12,label='Between-unit = open'),
+          Line2D([0],[0],marker='o',ls='none',markerfacecolor='white',markeredgecolor='#555',markeredgewidth=2.4,ms=12,label='Between-unit = white fill'),
           Line2D([0],[0],color=HUMAN_PURPLE,lw=3,marker='o',ms=12,label='Human')]
 handles=prov_h+intel_h+metric_h
 ax.legend(handles=handles,loc='upper center',bbox_to_anchor=(0.5,-0.13),ncol=9,fontsize=10,framealpha=0.95,handletextpad=0.5,columnspacing=1.2,borderpad=0.8)
