@@ -50,7 +50,7 @@ for m in models:
 for m in models:
     x=dat[m][0]; p=dat[m][4]; intel=dat[m][5]; col=PROV_COLOR.get(p,'#888')
     ax.scatter(tx(x),dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=0.50,zorder=6,edgecolors='white',linewidths=1.1)
-    ax.scatter(tx(x),btw[m][7],marker=MARK[intel],s=SIZE[intel]*0.9,facecolors='white',edgecolors=col,linewidths=2.6,alpha=1.0,zorder=6)
+    ax.scatter(tx(x),btw[m][7],marker=MARK[intel],s=SIZE[intel]*0.855,facecolors='white',edgecolors=col,linewidths=3.6,alpha=1.0,zorder=6)
 # human baselines: DAT filled dashed, between open dashed
 def human_line(hy,style,fillopen,line_alpha):
     hx=sorted(hy)
@@ -59,7 +59,7 @@ def human_line(hy,style,fillopen,line_alpha):
     ax.plot([tx(2025),tx(xmax)],[hy[2025],hy[2025]],'--',color=HUMAN_PURPLE,lw=2.4,zorder=5,alpha=line_alpha)
     for y in hx:
         if fillopen=='fill': ax.scatter(tx(y),hy[y],marker='o',s=210,color=HUMAN_PURPLE,alpha=0.50,zorder=7,edgecolors='white',linewidths=1.2)
-        else: ax.scatter(tx(y),hy[y],marker='o',s=210,facecolors='white',edgecolors=HUMAN_PURPLE,linewidths=3,alpha=1.0,zorder=7)
+        else: ax.scatter(tx(y),hy[y],marker='o',s=199.5,facecolors='white',edgecolors=HUMAN_PURPLE,linewidths=4,alpha=1.0,zorder=7)
 human_line(dat_hy,'-','fill',0.50)
 human_line(btw_hy,'--','open',0.50)
 # --- shade between the two HUMAN baselines (10%, purple) ---
