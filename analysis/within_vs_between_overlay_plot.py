@@ -38,7 +38,7 @@ def grad_segments(x,y0,y1,c0,c1,n=40,a0=0.12,a1=0.75):
         cols.append((rgb[0],rgb[1],rgb[2],a))
     return segs,cols
 
-fig,ax=plt.subplots(figsize=(14,9))
+fig,ax=plt.subplots(figsize=(8,4.5))
 GRAD_TO='#bcbcbc'  # fade toward grey at the between end
 for m in models:
     x=dat[m][0]; p=dat[m][4]; intel=dat[m][5]
@@ -117,9 +117,9 @@ intel_h=[Line2D([0],[0],marker=MARK[t],ls='none',color='#555',ms=13,label=t) for
 metric_h=[Line2D([0],[0],marker='o',ls='none',color='#555',ms=12,label='Within (DAT) = filled'),
           Line2D([0],[0],marker='o',ls='none',markerfacecolor='white',markeredgecolor='#555',markeredgewidth=2.4,ms=12,label='Between-unit = white fill'),
           Line2D([0],[0],color=HUMAN_PURPLE,lw=3,marker='o',ms=12,label='Human'),
-          Patch(facecolor='#9a9a9a',alpha=0.20,edgecolor='none',label='Shade = gap of scores')]
+          Patch(facecolor='#9a9a9a',alpha=0.20,edgecolor='none',label='gap of scores')]
 handles=prov_h+intel_h+metric_h
 ax.legend(handles=handles,loc='upper center',bbox_to_anchor=(0.5,-0.13),ncol=9,fontsize=10,framealpha=0.95,handletextpad=0.5,columnspacing=1.2,borderpad=0.8)
 fig.tight_layout(rect=[0,0.02,1,1])
-fig.savefig("/home/user/fig_overlay.png",dpi=220,bbox_inches='tight'); plt.close(fig)
+fig.savefig("/home/user/fig_overlay.png",dpi=400,bbox_inches='tight'); plt.close(fig)
 print("done models",len(models))
