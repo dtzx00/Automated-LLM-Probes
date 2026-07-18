@@ -44,3 +44,7 @@ Removed transient `logs/` and superseded intermediate collection snapshots (`mac
 - Metric: each focal word (valid-rank k, k=1..7) scored vs a fixed balanced per-rank reference (2500 human + 2500 machine GloVe words from that rank), mean cosine distance ×100, averaged over the 7 ranks. Fixed references committed in `machine_data/between_unit_references/`. Columns in merged data: `between_unit_score` (position-agnostic), `between_unit_posaware` (position-aware).
 - Reproduce: `python analysis/between_unit_by_release.py` (needs `GLOVE_PICKLE`).
 - Story: on within-person DAT models rival humans, but on between-unit divergence the human baseline (~81) sits ABOVE nearly all models — models are internally diverse yet cluster tightly against the shared human+machine pool.
+
+## Combined within-vs-between figure (added 2026-07-18)
+- Figure: `results/fig_dat_vs_between_unit_combined.png` — two stacked panels sharing the x-axis: (A) within-person DAT, (B) between-unit divergence (position-aware). Legend on panel B only.
+- The contrast: the human baseline sits mid-pack in A but at the TOP in B.
