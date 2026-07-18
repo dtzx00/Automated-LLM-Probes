@@ -26,7 +26,7 @@ btw,btw_hy=load("between_data.json")
 models=[m for m in dat if m in btw]
 allx=[dat[m][0] for m in models]; xmin=min(allx)-3/12; xmax=max(allx)+0.2/12
 
-def grad_segments(x,y0,y1,c0,c1,n=40,a0=0.12,a1=0.75):
+def grad_segments(x,y0,y1,c0,c1,n=40,a0=0.50,a1=0.50):
     # y0 = DAT end (alpha a0=0.70, matches 30%-transparent DAT circle); y1 = between end (alpha a1, faded)
     ys=np.linspace(y0,y1,n+1); xs=np.full(n+1,x)
     pts=np.array([xs,ys]).T.reshape(-1,1,2)
@@ -49,8 +49,8 @@ for m in models:
 # markers on top: filled = DAT, open thick = between
 for m in models:
     x=dat[m][0]; p=dat[m][4]; intel=dat[m][5]; col=PROV_COLOR.get(p,'#888')
-    ax.scatter(tx(x),dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=0.65,zorder=6,edgecolors='white',linewidths=1.1)
-    ax.scatter(tx(x),btw[m][7],marker=MARK[intel],s=SIZE[intel]*0.9,facecolors='white',edgecolors=col,linewidths=2.6,zorder=6)
+    ax.scatter(tx(x),dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=0.50,zorder=6,edgecolors='white',linewidths=1.1)
+    ax.scatter(tx(x),btw[m][7],marker=MARK[intel],s=SIZE[intel]*0.9,facecolors='white',edgecolors=col,linewidths=2.6,alpha=0.50,zorder=6)
 # human baselines: DAT filled dashed, between open dashed
 def human_line(hy,style,fillopen,line_alpha):
     hx=sorted(hy)
@@ -58,10 +58,10 @@ def human_line(hy,style,fillopen,line_alpha):
     ax.plot([tx(2024),tx(2025)],[hy[2024],hy[2025]],'-',color=HUMAN_PURPLE,lw=2.4,zorder=5,alpha=line_alpha)
     ax.plot([tx(2025),tx(xmax)],[hy[2025],hy[2025]],'--',color=HUMAN_PURPLE,lw=2.4,zorder=5,alpha=line_alpha)
     for y in hx:
-        if fillopen=='fill': ax.scatter(tx(y),hy[y],marker='o',s=210,color=HUMAN_PURPLE,alpha=0.65,zorder=7,edgecolors='white',linewidths=1.2)
-        else: ax.scatter(tx(y),hy[y],marker='o',s=210,facecolors='white',edgecolors=HUMAN_PURPLE,linewidths=3,zorder=7)
-human_line(dat_hy,'-','fill',0.65)   # DAT baseline: 35% transparent, matches its dots
-human_line(btw_hy,'--','open',0.90)  # between-unit baseline: strong, matches white-fill dots
+        if fillopen=='fill': ax.scatter(tx(y),hy[y],marker='o',s=210,color=HUMAN_PURPLE,alpha=0.50,zorder=7,edgecolors='white',linewidths=1.2)
+        else: ax.scatter(tx(y),hy[y],marker='o',s=210,facecolors='white',edgecolors=HUMAN_PURPLE,linewidths=3,alpha=0.50,zorder=7)
+human_line(dat_hy,'-','fill',0.50)
+human_line(btw_hy,'--','open',0.50)
 # --- shade between the two HUMAN baselines (10%, purple) ---
 def _human_y_at(hy, xv):
     hx=sorted(hy)
@@ -84,8 +84,8 @@ def _lineage_connectors(prefix, color, shade=True):
     _xs=[tx(dat[m][0]) for m in ms]
     _yd=[dat[m][7] for m in ms]     # DAT points
     _yb=[btw[m][7] for m in ms]     # between-unit points
-    ax.plot(_xs,_yd,'-',color=color,lw=2.2,alpha=0.65,zorder=4)   # DAT lineage: 35% transparent
-    ax.plot(_xs,_yb,'-',color=color,lw=2.2,alpha=0.90,zorder=4)   # between lineage: strong
+    ax.plot(_xs,_yd,'-',color=color,lw=2.2,alpha=0.50,zorder=4)   # DAT lineage
+    ax.plot(_xs,_yb,'-',color=color,lw=2.2,alpha=0.50,zorder=4)   # between lineage
     if shade:
         ax.fill_between(_xs,_yd,_yb,color=color,alpha=0.10,zorder=2,linewidth=0)  # shade gap 10%
 _lineage_connectors("claude", PROV_COLOR['anthropic'], shade=True)
