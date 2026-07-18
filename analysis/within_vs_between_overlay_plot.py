@@ -57,8 +57,8 @@ _havg=_json.load(open("human_avg.json"))
 HUMAN_DAT_AVG=_havg["human_dat_mean"]        # pooled mean human DAT
 HUMAN_BTW_AVG=_havg["human_between_mean"]     # pooled mean human between-unit
 _xL,_xR=tx(xmin),tx(xmax)
-ax.plot([_xL,_xR],[HUMAN_DAT_AVG,HUMAN_DAT_AVG],':',color=HUMAN_PURPLE,lw=2.4,alpha=0.50,zorder=5)
-ax.plot([_xL,_xR],[HUMAN_BTW_AVG,HUMAN_BTW_AVG],':',color=HUMAN_PURPLE,lw=2.4,alpha=0.50,zorder=5)
+ax.plot([_xL,_xR],[HUMAN_DAT_AVG,HUMAN_DAT_AVG],'-',color=HUMAN_PURPLE,lw=2.4,alpha=0.50,zorder=5)
+ax.plot([_xL,_xR],[HUMAN_BTW_AVG,HUMAN_BTW_AVG],':',color=HUMAN_PURPLE,lw=2.4,alpha=1.0,zorder=5)
 ax.fill_between([_xL,_xR],[HUMAN_DAT_AVG]*2,[HUMAN_BTW_AVG]*2,color=HUMAN_PURPLE,alpha=0.10,zorder=2,linewidth=0)
 ax.annotate(f"Human DAT (avg {HUMAN_DAT_AVG:.1f})",(tx(2025-0.5/12),HUMAN_DAT_AVG),textcoords="offset points",xytext=(0,-14),ha='center',fontsize=12,weight='bold',color=HUMAN_PURPLE)
 ax.annotate(f"Human between-unit (avg {HUMAN_BTW_AVG:.1f})",(tx(2025-0.5/12),HUMAN_BTW_AVG),textcoords="offset points",xytext=(0,6),ha='center',fontsize=12,weight='bold',color=HUMAN_PURPLE)
@@ -71,7 +71,7 @@ def _lineage_connectors(prefix, color, shade=True):
     _yd=[dat[m][7] for m in ms]
     _yb=[btw[m][7] for m in ms]
     ax.plot(_xs,_yd,'-',color=color,lw=2.2,alpha=0.50,zorder=4)
-    ax.plot(_xs,_yb,'-',color=color,lw=2.2,alpha=0.50,zorder=4)
+    ax.plot(_xs,_yb,':',color=color,lw=2.2,alpha=1.0,zorder=4)
     if shade:
         ax.fill_between(_xs,_yd,_yb,color=color,alpha=0.10,zorder=2,linewidth=0)
 _lineage_connectors("claude", PROV_COLOR['anthropic'], shade=True)
