@@ -15,6 +15,7 @@ def tx(x):
     return _np.sign(x-X0)*(abs(x-X0)**GAMMA)
 
 PROV_COLOR={'openai':'#10a37f','anthropic':'#d97757','qwen':'#9b30d0','deepseek':'#4d6bfe','moonshot':'#00b3a4','xai':'#333333','baidu':'#2932e1','meta':'#0866ff','minimax':'#e8590c','tencent':'#00a4a6'}
+PROV_LABEL={'openai':'OpenAI','anthropic':'Anthropic','qwen':'Qwen','deepseek':'DeepSeek','moonshot':'Moonshot','xai':'xAI','baidu':'Baidu','meta':'Meta','minimax':'MiniMax','tencent':'Tencent'}
 HUMAN_PURPLE='#5E348B'
 MARK={'efficient':'v','all-rounder':'o','hybrid':'D','reasoning':'*'}; SIZE={'efficient':170,'all-rounder':190,'hybrid':150,'reasoning':320}
 
@@ -93,14 +94,14 @@ for _y in sorted(set(dat_hy)&set(btw_hy)):
     _segs,_cols=grad_segments(tx(_y),dat_hy[_y],btw_hy[_y],HUMAN_PURPLE,GRAD_TO)
     ax.add_collection(LineCollection(_segs,colors=_cols,linewidths=4.2,zorder=4))
 ax.annotate("Human DAT",(tx(2025),dat_hy[2025]),textcoords="offset points",xytext=(8,-20),fontsize=13,weight='bold',color=HUMAN_PURPLE)
-ax.annotate("Human between-unit",(tx(2025),btw_hy[2025]),textcoords="offset points",xytext=(8,10),fontsize=13,weight='bold',color=HUMAN_PURPLE)
+ax.annotate("Human Between-Unit",(tx(2025),btw_hy[2025]),textcoords="offset points",xytext=(8,10),fontsize=13,weight='bold',color=HUMAN_PURPLE)
 
 ax.set_xlim(tx(xmin),tx(xmax))
 _yr=[2023,2024,2025,2026]
 ax.set_xticks([tx(y) for y in _yr]); ax.set_xticklabels([str(y) for y in _yr])
 ax.set_xlabel("API release date (year, by day) / human collection year",fontsize=17)
 ax.set_ylabel("Divergence score",fontsize=17)
-ax.set_title("Within-person (filled) vs between-unit (open) divergence per model\ngradient links each model's two scores; purple = human baselines",fontsize=15,weight='bold')
+ax.set_title("Within-Person (Filled) vs Between-Unit (Open) Divergence per Model\nGradient links each model's two scores; purple = human baselines",fontsize=15,weight='bold')
 # major year grid + light monthly minor grid (transformed positions)
 import numpy as _np
 _months=[y+mn/12 for y in range(2023,2027) for mn in range(12)]
@@ -112,12 +113,13 @@ ax.set_axisbelow(True); ax.spines[['top','right']].set_visible(False)
 
 # legend: providers + intelligence + metric fill convention, OUTSIDE bottom, 6 columns
 provs=sorted({dat[m][4] for m in models})
-prov_h=[Line2D([0],[0],marker='o',ls='none',color=PROV_COLOR.get(p,'#888'),ms=12,label=p) for p in provs]
-intel_h=[Line2D([0],[0],marker=MARK[t],ls='none',color='#555',ms=13,label=t) for t in ['efficient','all-rounder','hybrid','reasoning']]
+prov_h=[Line2D([0],[0],marker='o',ls='none',color=PROV_COLOR.get(p,'#888'),ms=12,label=PROV_LABEL.get(p,p)) for p in provs]
+INTEL_LABEL={'efficient':'Efficient','all-rounder':'All-rounder','hybrid':'Hybrid','reasoning':'Reasoning'}
+intel_h=[Line2D([0],[0],marker=MARK[t],ls='none',color='#555',ms=13,label=INTEL_LABEL[t]) for t in ['efficient','all-rounder','hybrid','reasoning']]
 metric_h=[Line2D([0],[0],marker='o',ls='none',color='#555',ms=12,label='Within (DAT) = filled'),
           Line2D([0],[0],marker='o',ls='none',markerfacecolor='white',markeredgecolor='#555',markeredgewidth=2.4,ms=12,label='Between-unit = white fill'),
           Line2D([0],[0],color=HUMAN_PURPLE,lw=3,marker='o',ms=12,label='Human'),
-          Patch(facecolor='#9a9a9a',alpha=0.20,edgecolor='none',label='gap of scores')]
+          Patch(facecolor='#9a9a9a',alpha=0.20,edgecolor='none',label='Gap of scores')]
 handles=prov_h+intel_h+metric_h
 ax.legend(handles=handles,loc='upper center',bbox_to_anchor=(0.5,-0.13),ncol=9,fontsize=10,framealpha=0.95,handletextpad=0.5,columnspacing=1.2,borderpad=0.8)
 fig.tight_layout(rect=[0,0.02,1,1])
