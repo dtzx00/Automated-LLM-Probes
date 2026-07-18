@@ -4,6 +4,7 @@ import matplotlib as mpl
 mpl.rcParams.update({'font.size':16,'axes.titlesize':18,'axes.labelsize':18,'xtick.labelsize':15,'ytick.labelsize':15})
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
+from matplotlib.patches import Patch
 from matplotlib.collections import LineCollection
 
 # --- expanding x-transform: earlier years compact, later years broader ---
@@ -95,7 +96,7 @@ ax.annotate("Human between-unit",(tx(2025),btw_hy[2025]),textcoords="offset poin
 ax.set_xlim(tx(xmin),tx(xmax))
 _yr=[2023,2024,2025,2026]
 ax.set_xticks([tx(y) for y in _yr]); ax.set_xticklabels([str(y) for y in _yr])
-ax.set_xlabel("Release date (year, by day) / human collection year",fontsize=17)
+ax.set_xlabel("API release date (year, by day) / human collection year",fontsize=17)
 ax.set_ylabel("Divergence score",fontsize=17)
 ax.set_title("Within-person (filled) vs between-unit (open) divergence per model\ngradient links each model's two scores; purple = human baselines",fontsize=15,weight='bold')
 # major year grid + light monthly minor grid (transformed positions)
@@ -113,7 +114,8 @@ prov_h=[Line2D([0],[0],marker='o',ls='none',color=PROV_COLOR.get(p,'#888'),ms=12
 intel_h=[Line2D([0],[0],marker=MARK[t],ls='none',color='#555',ms=13,label=t) for t in ['efficient','all-rounder','hybrid','reasoning']]
 metric_h=[Line2D([0],[0],marker='o',ls='none',color='#555',ms=12,label='Within (DAT) = filled'),
           Line2D([0],[0],marker='o',ls='none',markerfacecolor='white',markeredgecolor='#555',markeredgewidth=2.4,ms=12,label='Between-unit = white fill'),
-          Line2D([0],[0],color=HUMAN_PURPLE,lw=3,marker='o',ms=12,label='Human')]
+          Line2D([0],[0],color=HUMAN_PURPLE,lw=3,marker='o',ms=12,label='Human'),
+          Patch(facecolor='#9a9a9a',alpha=0.20,edgecolor='none',label='Shade = within–between gap')]
 handles=prov_h+intel_h+metric_h
 ax.legend(handles=handles,loc='upper center',bbox_to_anchor=(0.5,-0.13),ncol=9,fontsize=10,framealpha=0.95,handletextpad=0.5,columnspacing=1.2,borderpad=0.8)
 fig.tight_layout(rect=[0,0.02,1,1])
