@@ -50,16 +50,16 @@ for m in models:
     ax.scatter(tx(x),dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=0.50,zorder=6,edgecolors='white',linewidths=1.1)
     ax.scatter(tx(x),btw[m][7],marker=MARK[intel],s=SIZE[intel]*0.9,facecolors='white',edgecolors=col,linewidths=2.6,zorder=6)
 # human baselines: DAT filled dashed, between open dashed
-def human_line(hy,style,fillopen):
+def human_line(hy,style,fillopen,line_alpha):
     hx=sorted(hy)
-    ax.plot([tx(hx[0]),tx(hx[1])],[hy[hx[0]],hy[hx[1]]],':',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=0.9)
-    ax.plot([tx(2024),tx(2025)],[hy[2024],hy[2025]],'-',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=0.9)
-    ax.plot([tx(2025),tx(xmax)],[hy[2025],hy[2025]],'--',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=0.9)
+    ax.plot([tx(hx[0]),tx(hx[1])],[hy[hx[0]],hy[hx[1]]],':',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=line_alpha)
+    ax.plot([tx(2024),tx(2025)],[hy[2024],hy[2025]],'-',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=line_alpha)
+    ax.plot([tx(2025),tx(xmax)],[hy[2025],hy[2025]],'--',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=line_alpha)
     for y in hx:
         if fillopen=='fill': ax.scatter(tx(y),hy[y],marker='o',s=210,color=HUMAN_PURPLE,alpha=0.50,zorder=7,edgecolors='white',linewidths=1.2)
         else: ax.scatter(tx(y),hy[y],marker='o',s=210,facecolors='white',edgecolors=HUMAN_PURPLE,linewidths=3,zorder=7)
-human_line(dat_hy,'-','fill')
-human_line(btw_hy,'--','open')
+human_line(dat_hy,'-','fill',0.50)   # DAT baseline: 50% transparent, matches its dots
+human_line(btw_hy,'--','open',0.90)  # between-unit baseline: strong, matches white-fill dots
 # human connectors: same gradient pattern as models (faded at DAT end -> strong at between end)
 for _y in sorted(set(dat_hy)&set(btw_hy)):
     _segs,_cols=grad_segments(tx(_y),dat_hy[_y],btw_hy[_y],HUMAN_PURPLE,GRAD_TO)
