@@ -24,7 +24,7 @@ btw,btw_hy=load("between_data.json")
 models=[m for m in dat if m in btw]
 allx=[dat[m][0] for m in models]; xmin=min(allx)-1/12; xmax=max(allx)+1/12
 
-def grad_segments(x,y0,y1,c0,c1,n=40,a0=0.70,a1=0.12):
+def grad_segments(x,y0,y1,c0,c1,n=40,a0=0.12,a1=0.75):
     # y0 = DAT end (alpha a0=0.70, matches 30%-transparent DAT circle); y1 = between end (alpha a1, faded)
     ys=np.linspace(y0,y1,n+1); xs=np.full(n+1,x)
     pts=np.array([xs,ys]).T.reshape(-1,1,2)
@@ -43,11 +43,11 @@ for m in models:
     x=dat[m][0]; p=dat[m][4]; intel=dat[m][5]
     yd=dat[m][7]; yb=btw[m][7]; col=PROV_COLOR.get(p,'#888')
     segs,cols=grad_segments(tx(x),yd,yb,col,GRAD_TO)
-    ax.add_collection(LineCollection(segs,colors=cols,linewidths=3.4,zorder=3))
+    ax.add_collection(LineCollection(segs,colors=cols,linewidths=4.2,zorder=3))
 # markers on top: filled = DAT, open thick = between
 for m in models:
     x=dat[m][0]; p=dat[m][4]; intel=dat[m][5]; col=PROV_COLOR.get(p,'#888')
-    ax.scatter(tx(x),dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=0.70,zorder=6,edgecolors='white',linewidths=1.1)
+    ax.scatter(tx(x),dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=0.50,zorder=6,edgecolors='white',linewidths=1.1)
     ax.scatter(tx(x),btw[m][7],marker=MARK[intel],s=SIZE[intel]*0.9,facecolors='none',edgecolors=col,linewidths=2.6,zorder=6)
 # human baselines: DAT filled dashed, between open dashed
 def human_line(hy,style,fillopen):
