@@ -48,3 +48,6 @@ Removed transient `logs/` and superseded intermediate collection snapshots (`mac
 ## Combined within-vs-between figure (added 2026-07-18)
 - Figure: `results/fig_dat_vs_between_unit_combined.png` — two stacked panels sharing the x-axis: (A) within-person DAT, (B) between-unit divergence (position-aware). Legend on panel B only.
 - The contrast: the human baseline sits mid-pack in A but at the TOP in B.
+
+## Within-vs-between overlay figure (added 2026-07-18)
+- Figure: `results/fig_within_vs_between_overlay.png` — single plot overlaying both metrics per model: filled marker = within-person DAT, open thick-border marker = between-unit (position-aware), gradient connector links each model's two scores (provider color -> grey). Two human baselines (filled=DAT, open=between-unit). Legend below the plot, 6 columns.

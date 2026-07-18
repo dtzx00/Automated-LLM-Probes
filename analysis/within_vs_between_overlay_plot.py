@@ -1,0 +1,71 @@
+import json, numpy as np
+import matplotlib; matplotlib.use('Agg')
+import matplotlib as mpl
+mpl.rcParams.update({'font.size':16,'axes.titlesize':18,'axes.labelsize':18,'xtick.labelsize':15,'ytick.labelsize':15})
+import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
+from matplotlib.collections import LineCollection
+
+PROV_COLOR={'openai':'#10a37f','anthropic':'#d97757','qwen':'#9b30d0','deepseek':'#4d6bfe','moonshot':'#00b3a4','xai':'#333333','baidu':'#2932e1','meta':'#0866ff','minimax':'#e8590c','tencent':'#00a4a6'}
+HUMAN_PURPLE='#5E348B'
+MARK={'efficient':'v','all-rounder':'o','hybrid':'D','reasoning':'*'}; SIZE={'efficient':170,'all-rounder':190,'hybrid':150,'reasoning':320}
+
+def load(fn):
+    d=json.load(open(fn)); return {r[6]:r for r in d["recs"]}, {int(k):v for k,v in d["human_year"].items()}
+dat,dat_hy=load("permonth_data.json")
+btw,btw_hy=load("between_data.json")
+models=[m for m in dat if m in btw]
+allx=[dat[m][0] for m in models]; xmin=min(allx)-1/12; xmax=max(allx)+1/12
+
+def grad_segments(x,y0,y1,c0,c1,n=40):
+    ys=np.linspace(y0,y1,n+1); xs=np.full(n+1,x)
+    pts=np.array([xs,ys]).T.reshape(-1,1,2)
+    segs=np.concatenate([pts[:-1],pts[1:]],axis=1)
+    c0=np.array(mpl.colors.to_rgb(c0)); c1=np.array(mpl.colors.to_rgb(c1))
+    cols=[(1-t)*c0+t*c1 for t in np.linspace(0,1,n)]
+    return segs,cols
+
+fig,ax=plt.subplots(figsize=(14,9))
+GRAD_TO='#bcbcbc'  # fade toward grey at the between end
+for m in models:
+    x=dat[m][0]; p=dat[m][4]; intel=dat[m][5]
+    yd=dat[m][7]; yb=btw[m][7]; col=PROV_COLOR.get(p,'#888')
+    segs,cols=grad_segments(x,yd,yb,col,GRAD_TO)
+    ax.add_collection(LineCollection(segs,colors=cols,linewidths=2.6,alpha=0.55,zorder=3))
+# markers on top: filled = DAT, open thick = between
+for m in models:
+    x=dat[m][0]; p=dat[m][4]; intel=dat[m][5]; col=PROV_COLOR.get(p,'#888')
+    ax.scatter(x,dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=0.95,zorder=6,edgecolors='white',linewidths=1.1)
+    ax.scatter(x,btw[m][7],marker=MARK[intel],s=SIZE[intel],facecolors='none',edgecolors=col,linewidths=2.6,zorder=6)
+# human baselines: DAT filled dashed, between open dashed
+def human_line(hy,style,fillopen):
+    hx=sorted(hy)
+    ax.plot([hx[0],hx[1]],[hy[hx[0]],hy[hx[1]]],':',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=0.9)
+    ax.plot([2024,2025],[hy[2024],hy[2025]],'-',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=0.9)
+    ax.plot([2025,xmax],[hy[2025],hy[2025]],'--',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=0.9)
+    for y in hx:
+        if fillopen=='fill': ax.scatter(y,hy[y],marker='o',s=210,color=HUMAN_PURPLE,zorder=7,edgecolors='white',linewidths=1.2)
+        else: ax.scatter(y,hy[y],marker='o',s=210,facecolors='none',edgecolors=HUMAN_PURPLE,linewidths=3,zorder=7)
+human_line(dat_hy,'-','fill')
+human_line(btw_hy,'--','open')
+ax.annotate("Human DAT",(2025,dat_hy[2025]),textcoords="offset points",xytext=(8,-20),fontsize=13,weight='bold',color=HUMAN_PURPLE)
+ax.annotate("Human between-unit",(2025,btw_hy[2025]),textcoords="offset points",xytext=(8,10),fontsize=13,weight='bold',color=HUMAN_PURPLE)
+
+ax.set_xlim(xmin,xmax); ax.set_xticks([2023,2024,2025,2026])
+ax.set_xlabel("Release date (year, by day) / human collection year",fontsize=17)
+ax.set_ylabel("Divergence score",fontsize=17)
+ax.set_title("Within-person (filled) vs between-unit (open) divergence per model\ngradient links each model's two scores; purple = human baselines",fontsize=15,weight='bold')
+ax.grid(color='#ebebeb',lw=0.8,zorder=0); ax.set_axisbelow(True); ax.spines[['top','right']].set_visible(False)
+
+# legend: providers + intelligence + metric fill convention, OUTSIDE bottom, 6 columns
+provs=sorted({dat[m][4] for m in models})
+prov_h=[Line2D([0],[0],marker='o',ls='none',color=PROV_COLOR.get(p,'#888'),ms=12,label=p) for p in provs]
+intel_h=[Line2D([0],[0],marker=MARK[t],ls='none',color='#555',ms=13,label=t) for t in ['efficient','all-rounder','hybrid','reasoning']]
+metric_h=[Line2D([0],[0],marker='o',ls='none',color='#555',ms=12,label='Within (DAT) = filled'),
+          Line2D([0],[0],marker='o',ls='none',markerfacecolor='none',markeredgecolor='#555',markeredgewidth=2.4,ms=12,label='Between-unit = open'),
+          Line2D([0],[0],color=HUMAN_PURPLE,lw=3,marker='o',ms=12,label='Human')]
+handles=prov_h+intel_h+metric_h
+ax.legend(handles=handles,loc='upper center',bbox_to_anchor=(0.5,-0.13),ncol=6,fontsize=11,framealpha=0.95,handletextpad=0.5,columnspacing=1.2,borderpad=0.8)
+fig.tight_layout(rect=[0,0.02,1,1])
+fig.savefig("/home/user/fig_overlay.png",dpi=220,bbox_inches='tight'); plt.close(fig)
+print("done models",len(models))
