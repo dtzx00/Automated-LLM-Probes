@@ -8,7 +8,7 @@ from matplotlib.collections import LineCollection
 
 # --- expanding x-transform: earlier years compact, later years broader ---
 X0=2022.9  # anchor near earliest so compression bites
-GAMMA=1.75  # >1 => later spans get more width
+GAMMA=2.0  # >1 => later spans get more width
 def tx(x): 
     import numpy as _np
     return _np.sign(x-X0)*(abs(x-X0)**GAMMA)
