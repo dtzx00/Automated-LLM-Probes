@@ -43,7 +43,7 @@ for m in models:
 for m in models:
     x=dat[m][0]; p=dat[m][4]; intel=dat[m][5]; col=PROV_COLOR.get(p,'#888')
     ax.scatter(tx(x),dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=0.95,zorder=6,edgecolors='white',linewidths=1.1)
-    ax.scatter(tx(x),btw[m][7],marker=MARK[intel],s=SIZE[intel],facecolors='none',edgecolors=col,linewidths=2.6,zorder=6)
+    ax.scatter(tx(x),btw[m][7],marker=MARK[intel],s=SIZE[intel]*0.9,facecolors='none',edgecolors=col,linewidths=2.6,zorder=6)
 # human baselines: DAT filled dashed, between open dashed
 def human_line(hy,style,fillopen):
     hx=sorted(hy)
@@ -81,7 +81,7 @@ metric_h=[Line2D([0],[0],marker='o',ls='none',color='#555',ms=12,label='Within (
           Line2D([0],[0],marker='o',ls='none',markerfacecolor='none',markeredgecolor='#555',markeredgewidth=2.4,ms=12,label='Between-unit = open'),
           Line2D([0],[0],color=HUMAN_PURPLE,lw=3,marker='o',ms=12,label='Human')]
 handles=prov_h+intel_h+metric_h
-ax.legend(handles=handles,loc='upper center',bbox_to_anchor=(0.5,-0.13),ncol=6,fontsize=11,framealpha=0.95,handletextpad=0.5,columnspacing=1.2,borderpad=0.8)
+ax.legend(handles=handles,loc='upper center',bbox_to_anchor=(0.5,-0.13),ncol=9,fontsize=10,framealpha=0.95,handletextpad=0.5,columnspacing=1.2,borderpad=0.8)
 fig.tight_layout(rect=[0,0.02,1,1])
 fig.savefig("/home/user/fig_overlay.png",dpi=220,bbox_inches='tight'); plt.close(fig)
 print("done models",len(models))
