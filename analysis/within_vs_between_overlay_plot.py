@@ -22,7 +22,7 @@ def load(fn):
 dat,dat_hy=load("permonth_data.json")
 btw,btw_hy=load("between_data.json")
 models=[m for m in dat if m in btw]
-allx=[dat[m][0] for m in models]; xmin=min(allx)-1/12; xmax=max(allx)+1/12
+allx=[dat[m][0] for m in models]; xmin=min(allx)-3/12; xmax=max(allx)+1/12
 
 def grad_segments(x,y0,y1,c0,c1,n=40,a0=0.12,a1=0.75):
     # y0 = DAT end (alpha a0=0.70, matches 30%-transparent DAT circle); y1 = between end (alpha a1, faded)
