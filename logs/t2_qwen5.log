@@ -1,7 +1,0 @@
-SKIP DeepSeek-R1 (qwen) already 10
-SKIP Deepseek-Chat (qwen) already 10
-SKIP Qwen-Max (qwen) already 10
-SKIP Qwen-Turbo (qwen) already 10
-SKIP DeepSeek R2 (qwen) already 10
-SKIP Qwen3.7 Max (qwen) already 10
-RUN  GLM-5 (qwen) have=4 need=6

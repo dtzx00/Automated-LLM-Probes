@@ -29,3 +29,12 @@ midpoint temperature; the temp-0.5 legacy set (12,397 rows) is preserved for ref
 
 ## Not yet incorporated (human side)
 Lucas BTB (~800), Olson 2026 Sci Reports (~100k), Zunyi convergent (~800). See `machine_data/README.md`.
+
+## Model-DAT-by-release figure (added 2026-07-18)
+- Figure: `results/fig_model_dat_by_release.png` — per-model mean DAT vs release date, colored by provider (developer brand), shaped by intelligence class (efficient / all-rounder / hybrid / reasoning), with per-provider flagship evolution lines and the human baseline.
+- Reproduce: `python analysis/model_dat_by_release.py` (needs `GLOVE_PICKLE` → validated GloVe model, kept out of git).
+- Data columns added to `machine_data/processed/machine_all_merged.csv`: `model_month`, `model_day`, `date_precision` (exact|approx), `intelligence`; `provider` corrected to developer brand (not API endpoint).
+- Verification of every model's release date, provider, and intelligence class: `machine_data/model_release_dates_verified.md`.
+
+## Cleanup (2026-07-18)
+Removed transient `logs/` and superseded intermediate collection snapshots (`machine_all_n50…n500`, `raw_n100…n500_catchup`); canonical data is `machine_data/processed/machine_all_merged.csv`. Logs and large `*.pickle` embeddings are now gitignored.

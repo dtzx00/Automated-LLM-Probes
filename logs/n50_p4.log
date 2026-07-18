@@ -1,5 +1,0 @@
-START 3 lanes @ n=50, concurrency=3, min-gap=0.5s, batch=collect_2026_n50
-LANE moonshot: 2/4 models need work (concurrency=3)
-LANE qwen: 1/5 models need work (concurrency=3)
-LANE hunyuan: 3/6 models need work (concurrency=3)
-  [hunyuan] MiniMax-M2.7: +13 (done)

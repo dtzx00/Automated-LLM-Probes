@@ -1,3 +1,0 @@
-RUN  DeepSeek V4 Pro (deepseek) have=0 need=10
-[deepseek/deepseek-v4-pro] wrote 10 rows -> data/raw_thread2/topup_deepseek.csv
-PROVIDER DONE: deepseek

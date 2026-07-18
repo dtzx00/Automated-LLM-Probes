@@ -1,5 +1,0 @@
-RUN  Grok 4 (xai) have=0 need=10
-[xai/grok-4.3] wrote 10 rows -> data/raw_thread2/topup_xai.csv
-RUN  Grok 4.5 (xai) have=0 need=10
-[xai/grok-4.5] wrote 10 rows -> data/raw_thread2/topup_xai.csv
-PROVIDER DONE: xai
