@@ -8,7 +8,7 @@ from matplotlib.collections import LineCollection
 
 # --- expanding x-transform: earlier years compact, later years broader ---
 X0=2022.9  # anchor near earliest so compression bites
-GAMMA=2.6  # >1 => later spans get more width
+GAMMA=1.6  # >1 => later spans get more width
 def tx(x): 
     import numpy as _np
     return _np.sign(x-X0)*(abs(x-X0)**GAMMA)
@@ -64,7 +64,14 @@ ax.set_xticks([tx(y) for y in _yr]); ax.set_xticklabels([str(y) for y in _yr])
 ax.set_xlabel("Release date (year, by day) / human collection year",fontsize=17)
 ax.set_ylabel("Divergence score",fontsize=17)
 ax.set_title("Within-person (filled) vs between-unit (open) divergence per model\ngradient links each model's two scores; purple = human baselines",fontsize=15,weight='bold')
-ax.grid(color='#ebebeb',lw=0.8,zorder=0); ax.set_axisbelow(True); ax.spines[['top','right']].set_visible(False)
+# major year grid + light monthly minor grid (transformed positions)
+import numpy as _np
+_months=[y+mn/12 for y in range(2023,2027) for mn in range(12)]
+_months=[m for m in _months if xmin<=m<=xmax]
+ax.set_xticks([tx(m) for m in _months],minor=True)
+ax.grid(which='major',color='#dcdcdc',lw=1.0,zorder=0)
+ax.grid(which='minor',axis='x',color='#f2f2f2',lw=0.6,zorder=0)
+ax.set_axisbelow(True); ax.spines[['top','right']].set_visible(False)
 
 # legend: providers + intelligence + metric fill convention, OUTSIDE bottom, 6 columns
 provs=sorted({dat[m][4] for m in models})
