@@ -89,7 +89,6 @@ def _lineage_connectors(prefix, color, shade=True):
     if shade:
         ax.fill_between(_xs,_yd,_yb,color=color,alpha=0.10,zorder=2,linewidth=0)  # shade gap 10%
 _lineage_connectors("claude", PROV_COLOR['anthropic'], shade=True)
-_lineage_connectors("grok",   PROV_COLOR['xai'], shade=False)
 # human connectors: same gradient pattern as models (faded at DAT end -> strong at between end)
 for _y in sorted(set(dat_hy)&set(btw_hy)):
     _segs,_cols=grad_segments(tx(_y),dat_hy[_y],btw_hy[_y],HUMAN_PURPLE,GRAD_TO)
