@@ -56,7 +56,7 @@ def human_line(hy,style,fillopen):
     ax.plot([tx(2024),tx(2025)],[hy[2024],hy[2025]],'-',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=0.9)
     ax.plot([tx(2025),tx(xmax)],[hy[2025],hy[2025]],'--',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=0.9)
     for y in hx:
-        if fillopen=='fill': ax.scatter(tx(y),hy[y],marker='o',s=210,color=HUMAN_PURPLE,zorder=7,edgecolors='white',linewidths=1.2)
+        if fillopen=='fill': ax.scatter(tx(y),hy[y],marker='o',s=210,color=HUMAN_PURPLE,alpha=0.50,zorder=7,edgecolors='white',linewidths=1.2)
         else: ax.scatter(tx(y),hy[y],marker='o',s=210,facecolors='white',edgecolors=HUMAN_PURPLE,linewidths=3,zorder=7)
 human_line(dat_hy,'-','fill')
 human_line(btw_hy,'--','open')
