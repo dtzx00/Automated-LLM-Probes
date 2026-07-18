@@ -6,6 +6,13 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from matplotlib.collections import LineCollection
 
+# --- expanding x-transform: earlier years compact, later years broader ---
+X0=2022.9  # anchor near earliest so compression bites
+GAMMA=2.6  # >1 => later spans get more width
+def tx(x): 
+    import numpy as _np
+    return _np.sign(x-X0)*(abs(x-X0)**GAMMA)
+
 PROV_COLOR={'openai':'#10a37f','anthropic':'#d97757','qwen':'#9b30d0','deepseek':'#4d6bfe','moonshot':'#00b3a4','xai':'#333333','baidu':'#2932e1','meta':'#0866ff','minimax':'#e8590c','tencent':'#00a4a6'}
 HUMAN_PURPLE='#5E348B'
 MARK={'efficient':'v','all-rounder':'o','hybrid':'D','reasoning':'*'}; SIZE={'efficient':170,'all-rounder':190,'hybrid':150,'reasoning':320}
@@ -30,28 +37,30 @@ GRAD_TO='#bcbcbc'  # fade toward grey at the between end
 for m in models:
     x=dat[m][0]; p=dat[m][4]; intel=dat[m][5]
     yd=dat[m][7]; yb=btw[m][7]; col=PROV_COLOR.get(p,'#888')
-    segs,cols=grad_segments(x,yd,yb,col,GRAD_TO)
+    segs,cols=grad_segments(tx(x),yd,yb,col,GRAD_TO)
     ax.add_collection(LineCollection(segs,colors=cols,linewidths=2.6,alpha=0.55,zorder=3))
 # markers on top: filled = DAT, open thick = between
 for m in models:
     x=dat[m][0]; p=dat[m][4]; intel=dat[m][5]; col=PROV_COLOR.get(p,'#888')
-    ax.scatter(x,dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=0.95,zorder=6,edgecolors='white',linewidths=1.1)
-    ax.scatter(x,btw[m][7],marker=MARK[intel],s=SIZE[intel],facecolors='none',edgecolors=col,linewidths=2.6,zorder=6)
+    ax.scatter(tx(x),dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=0.95,zorder=6,edgecolors='white',linewidths=1.1)
+    ax.scatter(tx(x),btw[m][7],marker=MARK[intel],s=SIZE[intel],facecolors='none',edgecolors=col,linewidths=2.6,zorder=6)
 # human baselines: DAT filled dashed, between open dashed
 def human_line(hy,style,fillopen):
     hx=sorted(hy)
-    ax.plot([hx[0],hx[1]],[hy[hx[0]],hy[hx[1]]],':',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=0.9)
-    ax.plot([2024,2025],[hy[2024],hy[2025]],'-',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=0.9)
-    ax.plot([2025,xmax],[hy[2025],hy[2025]],'--',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=0.9)
+    ax.plot([tx(hx[0]),tx(hx[1])],[hy[hx[0]],hy[hx[1]]],':',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=0.9)
+    ax.plot([tx(2024),tx(2025)],[hy[2024],hy[2025]],'-',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=0.9)
+    ax.plot([tx(2025),tx(xmax)],[hy[2025],hy[2025]],'--',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=0.9)
     for y in hx:
-        if fillopen=='fill': ax.scatter(y,hy[y],marker='o',s=210,color=HUMAN_PURPLE,zorder=7,edgecolors='white',linewidths=1.2)
-        else: ax.scatter(y,hy[y],marker='o',s=210,facecolors='none',edgecolors=HUMAN_PURPLE,linewidths=3,zorder=7)
+        if fillopen=='fill': ax.scatter(tx(y),hy[y],marker='o',s=210,color=HUMAN_PURPLE,zorder=7,edgecolors='white',linewidths=1.2)
+        else: ax.scatter(tx(y),hy[y],marker='o',s=210,facecolors='none',edgecolors=HUMAN_PURPLE,linewidths=3,zorder=7)
 human_line(dat_hy,'-','fill')
 human_line(btw_hy,'--','open')
-ax.annotate("Human DAT",(2025,dat_hy[2025]),textcoords="offset points",xytext=(8,-20),fontsize=13,weight='bold',color=HUMAN_PURPLE)
-ax.annotate("Human between-unit",(2025,btw_hy[2025]),textcoords="offset points",xytext=(8,10),fontsize=13,weight='bold',color=HUMAN_PURPLE)
+ax.annotate("Human DAT",(tx(2025),dat_hy[2025]),textcoords="offset points",xytext=(8,-20),fontsize=13,weight='bold',color=HUMAN_PURPLE)
+ax.annotate("Human between-unit",(tx(2025),btw_hy[2025]),textcoords="offset points",xytext=(8,10),fontsize=13,weight='bold',color=HUMAN_PURPLE)
 
-ax.set_xlim(xmin,xmax); ax.set_xticks([2023,2024,2025,2026])
+ax.set_xlim(tx(xmin),tx(xmax))
+_yr=[2023,2024,2025,2026]
+ax.set_xticks([tx(y) for y in _yr]); ax.set_xticklabels([str(y) for y in _yr])
 ax.set_xlabel("Release date (year, by day) / human collection year",fontsize=17)
 ax.set_ylabel("Divergence score",fontsize=17)
 ax.set_title("Within-person (filled) vs between-unit (open) divergence per model\ngradient links each model's two scores; purple = human baselines",fontsize=15,weight='bold')
