@@ -38,7 +38,7 @@ def grad_segments(x,y0,y1,c0,c1,n=40,a0=0.12,a1=0.75):
         cols.append((rgb[0],rgb[1],rgb[2],a))
     return segs,cols
 
-fig,ax=plt.subplots(figsize=(8,4.5))
+fig,ax=plt.subplots(figsize=(16,9))
 GRAD_TO='#bcbcbc'  # fade toward grey at the between end
 for m in models:
     x=dat[m][0]; p=dat[m][4]; intel=dat[m][5]
@@ -121,5 +121,5 @@ metric_h=[Line2D([0],[0],marker='o',ls='none',color='#555',ms=12,label='Within (
 handles=prov_h+intel_h+metric_h
 ax.legend(handles=handles,loc='upper center',bbox_to_anchor=(0.5,-0.13),ncol=9,fontsize=10,framealpha=0.95,handletextpad=0.5,columnspacing=1.2,borderpad=0.8)
 fig.tight_layout(rect=[0,0.02,1,1])
-fig.savefig("/home/user/fig_overlay.png",dpi=400,bbox_inches='tight'); plt.close(fig)
+fig.savefig("/home/user/fig_overlay.png",dpi=300,bbox_inches='tight'); plt.close(fig)
 print("done models",len(models))
