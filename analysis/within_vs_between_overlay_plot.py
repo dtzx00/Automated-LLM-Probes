@@ -52,14 +52,24 @@ for m in models:
 # human baselines: DAT filled dashed, between open dashed
 def human_line(hy,style,fillopen,line_alpha):
     hx=sorted(hy)
-    ax.plot([tx(hx[0]),tx(hx[1])],[hy[hx[0]],hy[hx[1]]],':',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=line_alpha)
-    ax.plot([tx(2024),tx(2025)],[hy[2024],hy[2025]],'-',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=line_alpha)
-    ax.plot([tx(2025),tx(xmax)],[hy[2025],hy[2025]],'--',color=HUMAN_PURPLE,lw=4,zorder=5,alpha=line_alpha)
+    ax.plot([tx(hx[0]),tx(hx[1])],[hy[hx[0]],hy[hx[1]]],':',color=HUMAN_PURPLE,lw=2.4,zorder=5,alpha=line_alpha)
+    ax.plot([tx(2024),tx(2025)],[hy[2024],hy[2025]],'-',color=HUMAN_PURPLE,lw=2.4,zorder=5,alpha=line_alpha)
+    ax.plot([tx(2025),tx(xmax)],[hy[2025],hy[2025]],'--',color=HUMAN_PURPLE,lw=2.4,zorder=5,alpha=line_alpha)
     for y in hx:
         if fillopen=='fill': ax.scatter(tx(y),hy[y],marker='o',s=210,color=HUMAN_PURPLE,alpha=0.65,zorder=7,edgecolors='white',linewidths=1.2)
         else: ax.scatter(tx(y),hy[y],marker='o',s=210,facecolors='white',edgecolors=HUMAN_PURPLE,linewidths=3,zorder=7)
 human_line(dat_hy,'-','fill',0.65)   # DAT baseline: 35% transparent, matches its dots
 human_line(btw_hy,'--','open',0.90)  # between-unit baseline: strong, matches white-fill dots
+# --- Claude lineage connectors: link consecutive Claude models' existing points (no new numbers) ---
+_claude=[m for m in dat if m.lower().startswith("claude") and m in btw]
+_claude.sort(key=lambda m: dat[m][0])   # by release date
+_ccol=PROV_COLOR['anthropic']
+if len(_claude)>=2:
+    _xs=[tx(dat[m][0]) for m in _claude]
+    _yd=[dat[m][7] for m in _claude]     # DAT points
+    _yb=[btw[m][7] for m in _claude]     # between-unit points
+    ax.plot(_xs,_yd,'-',color=_ccol,lw=2.2,alpha=0.65,zorder=4)   # DAT lineage: 35% transparent (like human DAT)
+    ax.plot(_xs,_yb,'-',color=_ccol,lw=2.2,alpha=0.90,zorder=4)   # between lineage: strong (like human between)
 # human connectors: same gradient pattern as models (faded at DAT end -> strong at between end)
 for _y in sorted(set(dat_hy)&set(btw_hy)):
     _segs,_cols=grad_segments(tx(_y),dat_hy[_y],btw_hy[_y],HUMAN_PURPLE,GRAD_TO)
