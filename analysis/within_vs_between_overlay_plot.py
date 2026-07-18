@@ -51,51 +51,31 @@ for m in models:
     x=dat[m][0]; p=dat[m][4]; intel=dat[m][5]; col=PROV_COLOR.get(p,'#888')
     ax.scatter(tx(x),dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=0.50,zorder=6,edgecolors='white',linewidths=1.1)
     ax.scatter(tx(x),btw[m][7],marker=MARK[intel],s=SIZE[intel]*0.855,facecolors='white',edgecolors=col,linewidths=3.6,alpha=1.0,zorder=6)
-# human baselines: DAT filled dashed, between open dashed
-def human_line(hy,style,fillopen,line_alpha):
-    hx=sorted(hy)
-    ax.plot([tx(hx[0]),tx(hx[1])],[hy[hx[0]],hy[hx[1]]],':',color=HUMAN_PURPLE,lw=2.4,zorder=5,alpha=line_alpha)
-    ax.plot([tx(2024),tx(2025)],[hy[2024],hy[2025]],'-',color=HUMAN_PURPLE,lw=2.4,zorder=5,alpha=line_alpha)
-    ax.plot([tx(2025),tx(xmax)],[hy[2025],hy[2025]],'--',color=HUMAN_PURPLE,lw=2.4,zorder=5,alpha=line_alpha)
-    for y in hx:
-        if fillopen=='fill': ax.scatter(tx(y),hy[y],marker='o',s=210,color=HUMAN_PURPLE,alpha=0.50,zorder=7,edgecolors='white',linewidths=1.2)
-        else: ax.scatter(tx(y),hy[y],marker='o',s=199.5,facecolors='white',edgecolors=HUMAN_PURPLE,linewidths=4,alpha=1.0,zorder=7)
-human_line(dat_hy,'-','fill',0.50)
-human_line(btw_hy,'--','open',0.50)
-# --- shade between the two HUMAN baselines (10%, purple) ---
-def _human_y_at(hy, xv):
-    hx=sorted(hy)
-    if xv<=hx[0]: return hy[hx[0]]
-    if xv<=hx[1]: 
-        f=(xv-hx[0])/(hx[1]-hx[0]); return hy[hx[0]]+f*(hy[hx[1]]-hy[hx[0]])
-    if xv<=2025:
-        f=(xv-2024)/(2025-2024); return hy[2024]+f*(hy[2025]-hy[2024])
-    return hy[2025]
-import numpy as _np
-_hxs=_np.linspace(min(sorted(dat_hy)), xmax, 200)
-_hd=[_human_y_at(dat_hy,x) for x in _hxs]
-_hb=[_human_y_at(btw_hy,x) for x in _hxs]
-ax.fill_between([tx(x) for x in _hxs],_hd,_hb,color=HUMAN_PURPLE,alpha=0.10,zorder=2,linewidth=0)
+# human baselines: two FLAT dotted horizontal lines at the pooled grand-mean scores
+import json as _json
+_havg=_json.load(open("human_avg.json"))
+HUMAN_DAT_AVG=_havg["human_dat_mean"]        # pooled mean human DAT
+HUMAN_BTW_AVG=_havg["human_between_mean"]     # pooled mean human between-unit
+_xL,_xR=tx(xmin),tx(xmax)
+ax.plot([_xL,_xR],[HUMAN_DAT_AVG,HUMAN_DAT_AVG],':',color=HUMAN_PURPLE,lw=2.4,alpha=0.50,zorder=5)
+ax.plot([_xL,_xR],[HUMAN_BTW_AVG,HUMAN_BTW_AVG],':',color=HUMAN_PURPLE,lw=2.4,alpha=0.50,zorder=5)
+ax.fill_between([_xL,_xR],[HUMAN_DAT_AVG]*2,[HUMAN_BTW_AVG]*2,color=HUMAN_PURPLE,alpha=0.10,zorder=2,linewidth=0)
+ax.annotate(f"Human DAT (avg {HUMAN_DAT_AVG:.1f})",(_xR,HUMAN_DAT_AVG),textcoords="offset points",xytext=(-6,-14),ha='right',fontsize=12,weight='bold',color=HUMAN_PURPLE)
+ax.annotate(f"Human between-unit (avg {HUMAN_BTW_AVG:.1f})",(_xR,HUMAN_BTW_AVG),textcoords="offset points",xytext=(-6,6),ha='right',fontsize=12,weight='bold',color=HUMAN_PURPLE)
 # --- lineage horizontal connectors linking existing points (no new numbers) ---
 def _lineage_connectors(prefix, color, shade=True):
     ms=[m for m in dat if m.lower().startswith(prefix) and m in btw]
     ms.sort(key=lambda m: dat[m][0])
     if len(ms)<2: return
     _xs=[tx(dat[m][0]) for m in ms]
-    _yd=[dat[m][7] for m in ms]     # DAT points
-    _yb=[btw[m][7] for m in ms]     # between-unit points
-    ax.plot(_xs,_yd,'-',color=color,lw=2.2,alpha=0.50,zorder=4)   # DAT lineage
-    ax.plot(_xs,_yb,'-',color=color,lw=2.2,alpha=0.50,zorder=4)   # between lineage
+    _yd=[dat[m][7] for m in ms]
+    _yb=[btw[m][7] for m in ms]
+    ax.plot(_xs,_yd,'-',color=color,lw=2.2,alpha=0.50,zorder=4)
+    ax.plot(_xs,_yb,'-',color=color,lw=2.2,alpha=0.50,zorder=4)
     if shade:
-        ax.fill_between(_xs,_yd,_yb,color=color,alpha=0.10,zorder=2,linewidth=0)  # shade gap 10%
+        ax.fill_between(_xs,_yd,_yb,color=color,alpha=0.10,zorder=2,linewidth=0)
 _lineage_connectors("claude", PROV_COLOR['anthropic'], shade=True)
 _lineage_connectors("gpt",    PROV_COLOR['openai'], shade=True)
-# human connectors: same gradient pattern as models (faded at DAT end -> strong at between end)
-for _y in sorted(set(dat_hy)&set(btw_hy)):
-    _segs,_cols=grad_segments(tx(_y),dat_hy[_y],btw_hy[_y],HUMAN_PURPLE,GRAD_TO)
-    ax.add_collection(LineCollection(_segs,colors=_cols,linewidths=4.2,zorder=4))
-ax.annotate("Human DAT",(tx(2025),dat_hy[2025]),textcoords="offset points",xytext=(8,-20),fontsize=13,weight='bold',color=HUMAN_PURPLE)
-ax.annotate("Human Between-Unit",(tx(2025),btw_hy[2025]),textcoords="offset points",xytext=(8,10),fontsize=13,weight='bold',color=HUMAN_PURPLE)
 
 ax.set_xlim(tx(xmin),tx(xmax))
 _yr=[2023,2024,2025,2026]
