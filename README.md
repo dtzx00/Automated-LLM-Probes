@@ -38,3 +38,9 @@ Lucas BTB (~800), Olson 2026 Sci Reports (~100k), Zunyi convergent (~800). See `
 
 ## Cleanup (2026-07-18)
 Removed transient `logs/` and superseded intermediate collection snapshots (`machine_all_n50…n500`, `raw_n100…n500_catchup`); canonical data is `machine_data/processed/machine_all_merged.csv`. Logs and large `*.pickle` embeddings are now gitignored.
+
+## Between-unit divergence sister figure (added 2026-07-18)
+- Figure: `results/fig_between_unit_by_release.png` — sister to the DAT-by-release figure, same layout but y-axis = **between-unit (between-person) divergence**, position-aware.
+- Metric: each focal word (valid-rank k, k=1..7) scored vs a fixed balanced per-rank reference (2500 human + 2500 machine GloVe words from that rank), mean cosine distance ×100, averaged over the 7 ranks. Fixed references committed in `machine_data/between_unit_references/`. Columns in merged data: `between_unit_score` (position-agnostic), `between_unit_posaware` (position-aware).
+- Reproduce: `python analysis/between_unit_by_release.py` (needs `GLOVE_PICKLE`).
+- Story: on within-person DAT models rival humans, but on between-unit divergence the human baseline (~81) sits ABOVE nearly all models — models are internally diverse yet cluster tightly against the shared human+machine pool.
