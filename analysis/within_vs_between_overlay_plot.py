@@ -24,12 +24,17 @@ btw,btw_hy=load("between_data.json")
 models=[m for m in dat if m in btw]
 allx=[dat[m][0] for m in models]; xmin=min(allx)-1/12; xmax=max(allx)+1/12
 
-def grad_segments(x,y0,y1,c0,c1,n=40):
+def grad_segments(x,y0,y1,c0,c1,n=40,a0=0.70,a1=0.12):
+    # y0 = DAT end (alpha a0=0.70, matches 30%-transparent DAT circle); y1 = between end (alpha a1, faded)
     ys=np.linspace(y0,y1,n+1); xs=np.full(n+1,x)
     pts=np.array([xs,ys]).T.reshape(-1,1,2)
     segs=np.concatenate([pts[:-1],pts[1:]],axis=1)
     c0=np.array(mpl.colors.to_rgb(c0)); c1=np.array(mpl.colors.to_rgb(c1))
-    cols=[(1-t)*c0+t*c1 for t in np.linspace(0,1,n)]
+    cols=[]
+    for t in np.linspace(0,1,n):
+        rgb=(1-t)*c0+t*c1
+        a=(1-t)*a0+t*a1
+        cols.append((rgb[0],rgb[1],rgb[2],a))
     return segs,cols
 
 fig,ax=plt.subplots(figsize=(14,9))
@@ -38,11 +43,11 @@ for m in models:
     x=dat[m][0]; p=dat[m][4]; intel=dat[m][5]
     yd=dat[m][7]; yb=btw[m][7]; col=PROV_COLOR.get(p,'#888')
     segs,cols=grad_segments(tx(x),yd,yb,col,GRAD_TO)
-    ax.add_collection(LineCollection(segs,colors=cols,linewidths=2.6,alpha=0.55,zorder=3))
+    ax.add_collection(LineCollection(segs,colors=cols,linewidths=3.4,zorder=3))
 # markers on top: filled = DAT, open thick = between
 for m in models:
     x=dat[m][0]; p=dat[m][4]; intel=dat[m][5]; col=PROV_COLOR.get(p,'#888')
-    ax.scatter(tx(x),dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=0.95,zorder=6,edgecolors='white',linewidths=1.1)
+    ax.scatter(tx(x),dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=0.70,zorder=6,edgecolors='white',linewidths=1.1)
     ax.scatter(tx(x),btw[m][7],marker=MARK[intel],s=SIZE[intel]*0.9,facecolors='none',edgecolors=col,linewidths=2.6,zorder=6)
 # human baselines: DAT filled dashed, between open dashed
 def human_line(hy,style,fillopen):
