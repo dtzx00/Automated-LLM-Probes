@@ -77,7 +77,7 @@ _hd=[_human_y_at(dat_hy,x) for x in _hxs]
 _hb=[_human_y_at(btw_hy,x) for x in _hxs]
 ax.fill_between([tx(x) for x in _hxs],_hd,_hb,color=HUMAN_PURPLE,alpha=0.10,zorder=2,linewidth=0)
 # --- lineage horizontal connectors linking existing points (no new numbers) ---
-def _lineage_connectors(prefix, color):
+def _lineage_connectors(prefix, color, shade=True):
     ms=[m for m in dat if m.lower().startswith(prefix) and m in btw]
     ms.sort(key=lambda m: dat[m][0])
     if len(ms)<2: return
@@ -86,9 +86,10 @@ def _lineage_connectors(prefix, color):
     _yb=[btw[m][7] for m in ms]     # between-unit points
     ax.plot(_xs,_yd,'-',color=color,lw=2.2,alpha=0.65,zorder=4)   # DAT lineage: 35% transparent
     ax.plot(_xs,_yb,'-',color=color,lw=2.2,alpha=0.90,zorder=4)   # between lineage: strong
-    ax.fill_between(_xs,_yd,_yb,color=color,alpha=0.10,zorder=2,linewidth=0)  # shade gap 10%
-_lineage_connectors("claude", PROV_COLOR['anthropic'])
-_lineage_connectors("grok",   PROV_COLOR['xai'])
+    if shade:
+        ax.fill_between(_xs,_yd,_yb,color=color,alpha=0.10,zorder=2,linewidth=0)  # shade gap 10%
+_lineage_connectors("claude", PROV_COLOR['anthropic'], shade=True)
+_lineage_connectors("grok",   PROV_COLOR['xai'], shade=False)
 # human connectors: same gradient pattern as models (faded at DAT end -> strong at between end)
 for _y in sorted(set(dat_hy)&set(btw_hy)):
     _segs,_cols=grad_segments(tx(_y),dat_hy[_y],btw_hy[_y],HUMAN_PURPLE,GRAD_TO)
