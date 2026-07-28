@@ -55,7 +55,7 @@ FIELDS = ["record_id","model_name","api_model_requested","api_model_returned","p
           "request_timestamp_utc","response_timestamp_utc","latency_ms",
           "api_request_id","response_id","system_fingerprint","finish_reason",
           "prompt_tokens","completion_tokens","total_tokens","prompt_sha256",
-          "raw_response_text","parse_status","n_nouns_parsed"] + NOUN_COLS + ["dat_score","collector_version"]
+          "raw_response_text","reasoning_text","parse_status","n_nouns_parsed"] + NOUN_COLS + ["dat_score","collector_version"]
 
 def _collector_version():
     try:
@@ -66,6 +66,22 @@ COLLECTOR_VERSION = _collector_version()
 
 def _now():
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
+
+
+# ---- reasoning capture -------------------------------------------------------------------
+# POLICY (locked 2026-07-27, Dawei): capture ALL reasoning the API returns, and use each
+# model's DEFAULT thinking effort. Never send a reasoning_effort / thinking-budget override —
+# leaving it unset keeps every model at its shipped default. Reasoning tokens are billed
+# whether or not captured, so saving the trace is free; we simply stop discarding it.
+import re as _re
+def _extract_inline_think(text):
+    """Pull <think>...</think> (or <thinking>) out of a content string; return (reasoning, clean_answer)."""
+    if not text: return "", text
+    m = _re.search(r"<think(?:ing)?>(.*?)</think(?:ing)?>", text, _re.DOTALL|_re.IGNORECASE)
+    if not m: return "", text
+    reasoning = m.group(1).strip()
+    clean = _re.sub(r"<think(?:ing)?>.*?</think(?:ing)?>", "", text, flags=_re.DOTALL|_re.IGNORECASE).strip()
+    return reasoning, clean
 
 # ---- low-level POST that returns (parsed_json, response_headers) --------------------------
 def _post_full(url, headers, body, timeout=300):
@@ -83,8 +99,15 @@ def _openai_like(base, key, api_model, temperature, seed=None, extra_headers=Non
     d, h = _post_full(f"{base}/chat/completions", headers, body)
     ch = (d.get("choices") or [{}])[0]
     usage = d.get("usage") or {}
+    _msg = ch.get("message") or {}
+    _content = (_msg.get("content") or "")
+    _reasoning = (_msg.get("reasoning_content") or _msg.get("reasoning") or "").strip()
+    _inline, _clean = _extract_inline_think(_content)
+    if not _reasoning and _inline:   # models (e.g. MiniMax/Hunyuan) that inline <think> in content
+        _reasoning = _inline; _content = _clean
     return {
-        "text": (ch.get("message") or {}).get("content","").strip(),
+        "text": _content.strip(),
+        "reasoning_text": _reasoning,
         "api_model_returned": d.get("model",""),
         "response_id": d.get("id",""),
         "system_fingerprint": d.get("system_fingerprint",""),
@@ -98,12 +121,17 @@ def _openai_like(base, key, api_model, temperature, seed=None, extra_headers=Non
 
 def _anthropic(base, key, api_model, temperature, seed=None):
     headers = {"x-api-key": key, "anthropic-version":"2023-06-01", "Content-Type":"application/json"}
-    body = {"model": api_model, "max_tokens":200, "temperature":temperature,
+    # max_tokens raised so a model returning default thinking blocks is not truncated.
+    # We do NOT set the "thinking" param: leaving it unset = the model's default effort.
+    body = {"model": api_model, "max_tokens":4000, "temperature":temperature,
             "messages":[{"role":"user","content":BASELINE_PROMPT}]}
     d, h = _post_full(f"{base}/messages", headers, body)
     usage = d.get("usage") or {}
+    _blocks = d.get("content",[])
+    _reasoning = "".join(b.get("thinking","") for b in _blocks if b.get("type")=="thinking").strip()
     return {
-        "text": "".join(b.get("text","") for b in d.get("content",[])).strip(),
+        "text": "".join(b.get("text","") for b in _blocks if b.get("type")=="text").strip(),
+        "reasoning_text": _reasoning,
         "api_model_returned": d.get("model",""),
         "response_id": d.get("id",""),
         "system_fingerprint": "",
@@ -181,7 +209,7 @@ def generate(model_name, api_model, provider, n, out_csv, meta, dry_run=False, s
             "system_fingerprint": payload.get("system_fingerprint",""), "finish_reason": payload.get("finish_reason",""),
             "prompt_tokens": payload.get("prompt_tokens",""), "completion_tokens": payload.get("completion_tokens",""),
             "total_tokens": payload.get("total_tokens",""), "prompt_sha256": PROMPT_SHA256,
-            "raw_response_text": payload["text"], "parse_status": status,
+            "raw_response_text": payload["text"], "reasoning_text": payload.get("reasoning_text",""), "parse_status": status,
             "n_nouns_parsed": len(nouns) if nouns else 0,
             **{c:(nouns[i] if nouns else "") for i,c in enumerate(NOUN_COLS)},
             "dat_score": "", "collector_version": COLLECTOR_VERSION,
@@ -307,7 +335,7 @@ def collect_one(model_row, n, out_csv, batch, gate, key, stop):
             "system_fingerprint":payload.get("system_fingerprint",""),"finish_reason":payload.get("finish_reason",""),
             "prompt_tokens":payload.get("prompt_tokens",""),"completion_tokens":payload.get("completion_tokens",""),
             "total_tokens":payload.get("total_tokens",""),"prompt_sha256":PROMPT_SHA256,
-            "raw_response_text":payload["text"],"parse_status":status,
+            "raw_response_text":payload["text"],"reasoning_text":payload.get("reasoning_text",""),"parse_status":status,
             "n_nouns_parsed":len(nouns) if nouns else 0,
             **{c:(nouns[i] if nouns else "") for i,c in enumerate(NOUN_COLS)},
             "dat_score":"","collector_version":COLLECTOR_VERSION,
