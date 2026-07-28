@@ -29690,3 +29690,1633 @@ Check: all single words, all common nouns, no proper nouns, no technical terms. 
 Format: ""mountain, spoon, happiness, elephant, bread, whisper, thunder, bridge, childhood, fabric""
 
 Output only the string.",ok,10,mountain,spoon,happiness,elephant,bread,whisper,thunder,bridge,childhood,fabric,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:11:43.212Z,2026-07-28T04:12:02.342Z,19129,,chatcmpl-6a682bff92f93ba9e8850e6e,,stop,229,588,817,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"rock, love, hammer, bread, song, time, shoe, elephant, dream, bridge","The user wants 10 nouns that are as different from each other as possible. They should be:
+1. Single-word nouns in English
+2. Things, objects, and concepts
+3. No proper nouns
+4. No specialized/technical vocabulary
+5. Format: comma-separated string
+6. Nothing else
+
+I need maximum diversity. Let me think across different semantic categories:
+- Natural objects: rock, tree, ocean, cloud
+- Animals: dog, bird
+- Food: bread, apple
+- Tools/artifacts: hammer, chair, cup
+- Abstract concepts: love, time, justice, freedom, memory
+- Body parts: hand, heart
+- Buildings: house, bridge
+- Vehicles: car, boat
+- Natural phenomena: rain, fire, wind
+- Clothing: shoe, hat
+- Music/sound: song, bell
+- Emotions: fear, joy
+- Substances: water, gold, salt
+
+To maximize difference, I should pick from widely separated categories:
+
+1. rock (natural mineral object)
+2. love (abstract emotion concept)
+3. hammer (tool/artifact)
+4. cloud (meteorological phenomenon)
+5. bread (food)
+6. song (auditory/artistic creation)
+7. tree (living plant)
+8. time (abstract dimension concept)
+9. shoe (clothing item)
+10. river (geographical/natural feature)
+
+Hmm, rock, tree, cloud, river are all nature-related. Let me diversify more:
+
+1. rock (natural object)
+2. love (emotion)
+3. hammer (tool)
+4. bread (food)
+5. song (art/sound)
+6. time (abstract concept)
+7. shoe (clothing)
+8. elephant... wait, is elephant too common? No, it's fine - an animal.
+9. dream (mental phenomenon)
+10. bridge (structure)
+
+Let me check: rock (mineral nature), love (emotion), hammer (tool), bread (food), song (art), time (abstract), shoe (clothing), elephant (animal), dream (mental), bridge (man-made structure)
+
+That's pretty diverse. Could swap one for a body part or a substance like water. Let me finalize:
+
+rock, love, hammer, bread, song, time, shoe, elephant, dream, bridge
+
+Actually elephant vs rock - both physical things but very different. Good. Maybe replace elephant with something like ""shadow"" (optical phenomenon) or ""whisper"" (sound)... but song is already sound. Let me keep animal for the living creature category.
+
+Final: rock, love, hammer, bread, song, time, shoe, elephant, dream, bridge",ok,10,rock,love,hammer,bread,song,time,shoe,elephant,dream,bridge,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:11:47.132Z,2026-07-28T04:12:02.516Z,15384,,chatcmpl-6a682c0433277b8471973cc9,,stop,229,453,682,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, spoon, love, butterfly, water, justice, bicycle, apple, music, shadow","The user wants 10 nouns that are as different from each other as possible. Let me think about maximizing diversity across semantic categories:
+
+1. Living things: animal, plant
+2. Natural phenomena: ocean, mountain, weather
+3. Abstract concepts: love, time, justice, memory
+4. Man-made objects: chair, hammer, telephone
+5. Food: bread, apple
+6. Body parts: hand, heart
+7. Emotions: happiness, anger
+8. Materials: wood, metal, water
+9. Places/spaces: house, road (not proper nouns)
+10. Ideas: dream, thought, freedom
+
+Let me pick 10 highly diverse nouns:
+
+1. mountain (natural formation)
+2. spoon (man-made utensil)
+3. love (emotion)
+4. butterfly (animal)
+5. water (substance/liquid)
+6. justice (abstract concept)
+7. bicycle (vehicle/machine)
+8. apple (food/plant part)
+9. music (art form)
+10. shadow (phenomenon)
+
+That's pretty diverse. Let me check:
+- mountain: natural landform
+- spoon: small man-made object, utensil
+- love: emotion/abstract
+- butterfly: living creature
+- water: substance
+- justice: abstract concept/idea
+- bicycle: transportation
+- apple: food
+- music: art/sound
+- shadow: optical phenomenon
+
+These span: nature, tool, emotion, animal, substance, concept, machine, food, art, phenomenon. Good diversity.
+
+Alternative options: thunder (weather), memory (cognitive), shoe (clothing), tree (plant), knife (tool), time (abstract), dog (animal), bread (food), silence (phenomenon/concept), house (building).
+
+Let me finalize: mountain, spoon, love, butterfly, water, justice, bicycle, apple, music, shadow
+
+All single words, common vocabulary, no proper nouns, no technical terms. Format as comma-separated string only.",ok,10,mountain,spoon,love,butterfly,water,justice,bicycle,apple,music,shadow,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:11:51.270Z,2026-07-28T04:12:03.211Z,11941,,chatcmpl-6a682c088d417acc9ef3a42c,,stop,229,345,574,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"thunder, elephant, freedom, bread, scissors, finger, bridge, music, sadness, bicycle","The user wants 10 nouns that are as different from each other as possible. Let me think about maximizing diversity across categories:
+
+1. A natural object/thing
+2. An animal or living thing
+3. An abstract concept/emotion
+4. A food item
+5. A tool/man-made object
+6. A natural phenomenon
+7. A body part
+8. A building/structure
+9. A vehicle/transportation
+10. An abstract idea like time/justice
+
+Let me pick words from very different semantic categories:
+- mountain (geography/nature)
+- butterfly (animal)
+- justice (abstract concept)
+- bread (food)
+- hammer (tool)
+- ocean... wait that's similar to mountain (nature). Let me think.
+
+Categories to maximize difference:
+1. thunder (weather/natural phenomenon)
+2. elephant (animal)
+3. freedom (abstract concept)
+4. pizza... maybe too specific, bread (food)
+5. scissors (tool)
+6. finger (body part)
+7. bridge (structure)
+8. music (art/sound)
+9. sadness (emotion)
+10. bicycle (vehicle)
+
+That's good diversity:
+- thunder: natural phenomenon
+- elephant: animal
+- freedom: abstract concept
+- bread: food
+- scissors: tool
+- finger: body part
+- bridge: structure
+- music: art
+- sadness: emotion
+- bicycle: vehicle
+
+All single words, common nouns, not proper nouns, not technical. Good.",ok,10,thunder,elephant,freedom,bread,scissors,finger,bridge,music,sadness,bicycle,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:11:42.385Z,2026-07-28T04:12:05.733Z,23347,,chatcmpl-6a682bff8d25836cecf75c41,,stop,229,765,994,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, jealousy, spoon, butterfly, bread, time, chair, mud, song, dream","The user wants 10 nouns that are as different from each other as possible. Constraints:
+1. Single-word nouns in English
+2. Things, objects, and concepts
+3. No proper nouns
+4. No specialized/technical vocabulary
+5. Output as comma-separated string
+6. Nothing else
+
+To maximize difference, I should pick nouns from very different semantic categories:
+- Abstract concept: love, freedom, time
+- Natural thing: mountain, river, tree
+- Animal: dog, bird
+- Food: bread, apple
+- Tool/artifact: hammer, chair
+- Body part: hand
+- Weather: rain
+- Emotion: anger
+- Building: house
+- Vehicle: car
+
+Let me pick 10 very diverse ones spanning different categories:
+
+1. mountain (natural landform)
+2. love (abstract emotion/concept)
+3. spoon (kitchen utensil)
+4. dog (animal)
+5. time (abstract concept)
+6. bread (food)
+7. chair (furniture)
+8. rain (weather phenomenon)
+9. dream (mental phenomenon)
+10. river (body of water)
+
+Wait, mountain and river are both natural things. Let me diversify more:
+
+1. mountain (geography/nature)
+2. jealousy (emotion)
+3. hammer (tool)
+4. butterfly (animal/insect)
+5. bread (food)
+6. whisper (sound/action concept)
+7. chair (furniture)
+8. gravity (physical concept - but is it technical? Gravity is common knowledge, not specialized)
+9. shadow (visual phenomenon)
+10. music (art form)
+
+Let me check: 
+- mountain - concrete, natural
+- jealousy - abstract, emotion
+- hammer - concrete, tool
+- butterfly - living creature
+- bread - food
+- whisper - sound
+- chair - furniture
+- gravity - might be slightly scientific but it's common vocabulary
+- shadow - visual phenomenon
+- music - art/auditory
+
+These are quite diverse. Maybe replace gravity with something simpler like ""game"" or ""war"" or ""sleep""?
+
+Actually let me think about maximizing semantic distance across multiple dimensions:
+- Concrete vs abstract
+- Living vs non-living
+- Natural vs artificial
+- Size
+- Sensory domain (visual, auditory, tactile, taste)
+- Function
+
+Final list:
+1. mountain (large, natural, concrete, visual)
+2. jealousy (abstract emotion)
+3. spoon (small tool, artificial)
+4. butterfly (living, small)
+5. bread (food, taste/smell)
+6. silence (abstract, auditory absence)
+7. chair (furniture)
+8. time (abstract dimension)
+9. mud (substance, tactile)
+10. song (auditory art)
+
+Hmm, silence and song both auditory. Time and jealousy both abstract. Let me refine:
+
+1. mountain — natural landform
+2. jealousy — emotion
+3. spoon — utensil/tool
+4. butterfly — animal
+5. bread — food
+6. time — abstract dimension
+7. chair — furniture
+8. mud — substance/material
+9. song — art/entertainment
+10. dream — mental phenomenon
+
+That's good diversity: nature, emotion, tool, animal, food, abstract concept, furniture, substance, art, mental phenomenon.
+
+All are single words, common nouns, not proper nouns, not technical. 
+
+Output format: ""mountain, jealousy, spoon, butterfly, bread, time, chair, mud, song, dream""
+
+Nothing else in the response.",ok,10,mountain,jealousy,spoon,butterfly,bread,time,chair,mud,song,dream,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:11:48.261Z,2026-07-28T04:12:12.973Z,24712,,chatcmpl-6a682c052ee123acbef0dc72,,stop,229,758,987,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"spoon, cat, love, mountain, music, bread, time, rain, house, war","The user wants 10 nouns that are as different from each other as possible. They should be:
+1. Single-word nouns in English
+2. Things, objects, concepts
+3. No proper nouns
+4. No specialized vocabulary or technical terms
+5. Comma-separated string output only
+
+Let me think about maximizing diversity. I want nouns from very different semantic categories:
+
+1. A concrete physical object (small, everyday)
+2. A natural phenomenon
+3. An abstract concept/emotion
+4. A food item
+5. A living thing (animal or plant)
+6. A structure/building
+7. A tool/instrument
+8. A time-related concept
+9. A material/substance
+10. An event/occurrence
+
+Let me pick diverse ones:
+
+1. ""table"" - furniture (concrete object)
+2. ""love"" - abstract emotion
+3. ""mountain"" - natural landform
+4. ""music"" - art form/sound
+5. ""bread"" - food
+6. ""speed"" - physical property/concept
+7. ""dog"" - animal
+8. ""dream"" - mental phenomenon
+9. ""water"" - substance/liquid
+10. ""war"" - social event/concept
+
+Or maybe even more diversity:
+- Something alive: ""tree"" or ""bird""
+- Something abstract emotional: ""happiness"" or ""fear""
+- Something natural: ""rain"" or ""ocean""
+- Something man-made small: ""spoon"" or ""key""
+- Something conceptual: ""time"" or ""justice""
+- Something food: ""apple"" or ""soup""
+- Something sound-related: ""noise"" or ""song""
+- Something event: ""party"" or ""storm""
+- Something material: ""metal"" or ""cloth""
+- Something spatial: ""distance"" or ""corner""
+
+Let me finalize a maximally diverse list:
+
+1. spoon - small man-made utensil (kitchen)
+2. elephant - large living animal... wait, is ""elephant"" too specialized? No, it's common vocabulary. But maybe simpler: ""cat""
+3. love - abstract emotion
+4. mountain - large natural landform
+5. music - art/sound
+6. bread - food
+7. time - abstract concept
+8. rain - weather phenomenon
+9. house - building/structure
+10. fear... wait I have love already. Maybe ""war"" or ""justice""
+
+Hmm, let me think about coverage:
+- Concrete small object: spoon
+- Living creature: cat
+- Emotion: love
+- Natural landscape: mountain
+- Art form: music
+- Food: bread
+- Abstract concept: time
+- Weather/natural phenomenon: rain
+- Building: house
+- Social concept/event: war
+
+That's pretty diverse. All common words, single words, nouns, not proper nouns, not technical.
+
+Final: ""spoon, cat, love, mountain, music, bread, time, rain, house, war""
+
+Actually, maybe replace one to add more diversity. Categories covered:
+- utensil/tool: spoon ✓
+- animal: cat ✓
+- emotion: love ✓
+- landform: mountain ✓
+- art: music ✓
+- food: bread ✓
+- abstract concept: time ✓
+- weather: rain ✓
+- structure: house ✓
+- event/conflict: war ✓
+
+Good diversity. Output only the string.",ok,10,spoon,cat,love,mountain,music,bread,time,rain,house,war,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:11:49.322Z,2026-07-28T04:12:15.340Z,26018,,chatcmpl-6a682c061e3e858d65462628,,stop,229,791,1020,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"elephant, bread, hammer, ocean, happiness, childhood, shadow, brick, finger, music","The user wants 10 nouns that are as different from each other as possible. Requirements:
+1. Single-word nouns in English
+2. Things, objects, and concepts
+3. No proper nouns
+4. No specialized/technical vocabulary
+5. Comma-separated string format
+6. Nothing else
+
+To maximize diversity, I should pick nouns from very different semantic categories:
+- Living thing/animal
+- Food
+- Concept/abstract idea
+- Natural phenomenon
+- Tool/object
+- Emotion
+- Structure/building
+- Body part
+- Time concept
+- Substance/material
+
+Let me brainstorm diverse categories:
+1. Animal: ""elephant"" or ""dog""
+2. Abstract concept: ""justice"" or ""freedom"" or ""love""
+3. Food: ""bread"" or ""apple""
+4. Natural phenomenon: ""thunder"" or ""rain""
+5. Tool: ""hammer"" or ""spoon""
+6. Emotion: ""sadness"" or ""joy"" (but this overlaps with abstract concept)
+7. Building: ""house"" or ""bridge""
+8. Body part: ""finger"" or ""heart""
+9. Time: ""century"" or ""moment""
+10. Material: ""wood"" or ""water""
+
+Let me pick maximally different ones:
+1. elephant (animal - large, living)
+2. whisper (sound/action concept - actually whisper can be a noun meaning a soft sound)
+3. bread (food)
+4. mountain (landform/geography)
+5. happiness (emotion/abstract)
+6. scissors (tool - but this is pluralia tantum... maybe ""hammer"" is safer as single word)
+7. ocean (body of water)
+8. childhood (time period of life)
+9. shadow (visual phenomenon)
+10. brick (building material/object)
+
+Hmm, let me check for overlap:
+- elephant: living animal
+- whisper: sound
+- bread: food
+- mountain: landform
+- happiness: emotion
+- hammer: tool
+- ocean: water body
+- childhood: life stage/time
+- shadow: light phenomenon
+- brick: manufactured object/material
+
+These are pretty diverse. Mountain and ocean are both geography-related but different enough. Let me refine:
+
+1. elephant (animal)
+2. justice (abstract concept/idea)
+3. bread (food)
+4. thunder (weather/sound phenomenon)
+5. hammer (tool)
+6. sadness — wait, justice and sadness are both abstract. Let me keep justice and use something else.
+
+Actually the goal is maximum difference. Let me pick from distinct semantic fields:
+
+1. elephant — animal
+2. bread — food
+3. hammer — tool
+4. ocean — natural geography/water
+5. happiness — emotion
+6. thunder — weather phenomenon/sound
+7. childhood — time/life stage
+8. shadow — optical phenomenon
+9. brick — construction material
+10. whisper — communication/sound... thunder is also sound. Maybe ""dance""? Dance is an activity. Or ""finger"" — body part.
+
+Final list:
+1. elephant (animal)
+2. bread (food)
+3. hammer (tool)
+4. ocean (body of water)
+5. happiness (emotion)
+6. childhood (time period)
+7. shadow (light phenomenon)
+8. brick (material/object)
+9. finger (body part)
+10. music (art form)
+
+Check: all single words, all common nouns, no proper nouns, no technical terms, all very different categories. 
+
+Format: ""elephant, bread, hammer, ocean, happiness, childhood, shadow, brick, finger, music""",ok,10,elephant,bread,hammer,ocean,happiness,childhood,shadow,brick,finger,music,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:02.342Z,2026-07-28T04:12:17.546Z,15204,,chatcmpl-6a682c13a66e76149f54c266,,stop,229,445,674,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"teapot, ocean, justice, butterfly, thunder, bread, sorrow, ladder, shadow, melody","The user wants 10 nouns that are as different from each other as possible. Let me think about maximizing diversity across semantic categories:
+
+1. Something concrete/small (physical object)
+2. Something natural
+3. An abstract concept/emotion
+4. An animal or living thing (but should be a thing/object/concept... animals count as nouns/things)
+5. Something related to time or abstract
+6. Food
+7. A place-like noun (but not proper nouns - generic places like ""mountain"" or ""ocean"" are fine)
+8. A human-made structure
+9. A weather/natural phenomenon
+10. Something abstract like a quality
+
+Let me pick maximally different ones:
+- teapot (small man-made object)
+- ocean (large natural body)
+- justice (abstract concept)
+- butterfly (living creature)
+- thunder (natural phenomenon/sound)
+- bread (food)
+- ladder (tool)
+- sorrow (emotion)
+- mountain (landform)... but ocean is already natural, maybe pick something else
+- shadow (optical phenomenon)
+- whisper (sound/communication)
+- gravity (force... might be too technical? No, gravity is common vocabulary)
+- pillow (household)
+- forest (nature)
+
+Let me maximize category spread:
+1. teapot - small artifact, kitchen
+2. ocean - vast natural water
+3. justice - abstract social concept
+4. butterfly - living creature
+5. thunder - natural phenomenon/sound
+6. bread - food
+7. sorrow - emotion
+8. ladder - tool
+9. shadow - light phenomenon
+10. melody - sound/art
+
+That's quite diverse. Alternatively include something like ""friendship"" but that overlaps with justice/sorrow as abstract. Let me keep: teapot, ocean, justice, butterfly, thunder, bread, sorrow, ladder, shadow, melody.
+
+Check rules: all single words, all common English nouns, no proper nouns, no technical terms. Good.",ok,10,teapot,ocean,justice,butterfly,thunder,bread,sorrow,ladder,shadow,melody,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:00.594Z,2026-07-28T04:12:19.209Z,18614,,chatcmpl-6a682c11f3fb1d6dd944bed0,,stop,229,585,814,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"elephant, screwdriver, democracy, lightning, cheese, castle, happiness, mountain, music, diamond","The user wants 10 nouns that are maximally different from each other. Let me think about selecting words from completely different semantic categories:
+
+1. Something living/organic
+2. Something mechanical/tool
+3. An abstract concept
+4. A natural phenomenon
+5. A food item
+6. A structure/building
+7. Something related to emotion/feeling
+8. A body of water or landform
+9. A sound-related thing
+10. A textile/material
+
+Let me pick words that are common (not specialized), single-word, not proper nouns:
+
+1. ""tree"" - living organism
+2. ""hammer"" - tool
+3. ""justice"" - abstract concept
+4. ""rainbow"" - natural phenomenon
+5. ""bread"" - food
+6. ""bridge"" - structure
+7. ""sadness"" - emotion
+8. ""ocean"" - body of water
+9. ""whisper"" - sound/communication
+10. ""velvet"" - material
+
+Hmm, but justice and sadness are both abstract. Let me diversify more:
+
+1. ""elephant"" - animal (living)
+2. ""screwdriver"" - man-made tool
+3. ""democracy"" - political/social concept
+4. ""lightning"" - natural phenomenon
+5. ""cheese"" - food
+6. ""castle"" - building/structure
+7. ""happiness"" - emotion/feeling
+8. ""mountain"" - landform
+9. ""music"" - art/sound
+10. ""diamond"" - mineral/object
+
+Wait, diamond might be somewhat specialized? No, it's common. Let me check:
+- elephant: animal ✓
+- screwdriver: tool ✓
+- democracy: political concept ✓ (common enough)
+- lightning: weather phenomenon ✓
+- cheese: food ✓
+- castle: building ✓
+- happiness: emotion ✓
+- mountain: landform ✓
+- music: art form ✓
+- diamond: gemstone/mineral ✓
+
+These span very different categories: animals, tools, political systems, weather, food, architecture, emotions, geography, arts, minerals. That's quite diverse.
+
+Alternatively I could use:
+- ""book"" (object for reading)
+- ""cloud"" (sky)
+- ""dream"" (mental experience)
+
+Let me finalize: elephant, screwdriver, democracy, lightning, cheese, castle, happiness, mountain, music, diamond
+
+Actually, is ""democracy"" too abstract/political? It's a concept, which is allowed (""concepts""). It's not specialized. Fine.
+
+Format: comma-separated string only, nothing else.",ok,10,elephant,screwdriver,democracy,lightning,cheese,castle,happiness,mountain,music,diamond,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:03.212Z,2026-07-28T04:12:19.661Z,16449,,chatcmpl-6a682c138d25836cecf75c54,,stop,229,486,715,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, spoon, freedom, banana, thunder, bicycle, sadness, bridge, dog, music","The user wants 10 nouns that are as different from each other as possible. They should be:
+1. Single-word nouns in English
+2. Things, objects, and concepts
+3. No proper nouns
+4. No specialized/technical vocabulary
+5. Output as comma-separated string
+6. Nothing else
+
+To maximize diversity, I should pick nouns from very different semantic categories:
+- A natural object (e.g., mountain, rock)
+- An animal or living thing... but they said things, objects, concepts — animals could count as things. Let me think. Maybe safer to include some.
+- A food item
+- A concept/abstract idea (e.g., freedom, time)
+- A tool/artifact
+- A body part? Maybe
+- A weather phenomenon
+- An emotion
+- A building/structure
+- A vehicle
+- A plant
+
+Let me pick 10 maximally diverse nouns:
+1. mountain (natural landform)
+2. spoon (utensil/tool)
+3. freedom (abstract concept)
+4. banana (food/fruit)
+5. thunder (weather/sound phenomenon)
+6. bicycle (vehicle/machine)
+7. sadness (emotion)
+8. bridge (structure)
+9. tree (plant) — but tree and mountain both nature; still different enough. Maybe use ""flower"" or skip plant. Alternatively use ""dog"" (animal).
+10. dream (mental phenomenon) — but dream and freedom both abstract... still distinct categories (concept vs mental experience). Maybe choose ""whisper"" (sound) or ""shadow"" (visual phenomenon).
+
+Let me finalize:
+1. mountain — geography/nature
+2. spoon — kitchen utensil
+3. freedom — abstract concept
+4. banana — food
+5. thunder — weather phenomenon
+6. bicycle — transportation
+7. sadness — emotion
+8. bridge — construction/architecture
+9. dog — animal
+10. music — art/sound
+
+That's a good spread: natural formation, utensil, abstract idea, food, weather, vehicle, emotion, structure, animal, art form.
+
+All single words, common vocabulary, no proper nouns. Output as comma-separated string only.",ok,10,mountain,spoon,freedom,banana,thunder,bicycle,sadness,bridge,dog,music,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:11:57.059Z,2026-07-28T04:12:20.503Z,23443,,chatcmpl-6a682c0d499e32a8bd18413e,,stop,229,717,946,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"rock, sparrow, freedom, spoon, bread, thunder, knee, sadness, bicycle, dream","The user wants 10 nouns that are as different from each other as possible. Let me think about maximizing diversity across different semantic categories.
+
+Categories to consider:
+- Natural objects (rock, tree, water)
+- Animals (dog, bird)
+- Abstract concepts (love, justice, time)
+- Man-made objects (chair, hammer, spoon)
+- Food items (bread, apple)
+- Body parts (hand, eye)
+- Weather/nature phenomena (rain, thunder)
+- Emotions/feelings (fear, joy)
+- Actions/events... but those are verbs usually, nouns like ""war"" or ""party""
+- Materials (wood, metal)
+- Places... no wait, proper nouns of places not allowed, but common nouns like ""mountain"" are fine
+- Sounds (music, noise)
+- Time-related (hour, century)
+- Ideas (freedom, truth)
+
+To maximize difference, I should pick from maximally distant semantic categories:
+1. Concrete natural object: ""mountain"" or ""rock""
+2. Animal: ""elephant"" or ""sparrow""
+3. Abstract emotion: ""anger"" or ""happiness""
+4. Man-made tool: ""hammer"" or ""scissors""
+5. Food: ""bread"" or ""cheese""
+6. Abstract concept (philosophical): ""justice"" or ""freedom""
+7. Body part: ""finger"" or ""elbow""
+8. Weather phenomenon: ""lightning"" or ""fog""
+9. Furniture/household: ""bed"" or ""candle""
+10. Sound/music: ""melody"" or ""echo""
+11. Time: ""moment"" or ""year""
+12. Liquid: ""milk"" or ""ocean""
+
+Let me pick 10 maximally diverse:
+1. mountain (natural formation, large)
+2. butterfly (animal, living)
+3. justice (abstract concept)
+4. hammer (tool, man-made)
+5. soup (food, liquid-ish)
+6. whisper (sound/quiet thing)
+7. finger (body part)
+8. fog (weather)
+9. pillow (soft household object)
+10. century (time period)
+
+Or:
+1. rock (natural mineral)
+2. sparrow (animal)
+3. freedom (abstract political concept)
+4. spoon (utensil)
+5. bread (food)
+6. thunder (natural sound/phenomenon)
+7. knee (body part)
+8. sadness (emotion)
+9. bicycle (vehicle)
+10. dream (mental phenomenon)
+
+These seem very diverse. Let me refine:
+- rock: solid, natural, non-living
+- sparrow: living, animal
+- freedom: abstract, social concept
+- spoon: small man-made utensil
+- bread: food
+- thunder: atmospheric sound phenomenon
+- knee: body part
+- sadness: emotion
+- bicycle: vehicle/transportation
+- dream: mental experience
+
+That's a good spread across: geology, biology, philosophy/politics, kitchenware, food, weather, anatomy, psychology/emotion, transportation, cognition.
+
+All are common words, not technical, not proper nouns, single words, nouns.
+
+Final answer format: ""rock, sparrow, freedom, spoon, bread, thunder, knee, sadness, bicycle, dream""",ok,10,rock,sparrow,freedom,spoon,bread,thunder,knee,sadness,bicycle,dream,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:02.542Z,2026-07-28T04:12:27.299Z,24756,,chatcmpl-6a682c135eaf930e38bd6895,,stop,229,706,935,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"dog, spoon, freedom, rain, bread, anger, shadow, mountain, music, brick","The user wants 10 single-word nouns that are as different from each other as possible. They should be:
+- Single-word nouns in English
+- Things, objects, and concepts
+- Not proper nouns
+- Not specialized/technical vocabulary
+- Formatted as comma-separated string
+
+Let me think about maximizing semantic diversity. I want nouns from very different semantic categories:
+
+Categories to consider:
+1. Natural objects (rock, tree, water)
+2. Living things (dog, bird) — but nouns for things/objects/concepts... animals count as things
+3. Abstract concepts (love, time, freedom, justice)
+4. Man-made objects (chair, spoon, bridge)
+5. Food (bread, apple)
+6. Emotions (fear, joy)
+7. Natural phenomena (rain, thunder)
+8. Body parts (hand, heart)
+9. Materials (wood, metal)
+10. Places... no wait, no proper nouns like places, but common nouns for places? It says ""do not use proper nouns such as people or places"" — meaning proper nouns that name people or places. Common nouns like ""house"" should be fine.
+
+To maximize difference:
+1. Dog (animal - living creature)
+2. Rock (natural mineral object)
+3. Freedom (abstract concept)
+4. Spoon (small man-made utensil)
+5. Rain (weather phenomenon)
+6. Bread (food)
+7. Anger (emotion)
+8. Mountain (large natural landform)
+9. Whisper (sound/action-related noun)
+10. Shadow (visual phenomenon)
+
+Hmm, let me reconsider. Some overlap: rock and mountain are both natural geological. Let me diversify more.
+
+1. Dog (animal)
+2. Spoon (utensil/tool)
+3. Freedom (abstract concept)
+4. Rain (weather)
+5. Bread (food)
+6. Anger (emotion)
+7. Shadow (light phenomenon)
+8. Ocean (large natural body)
+9. Music (art form)
+10. Brick (building material)
+
+Check for differences:
+- Dog: living, animate, biological
+- Spoon: inanimate, small, man-made, kitchen
+- Freedom: abstract, political/philosophical concept
+- Rain: natural process/phenomenon, water
+- Bread: food, edible, baked
+- Anger: emotion, internal feeling
+- Shadow: optical phenomenon, visual
+- Ocean: vast natural body of water
+- Music: art, auditory, cultural
+- Brick: construction material, solid, manufactured
+
+Rain and ocean both water-related. Maybe replace ocean with something else. 
+
+Alternative: mountain (landform) vs rain (weather) — different enough.
+
+Let me finalize:
+1. dog
+2. spoon
+3. freedom
+4. rain
+5. bread
+6. anger
+7. shadow
+8. mountain
+9. music
+10. brick
+
+Rain (weather) vs mountain (landform) - different categories.
+Shadow and music — shadow is visual, music is auditory. Good.
+
+All common nouns, single words, no proper nouns, no technical terms. 
+
+Format: ""dog, spoon, freedom, rain, bread, anger, shadow, mountain, music, brick""
+
+That satisfies all requirements.",ok,10,dog,spoon,freedom,rain,bread,anger,shadow,mountain,music,brick,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:15.341Z,2026-07-28T04:12:27.496Z,12155,,chatcmpl-6a682c20255aaaf8ea5b97f5,,stop,229,351,580,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"rock, dog, bread, love, hand, hammer, rain, bridge, childhood, music","The user wants 10 nouns that are as different from each other as possible. They should be:
+1. Single-word nouns in English
+2. Things, objects, and concepts
+3. No proper nouns
+4. No specialized vocabulary or technical terms
+5. Comma-separated string format
+
+To maximize difference, I should pick from very different semantic categories:
+- A natural object (rock, tree)
+- An animal (dog)
+- A food item (bread)
+- An emotion/concept (love, justice)
+- A body part (hand)
+- A tool/artifact (hammer)
+- Weather phenomenon (rain)
+- A building/structure (bridge)
+- Time concept (morning)
+- Abstract concept (freedom)
+
+Let me pick 10 highly diverse nouns across different domains:
+
+1. rock - natural mineral object
+2. dog - animal
+3. bread - food
+4. love - emotion
+5. hand - body part
+6. hammer - tool
+7. rain - weather
+8. bridge - structure
+9. childhood - time/life stage concept
+10. music - art form
+
+These span: geology, biology/animals, food, emotions, anatomy, tools, weather, architecture, time/life stages, and arts. That's quite diverse.
+
+All are common words, not technical, not proper nouns, all single words. Good.
+
+Format: ""rock, dog, bread, love, hand, hammer, rain, bridge, childhood, music""
+
+Only return the string, nothing else.",ok,10,rock,dog,bread,love,hand,hammer,rain,bridge,childhood,music,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:12.973Z,2026-07-28T04:12:29.225Z,16252,,chatcmpl-6a682c1d15c0ba78d08570a9,,stop,229,473,702,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"elephant, bread, freedom, hammer, ocean, whisper, chair, shadow, anger, music","The user wants 10 nouns that are as different from each other as possible. Requirements:
+1. Single-word nouns in English
+2. Things, objects, and concepts
+3. No proper nouns
+4. No specialized/technical vocabulary
+5. Comma-separated string
+6. Nothing else in response
+
+To maximize diversity, I should pick nouns from very different semantic categories:
+- Abstract concept: love, freedom, time, justice
+- Natural object: rock, tree, ocean
+- Animal: dog, bird
+- Food: bread, apple
+- Tool/artifact: hammer, chair
+- Body part: hand
+- Weather/nature phenomenon: rain
+- Emotion: fear
+- Building: house
+
+Let me pick 10 very different ones:
+1. freedom (abstract concept)
+2. rock (natural mineral object)
+3. dog (animal)
+4. bread (food)
+5. hammer (tool)
+6. rain (weather phenomenon)
+7. chair (furniture)
+8. whisper (sound/action concept... hmm, whisper is a noun)
+9. tree (plant)
+10. anger (emotion)
+
+Wait, freedom and anger are both abstract — but different types (concept vs emotion). Let me diversify more:
+
+1. elephant (animal)
+2. bread (food)
+3. freedom (abstract concept)
+4. hammer (tool)
+5. ocean (natural body of water)
+6. whisper (sound)
+7. mountain (landform) — too similar to ocean? Both natural geography. Maybe replace.
+8. chair (furniture)
+9. shadow (light phenomenon)
+10. anger (emotion)
+
+Let me finalize: elephant, bread, freedom, hammer, ocean, whisper, chair, shadow, anger, music
+
+Categories:
+- elephant: animal
+- bread: food
+- freedom: abstract concept
+- hammer: tool
+- ocean: natural feature
+- whisper: sound
+- chair: furniture
+- shadow: optical phenomenon
+- anger: emotion
+- music: art form
+
+That's quite diverse. All are common words, single words, no proper nouns, no technical terms. Good.",ok,10,elephant,bread,freedom,hammer,ocean,whisper,chair,shadow,anger,music,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:19.209Z,2026-07-28T04:12:29.279Z,10069,,chatcmpl-6a682c23165e1911f027937e,,stop,229,229,458,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"spoon, mountain, justice, thunder, bread, laughter, bridge, dream, shadow, fabric","I need 10 single-word English nouns, maximally different from each other. No proper nouns, no technical terms. They should span very different semantic categories: natural object, artifact, abstract concept, emotion, phenomenon, food, animal-related?, etc. Things, objects, concepts.
+
+Ideas: mountain (natural place/thing), spoon (utensil), justice (abstract concept), thunder (phenomenon), bread (food), elephant? Animal - it's a thing/object. Maybe keep diversity: time (concept), fabric, laughter (sound/emotion expression), shadow, bridge (structure), dream (mental concept), stone?
+
+Pick: spoon, mountain, justice, thunder, bread, laughter, bridge, dream, shadow, fabric.
+
+Check differences: utensil, landform, abstract concept, weather phenomenon, food, sound/emotion, structure, mental experience, visual phenomenon, material. Good diversity.
+
+Format exactly: comma-separated string.",ok,10,spoon,mountain,justice,thunder,bread,laughter,bridge,dream,shadow,fabric,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:05.734Z,2026-07-28T04:12:29.372Z,23638,,chatcmpl-6a682c166d94e0217753fa6a,,stop,229,682,911,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, butterfly, bread, freedom, hammer, laughter, bicycle, shadow, pillow, storm","The user wants 10 nouns that are as different from each other as possible. They should be:
+1. Single-word nouns in English
+2. Things, objects, and concepts
+3. No proper nouns
+4. No specialized/technical vocabulary
+5. Comma-separated string format
+6. Nothing else in the response
+
+Let me think about maximizing diversity. I want nouns from very different semantic categories:
+
+- Natural object: rock, tree, river, cloud
+- Animal: dog, bird, fish
+- Food: bread, apple, cheese
+- Abstract concept: love, freedom, time, justice
+- Man-made object: chair, hammer, car, phone
+- Body part: hand, heart, eye
+- Emotion: fear, joy, anger
+- Building/structure: house, bridge, tower
+- Clothing: shoe, hat, shirt
+- Event: wedding, storm, party
+
+Let me pick 10 maximally different ones:
+
+1. mountain (natural landform)
+2. butterfly (animal/insect)
+3. bread (food)
+4. freedom (abstract concept)
+5. hammer (tool)
+6. whisper (sound/quiet action)
+7. ocean (water body)... maybe too similar to mountain as nature
+8. laughter (emotion/sound)
+9. bicycle (vehicle)
+10. shadow (phenomenon)
+
+Let me refine:
+1. mountain - natural landform
+2. butterfly - living creature
+3. bread - food
+4. freedom - abstract concept
+5. hammer - tool
+6. laughter - emotion/expression
+7. bicycle - vehicle
+8. shadow - light phenomenon
+9. whisper - sound... hmm, laughter and whisper both relate to sound
+10. dream - mental phenomenon
+
+Let me swap whisper for something else:
+1. mountain
+2. butterfly
+3. bread
+4. freedom
+5. hammer
+6. laughter
+7. bicycle
+8. shadow
+9. thunder - weather phenomenon
+10. pillow - furniture/soft object
+
+Or maybe:
+- thunder and shadow are both natural phenomena...
+
+Let me think about categories:
+1. Landform: mountain
+2. Creature: butterfly
+3. Food: bread
+4. Abstract concept: freedom
+5. Tool: hammer
+6. Emotion/expression: laughter
+7. Vehicle: bicycle
+8. Optical phenomenon: shadow
+9. Furniture/comfort: pillow
+10. Weather: thunder
+
+That's pretty diverse. Alternatively:
+- Replace thunder with something else like ""music"" or ""dance""?
+
+Maybe:
+1. mountain (geology/nature)
+2. butterfly (animal)
+3. bread (food)
+4. freedom (abstract idea)
+5. hammer (tool)
+6. laughter (human expression)
+7. bicycle (transportation)
+8. shadow (physics/optics)
+9. pillow (household item)
+10. storm (weather)
+
+All common words, no technical terms, all single-word nouns, all things/objects/concepts.
+
+Final answer format: ""mountain, butterfly, bread, freedom, hammer, laughter, bicycle, shadow, pillow, storm""",ok,10,mountain,butterfly,bread,freedom,hammer,laughter,bicycle,shadow,pillow,storm,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:20.503Z,2026-07-28T04:12:30.530Z,10026,,chatcmpl-6a682c256a707aa36e381d49,,stop,229,304,533,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"bicycle, freedom, mountain, bread, thunder, elephant, sadness, bridge, water, childhood","The user wants 10 nouns that are as different from each other as possible. Let me think about categories to maximize diversity:
+
+1. A physical object/thing
+2. An abstract concept
+3. A natural phenomenon
+4. A food item
+5. An animal (but that's a thing... animals are nouns, things)
+6. An emotion
+7. A tool
+8. A structure/building
+9. A natural material
+10. A time-related concept
+
+Let me pick diverse nouns across very different semantic domains:
+
+1. bicycle (man-made vehicle/object)
+2. freedom (abstract concept)
+3. mountain (natural landform)
+4. bread (food)
+5. thunder (natural phenomenon/sound)
+6. elephant (animal)
+7. sadness (emotion)
+8. bridge (structure)
+9. water (substance/liquid)
+10. childhood (time/life stage concept)
+
+These cover: vehicle, abstract concept, landform, food, weather phenomenon, animal, emotion, structure, substance, life stage. That's pretty diverse.
+
+Avoid technical terms - all of these are common words. None are proper nouns. All single words. All nouns.
+
+Final format: ""bicycle, freedom, mountain, bread, thunder, elephant, sadness, bridge, water, childhood""",ok,10,bicycle,freedom,mountain,bread,thunder,elephant,sadness,bridge,water,childhood,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:17.547Z,2026-07-28T04:12:34.245Z,16698,,chatcmpl-6a682c22be759e5d2afe21bf,,stop,229,534,763,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"elephant, bread, freedom, mountain, hammer, anger, flower, song, chair, childhood","The user wants 10 nouns that are as different from each other as possible. Constraints:
+- Single-word nouns in English
+- Things, objects, concepts
+- No proper nouns
+- No specialized vocabulary or technical terms
+- Final response as comma-separated string only
+
+I should pick nouns from very different semantic categories to maximize diversity:
+1. An animal: ""dog"" or ""elephant""
+2. A food: ""bread""
+3. A concept/abstract: ""justice"" or ""freedom""
+4. A natural phenomenon: ""rain"" or ""mountain""
+5. A tool/object: ""hammer"" or ""spoon""
+6. A vehicle: ""bicycle""
+7. An emotion: ""anger"" or ""happiness""
+8. A plant: ""tree"" or ""flower""
+9. Furniture: ""chair""
+10. A time concept: ""hour"" or ""childhood""
+11. Clothing: ""hat""
+12. Body part: ""hand""
+13. Building: ""house""
+14. Music: ""song""
+
+Let me pick 10 maximally different ones covering different domains:
+1. elephant (animal)
+2. bread (food)
+3. freedom (abstract concept)
+4. mountain (natural landform)
+5. hammer (tool)
+6. bicycle (vehicle/transport)
+7. anger (emotion)
+8. flower (plant)
+9. song (art/sound)
+10. chair (furniture)
+
+These span: animal, food, abstract idea, geography/nature, tool, transportation, emotion, plant, art, furniture. That's quite diverse. All are common words, single words, not proper nouns, not technical.
+
+Maybe swap one for a time-related concept or body part for even more diversity. Let me consider:
+- elephant (animal)
+- bread (food)
+- freedom (abstract concept)
+- ocean (nature/water)
+- hammer (tool)
+- anger (emotion)
+- flower (plant)
+- song (art)
+- chair (furniture)
+- childhood (time/life stage concept)
+
+That removes vehicle but adds a temporal concept. Both work. I'll go with a good mix. Perhaps include ""rain"" for weather.
+
+Final list:
+elephant, bread, freedom, mountain, hammer, anger, flower, song, chair, childhood
+
+That's 10 nouns across very different categories. All single words, common vocabulary. Output only the comma-separated string.",ok,10,elephant,bread,freedom,mountain,hammer,anger,flower,song,chair,childhood,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:19.662Z,2026-07-28T04:12:37.193Z,17531,,chatcmpl-6a682c24c05696b2de031e2b,,stop,229,505,734,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, love, spoon, freedom, elephant, whisper, century, bread, shadow, dream","The user wants 10 nouns that are as different from each other as possible. Let me think about maximizing semantic diversity across categories:
+
+1. Something natural/living: tree, dog, water
+2. Something abstract/emotional: love, fear, justice
+3. Something man-made object: chair, hammer, spoon
+4. Something related to time: hour, century
+5. Something food-related: bread, apple
+6. Something related to weather/nature phenomenon: thunder, rainbow
+7. Something body-related: hand, heart
+8. Something about ideas/knowledge: idea, dream
+9. Something about sound/music: melody, noise
+10. Something about measurement/quantity: dozen, weight
+
+Let me pick very diverse ones:
+1. mountain (natural formation, concrete, large)
+2. love (abstract emotion)
+3. spoon (small man-made object, kitchen)
+4. freedom (abstract concept, political/social)
+5. elephant (animal, living)
+6. whisper (sound-related, action noun)
+7. century (time)
+8. bread (food)
+9. shadow (visual phenomenon)
+10. gravity (force... might be too technical/scientific)
+
+Wait, instruction 4 says no specialized vocabulary or technical terms. Gravity might be borderline - it's a common word though. Let me avoid it to be safe.
+
+Alternative: dream (mental phenomenon), laugh, idea
+
+Let me finalize:
+1. mountain - natural landform
+2. love - emotion
+3. spoon - utensil/tool
+4. freedom - social/political concept
+5. elephant - animal
+6. whisper - sound
+7. century - time period
+8. bread - food
+9. shadow - light phenomenon
+10. dream - mental experience
+
+These are quite diverse:
+- Natural geography: mountain
+- Emotion: love
+- Man-made tool: spoon
+- Abstract concept: freedom
+- Living creature: elephant
+- Sound: whisper
+- Time: century
+- Food: bread
+- Optical phenomenon: shadow
+- Mental: dream
+
+That covers: geography, emotion, object, concept, animal, sound, time, food, light, mind. Very diverse.
+
+All are single words, common English, not proper nouns, not technical. Good.",ok,10,mountain,love,spoon,freedom,elephant,whisper,century,bread,shadow,dream,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:30.530Z,2026-07-28T04:12:44.385Z,13854,,chatcmpl-6a682c2ff4fe3c88d68ab16f,,stop,229,269,498,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"apple, dog, hammer, ocean, chair, bridge, freedom, dream, shadow, music","The task: generate 10 nouns as different from each other as possible. Single-word English nouns, common vocabulary (no technical terms), no proper nouns. Maximize semantic diversity: pick from very different categories — food, animal, abstract concept, natural phenomenon, tool, body part, emotion-ish concept, building/structure, clothing, vehicle, etc.
+
+Let me choose highly diverse nouns:
+1. apple (food/plant)
+2. freedom (abstract concept)
+3. hammer (tool)
+4. ocean (natural feature)
+5. dog (animal)
+6. chair (furniture)
+7. whisper (sound/action noun) — maybe ""music"" instead
+8. bridge (structure)
+9. shadow (phenomenon)
+10. dream (mental concept)
+
+Check diversity: apple (food), dog (animal), hammer (tool), ocean (geography/nature), chair (furniture), bridge (man-made structure), freedom (abstract/social concept), dream (mental), shadow (optical phenomenon), music (art/sound).
+
+All single words, common nouns, not technical. Good.
+
+Output only the comma-separated string.",ok,10,apple,dog,hammer,ocean,chair,bridge,freedom,dream,shadow,music,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:27.499Z,2026-07-28T04:12:46.114Z,18614,,chatcmpl-6a682c2c307babd5f0fdb962,,stop,229,535,764,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"hammer, butterfly, freedom, bread, whisper, sadness, mountain, clock, dream, shadow","The user wants 10 nouns that are as different from each other as possible. They should be:
+1. Single-word nouns in English
+2. Things, objects, and concepts
+3. Not proper nouns
+4. Not specialized/technical vocabulary
+5. Output as comma-separated string only
+
+To maximize diversity, I should pick nouns from very different semantic categories:
+- A physical object (e.g., chair, hammer)
+- A natural thing (e.g., river, tree)
+- An animal (e.g., dog, eagle)
+- An abstract concept (e.g., freedom, justice)
+- An emotion (e.g., joy, fear)
+- A food (e.g., bread, apple)
+- A body part (e.g., hand, heart) - though heart could be dual
+- A weather/nature phenomenon (e.g., rain, storm)
+- A concept of time (e.g., moment, century)
+- A place-like thing but not proper noun (e.g., bridge, house)
+- An action-derived noun (e.g., dance, thought)
+- A sound (e.g., music, whisper)
+
+Let me pick 10 very different ones:
+1. hammer (tool/man-made object)
+2. butterfly (animal/insect)
+3. freedom (abstract concept)
+4. ocean (natural feature)
+5. bread (food)
+6. whisper (sound/action)
+7. sadness (emotion)
+8. mountain (geological/natural)
+9. clock (time-measuring device)
+10. dream (mental phenomenon)
+
+Hmm, ocean and mountain are both natural features — maybe swap one. Let me diversify more:
+1. hammer — tool
+2. butterfly — living creature
+3. freedom — abstract concept/political idea
+4. bread — food
+5. whisper — sound/quiet communication
+6. sadness — emotion
+7. mountain — natural landscape
+8. clock — man-made device measuring time
+9. dream — mental experience
+10. shadow — optical phenomenon
+
+That covers: tool, animal, abstract concept, food, sound, emotion, natural formation, device, mental phenomenon, light/optical phenomenon. Very diverse.
+
+Alternatively include something like ""family"" (social group) or ""journey"" (event/process). But I think my list is good.
+
+All single words, common vocabulary, no proper nouns, no technical terms.
+
+Final answer format: just the comma-separated string.",ok,10,hammer,butterfly,freedom,bread,whisper,sadness,mountain,clock,dream,shadow,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:34.245Z,2026-07-28T04:12:47.671Z,13425,,chatcmpl-6a682c33fb5b65c1172ed8df,,stop,229,421,650,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"chair, elephant, justice, water, mountain, bread, happiness, hand, thunder, dream","The user wants 10 nouns that are as different from each other as possible. They need to be:
+1. Single-word nouns in English
+2. Things, objects, and concepts
+3. Not proper nouns
+4. Not specialized/technical vocabulary
+5. Formatted as comma-separated string
+6. Nothing else in the response
+
+To maximize diversity, I should pick nouns from very different semantic categories:
+- A physical object (e.g., chair, spoon)
+- A natural phenomenon (e.g., rain, ocean)
+- An abstract concept (e.g., justice, love)
+- An animal (e.g., elephant)
+- A food (e.g., bread)
+- A concept related to time or emotion (e.g., happiness, time)
+- A natural object (e.g., mountain, tree)
+- An activity or event concept (e.g., dance, journey)
+- A body part (e.g., hand)
+- A material/substance (e.g., water, sand)
+
+Let me pick maximally different ones:
+1. chair (furniture/man-made object)
+2. elephant (animal)
+3. justice (abstract concept)
+4. water (substance/liquid)
+5. mountain (natural landform)
+6. bread (food)
+7. happiness (emotion)
+8. hand (body part)
+9. thunder (natural phenomenon/sound)
+10. dream (mental experience)
+
+These are all common words, single-word nouns, not proper nouns, not technical. They span very different categories: furniture, animal, abstract concept, substance, landform, food, emotion, body part, weather phenomenon, mental experience.
+
+That seems like a good maximally diverse set. Let me finalize:
+
+""chair, elephant, justice, water, mountain, bread, happiness, hand, thunder, dream""
+
+The response should be only the comma-separated string, nothing else.",ok,10,chair,elephant,justice,water,mountain,bread,happiness,hand,thunder,dream,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:29.225Z,2026-07-28T04:12:47.790Z,18564,,chatcmpl-6a682c2e6dbb98be6449f243,,stop,229,573,802,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"rock, butterfly, freedom, spoon, thunder, sadness, mirror, seed, honey, shadow","The user wants 10 nouns that are as different from each other as possible. Requirements:
+1. Single-word nouns in English
+2. Things, objects, and concepts
+3. No proper nouns
+4. No specialized vocabulary or technical terms
+5. Format: comma-separated string
+6. Nothing else in response
+
+I should pick nouns from very different semantic categories to maximize difference:
+- A natural object (rock, tree, cloud)
+- An animal (dog, bird)
+- A concept/abstract idea (love, justice, time)
+- A tool/artifact (hammer, spoon)
+- A food (bread, apple)
+- A body part (hand, heart)
+- A natural phenomenon (rain, fire)
+- An emotion (fear, joy)
+- A place-ish generic thing (house, bridge)
+- A substance/material (water, gold)
+
+Let me pick 10 maximally different nouns:
+
+1. mountain (natural landform)
+2. butterfly (animal/insect)
+3. justice (abstract concept)
+4. spoon (utensil/artifact)
+5. bread (food)
+6. whisper (sound/action as noun)
+7. fear (emotion)
+8. ocean (body of water) — but maybe too close to mountain as a natural feature. Maybe replace with something else.
+9. diamond (mineral/valuable object)
+10. dream (mental phenomenon)
+
+Let me refine:
+- rock (natural object)
+- elephant (animal)
+- freedom (abstract concept)
+- chair (furniture)
+- honey (food/substance)
+- thunder (natural phenomenon/sound)
+- sadness (emotion)
+- mirror (artifact)
+- seed (plant-related)
+- shadow (visual phenomenon)
+
+Hmm, ensure single words, common vocabulary, all different categories:
+1. rock — geology/natural object
+2. elephant — animal
+3. freedom — abstract concept
+4. spoon — tool/utensil
+5. honey — food
+6. thunder — weather phenomenon
+7. sadness — emotion
+8. mirror — household object
+9. seed — plant biology
+10. shadow — optical phenomenon
+
+These are pretty different from each other. Maybe vary more: include something like ""thread"" (material), ""journey"" (event/concept), ""warmth"" (sensation). Let me finalize:
+
+rock, butterfly, freedom, spoon, thunder, sadness, mirror, seed, honey, shadow
+
+That's 10. Good spread: natural object, animal, abstract concept, utensil, weather, emotion, household item, plant, food, light phenomenon.
+
+Final answer only the comma-separated string.",ok,10,rock,butterfly,freedom,spoon,thunder,sadness,mirror,seed,honey,shadow,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:29.626Z,2026-07-28T04:12:47.936Z,18309,,chatcmpl-6a682c2e5eaf930e38bd68b2,,stop,229,518,747,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"elephant, justice, hammer, ocean, bread, song, shoe, fire, house, dream","The user wants 10 nouns that are as different from each other as possible. Constraints:
+- Single-word nouns in English
+- Things, objects, concepts
+- No proper nouns
+- No specialized vocabulary or technical terms
+- Final response: comma-separated string only
+
+I need to pick nouns from very different semantic categories to maximize diversity. Let me think of categories:
+- Natural phenomenon: ocean, mountain, rain
+- Food: bread, apple
+- Animal: dog, elephant
+- Emotion/concept: love, freedom, justice
+- Tool/object: hammer, chair
+- Body part: hand
+- Time: hour, century
+- Building: house
+- Vehicle: car
+- Clothing: shoe
+- Music/art: song
+- Abstract: idea, dream
+
+Let me pick maximally different ones:
+1. mountain (natural landscape)
+2. love (emotion/abstract concept)
+3. hammer (tool)
+4. dog (animal)
+5. bread (food)
+6. song (art/sound)
+7. chair (furniture)
+8. river... wait, mountain already covers nature. Let me spread more.
+
+Try:
+1. elephant (animal)
+2. justice (abstract concept)
+3. spoon (utensil/tool)
+4. ocean (natural body)
+5. bread (food)
+6. whisper (sound/action noun?) — whisper is a noun but maybe verb-like. Use ""song"" instead.
+7. shoe (clothing)
+8. dream (mental concept) — but justice is abstract too. Still different domains.
+9. mountain (landform) — ocean covers nature. Maybe use ""fire"" (element/phenomenon)
+10. house (building)
+
+Let me finalize for maximal semantic distance:
+- elephant (animal)
+- justice (abstract concept/law)
+- hammer (tool)
+- ocean (natural geography)
+- bread (food)
+- song (art/entertainment)
+- shoe (clothing)
+- fire (natural phenomenon/element)
+- house (building/shelter)
+- dream (mental/psychological)
+
+That's 10. All single words, common vocabulary, no proper nouns, no technical terms. They span: animal, abstract concept, tool, geography, food, art, clothing, phenomenon, building, mental state. Good diversity.
+
+Final output only the string.",ok,10,elephant,justice,hammer,ocean,bread,song,shoe,fire,house,dream,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:27.299Z,2026-07-28T04:12:49.503Z,22203,,chatcmpl-6a682c2c4b91d2767076452b,,stop,229,673,902,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"mountain, bread, jealousy, hammer, thunder, elbow, freedom, century, tiger, shadow","The task is to generate 10 nouns that are as different from each other as possible. They should be:
+1. Single-word nouns in English
+2. Things, objects, and concepts
+3. Not proper nouns
+4. Not specialized/technical vocabulary
+5. Formatted as comma-separated string
+6. Nothing else in the response
+
+To maximize diversity, I should pick nouns from very different semantic categories:
+- A natural object (e.g., mountain, river)
+- An animal (e.g., elephant) - wait, animals are nouns too, ""things"" broadly
+- A food item (e.g., bread)
+- An abstract concept (e.g., freedom, justice)
+- An emotion (e.g., anger)
+- A tool/artifact (e.g., hammer)
+- A body part (e.g., elbow)
+- A weather phenomenon (e.g., thunder)
+- A time concept (e.g., century)
+- A plant (e.g., tree, flower)
+
+Let me pick 10 maximally different nouns:
+1. mountain (geographical/natural feature)
+2. elephant (animal) - or should I avoid animals? The instructions say ""things, objects and concepts"" - animals are things. But to be safe, maybe stick to objects and concepts. Actually ""things"" is broad enough to include animals. But let me be safe and varied.
+3. bread (food)
+4. freedom (abstract concept)
+5. hammer (tool)
+6. whisper (sound/action noun)
+7. elbow (body part)
+8. thunder (weather/natural phenomenon)
+9. childhood (time/life stage concept)
+10. perfume (substance/sensory)
+
+Let me refine to maximize difference:
+1. mountain - natural landform
+2. spoon - small man-made utensil
+3. jealousy - emotion
+4. thunder - sound/weather phenomenon
+5. bread - food
+6. gravity - force/concept (might be slightly technical? It's common knowledge, not specialized)
+7. elbow - body part
+8. melody - music/sound concept
+9. shadow - visual phenomenon
+10. brick - building material
+
+Hmm, let me think about categories:
+- Natural landform: mountain
+- Animal: tiger (optional)
+- Food: bread
+- Emotion: jealousy
+- Tool: hammer
+- Body part: elbow
+- Weather: thunder
+- Abstract concept: freedom
+- Time period: century
+- Substance/material: water or glass
+
+Final list:
+1. mountain (natural place feature)
+2. bread (food)
+3. jealousy (emotion)
+4. hammer (tool)
+5. thunder (weather phenomenon)
+6. elbow (body part)
+7. freedom (abstract concept)
+8. century (time)
+9. tiger (animal)
+10. shadow (visual phenomenon)
+
+These are all common, non-technical, single-word nouns, none are proper nouns, and they span very different semantic categories.
+
+Output format: ""mountain, bread, jealousy, hammer, thunder, elbow, freedom, century, tiger, shadow""",ok,10,mountain,bread,jealousy,hammer,thunder,elbow,freedom,century,tiger,shadow,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:29.426Z,2026-07-28T04:12:50.397Z,20971,,chatcmpl-6a682c2ee802f55ebfbfa18e,,stop,229,593,822,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"hammer, love, mountain, bread, justice, cloud, ankle, century, music, shadow","The user wants 10 nouns that are as different from each other as possible. Let me think about maximizing semantic diversity across different domains/categories:
+
+Categories I could draw from:
+1. Nature/weather: cloud, mountain, rain
+2. Emotions/abstract: love, fear, courage
+3. Man-made objects: hammer, chair, bridge
+4. Food: bread, apple
+5. Time concepts: moment, century
+6. Body parts: hand, heart
+7. Animals: dog (wait, animals are nouns too but maybe too concrete?)
+8. Materials: wood, metal
+9. Social concepts: friendship, justice
+10. Sound: noise, whisper
+11. Math/quantity: number, dozen
+12. Color: red (adjective though)
+13. Money/economics: debt, wealth
+14. Movement: journey, dance
+15. Sensory: smell, taste
+
+Let me pick 10 maximally different nouns:
+1. hammer (tool, physical man-made object)
+2. love (emotion, abstract)
+3. mountain (natural landform)
+4. whisper (sound/quiet communication)
+5. bread (food)
+6. justice (social/moral concept)
+7. cloud (weather/atmosphere)
+8. ankle (body part)
+9. century (time period)
+10. laughter (sound/emotion expression)
+
+Hmm, whisper and laughter might overlap (both sounds). Let me adjust:
+1. hammer (tool)
+2. love (emotion)
+3. mountain (landform)
+4. bread (food)
+5. justice (social concept)
+6. cloud (weather)
+7. ankle (body part)
+8. century (time)
+9. music (art/sound)
+10. shadow (light phenomenon)
+
+That's pretty diverse. Or maybe:
+1. hammer
+2. love
+3. mountain
+4. bread
+5. justice
+6. cloud
+7. ankle
+8. century
+9. music
+10. shadow
+
+Alternative options: velvet (texture/fabric), debt (finance), silence, gravity (too technical?), smell, dream, spoon (similar to hammer as utensil/tool), river (similar to mountain as landform)...
+
+Let me check rules:
+- Single words ✓
+- Nouns (things, objects, concepts) ✓
+- No proper nouns ✓
+- No specialised/technical vocabulary ✓
+- Comma-separated string only ✓
+
+Final answer: hammer, love, mountain, bread, justice, cloud, ankle, century, music, shadow
+
+These span: tools, emotions, geography, food, ethics, meteorology, anatomy, time, art, optics/phenomena. Good diversity.",ok,10,hammer,love,mountain,bread,justice,cloud,ankle,century,music,shadow,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:44.385Z,2026-07-28T04:13:00.841Z,16456,,chatcmpl-6a682c3d0a128ec1a675453e,,stop,229,496,725,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"elephant, happiness, hammer, bread, whisper, justice, rain, tree, shadow, dance","The user wants 10 nouns that are maximally different from each other. Let me think about maximizing semantic diversity across categories:
+
+- Living things (animals, plants)
+- Natural phenomena
+- Man-made objects
+- Abstract concepts
+- Emotions/feelings
+- Food
+- Structures
+- Materials
+- Time-related concepts
+- Sounds
+
+Let me pick 10 highly diverse, common nouns:
+
+1. elephant (animal)
+2. happiness (abstract emotion)
+3. hammer (tool)
+4. ocean (natural feature)
+5. bread (food)
+6. whisper (sound/action as noun)
+7. tree (plant)
+8. justice (concept)
+9. bicycle (vehicle)
+10. mountain (geological) — wait, ocean and mountain are both natural. Let me diversify more.
+
+Let me choose:
+1. elephant — animal
+2. happiness — emotion/abstract
+3. hammer — tool
+4. bread — food
+5. whisper — sound
+6. justice — social concept
+7. bicycle — vehicle
+8. rain — weather phenomenon
+9. chair — furniture
+10. shadow — optical phenomenon
+
+Hmm, chair and hammer are both man-made objects. Let me vary:
+
+1. elephant (animal)
+2. happiness (emotion)
+3. hammer (tool)
+4. bread (food)
+5. whisper (sound)
+6. justice (abstract concept)
+7. rain (weather)
+8. tree (plant)
+9. shadow (light phenomenon)
+10. dance (activity/art form)
+
+That's quite diverse: animal, emotion, tool, food, sound, concept, weather, plant, light phenomenon, activity.
+
+Or maybe include a material like ""wood"" or ""gold""? Let me finalize:
+
+elephant, happiness, hammer, bread, whisper, justice, rain, tree, shadow, dance
+
+All are common words, not technical, not proper nouns, all single words, all nouns. Good diversity:
+- Animal: elephant
+- Emotion: happiness
+- Tool: hammer
+- Food: bread
+- Sound: whisper
+- Abstract concept: justice
+- Weather: rain
+- Plant: tree
+- Optical: shadow
+- Activity: dance
+
+Output only the comma-separated string.",ok,10,elephant,happiness,hammer,bread,whisper,justice,rain,tree,shadow,dance,,git:8f24e8a
+,Kimi-K3,kimi-k3,kimi-k3,moonshot,https://api.moonshot.ai/v1,collect_2026_midpoint,Eastern,Yes,2026,0.5,1.0,0-1,,2026-07-28T04:12:37.194Z,2026-07-28T04:13:02.452Z,25258,,chatcmpl-6a682c35596e23aec0df941e,,stop,229,758,987,d03218e72a815ec8b138d1c5cd9237449ab59b1f0f1ae1aacd0d21c33ccffbc2,"elephant, mountain, love, hammer, bread, time, music, water, dream, cloth","The user wants 10 nouns that are as different from each other as possible. Let me think about maximizing semantic diversity across different categories:
+
+Categories to consider:
+- Natural phenomena
+- Living things
+- Emotions/concepts
+- Objects
+- Food
+- Materials
+- Time-related
+- Abstract concepts
+- Sounds
+- Physical things
+
+Let me brainstorm diverse options:
+1. Tree (living nature)
+2. Love (emotion)
+3. Hammer (tool)
+4. Thunder (natural phenomenon)
+5. Freedom (abstract concept)
+6. Bread (food)
+7. Mountain (geography/nature)
+8. Shadow (light phenomenon)
+9. Whisper (sound)
+10. Time (abstract dimension)
+
+Or other options:
+- Ocean (water body)
+- Justice (abstract)
+- Chair (furniture)
+- Elephant (animal)
+- Music (art form)
+- Stone (material/object)
+- Hunger (physical state)
+- Window (structure)
+- Sleep (state/activity)
+- Color (property)
+
+Let me pick 10 maximally different ones:
+1. Elephant (animal)
+2. Justice (abstract concept)
+3. Thunder (natural phenomenon/sound)
+4. Bread (food)
+5. Hammer (tool)
+6. Ocean (large natural body)
+7. Shadow (light phenomenon)
+8. Time (abstract dimension)
+9. Laughter (sound/emotion expression)
+10. Stone (mineral/object)
+
+Hmm, shadow and thunder might overlap in ""natural phenomena."" Let me refine:
+
+1. Elephant (living animal)
+2. Justice (moral concept)
+3. Bread (food)
+4. Hammer (manufactured tool)
+5. Ocean (natural body/geography)
+6. Time (abstract dimension)
+7. Music (art/sound)
+8. Dream (mental phenomenon)
+9. Metal (material)
+10. Flower (plant)
+
+Wait, elephant and flower are both living things. But they're quite different (animal vs plant). That's fine - they're different enough.
+
+Actually let me reconsider for maximum diversity:
+1. Elephant (animal)
+2. Justice (abstract moral concept)
+3. Bread (food)
+4. Hammer (tool/artifact)
+5. Ocean (natural geographical feature)
+6. Time (dimension/abstract)
+7. Music (auditory art)
+8. Dream (mental experience)
+9. Plastic (material)
+10. Anger (emotion)
+
+Hmm, justice and anger are both abstract. But emotion vs moral concept are different domains.
+
+Alternative set:
+1. Elephant (animal)
+2. Mountain (geological)
+3. Love (emotion)
+4. Hammer (tool)
+5. Bread (food)
+6. Time (concept/dimension)
+7. Music (art)
+8. Stone (material) - hmm, mountain and stone overlap
+9. Water (substance)
+10. Dream (mental)
+
+Let me finalize:
+1. Elephant - animal
+2. Mountain - geographical feature
+3. Love - emotion
+4. Hammer - tool
+5. Bread - food
+6. Time - abstract dimension
+7. Music - art form/sound
+8. Water - liquid substance
+9. Dream - mental phenomenon
+10. Cloth - material/fabric
+
+That's pretty diverse. Check constraints:
+- Single words ✓
+- Nouns (things, objects, concepts) ✓
+- Not proper nouns ✓
+- Not specialized/technical ✓ (all common words)
+- Comma-separated string ✓
+
+Final: elephant, mountain, love, hammer, bread, time, music, water, dream, cloth",ok,10,elephant,mountain,love,hammer,bread,time,music,water,dream,cloth,,git:8f24e8a
