@@ -6,7 +6,11 @@ ROOT="/home/user/cn"
 BASE=f"{ROOT}/machine_data/processed/machine_final_baseline_midpoint.csv"   # committed dat_score per row
 MERGED=f"{ROOT}/machine_data/processed/machine_all_merged.csv"               # committed between_unit_posaware + metadata
 HUMAN=f"{ROOT}/human_data/processed/human_dat_all.csv"
-K3=f"{ROOT}/machine_data/raw_reasoning/topup_moonshot_k3.csv"
+NEW_MODELS=[
+  ("Kimi-K3",  f"{ROOT}/machine_data/raw_reasoning/topup_moonshot_k3.csv",      (2026,7,16,'moonshot','reasoning','exact')),
+  ("Claude-Opus-5", f"{ROOT}/machine_data/raw_reasoning/topup_anthropic_opus5.csv", (2026,7,24,'anthropic','hybrid','exact')),
+  ("GPT-5.6-Sol",   f"{ROOT}/machine_data/raw_reasoning/topup_openai_gpt56sol.csv", (2026,7,9,'openai','hybrid','exact')),
+]
 REFDIR=f"{ROOT}/machine_data/between_unit_references"
 V=pickle.load(open("/home/user/repro/models/glove_olson.pickle","rb"))
 
@@ -81,16 +85,16 @@ for row in csv.DictReader(open(MERGED,encoding='utf-8-sig',errors='replace')):
 
 # ---- Kimi-K3 scored identically ----
 NC=[f"noun_{i}" for i in range(10)]
-k3d=[];k3b=[]
-for row in csv.DictReader(open(K3)):
-    if row['model_name']!='Kimi-K3': continue
-    nouns=[row.get(c,"") for c in NC]
-    ds=dat(nouns); bs=bpa(nouns)
-    if ds is not None: k3d.append(ds)
-    if bs is not None: k3b.append(bs)
-dat_by['Kimi-K3']=k3d; btw_by['Kimi-K3']=k3b
-info['Kimi-K3']=(2026,7,16,'moonshot','reasoning','exact')
-print(f"K3 DAT n={len(k3d)} mean={np.mean(k3d):.2f} | between n={len(k3b)} mean={np.mean(k3b):.2f}")
+for mname, path, meta in NEW_MODELS:
+    dd=[];bb=[]
+    for row in csv.DictReader(open(path)):
+        if row['model_name']!=mname: continue
+        nouns=[row.get(c,"") for c in NC]
+        ds=dat(nouns); bs=bpa(nouns)
+        if ds is not None: dd.append(ds)
+        if bs is not None: bb.append(bs)
+    dat_by[mname]=dd; btw_by[mname]=bb; info[mname]=meta
+    print(f"{mname}: DAT n={len(dd)} mean={np.mean(dd):.2f} | between n={len(bb)} mean={np.mean(bb):.2f}")
 
 def recs(by):
     out=[]
