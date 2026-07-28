@@ -21,8 +21,8 @@ MARK={'efficient':'v','all-rounder':'o','hybrid':'D','reasoning':'*'}; SIZE={'ef
 
 def load(fn):
     d=json.load(open(fn)); return {r[6]:r for r in d["recs"]}, {int(k):v for k,v in d["human_year"].items()}
-dat,dat_hy=load("permonth_data.json")
-btw,btw_hy=load("between_data.json")
+dat,dat_hy=load("data/permonth_data.json")
+btw,btw_hy=load("data/between_data.json")
 models=[m for m in dat if m in btw]
 allx=[dat[m][0] for m in models]; xmin=min(allx)-3/12; xmax=max(allx)+0.2/12
 
@@ -53,7 +53,7 @@ for m in models:
     ax.scatter(tx(x),btw[m][7],marker=MARK[intel],s=SIZE[intel]*0.855,facecolors='white',edgecolors=col,linewidths=3.6,alpha=1.0,zorder=6)
 # human baselines: two FLAT dotted horizontal lines at the pooled grand-mean scores
 import json as _json
-_havg=_json.load(open("human_avg.json"))
+_havg=_json.load(open("data/human_avg.json"))
 HUMAN_DAT_AVG=_havg["human_dat_mean"]        # pooled mean human DAT
 HUMAN_BTW_AVG=_havg["human_between_mean"]     # pooled mean human between-unit
 _xL,_xR=tx(xmin),tx(xmax)

@@ -19,8 +19,8 @@ MARK={'efficient':'v','all-rounder':'o','hybrid':'D','reasoning':'*'}; SIZE={'ef
 
 def load(fn):
     d=json.load(open(fn)); return {r[6]:r for r in d["recs"]}, {int(k):v for k,v in d["human_year"].items()}
-dat,dat_hy=load("permonth_data.json")
-btw,btw_hy=load("between_data.json")
+dat,dat_hy=load("data/permonth_data.json")
+btw,btw_hy=load("data/between_data.json")
 models=[m for m in dat if m in btw]   # same model set as combined fig
 allx=[dat[m][0] for m in models]; xmin=min(allx)-3/12; xmax=max(allx)+0.2/12
 
@@ -31,7 +31,7 @@ for m in models:
     ax.scatter(tx(x),dat[m][7],marker=MARK[intel],s=SIZE[intel],color=col,alpha=1.0,zorder=6,edgecolors='white',linewidths=1.1)
 
 # human DAT baseline: single solid flat line (same as combined)
-_havg=json.load(open("human_avg.json"))
+_havg=json.load(open("data/human_avg.json"))
 HUMAN_DAT_AVG=_havg["human_dat_mean"]
 _xL,_xR=tx(xmin),tx(xmax)
 ax.plot([_xL,_xR],[HUMAN_DAT_AVG,HUMAN_DAT_AVG],'-',color=HUMAN_PURPLE,lw=2.4,alpha=1.0,zorder=5)
