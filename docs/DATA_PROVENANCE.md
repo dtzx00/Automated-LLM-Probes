@@ -54,3 +54,37 @@ Providers that expose verbatim chain-of-thought on OpenAI-compatible endpoints (
 ## Collection protocol
 
 10 nouns, single words, English, no proper nouns, no technical terms, comma-separated. 500 responses per model, no seed reuse within a model, each model left at its shipped default thinking effort. Temperature requested at the provider midpoint; several models reject it and fall back to 1.0 (Kimi-K3, Claude-Opus-4.7, Claude-Opus-5), which is recorded per row in the raw files.
+
+## Model registry: `machine_data/models.csv` (rebuilt 2026-07-29)
+
+One row per model in the analysis, 59 rows. Invariant: the row set equals the model
+set in `analysis/data/permonth_data.json` and `between_data.json`, and `n_analysis`
+sums to the row count of `machine_analysis_canonical.csv` (33,481). Assert both when
+changing the data.
+
+Why it was rebuilt: the registry had drifted to a collection-era snapshot of 55 rows.
+It was missing five models that were being plotted (Claude-Opus-5, Claude-Sonnet-4,
+DeepSeek-Chat, GPT-5.6-Sol, Kimi-K3), carried a `Kimi-k2-legacy` row that is not in
+the analysis, used a superseded three-way `type` taxonomy (fast / allrounder /
+reasoning) rather than the four-class `intelligence` used by the figures, and its
+`year` column predated the release-date corrections (GPT-3.5-Turbo was recorded as
+2022 against an actual release of 2023-02-28).
+
+Field precedence, so metadata is never silently invented:
+1. Majority value across that model's rows in the canonical CSV.
+2. Else the value curated in the previous registry.
+3. Else derived — region from provider, reasoning from intelligence class.
+Any field reaching step 3 is named in the `derived_fields` column. Currently two
+models rely on derivation: DeepSeek-Chat and Claude-Sonnet-4, which are absent from
+the old registry and have blank region/reasoning in the legacy corpus.
+
+`api_model_id` is blank for eight legacy models (Llama-2-70b, GPT-4.0-Turbo,
+Claude-3-Opus, Claude-3-Haiku, DeepSeek-Chat, Llama4-Scout, Llama4-Maverick,
+Claude-Sonnet-4). They were collected before the collector recorded the requested id
+and it is not recoverable from the data held. Claude-Opus-5, Kimi-K3 and GPT-5.6-Sol
+were backfilled from `machine_data/raw_reasoning/`, where requested and returned ids
+are both recorded.
+
+Known redundancy: `models.csv` and `model_release_dates.csv` now overlap on date
+fields. `model_release_dates.csv` remains the input the build script reads; the
+registry is generated to match it. Do not edit date fields in the registry alone.
