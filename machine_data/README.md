@@ -1,140 +1,40 @@
-# Machine Data Collection
+# Machine data
 
-## Model selection — rules of thumb
-The grid in `models.csv` is optimized to the following:
-- **≤ 1 minute per call.** Anything slower is dropped: at n=500, >1 min/call means >500 min ≈ 8 hours per model.
-- **Even models per API key** Roughly 7-9 models per API, slightly more on OpenAI, Claude, and xAI, than on Eastern ones.
-- **Even mix model intelligence** Roughly even mix of efficient · all-rounder · reasoning models. 
-- **Half-half mix by region:** Eastern (mainly Chinese models run using English prompts) and Western (USA) models.
-- **A mix of eras:** 2023 · 2024 · 2025 · 2026 (plus the 2022 baseline), using retired/legacy rows for the older years.
-This will result in total of 55 models = 38 live models collected at n=500 + 17 legacy/retired.
+LLM responses to the DAT prompt: 10 single-word English nouns, no proper nouns, no
+technical terms, comma-separated. Baseline prompt, each provider's midpoint temperature,
+default thinking effort (never overridden), n≈500 per model, no seed.
 
-| File | What it is |
+## Files
+
+| Path | What it is |
 |---|---|
-| `models.csv` | One row per model: `#, model, year, region, reasoning, provider, api_model_id, type, existing_samples_legacy, status`. Replaces the old `model_id_mapping.csv` / `model_inventory.csv` / `model_inventory_final.csv` / `model_summary.csv`. |
-| `data_collection.py` | Single model (`--model ... --provider ...`), serial batch (`--all`), or 7-lane parallel run (`--parallel`) — one thread per provider key, `--concurrency` runners per lane sharing a 0.5 s launch gate. One raw row per generation, full provenance, incremental flush, resumable (skips models already at target n). Baseline prompt embedded in-code, verified against the SHA below. |
-| `data_cleaning.py` | Builds the canonical temperature-0.5 dataset from the archived source machine files, tagging source + temperature, and writes `processed/machine_temp05.csv` (+ summary). |
-| `raw/` | The one raw output folder — per-provider `topup_<provider>.csv` files written during collection. |
-| `processed/` | Consolidated outputs: `machine_all.csv` (one row per generation, stable `record_id`s) and `machine_temp05.csv` (cleaned temp-0.5 analysis set). |
-| `legacy/` | Archived material, not part of active collection: the flat temp-0.5 reference data, and `prior_raw_inputs/` (Anthony's original `average_machine_raw.csv` / `new_machine_baseline.csv` source files, consumed by `data_cleaning.py`). |
+| `models.csv` | **The registry.** One row per model in the analysis (59). Metadata, api id and id type, release date with precision/verification/source, per-model scores, and any identity flag. Read directly by `analysis/build_overtime_data.py`. |
+| `data_collection.py` | The collection script. Single model, serial `--all`, or 7-lane `--parallel` (one thread per provider key). One raw row per generation with full provenance, incremental flush, resumable. |
+| `raw/` | Per-provider collection output, `topup_<provider>.csv`. |
+| `raw_reasoning/` | Collection under the reasoning-capture protocol, which also stores `reasoning_text`. |
+| `processed/machine_analysis_canonical.csv` | **The analysis file.** 33,481 responses, 59 models, DAT and between-person on identical rows. |
+| `processed/machine_final_baseline_midpoint.csv` | Midpoint-temperature slice the canonical file is built from. |
+| `processed/machine_all_merged.csv` | Full merge across all collection eras, including the temperature sweep. Superset; not the analysis set. |
+| `processed/machine_all.csv` | Early collection batch, 45 models, retained because it is the only file carrying full api provenance (requested/returned ids, timestamps, tokens, latency) for those rows. |
+| `between_unit_references/` | Rank-matched reference pools for the between-person measure: `rank1_ref.txt` … `rank7_ref.txt`, each 2,500 human + 2,500 machine words, plus a position-agnostic 5,000-word pool. |
+| `human_avg_baselines.json` | Human grand means, same scorer as the machine numbers. |
+| `legacy/` | Archived, not in the active analysis: the retired temperature-0.5 dataset and the script that built it (`data_cleaning_temp05.py`), plus `prior_raw_inputs/` (the original source files this project inherited). |
 
+## Reasoning capture
 
-## Consolidated dataset (2026-07-15)
-All collection batches for the **locked** model list are merged in `raw/` under normalized model names,
-joined on `api_model_id` + `provider` (not display name), so earlier-preview rows for a finalized model
-are preserved rather than lost to a renamed label. Every row keeps its original `batch` tag
-(`collect_2026_midpoint`, `collect_2026_thread2_n10`, `collect_2026_n50`) for provenance. Rows for
-models that are **not** in the locked list (e.g. GLM, and preview-only models like GPT-5.6-Sol) are
-archived under `machine_data/legacy/pre_lock_nonfinal/`, not deleted. `processed/machine_all.csv` is the consolidated
-one-row-per-generation view of the finalized set.
+Every response row has a `reasoning_text` column. The collector reads whatever the API
+exposes — `reasoning_content` on OpenAI-compatible endpoints, `thinking` blocks on
+Anthropic, inline `<think>` tags otherwise — and never sends a reasoning-effort or
+thinking-budget override, so every model runs at its shipped default. Reasoning tokens are
+billed whether or not the text is stored, so capturing costs nothing extra. In practice
+Anthropic returns encrypted blocks and OpenAI does not expose reasoning on the completions
+endpoint, so usable traces exist only for the open models.
 
+## Release dates
 
----
-
-## Locked design (2026-07-15)
-
-### Baseline prompt (verbatim — do NOT paraphrase)
-Source: https://osf.io/a9v2t/files/y4rhs (`studies_prompts.ipynb`, `baseline_prompt_1`, Study 1a/1b).
-SHA-256: `d03218e72a815ec8...` (asserted at collection time). Matches the existing 12,397 legacy rows.
-
-```
-Generate 10 nouns that are as different from each other as possible using the instructions below:
-1. Generate only single-word nouns in English.
-2. Generate only nouns such as things, objects and concepts.
-3. Do not use proper nouns such as people or places.
-4. Do not use specialised vocabulary or technical terms.
-5. Generate your final response as a string with each noun separated by commas: "noun_1, noun_2, noun_3, noun_4, noun_5, noun_6, noun_7, noun_8, noun_9, noun_10".
-6. Do not return anything else other than the comma-separated string of nouns.
-```
-
-> The exact prompt is embedded in `data_collection.py`; there is no separate `baseline_prompt.txt`.
-
-### Temperature — per-provider midpoint (LOCKED 2026-07-14)
-- The collector requests each provider's **scale midpoint**: providers on a **0–2** scale
-  (OpenAI, xAI, DeepSeek, Qwen, Hunyuan, Moonshot) get **temperature = 1.0**; providers on a **0–1**
-  scale (Anthropic) get **temperature = 0.5**. This is the locked design, chosen so every model runs at
-  the neutral centre of its own supported range rather than at one arbitrary absolute value.
-- Every row records `temperature_requested`, `temperature_effective` (what was actually used), and
-  `temp_range_used` (the provider's scale), so the choice is fully auditable per row.
-- Exception handling: if a model rejects the midpoint (some newer models only accept temperature = 1),
-  the collector falls back to the model's allowed default and records the TRUE value. Those rows are a
-  documented exception, not silently mixed in.
-- The legacy temp-0.5 reference data in `legacy/` was collected under the earlier flat-0.5 setting and is
-  kept separate; it is a comparison input, not part of the midpoint collection.
-
-### Other locked choices
-- **Target n:** 500 per model.
-- **Region label:** `Western` / `Eastern` = model origin; all prompts are in English.
-- **Noun parsing:** parsed nouns are lowercase-normalized; `raw_response_text` is kept verbatim.
-- **DAT scoring:** deferred to data cleaning (`dat_score` stays blank during collection).
-- **DAT scorer:** use Olson et al. 2021 (github.com/jayolson/divergent-association-task).
-- **Slow models:** Gemini and GLM are dropped entirely — both exceed the ~1 min/call budget (GLM ran 30–55 s/call), which at n=500 would push the run past ~8 h. Excluded from the grid, not merely deprioritized.
-
----
-
-## The model grid (`models.csv`)
-
-55 rows total: **38 live/collectable models** + 17 retired/legacy rows whose existing data stands. Columns:
-
-`#, model, year, region, reasoning, provider, api_model_id, type, existing_samples_legacy, status`
-
-**Grid revision 2026-07-15 (55 models).** Balanced against: ≤1 min/call (GLM dropped entirely, like
-Gemini); lanes roughly even with Western keys heaviest (OpenAI 10, Anthropic 7, Hunyuan/TokenHub 6, Qwen 5,
-xAI 4, Moonshot 4, DeepSeek native 2); a mix of **fast / all-rounder / reasoning** types (12 / 23 / 20);
-**Eastern + Western** (23 / 32); and an era spread across **2022–2026**. All 7 distinct Eastern reasoning
-models are preserved (DeepSeek-V4-Pro, DeepSeek-R1, DeepSeek-V3.2, Qwen3.7-Max, MiniMax-M3, MiniMax-M2.7,
-Kimi-K2.6). 38 models are collected live at n=500; the other 17 are legacy/retired rows whose existing data
-stands (source of the 2022–2024 depth).
-
-**DeepSeek naming convention:** the display name matches the actual API version (`DeepSeek-V4-Pro`,
-`DeepSeek-R1`, `DeepSeek-V3.2`, ...). When the same version is collected on a second key (e.g. TokenHub as
-well as DashScope), the second row carries a lane suffix (`-TH`) so rows stay distinct and honest about
-which endpoint produced them. `type` = fast / allrounder / reasoning.
-
----
-
-## Provider configuration
-
-| Provider | Env key | Base URL |
-|---|---|---|
-| openai | `OPENAI_API_KEY` | default |
-| anthropic | `ANTHROPIC_API_KEY` | default |
-| xai | `XAI_API_KEY` | default |
-| qwen (DashScope) | `QWEN_API_KEY` | dashscope.aliyuncs.com/compatible-mode/v1 |
-| deepseek | `DEEPSEEK_API_KEY` | api.deepseek.com/v1 |
-| hunyuan (TokenHub) | `HUNYUAN_API_KEY` | tokenhub.tencentmaas.com/v1 |
-| moonshot | `MOONSHOT_API_KEY` | api.moonshot.ai |
-
-Keys are read from env at runtime — never hard-coded, never written to disk.
-Known-benign metadata gaps: Anthropic/Qwen/Hunyuan return no `system_fingerprint`;
-DeepSeek/Hunyuan return no `api_request_id`.
-
----
-
-## How to run
-
-```bash
-# one model, quick sanity check (prints one row, writes nothing)
-python machine_data/data_collection.py --model "GPT-4.1" --api-model gpt-4.1 --provider openai --n 1 --dry-run
-
-# FULL RUN (recommended): 7 lanes in parallel, 3 runners per lane, 0.5s launch gate per lane
-python machine_data/data_collection.py --parallel --n 500 --concurrency 3 --min-gap 0.5 --batch collect_2026_n500
-#   - one lane per API key (7 keys -> 7 parallel lanes); rate limits are per key, so lanes never
-#     collide with each other. --concurrency = runners WITHIN each lane; --min-gap = min seconds
-#     between request launches on a single lane (held >=0.5s under any concurrency).
-#   - --only openai,anthropic  restricts to a subset of lanes.
-#   - resumable: skips models already at n; safe to re-run after an interruption.
-#   - skip-and-flag: if a model errors, it is skipped and listed under "SKIPPED" at the end (never swapped).
-#   - inter-call pacing is 0.1s in the serial path; the parallel path spaces launches by --min-gap (>=0.5s/lane).
-
-# serial fallback (no threads): one provider, or all providers serially
-python machine_data/data_collection.py --all --n 500 --provider openai
-python machine_data/data_collection.py --all --n 500
-
-# build the cleaned temperature-0.5 analysis dataset
-python machine_data/data_cleaning.py
-```
-
-Each row carries: identity + provenance (timestamps, api request/response ids, system fingerprint,
-finish reason, token usage, prompt SHA-256), the verbatim `raw_response_text`, `parse_status`, and
-`noun_0..noun_9`. `dat_score` is filled in the separate scoring pass.
+Trust a date only when it is tied to the exact api id that was called. OpenAI, Anthropic
+and xAI return a real creation timestamp. DashScope and Moonshot return the timestamp of
+the *query*, so they are never used as release dates — but DashScope does expose pinned
+dated snapshot ids, and the earliest snapshot in a family is good evidence. Rolling aliases
+cannot be dated at all and are marked `alias_unresolved`. Details and the full correction
+history are in `docs/DATA_PROVENANCE.md`.

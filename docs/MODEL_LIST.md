@@ -1,12 +1,12 @@
-# creativity_networks — model registry (59 models)
+# Model registry — 59 models
 
-`machine_data/models.csv` is the **single source of truth** for model metadata and release dates. `analysis/build_overtime_data.py` reads it directly, so the figures and this table cannot disagree.
+Generated from `machine_data/models.csv`, the single source of truth. `analysis/build_overtime_data.py` reads that file directly, so this table and the figures cannot disagree.
 
-Scores come from `machine_data/processed/machine_analysis_canonical.csv` (33,481 responses), with DAT and between-person computed on identical rows per model.
+Scores from `machine_data/processed/machine_analysis_canonical.csv` (33,481 responses), DAT and between-person on identical rows per model.
 
 Human baselines: DAT **78.45** (n=11,597), between-person **80.11** (n=11,531).
 
-**Shift** = between-person relative to DAT (the arrow direction in figure 2). **id type** — *pinned* = the api id names a fixed dated snapshot; *alias* = a rolling name whose target can change; *none* = not recorded. **Precision** — *exact* = a specific announced or provider-verified date; *alias_unresolved* = we called a rolling alias and cannot establish which build answered.
+**Shift** = between-person relative to DAT (arrow direction in figure 2). **id type**: *pinned* = api id names a fixed dated snapshot; *alias* = rolling name whose target can change; *none* = not recorded. **Precision**: *exact* = announced or provider-verified date; *alias_unresolved* = a rolling alias was called and the answering build cannot be established.
 
 
 | # | Model | Provider | Region | Class | Reasoning | API model id | id type | Release date | Precision | Verified | n | DAT | Between | Shift |
@@ -14,11 +14,11 @@ Human baselines: DAT **78.45** (n=11,597), between-person **80.11** (n=11,531).
 | 1 | GPT-3.5-Turbo | openai | Western | All-rounder | No | `gpt-3.5-turbo` | alias | 2023-02-28 | exact | yes | 770 | 76.73 | 75.69 | down 1.04 |
 | 2 | Llama-2-70b | meta | Western | All-rounder | No | — | none | 2023-07-18 | exact | — | 750 | 77.89 | 76.11 | down 1.77 |
 | 3 | Ernie-4.0-8k | baidu | Eastern | All-rounder | No | `ernie-4.0-8k` | alias | 2023-10-17 | exact | — | 750 | 76.12 | 76.65 | up 0.53 |
-| 4 | GPT-4.0-Turbo | openai | Western | All-rounder | No | — | none | 2023-11-06 | exact | — | 770 | 81.77 | 79.03 | down 2.74 |
-| 5 | Moonshot-v1-128k | moonshot | Eastern | Efficient | No | `moonshot-v1-128k` | alias | 2024-02-01 | exact | — | 500 | 74.45 | 75.41 | up 0.96 |
-| 6 | Moonshot-v1-8k | moonshot | Eastern | Efficient | No | `moonshot-v1-8k` | alias | 2024-02-01 | exact | — | 500 | 74.44 | 75.42 | up 0.98 |
-| 7 | Claude-3-Opus | anthropic | Western | All-rounder | No | — | none | 2024-03-04 | exact | — | 750 | 76.80 | 76.87 | up 0.08 |
-| 8 | Claude-3-Haiku | anthropic | Western | Efficient | No | — | none | 2024-03-13 | exact | — | 750 | 79.06 | 77.59 | down 1.47 |
+| 4 | Moonshot-v1-128k | moonshot | Eastern | Efficient | No | `moonshot-v1-128k` | alias | 2024-02-01 | exact | — | 500 | 74.45 | 75.41 | up 0.96 |
+| 5 | Moonshot-v1-8k | moonshot | Eastern | Efficient | No | `moonshot-v1-8k` | alias | 2024-02-01 | exact | — | 500 | 74.44 | 75.42 | up 0.98 |
+| 6 | Claude-3-Opus | anthropic | Western | All-rounder | No | — | none | 2024-03-04 | exact | — | 750 | 76.80 | 76.87 | up 0.08 |
+| 7 | Claude-3-Haiku | anthropic | Western | Efficient | No | — | none | 2024-03-13 | exact | — | 750 | 79.06 | 77.59 | down 1.47 |
+| 8 | GPT-4.0-Turbo | openai | Western | All-rounder | No | `gpt-4-turbo-2024-04-09` | pinned | 2024-04-08 | exact | yes | 770 | 81.77 | 79.03 | down 2.74 |
 | 9 | DeepSeek-Chat | deepseek | Eastern | All-rounder | No | — | none | 2024-05-06 | exact | — | 515 | 75.89 | 76.26 | up 0.38 |
 | 10 | Claude-3.5-Sonnet | anthropic | Western | All-rounder | No | `claude-3.5-sonnet` | alias | 2024-06-20 | exact | — | 750 | 80.01 | 77.12 | down 2.89 |
 | 11 | GPT-4o | openai | Western | All-rounder | No | `gpt-4o-2024-08-06` | pinned | 2024-08-04 | exact | yes | 770 | 76.20 | 75.03 | down 1.17 |
@@ -71,7 +71,7 @@ Human baselines: DAT **78.45** (n=11,597), between-person **80.11** (n=11,531).
 | 58 | Kimi-K3 | moonshot | Eastern | Reasoning | Yes | `kimi-k3` | alias | 2026-07-16 | exact | — | 508 | 77.56 | 77.10 | down 0.45 |
 | 59 | Claude-Opus-5 | anthropic | Western | Hybrid | Yes | `claude-opus-5` | alias | 2026-07-24 | exact | yes | 508 | 84.30 | 81.44 | down 2.86 |
 
-## Flagged model identities — need a decision
+## Flagged identities — need a decision
 
 | Model | Issue |
 |---|---|
@@ -212,7 +212,7 @@ Human baselines: DAT **78.45** (n=11,597), between-person **80.11** (n=11,531).
 |---|---|---|---|---|
 | meta | 3 | 81.51 | 78.05 | 0 of 3 |
 | anthropic | 13 | 81.15 | 78.78 | 9 of 13 |
-| openai | 14 | 78.12 | 76.58 | 13 of 14 |
+| openai | 14 | 78.12 | 76.58 | 14 of 14 |
 | moonshot | 6 | 77.56 | 77.32 | 0 of 6 |
 | tencent | 1 | 77.52 | 74.93 | 0 of 1 |
 | minimax | 3 | 77.31 | 76.97 | 0 of 3 |
@@ -228,11 +228,11 @@ Human baselines: DAT **78.45** (n=11,597), between-person **80.11** (n=11,531).
 | GPT-3.5-Turbo | 2023-02-28 | openai /v1/models created |
 | Llama-2-70b | 2023-07-18 | published announcement / dataset |
 | Ernie-4.0-8k | 2023-10-17 | published announcement / dataset |
-| GPT-4.0-Turbo | 2023-11-06 | published announcement / dataset |
 | Moonshot-v1-128k | 2024-02-01 | published announcement / dataset |
 | Moonshot-v1-8k | 2024-02-01 | published announcement / dataset |
 | Claude-3-Opus | 2024-03-04 | published announcement / dataset |
 | Claude-3-Haiku | 2024-03-13 | published announcement / dataset |
+| GPT-4.0-Turbo | 2024-04-08 | openai /v1/models created for gpt-4-turbo-2024-04-09 (id recovered from machine_all.csv provenance) |
 | DeepSeek-Chat | 2024-05-06 | published announcement / dataset |
 | Claude-3.5-Sonnet | 2024-06-20 | published announcement / dataset |
 | GPT-4o | 2024-08-04 | openai /v1/models created |

@@ -151,3 +151,50 @@ when the midpoint file already carries the model. Total scored responses: 33,481
 ### Reasoning flag
 `Grok-Code-Fast` was recorded as reasoning=No while classified in the always-on CoT
 `reasoning` intelligence class. Set to Yes for consistency with its class.
+
+## GPT-4.0-Turbo date corrected (14th correction, 2026-07-29)
+
+`machine_data/processed/machine_all.csv` retains full api provenance for an early collection
+batch, and it shows GPT-4.0-Turbo was called as **`gpt-4-turbo-2024-04-09`** — a pinned GA
+snapshot. The registry had dated it 2023-11-06, which is the GPT-4 Turbo *preview*
+announcement, not the snapshot we called. OpenAI `/v1/models` reports `created` =
+**2024-04-08** for that id, so the date moves 154 days later and is now api-verified.
+
+This is the same class of error as the earlier GPT-4o correction, where the dataset used the
+May launch date while the collector called the August snapshot. The lesson holds: date the
+exact api id, never the family announcement.
+
+Cross-checking every registry `api_model_id` against the ids actually recorded in the
+collected data found this as the **only** discrepancy across the 48 models that carry
+observable ids, which is good evidence the rest of the registry is faithful.
+
+Seven models still have no recorded api id (Llama-2-70b, Claude-3-Opus, Claude-3-Haiku,
+DeepSeek-Chat, Llama4-Scout, Llama4-Maverick, Claude-Sonnet-4). Their collection predates
+provenance capture and the ids are not recoverable from data held here.
+
+## Repository cleanup (2026-07-29)
+
+Removed as superseded, duplicated, or actively misleading:
+- `machine_data/processed/machine_temp05.csv` and its summary — byte-identical duplicates of
+  the copies already in `legacy/` (md5 verified before deletion).
+- `machine_data/models_n100.csv`, `models_n200.csv`, `models_n500.csv` — collection-planning
+  snapshots on the retired schema, referenced by nothing.
+- `machine_data/model_release_dates_verified.md` — superseded by the registry, and it carried
+  the pre-correction dates, so keeping it would mislead.
+- `machine_data/processed/*_summary.md` (three files) — stale, unreferenced, superseded by
+  `docs/MODEL_LIST.md`.
+- `analysis/between_unit_label.py`, `analysis/between_unit_posaware_label.py` — one-off
+  labelling scripts, unreferenced, superseded by `analysis/build_overtime_data.py`.
+
+Moved:
+- `machine_data/data_cleaning.py` → `machine_data/legacy/data_cleaning_temp05.py`. It builds
+  the retired temperature-0.5 dataset, so it belongs with that data rather than looking like
+  part of the live pipeline.
+- `analysis/figure1_composite.png`, `analysis/panelD_trial_dendrogram.png` → `results/`.
+
+Kept deliberately: `machine_data/processed/machine_all.csv` shares no rows with the merged
+file and is the only source of api ids, timestamps, token counts and latency for its 45
+models — it is what made the GPT-4.0-Turbo correction possible.
+
+Both READMEs were rewritten. They had described a 40-model, temperature-0.5-only design and
+listed models as "to collect" that were already collected and analysed.
