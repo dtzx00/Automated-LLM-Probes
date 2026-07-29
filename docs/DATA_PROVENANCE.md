@@ -88,3 +88,66 @@ are both recorded.
 Known redundancy: `models.csv` and `model_release_dates.csv` now overlap on date
 fields. `model_release_dates.csv` remains the input the build script reads; the
 registry is generated to match it. Do not edit date fields in the registry alone.
+
+## Single model registry (2026-07-29)
+
+`machine_data/models.csv` is now the only source of model metadata and release dates,
+and `analysis/build_overtime_data.py` reads it directly. Previously dates lived in three
+places: a hardcoded DATE_FIX dict inside the build script, the model_year/model_month/
+model_day columns of the master CSV, and model_release_dates.csv — which was never read
+by anything and served only as documentation. That file has been deleted.
+
+### 13 release dates corrected against primary sources
+Re-checking the 14 dates previously marked approximate showed they were not merely
+day-imprecise: most were wrong by months, nearly all too early.
+
+| Model | Was | Now | Shift | Evidence |
+|---|---|---|---|---|
+| MiniMax-M3 | 2025-12-16 | 2026-06-01 | +167d | MiniMax platform release notes |
+| Hunyuan-Hy3 | 2026-01-23 | 2026-07-06 | +164d | Tencent GA announcement (preview was 2026-04-23) |
+| Qwen3.7-Max | 2025-12-04 | 2026-05-17 | +164d | earliest pinned DashScope snapshot |
+| MiniMax-M2.5 | 2025-10-11 | 2026-02-12 | +124d | MiniMax blog |
+| MiniMax-M2.7 | 2025-12-04 | 2026-03-18 | +104d | MiniMax news + release notes |
+| DeepSeek-V4-Pro | 2026-02-10 | 2026-04-24 | +73d | DeepSeek API changelog |
+| DeepSeek-V4-Flash-TH | 2026-02-10 | 2026-04-24 | +73d | DeepSeek API changelog |
+| Qwen-Plus | 2025-09-22 | 2025-12-01 | +70d | latest pinned snapshot at collection |
+| Kimi-K2.6 | 2026-02-11 | 2026-04-21 | +69d | Moonshot forum announcement |
+| DeepSeek-V4-Flash | 2026-02-18 | 2026-04-24 | +65d | DeepSeek API changelog |
+| Kimi-K2.5 | 2025-12-16 | 2026-01-27 | +42d | ZDNET + Baidu Baike |
+| Qwen3.5-Plus | 2026-01-23 | 2026-02-15 | +23d | earliest pinned DashScope snapshot |
+| Qwen4-Max | 2026-03-23 | 2026-01-23 | −59d | date encoded in the api id actually called |
+
+Scores are unaffected: re-running the build reproduces every per-model DAT and
+between-person value bit-identically (max difference 0.00e+00). Only x-positions move.
+
+### Two provider APIs re-tested and still unusable for dates
+DashScope (Qwen) returns a listing timestamp — `qwen-max` reported the date of the query
+itself. Moonshot returns the query date for all twelve models. Neither is a release date.
+However DashScope exposes **pinned dated snapshot ids**, and the earliest snapshot in a
+family is solid release evidence; that is how the two Qwen dates were fixed.
+
+### Rolling aliases: three models cannot be dated
+Qwen-Max, Qwen-Plus and Qwen-Turbo were collected through bare aliases whose target
+changes silently, so no release date describes what actually answered. They are marked
+`alias_unresolved` rather than given false precision. 32 of 59 models were called by
+alias; for OpenAI, Anthropic and xAI the provider API still dates the alias, so only
+these three are unresolved.
+
+### Two flagged identity mismatches — unresolved, need a decision
+- **Qwen4-Max** was collected via `qwen3-max-2026-01-23`, a Qwen3-Max snapshot. The name
+  says Qwen4; the endpoint says Qwen3. The date now follows the endpoint.
+- **Kimi-K2** was collected via `moonshot-v1-32k`, not a `kimi-k2` endpoint. Its label and
+  its 2025-07-11 date both describe Kimi K2, which is probably not what answered.
+Both are recorded in the `identity_flag` column. Neither name has been changed, because
+renaming alters what the datapoint means.
+
+### Latent double-count bug fixed
+The build appended Kimi-K3, Claude-Opus-5 and GPT-5.6-Sol from `raw_reasoning/` while a
+later commit had also merged them into the midpoint file, so a fresh run counted every
+response twice (n 508 to 1016). Means were unaffected because the duplicates are
+identical, which is why it went unnoticed. The build now skips the raw_reasoning append
+when the midpoint file already carries the model. Total scored responses: 33,481.
+
+### Reasoning flag
+`Grok-Code-Fast` was recorded as reasoning=No while classified in the always-on CoT
+`reasoning` intelligence class. Set to Yes for consistency with its class.

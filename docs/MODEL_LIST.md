@@ -1,73 +1,82 @@
-# creativity_networks — model list (59 models)
+# creativity_networks — model registry (59 models)
 
-Canonical source: `machine_data/processed/machine_analysis_canonical.csv` (33,481 responses). Both scores are computed on identical rows per model (midpoint condition), so DAT and between-person are never based on different samples.
+`machine_data/models.csv` is the **single source of truth** for model metadata and release dates. `analysis/build_overtime_data.py` reads it directly, so the figures and this table cannot disagree.
+
+Scores come from `machine_data/processed/machine_analysis_canonical.csv` (33,481 responses), with DAT and between-person computed on identical rows per model.
 
 Human baselines: DAT **78.45** (n=11,597), between-person **80.11** (n=11,531).
 
-**Shift** = between-person relative to DAT, the direction of the arrow in figure 2. **Precision** *approx* means the release month is sourced but the exact day is not.
+**Shift** = between-person relative to DAT (the arrow direction in figure 2). **id type** — *pinned* = the api id names a fixed dated snapshot; *alias* = a rolling name whose target can change; *none* = not recorded. **Precision** — *exact* = a specific announced or provider-verified date; *alias_unresolved* = we called a rolling alias and cannot establish which build answered.
 
 
-| # | Model | Provider | Class | API model id | Release date | Precision | API-verified | n | DAT | Between | Shift |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | GPT-3.5-Turbo | openai | All-rounder | `gpt-3.5-turbo` | 2023-02-28 | exact | yes | 770 | 76.73 | 75.69 | down 1.04 |
-| 2 | Llama-2-70b | meta | All-rounder | — | 2023-07-18 | exact | — | 750 | 77.89 | 76.11 | down 1.77 |
-| 3 | Ernie-4.0-8k | baidu | All-rounder | `ernie-4.0-8k` | 2023-10-17 | exact | — | 750 | 76.12 | 76.65 | up 0.53 |
-| 4 | GPT-4.0-Turbo | openai | All-rounder | — | 2023-11-06 | exact | — | 770 | 81.77 | 79.03 | down 2.74 |
-| 5 | Moonshot-v1-8k | moonshot | Efficient | `moonshot-v1-8k` | 2024-02-01 | exact | — | 500 | 74.44 | 75.42 | up 0.98 |
-| 6 | Moonshot-v1-128k | moonshot | Efficient | `moonshot-v1-128k` | 2024-02-01 | exact | — | 500 | 74.45 | 75.41 | up 0.96 |
-| 7 | Claude-3-Opus | anthropic | All-rounder | — | 2024-03-04 | exact | — | 750 | 76.80 | 76.87 | up 0.08 |
-| 8 | Claude-3-Haiku | anthropic | Efficient | — | 2024-03-13 | exact | — | 750 | 79.06 | 77.59 | down 1.47 |
-| 9 | DeepSeek-Chat | deepseek | All-rounder | — | 2024-05-06 | exact | — | 515 | 75.89 | 76.26 | up 0.38 |
-| 10 | Claude-3.5-Sonnet | anthropic | All-rounder | `claude-3.5-sonnet` | 2024-06-20 | exact | — | 750 | 80.01 | 77.12 | down 2.89 |
-| 11 | GPT-4o | openai | All-rounder | `gpt-4o-2024-08-06` | 2024-08-04 | exact | yes | 770 | 76.20 | 75.03 | down 1.17 |
-| 12 | DeepSeek-R1 | deepseek | Reasoning | `deepseek-r1` | 2025-01-20 | exact | — | 766 | 76.49 | 76.13 | down 0.36 |
-| 13 | Qwen-Turbo | qwen | Efficient | `qwen-turbo` | 2025-02-01 | exact | — | 535 | 71.31 | 74.04 | up 2.72 |
-| 14 | Llama4-Scout | meta | Efficient | — | 2025-04-05 | exact | — | 515 | 81.81 | 77.66 | down 4.15 |
-| 15 | Llama4-Maverick | meta | All-rounder | — | 2025-04-05 | exact | — | 514 | 84.84 | 80.37 | down 4.47 |
-| 16 | o4-mini | openai | Reasoning | `o4-mini-2025-04-16` | 2025-04-08 | exact | yes | 500 | 76.14 | 75.23 | down 0.91 |
-| 17 | GPT-4.1 | openai | All-rounder | `gpt-4.1-2025-04-14` | 2025-04-10 | exact | yes | 500 | 77.20 | 75.45 | down 1.75 |
-| 18 | GPT-4.1-mini | openai | Efficient | `gpt-4.1-mini-2025-04-14` | 2025-04-10 | exact | yes | 500 | 76.77 | 75.15 | down 1.62 |
-| 19 | GPT-4.1-nano | openai | Efficient | `gpt-4.1-nano-2025-04-14` | 2025-04-10 | exact | yes | 496 | 78.65 | 77.31 | down 1.34 |
-| 20 | Claude-Sonnet-4 | anthropic | Hybrid | — | 2025-05-22 | exact | — | 515 | 77.90 | 76.28 | down 1.62 |
-| 21 | Kimi-K2 | moonshot | All-rounder | `moonshot-v1-32k` | 2025-07-11 | exact | — | 515 | 80.91 | 79.05 | down 1.86 |
-| 22 | Qwen3-235B-Instruct | qwen | All-rounder | `qwen3-235b-a22b-instruct-2507` | 2025-07-21 | exact | — | 530 | 75.13 | 75.33 | up 0.20 |
-| 23 | GPT-5 | openai | Hybrid | `gpt-5-2025-08-07` | 2025-08-01 | exact | yes | 1,054 | 78.84 | 77.48 | down 1.35 |
-| 24 | GPT-5-mini | openai | Efficient | `gpt-5-mini-2025-08-07` | 2025-08-05 | exact | yes | 1,020 | 75.74 | 75.32 | down 0.42 |
-| 25 | Claude-Opus-4.1 | anthropic | Hybrid | `claude-opus-4-1-20250805` | 2025-08-05 | exact | yes | 535 | 84.76 | 79.92 | down 4.84 |
-| 26 | Grok-Code-Fast | xai | Reasoning | `grok-code-fast` | 2025-08-28 | exact | — | 478 | 74.46 | 74.94 | up 0.48 |
-| 27 | Qwen-Max | qwen | Hybrid | `qwen-max` | 2025-09-13 | **approx** | — | 535 | 75.15 | 74.30 | down 0.84 |
-| 28 | Qwen-Plus | qwen | Hybrid | `qwen-plus` | 2025-09-22 | **approx** | — | 500 | 77.89 | 76.21 | down 1.67 |
-| 29 | Claude-Sonnet-4.5 | anthropic | Hybrid | `claude-sonnet-4-5-20250929` | 2025-09-29 | exact | yes | 520 | 80.92 | 78.26 | down 2.66 |
-| 30 | MiniMax-M2.5 | minimax | Reasoning | `minimax-m2.5` | 2025-10-11 | **approx** | — | 500 | 75.59 | 75.78 | up 0.19 |
-| 31 | Claude-Haiku-4.5 | anthropic | Efficient | `claude-haiku-4-5-20251001` | 2025-10-15 | exact | yes | 500 | 80.96 | 79.10 | down 1.85 |
-| 32 | GPT-5.1 | openai | Hybrid | `gpt-5.1-2025-11-13` | 2025-11-10 | exact | yes | 500 | 80.84 | 78.11 | down 2.72 |
-| 33 | Claude-Opus-4.5 | anthropic | Hybrid | `claude-opus-4-5-20251101` | 2025-11-24 | exact | yes | 500 | 79.69 | 78.09 | down 1.60 |
-| 34 | DeepSeek-V3.2 | deepseek | Hybrid | `deepseek-v3.2` | 2025-12-01 | exact | — | 547 | 79.40 | 79.22 | down 0.18 |
-| 35 | MiniMax-M2.7 | minimax | Reasoning | `minimax-m2.7` | 2025-12-04 | **approx** | — | 500 | 77.86 | 77.55 | down 0.31 |
-| 36 | Qwen3.7-Max | qwen | Hybrid | `qwen3.7-max` | 2025-12-04 | **approx** | — | 520 | 77.51 | 78.07 | up 0.56 |
-| 37 | GPT-5.2 | openai | Hybrid | `gpt-5.2-2025-12-11` | 2025-12-09 | exact | yes | 500 | 79.51 | 77.24 | down 2.27 |
-| 38 | Kimi-K2.5 | moonshot | All-rounder | `kimi-k2.5` | 2025-12-16 | **approx** | — | 519 | 79.43 | 78.69 | down 0.74 |
-| 39 | MiniMax-M3 | minimax | Reasoning | `minimax-m3` | 2025-12-16 | **approx** | — | 500 | 78.48 | 77.57 | down 0.91 |
-| 40 | Hunyuan-Hy3 | tencent | Hybrid | `hy3` | 2026-01-23 | **approx** | — | 542 | 77.52 | 74.93 | down 2.59 |
-| 41 | Qwen3.5-Plus | qwen | Hybrid | `qwen3.5-plus` | 2026-01-23 | **approx** | — | 500 | 72.83 | 75.57 | up 2.74 |
-| 42 | DeepSeek-V4-Pro | deepseek | Reasoning | `deepseek-v4-pro` | 2026-02-10 | **approx** | — | 536 | 77.34 | 77.22 | down 0.12 |
-| 43 | DeepSeek-V4-Flash-TH | deepseek | Efficient | `deepseek-v4-flash` | 2026-02-10 | **approx** | — | 500 | 73.59 | 75.38 | up 1.79 |
-| 44 | Kimi-K2.6 | moonshot | Reasoning | `kimi-k2.6` | 2026-02-11 | **approx** | — | 502 | 78.55 | 78.27 | down 0.29 |
-| 45 | Claude-Sonnet-4.6 | anthropic | Hybrid | `claude-sonnet-4-6` | 2026-02-17 | exact | yes | 500 | 79.97 | 79.82 | down 0.15 |
-| 46 | DeepSeek-V4-Flash | deepseek | Efficient | `deepseek-v4-flash` | 2026-02-18 | **approx** | — | 500 | 73.95 | 75.59 | up 1.64 |
-| 47 | GPT-5.4 | openai | Hybrid | `gpt-5.4-2026-03-05` | 2026-03-04 | exact | yes | 500 | 76.79 | 76.67 | down 0.12 |
-| 48 | Grok-4.20-nonreason | xai | All-rounder | `grok-4.20-0309-non-reasoning` | 2026-03-09 | exact | yes | 500 | 73.98 | 75.92 | up 1.94 |
-| 49 | Grok-4.20-reason | xai | Reasoning | `grok-4.20-0309-reasoning` | 2026-03-09 | exact | yes | 500 | 75.92 | 76.35 | up 0.43 |
-| 50 | Qwen4-Max | qwen | Hybrid | `qwen3-max-2026-01-23` | 2026-03-23 | **approx** | — | 532 | 76.45 | 75.72 | down 0.73 |
-| 51 | Claude-Opus-4.7 | anthropic | Hybrid | `claude-opus-4-7` | 2026-04-14 | exact | yes | 520 | 85.89 | 80.35 | down 5.54 |
-| 52 | Grok-4.3 | xai | Hybrid | `grok-4.3` | 2026-04-17 | exact | yes | 520 | 76.55 | 76.65 | up 0.10 |
-| 53 | GPT-5.5 | openai | Hybrid | `gpt-5.5-2026-04-23` | 2026-04-22 | exact | yes | 500 | 78.12 | 76.41 | down 1.71 |
-| 54 | Claude-Fable-5 | anthropic | Hybrid | `claude-fable-5` | 2026-06-07 | exact | yes | 537 | 83.49 | 79.49 | down 4.00 |
-| 55 | GPT-5.6-Sol | openai | Hybrid | `gpt-5.6-sol` | 2026-06-23 | exact | yes | 514 | 80.42 | 78.04 | down 2.37 |
-| 56 | Claude-Sonnet-5 | anthropic | Hybrid | `claude-sonnet-5` | 2026-06-29 | exact | yes | 533 | 81.16 | 79.76 | down 1.41 |
-| 57 | Grok-4.5 | xai | Hybrid | `grok-4.5` | 2026-06-29 | exact | yes | 540 | 75.93 | 75.54 | down 0.39 |
-| 58 | Kimi-K3 | moonshot | Reasoning | `kimi-k3` | 2026-07-16 | exact | — | 508 | 77.56 | 77.10 | down 0.45 |
-| 59 | Claude-Opus-5 | anthropic | Hybrid | `claude-opus-5` | 2026-07-24 | exact | yes | 508 | 84.30 | 81.44 | down 2.86 |
+| # | Model | Provider | Region | Class | Reasoning | API model id | id type | Release date | Precision | Verified | n | DAT | Between | Shift |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | GPT-3.5-Turbo | openai | Western | All-rounder | No | `gpt-3.5-turbo` | alias | 2023-02-28 | exact | yes | 770 | 76.73 | 75.69 | down 1.04 |
+| 2 | Llama-2-70b | meta | Western | All-rounder | No | — | none | 2023-07-18 | exact | — | 750 | 77.89 | 76.11 | down 1.77 |
+| 3 | Ernie-4.0-8k | baidu | Eastern | All-rounder | No | `ernie-4.0-8k` | alias | 2023-10-17 | exact | — | 750 | 76.12 | 76.65 | up 0.53 |
+| 4 | GPT-4.0-Turbo | openai | Western | All-rounder | No | — | none | 2023-11-06 | exact | — | 770 | 81.77 | 79.03 | down 2.74 |
+| 5 | Moonshot-v1-128k | moonshot | Eastern | Efficient | No | `moonshot-v1-128k` | alias | 2024-02-01 | exact | — | 500 | 74.45 | 75.41 | up 0.96 |
+| 6 | Moonshot-v1-8k | moonshot | Eastern | Efficient | No | `moonshot-v1-8k` | alias | 2024-02-01 | exact | — | 500 | 74.44 | 75.42 | up 0.98 |
+| 7 | Claude-3-Opus | anthropic | Western | All-rounder | No | — | none | 2024-03-04 | exact | — | 750 | 76.80 | 76.87 | up 0.08 |
+| 8 | Claude-3-Haiku | anthropic | Western | Efficient | No | — | none | 2024-03-13 | exact | — | 750 | 79.06 | 77.59 | down 1.47 |
+| 9 | DeepSeek-Chat | deepseek | Eastern | All-rounder | No | — | none | 2024-05-06 | exact | — | 515 | 75.89 | 76.26 | up 0.38 |
+| 10 | Claude-3.5-Sonnet | anthropic | Western | All-rounder | No | `claude-3.5-sonnet` | alias | 2024-06-20 | exact | — | 750 | 80.01 | 77.12 | down 2.89 |
+| 11 | GPT-4o | openai | Western | All-rounder | No | `gpt-4o-2024-08-06` | pinned | 2024-08-04 | exact | yes | 770 | 76.20 | 75.03 | down 1.17 |
+| 12 | DeepSeek-R1 | deepseek | Eastern | Reasoning | Yes | `deepseek-r1` | alias | 2025-01-20 | exact | — | 766 | 76.49 | 76.13 | down 0.36 |
+| 13 | Qwen-Turbo | qwen | Eastern | Efficient | No | `qwen-turbo` | alias | 2025-02-01 | alias_unresolved | — | 535 | 71.31 | 74.04 | up 2.72 |
+| 14 | Llama4-Maverick | meta | Western | All-rounder | No | — | none | 2025-04-05 | exact | — | 514 | 84.84 | 80.37 | down 4.47 |
+| 15 | Llama4-Scout | meta | Western | Efficient | No | — | none | 2025-04-05 | exact | — | 515 | 81.81 | 77.66 | down 4.15 |
+| 16 | o4-mini | openai | Western | Reasoning | Yes | `o4-mini-2025-04-16` | pinned | 2025-04-08 | exact | yes | 500 | 76.14 | 75.23 | down 0.91 |
+| 17 | GPT-4.1 | openai | Western | All-rounder | No | `gpt-4.1-2025-04-14` | pinned | 2025-04-10 | exact | yes | 500 | 77.20 | 75.45 | down 1.75 |
+| 18 | GPT-4.1-mini | openai | Western | Efficient | No | `gpt-4.1-mini-2025-04-14` | pinned | 2025-04-10 | exact | yes | 500 | 76.77 | 75.15 | down 1.62 |
+| 19 | GPT-4.1-nano | openai | Western | Efficient | No | `gpt-4.1-nano-2025-04-14` | pinned | 2025-04-10 | exact | yes | 496 | 78.65 | 77.31 | down 1.34 |
+| 20 | Claude-Sonnet-4 | anthropic | Western | Hybrid | Yes | — | none | 2025-05-22 | exact | — | 515 | 77.90 | 76.28 | down 1.62 |
+| 21 | Kimi-K2 | moonshot | Eastern | All-rounder | No | `moonshot-v1-32k` | alias | 2025-07-11 | exact | — | 515 | 80.91 | 79.05 | down 1.86 |
+| 22 | Qwen3-235B-Instruct | qwen | Eastern | All-rounder | No | `qwen3-235b-a22b-instruct-2507` | pinned | 2025-07-21 | exact | — | 530 | 75.13 | 75.33 | up 0.20 |
+| 23 | GPT-5 | openai | Western | Hybrid | Yes | `gpt-5-2025-08-07` | pinned | 2025-08-01 | exact | yes | 1,054 | 78.84 | 77.48 | down 1.35 |
+| 24 | Claude-Opus-4.1 | anthropic | Western | Hybrid | Yes | `claude-opus-4-1-20250805` | pinned | 2025-08-05 | exact | yes | 535 | 84.76 | 79.92 | down 4.84 |
+| 25 | GPT-5-mini | openai | Western | Efficient | No | `gpt-5-mini-2025-08-07` | pinned | 2025-08-05 | exact | yes | 1,020 | 75.74 | 75.32 | down 0.42 |
+| 26 | Grok-Code-Fast | xai | Western | Reasoning | Yes | `grok-code-fast` | alias | 2025-08-28 | exact | — | 478 | 74.46 | 74.94 | up 0.48 |
+| 27 | Qwen-Max | qwen | Eastern | Hybrid | No | `qwen-max` | alias | 2025-09-13 | alias_unresolved | — | 535 | 75.15 | 74.30 | down 0.84 |
+| 28 | Claude-Sonnet-4.5 | anthropic | Western | Hybrid | No | `claude-sonnet-4-5-20250929` | pinned | 2025-09-29 | exact | yes | 520 | 80.92 | 78.26 | down 2.66 |
+| 29 | Claude-Haiku-4.5 | anthropic | Western | Efficient | No | `claude-haiku-4-5-20251001` | pinned | 2025-10-15 | exact | yes | 500 | 80.96 | 79.10 | down 1.85 |
+| 30 | GPT-5.1 | openai | Western | Hybrid | Yes | `gpt-5.1-2025-11-13` | pinned | 2025-11-10 | exact | yes | 500 | 80.84 | 78.11 | down 2.72 |
+| 31 | Claude-Opus-4.5 | anthropic | Western | Hybrid | Yes | `claude-opus-4-5-20251101` | pinned | 2025-11-24 | exact | yes | 500 | 79.69 | 78.09 | down 1.60 |
+| 32 | DeepSeek-V3.2 | deepseek | Eastern | Hybrid | Yes | `deepseek-v3.2` | alias | 2025-12-01 | exact | — | 547 | 79.40 | 79.22 | down 0.18 |
+| 33 | Qwen-Plus | qwen | Eastern | Hybrid | No | `qwen-plus` | alias | 2025-12-01 | alias_unresolved | — | 500 | 77.89 | 76.21 | down 1.67 |
+| 34 | GPT-5.2 | openai | Western | Hybrid | Yes | `gpt-5.2-2025-12-11` | pinned | 2025-12-09 | exact | yes | 500 | 79.51 | 77.24 | down 2.27 |
+| 35 | Qwen4-Max | qwen | Eastern | Hybrid | Yes | `qwen3-max-2026-01-23` | pinned | 2026-01-23 | exact | — | 532 | 76.45 | 75.72 | down 0.73 |
+| 36 | Kimi-K2.5 | moonshot | Eastern | All-rounder | No | `kimi-k2.5` | alias | 2026-01-27 | exact | — | 519 | 79.43 | 78.69 | down 0.74 |
+| 37 | MiniMax-M2.5 | minimax | Eastern | Reasoning | Yes | `minimax-m2.5` | alias | 2026-02-12 | exact | — | 500 | 75.59 | 75.78 | up 0.19 |
+| 38 | Qwen3.5-Plus | qwen | Eastern | Hybrid | No | `qwen3.5-plus` | alias | 2026-02-15 | exact | — | 500 | 72.83 | 75.57 | up 2.74 |
+| 39 | Claude-Sonnet-4.6 | anthropic | Western | Hybrid | No | `claude-sonnet-4-6` | alias | 2026-02-17 | exact | yes | 500 | 79.97 | 79.82 | down 0.15 |
+| 40 | GPT-5.4 | openai | Western | Hybrid | No | `gpt-5.4-2026-03-05` | pinned | 2026-03-04 | exact | yes | 500 | 76.79 | 76.67 | down 0.12 |
+| 41 | Grok-4.20-nonreason | xai | Western | All-rounder | No | `grok-4.20-0309-non-reasoning` | pinned | 2026-03-09 | exact | yes | 500 | 73.98 | 75.92 | up 1.94 |
+| 42 | Grok-4.20-reason | xai | Western | Reasoning | Yes | `grok-4.20-0309-reasoning` | pinned | 2026-03-09 | exact | yes | 500 | 75.92 | 76.35 | up 0.43 |
+| 43 | MiniMax-M2.7 | minimax | Eastern | Reasoning | Yes | `minimax-m2.7` | alias | 2026-03-18 | exact | — | 500 | 77.86 | 77.55 | down 0.31 |
+| 44 | Claude-Opus-4.7 | anthropic | Western | Hybrid | Yes | `claude-opus-4-7` | alias | 2026-04-14 | exact | yes | 520 | 85.89 | 80.35 | down 5.54 |
+| 45 | Grok-4.3 | xai | Western | Hybrid | Yes | `grok-4.3` | alias | 2026-04-17 | exact | yes | 520 | 76.55 | 76.65 | up 0.10 |
+| 46 | Kimi-K2.6 | moonshot | Eastern | Reasoning | Yes | `kimi-k2.6` | alias | 2026-04-21 | exact | — | 502 | 78.55 | 78.27 | down 0.29 |
+| 47 | GPT-5.5 | openai | Western | Hybrid | Yes | `gpt-5.5-2026-04-23` | pinned | 2026-04-22 | exact | yes | 500 | 78.12 | 76.41 | down 1.71 |
+| 48 | DeepSeek-V4-Flash | deepseek | Eastern | Efficient | No | `deepseek-v4-flash` | alias | 2026-04-24 | exact | — | 500 | 73.95 | 75.59 | up 1.64 |
+| 49 | DeepSeek-V4-Flash-TH | deepseek | Eastern | Efficient | No | `deepseek-v4-flash` | alias | 2026-04-24 | exact | — | 500 | 73.59 | 75.38 | up 1.79 |
+| 50 | DeepSeek-V4-Pro | deepseek | Eastern | Reasoning | Yes | `deepseek-v4-pro` | alias | 2026-04-24 | exact | — | 536 | 77.34 | 77.22 | down 0.12 |
+| 51 | Qwen3.7-Max | qwen | Eastern | Hybrid | Yes | `qwen3.7-max` | alias | 2026-05-17 | exact | — | 520 | 77.51 | 78.07 | up 0.56 |
+| 52 | MiniMax-M3 | minimax | Eastern | Reasoning | Yes | `minimax-m3` | alias | 2026-06-01 | exact | — | 500 | 78.48 | 77.57 | down 0.91 |
+| 53 | Claude-Fable-5 | anthropic | Western | Hybrid | Yes | `claude-fable-5` | alias | 2026-06-07 | exact | yes | 537 | 83.49 | 79.49 | down 4.00 |
+| 54 | GPT-5.6-Sol | openai | Western | Hybrid | Yes | `gpt-5.6-sol` | alias | 2026-06-23 | exact | yes | 514 | 80.42 | 78.04 | down 2.37 |
+| 55 | Claude-Sonnet-5 | anthropic | Western | Hybrid | No | `claude-sonnet-5` | alias | 2026-06-29 | exact | yes | 533 | 81.16 | 79.76 | down 1.41 |
+| 56 | Grok-4.5 | xai | Western | Hybrid | Yes | `grok-4.5` | alias | 2026-06-29 | exact | yes | 540 | 75.93 | 75.54 | down 0.39 |
+| 57 | Hunyuan-Hy3 | tencent | Eastern | Hybrid | No | `hy3` | alias | 2026-07-06 | exact | — | 542 | 77.52 | 74.93 | down 2.59 |
+| 58 | Kimi-K3 | moonshot | Eastern | Reasoning | Yes | `kimi-k3` | alias | 2026-07-16 | exact | — | 508 | 77.56 | 77.10 | down 0.45 |
+| 59 | Claude-Opus-5 | anthropic | Western | Hybrid | Yes | `claude-opus-5` | alias | 2026-07-24 | exact | yes | 508 | 84.30 | 81.44 | down 2.86 |
+
+## Flagged model identities — need a decision
+
+| Model | Issue |
+|---|---|
+| Kimi-K2 | ID MISMATCH: collected via moonshot-v1-32k, not a kimi-k2 endpoint; label and date need confirmation |
+| Qwen4-Max | NAME MISMATCH: collected via qwen3-max-2026-01-23, a Qwen3-Max snapshot, not a Qwen4 model |
 
 ## Ranked by DAT (within-person)
 
@@ -199,7 +208,7 @@ Human baselines: DAT **78.45** (n=11,597), between-person **80.11** (n=11,531).
 
 ## By provider
 
-| Provider | Models | Mean DAT | Mean between | Dates API-verified |
+| Provider | Models | Mean DAT | Mean between | Dates verified |
 |---|---|---|---|---|
 | meta | 3 | 81.51 | 78.05 | 0 of 3 |
 | anthropic | 13 | 81.15 | 78.78 | 9 of 13 |
@@ -212,52 +221,66 @@ Human baselines: DAT **78.45** (n=11,597), between-person **80.11** (n=11,531).
 | xai | 5 | 75.37 | 75.88 | 4 of 5 |
 | qwen | 7 | 75.18 | 75.61 | 0 of 7 |
 
-## Date quality
+## Date sourcing
 
-- **Exact dates:** 45 of 59. **Approximate (month only):** 14 of 59.
-- **API-verified against the exact model id we called:** 26 of 59. Only OpenAI, Anthropic and xAI return a real creation timestamp. Moonshot and Qwen/DashScope return a listing timestamp, which is not a release date and is not used.
-- **All 13 Claude and all 13 GPT models have exact dates** (9 and 12 API-verified), so both version-evolution lines in the figures rest entirely on exact dates.
-- **Missing `api_model_id`:** 8 legacy models — Llama-2-70b, GPT-4.0-Turbo, Claude-3-Opus, Claude-3-Haiku, DeepSeek-Chat, Llama4-Scout, Llama4-Maverick, Claude-Sonnet-4. Collected before the locked collector recorded the requested id; not recoverable from the data we hold.
-
-### The 14 approximate dates
-
-| Model | Provider | Date used |
+| Model | Release date | Source |
 |---|---|---|
-| Qwen-Max | qwen | 2025-09-13 |
-| Qwen-Plus | qwen | 2025-09-22 |
-| MiniMax-M2.5 | minimax | 2025-10-11 |
-| MiniMax-M2.7 | minimax | 2025-12-04 |
-| Qwen3.7-Max | qwen | 2025-12-04 |
-| Kimi-K2.5 | moonshot | 2025-12-16 |
-| MiniMax-M3 | minimax | 2025-12-16 |
-| Hunyuan-Hy3 | tencent | 2026-01-23 |
-| Qwen3.5-Plus | qwen | 2026-01-23 |
-| DeepSeek-V4-Pro | deepseek | 2026-02-10 |
-| DeepSeek-V4-Flash-TH | deepseek | 2026-02-10 |
-| Kimi-K2.6 | moonshot | 2026-02-11 |
-| DeepSeek-V4-Flash | deepseek | 2026-02-18 |
-| Qwen4-Max | qwen | 2026-03-23 |
-
-### Dates shared by more than one model
-
-| Date | Models | Precision | Is the same-day launch real? |
-|---|---|---|---|
-| 2024-02-01 | Moonshot-v1-8k, Moonshot-v1-128k | exact | yes, genuine same-day launch |
-| 2025-04-05 | Llama4-Scout, Llama4-Maverick | exact | yes, genuine same-day launch |
-| 2025-04-10 | GPT-4.1, GPT-4.1-mini, GPT-4.1-nano | exact | yes, genuine same-day launch |
-| 2025-08-05 | GPT-5-mini, Claude-Opus-4.1 | exact | yes, genuine same-day launch |
-| 2025-12-04 | MiniMax-M2.7, Qwen3.7-Max | approx | unknown, both dates are month-only |
-| 2025-12-16 | Kimi-K2.5, MiniMax-M3 | approx | unknown, both dates are month-only |
-| 2026-01-23 | Hunyuan-Hy3, Qwen3.5-Plus | approx | unknown, both dates are month-only |
-| 2026-02-10 | DeepSeek-V4-Pro, DeepSeek-V4-Flash-TH | approx | unknown, both dates are month-only |
-| 2026-03-09 | Grok-4.20-nonreason, Grok-4.20-reason | exact | yes, genuine same-day launch |
-| 2026-06-29 | Claude-Sonnet-5, Grok-4.5 | exact | yes, genuine same-day launch |
-
-### Markers that overlap in the figures
-
-| Pair | DAT gap | Between gap | Effect |
-|---|---|---|---|
-| Moonshot-v1-8k / Moonshot-v1-128k | 0.01 | 0.01 | one marker fully hides the other in both figures |
-| GPT-4.1 / GPT-4.1-mini | 0.43 | 0.30 | markers touch, both readable |
-| MiniMax-M2.7 / Qwen3.7-Max | 0.35 | 0.52 | markers touch, different colours so readable |
-| Grok-4.20-nonreason / Grok-4.20-reason | 1.94 | 0.43 | clear in DAT, touching in between |
+| GPT-3.5-Turbo | 2023-02-28 | openai /v1/models created |
+| Llama-2-70b | 2023-07-18 | published announcement / dataset |
+| Ernie-4.0-8k | 2023-10-17 | published announcement / dataset |
+| GPT-4.0-Turbo | 2023-11-06 | published announcement / dataset |
+| Moonshot-v1-128k | 2024-02-01 | published announcement / dataset |
+| Moonshot-v1-8k | 2024-02-01 | published announcement / dataset |
+| Claude-3-Opus | 2024-03-04 | published announcement / dataset |
+| Claude-3-Haiku | 2024-03-13 | published announcement / dataset |
+| DeepSeek-Chat | 2024-05-06 | published announcement / dataset |
+| Claude-3.5-Sonnet | 2024-06-20 | published announcement / dataset |
+| GPT-4o | 2024-08-04 | openai /v1/models created |
+| DeepSeek-R1 | 2025-01-20 | published announcement / dataset |
+| Qwen-Turbo | 2025-02-01 | bare alias qwen-turbo; only dated snapshot is 2024-11-01 |
+| Llama4-Maverick | 2025-04-05 | published announcement / dataset |
+| Llama4-Scout | 2025-04-05 | published announcement / dataset |
+| o4-mini | 2025-04-08 | openai /v1/models created |
+| GPT-4.1 | 2025-04-10 | openai /v1/models created |
+| GPT-4.1-mini | 2025-04-10 | openai /v1/models created |
+| GPT-4.1-nano | 2025-04-10 | openai /v1/models created |
+| Claude-Sonnet-4 | 2025-05-22 | published announcement / dataset |
+| Kimi-K2 | 2025-07-11 | published announcement / dataset |
+| Qwen3-235B-Instruct | 2025-07-21 | published announcement / dataset |
+| GPT-5 | 2025-08-01 | openai /v1/models created |
+| Claude-Opus-4.1 | 2025-08-05 | anthropic /v1/models created_at |
+| GPT-5-mini | 2025-08-05 | openai /v1/models created |
+| Grok-Code-Fast | 2025-08-28 | published announcement / dataset |
+| Qwen-Max | 2025-09-13 | bare alias qwen-max; DashScope exposes no dated snapshot |
+| Claude-Sonnet-4.5 | 2025-09-29 | anthropic /v1/models created_at |
+| Claude-Haiku-4.5 | 2025-10-15 | anthropic /v1/models created_at |
+| GPT-5.1 | 2025-11-10 | openai /v1/models created |
+| Claude-Opus-4.5 | 2025-11-24 | anthropic /v1/models created_at |
+| DeepSeek-V3.2 | 2025-12-01 | published announcement / dataset |
+| Qwen-Plus | 2025-12-01 | latest pinned snapshot qwen-plus-2025-12-01 at collection |
+| GPT-5.2 | 2025-12-09 | openai /v1/models created |
+| Qwen4-Max | 2026-01-23 | date encoded in the api id actually called: qwen3-max-2026-01-23 |
+| Kimi-K2.5 | 2026-01-27 | zdnet.com/article/moonshot-kimi-k2-5-model + Baidu Baike (2026-01-27) |
+| MiniMax-M2.5 | 2026-02-12 | minimax.io/blog/minimax-m25 (announcement 2026-02-12) |
+| Qwen3.5-Plus | 2026-02-15 | earliest pinned DashScope snapshot qwen3.5-plus-2026-02-15 |
+| Claude-Sonnet-4.6 | 2026-02-17 | anthropic /v1/models created_at |
+| GPT-5.4 | 2026-03-04 | openai /v1/models created |
+| Grok-4.20-nonreason | 2026-03-09 | xai /v1/models created |
+| Grok-4.20-reason | 2026-03-09 | xai /v1/models created |
+| MiniMax-M2.7 | 2026-03-18 | minimax.io/news/minimax-m27-en + platform release notes (2026-03-18) |
+| Claude-Opus-4.7 | 2026-04-14 | anthropic /v1/models created_at |
+| Grok-4.3 | 2026-04-17 | xai /v1/models created |
+| Kimi-K2.6 | 2026-04-21 | forum.moonshot.ai/t/meet-kimi-k2-6 (2026-04-21) |
+| GPT-5.5 | 2026-04-22 | openai /v1/models created |
+| DeepSeek-V4-Flash | 2026-04-24 | api-docs.deepseek.com/updates (2026-04-24) |
+| DeepSeek-V4-Flash-TH | 2026-04-24 | api-docs.deepseek.com/updates (2026-04-24; thinking mode of v4-flash) |
+| DeepSeek-V4-Pro | 2026-04-24 | api-docs.deepseek.com/updates (2026-04-24) |
+| Qwen3.7-Max | 2026-05-17 | earliest pinned DashScope snapshot qwen3.7-max-2026-05-17 |
+| MiniMax-M3 | 2026-06-01 | platform.minimax.io/docs/release-notes/models (Jun 1 2026) |
+| Claude-Fable-5 | 2026-06-07 | anthropic /v1/models created_at |
+| GPT-5.6-Sol | 2026-06-23 | openai /v1/models created |
+| Claude-Sonnet-5 | 2026-06-29 | anthropic /v1/models created_at |
+| Grok-4.5 | 2026-06-29 | xai /v1/models created |
+| Hunyuan-Hy3 | 2026-07-06 | tencent.com Hy3 GA announcement (2026-07-06); preview was 2026-04-23 |
+| Kimi-K3 | 2026-07-16 | published announcement / dataset |
+| Claude-Opus-5 | 2026-07-24 | anthropic /v1/models created_at |

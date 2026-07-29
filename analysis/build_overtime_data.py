@@ -58,33 +58,20 @@ def bpa(cells):
 def rd(f):
     with open(f,newline='',encoding='utf-8',errors='replace') as fh: return list(csv.DictReader(fh))
 
-# ---------------- P6: provider-authoritative release dates ----------------
-DATE_FIX = {  # api-verified created_at for the exact api_model_id we called
- "Claude-Sonnet-4.6":"2026-02-17","Claude-Opus-4.7":"2026-04-14","Claude-Sonnet-5":"2026-06-29",
- "Claude-Fable-5":"2026-06-07","Claude-Opus-5":"2026-07-24",
- "Grok-4.20-nonreason":"2026-03-09","Grok-4.20-reason":"2026-03-09","Grok-4.3":"2026-04-17","Grok-4.5":"2026-06-29",
- "GPT-3.5-Turbo":"2023-02-28","GPT-4o":"2024-08-04","GPT-4.1":"2025-04-10","GPT-4.1-mini":"2025-04-10",
- "GPT-4.1-nano":"2025-04-10","o4-mini":"2025-04-08","GPT-5":"2025-08-01","GPT-5-mini":"2025-08-05",
- "GPT-5.1":"2025-11-10","GPT-5.2":"2025-12-09","GPT-5.4":"2026-03-04","GPT-5.5":"2026-04-22",
- "GPT-5.6-Sol":"2026-06-23","Kimi-K3":"2026-07-16",
-}
-NEW_META = {"Kimi-K3":("moonshot","reasoning","Eastern","Yes"),
-            "Claude-Opus-5":("anthropic","hybrid","Western","Yes"),
-            "GPT-5.6-Sol":("openai","hybrid","Western","Yes")}
+# ---------------- single model registry is the ONLY source of dates + metadata ----------------
+REG = f"{ROOT}/machine_data/models.csv"
 
-# ---------------- metadata + canonical names from master ----------------
 MAST_ROWS = rd(MAST)
-canon={}; meta={}
-for r in MAST_ROWS:
-    n=r['model_name']; canon[n.lower()]=n
-    meta.setdefault(n,dict(prov=r['provider'],intel=r['intelligence'],reg=r['region'],reas=r['reasoning'],
-                           y=int(r['model_year']),mo=int(r['model_month']),d=int(r['model_day']),prec=r['date_precision']))
-for n,(p,i,rg,rs) in NEW_META.items():
-    canon[n.lower()]=n
-    meta[n]=dict(prov=p,intel=i,reg=rg,reas=rs,y=0,mo=0,d=0,prec="exact")
-for n,ds in DATE_FIX.items():
-    y,mo,d=[int(x) for x in ds.split("-")]
-    meta[n].update(y=y,mo=mo,d=d,prec="exact")
+canon={}
+for r in MAST_ROWS: canon[r['model_name'].lower()]=r['model_name']
+
+meta={}
+for r in rd(REG):
+    n=r['model']; canon[n.lower()]=n
+    y,mo,d=[int(x) for x in r['release_date'].split("-")]
+    meta[n]=dict(prov=r['provider'],intel=r['intelligence'],reg=r['region'],reas=r['reasoning'],
+                 y=y,mo=mo,d=d,prec=r['date_precision'])
+print(f"[registry] {len(meta)} models loaded from machine_data/models.csv (dates + metadata)")
 
 # ---------------- P1: rebuild MiniMax-M3 responses from raw text ----------------
 m3=[]
@@ -105,7 +92,13 @@ for r in rd(MID):
     if n=='MiniMax-M3': continue                      # replaced by re-parse
     resp[n].append([r[f'word_{i}'] for i in range(1,11)])
 resp['MiniMax-M3']=m3
+# The three newest models were later merged INTO the midpoint file. Only pull them
+# from raw_reasoning/ if the midpoint file does not already carry them, otherwise
+# every response is counted twice (n doubles; means unchanged, counts wrong).
 for n,f in NEWF.items():
+    if resp.get(n):
+        print(f"[P3] {n}: already in midpoint file ({len(resp[n])} responses) - skipping raw_reasoning to avoid double count")
+        continue
     for r in rd(f"{ROOT}/machine_data/raw_reasoning/{f}.csv"):
         if r['model_name']==n: resp[n].append([r[f'noun_{i}'] for i in range(10)])
 print(f"[P2/P3] models assembled: {len(resp)}  (name-casing merged, 3 new models included)")
