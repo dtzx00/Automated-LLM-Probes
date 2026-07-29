@@ -198,3 +198,40 @@ models — it is what made the GPT-4.0-Turbo correction possible.
 
 Both READMEs were rewritten. They had described a 40-model, temperature-0.5-only design and
 listed models as "to collect" that were already collected and analysed.
+
+## Two identity mismatches resolved (2026-07-29)
+
+Both flags are cleared. The evidence pointed in opposite directions, and in one case the
+flag was aimed at the wrong field.
+
+### Qwen4-Max → renamed Qwen3-Max (the label was wrong)
+`api_model_requested` is recorded as **`qwen3-max-2026-01-23`** in both
+`machine_data/processed/machine_all.csv` and `machine_data/raw/topup_qwen.csv` (82 rows
+each). That is observed collection provenance, not a planning value, so a Qwen3-Max pinned
+snapshot answered these prompts and the name "Qwen4-Max" described a model that was never
+called. Renamed to **Qwen3-Max** across the registry, canonical, midpoint, merged,
+machine_all and raw Qwen files — 1,760 rows in total. The release date 2026-01-23 was
+already correct because it came from the snapshot id.
+
+### Kimi-K2 → label kept, api id cleared (the api id was wrong)
+The opposite conclusion. Two independent lines of evidence:
+
+1. **No observed api id exists.** Kimi-K2's 6,175 merged rows all carry
+   `data_generation=legacy` and originate from
+   `legacy/prior_raw_inputs/new_machine_baseline.csv`, inherited data with no provenance
+   columns. The `moonshot-v1-32k` value came from the old planning spreadsheet and was never
+   an observed fact.
+2. **The scores rule it out.** Moonshot-v1-8k and Moonshot-v1-128k score DAT 74.44 and
+   74.45 — a 0.01 gap, as expected for one base model at two context lengths. If Kimi-K2
+   were `moonshot-v1-32k` it should land near 74.4. It scores **80.91**, 6.5 points higher.
+   Meanwhile it fits the Kimi lineage cleanly as its earliest and highest member
+   (K2 80.91 → K2.5 79.43 → K2.6 78.55 → K3 77.56).
+
+So the label is right and the api id was the error. `api_model_id` is now blank with
+`api_id_type=none`, consistent with the seven other legacy models whose ids were never
+recorded. The 2025-07-11 Kimi K2 release date stands.
+
+**Lesson worth keeping:** a planning-sheet field can masquerade as collection provenance.
+Distinguish observed values (`api_model_requested` in the response rows) from intended ones
+(the planning registry) before concluding which field is wrong. Scores of known sibling
+models are a useful independent check on identity.

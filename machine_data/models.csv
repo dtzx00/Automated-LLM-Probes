@@ -19,7 +19,7 @@
 18,GPT-4.1-mini,openai,Western,efficient,No,gpt-4.1-mini-2025-04-14,pinned,2025-04-10,exact,yes,openai /v1/models created,500,76.7683,75.1530,,
 19,GPT-4.1-nano,openai,Western,efficient,No,gpt-4.1-nano-2025-04-14,pinned,2025-04-10,exact,yes,openai /v1/models created,496,78.6453,77.3063,,
 20,Claude-Sonnet-4,anthropic,Western,hybrid,Yes,,none,2025-05-22,exact,no,published announcement / dataset,515,77.8997,76.2794,,region|reasoning
-21,Kimi-K2,moonshot,Eastern,all-rounder,No,moonshot-v1-32k,alias,2025-07-11,exact,no,published announcement / dataset,515,80.9142,79.0549,"ID MISMATCH: collected via moonshot-v1-32k, not a kimi-k2 endpoint; label and date need confirmation",
+21,Kimi-K2,moonshot,Eastern,all-rounder,No,,none,2025-07-11,exact,no,"Kimi K2 announced release 2025-07-11; inherited legacy rows carry no recorded api id (the previous 'moonshot-v1-32k' was a planning-sheet artifact, not observed)",515,80.9142,79.0549,,
 22,Qwen3-235B-Instruct,qwen,Eastern,all-rounder,No,qwen3-235b-a22b-instruct-2507,pinned,2025-07-21,exact,no,published announcement / dataset,530,75.1348,75.3322,,
 23,GPT-5,openai,Western,hybrid,Yes,gpt-5-2025-08-07,pinned,2025-08-01,exact,yes,openai /v1/models created,1054,78.8372,77.4825,,
 24,Claude-Opus-4.1,anthropic,Western,hybrid,Yes,claude-opus-4-1-20250805,pinned,2025-08-05,exact,yes,anthropic /v1/models created_at,535,84.7598,79.9195,,
@@ -33,7 +33,7 @@
 32,DeepSeek-V3.2,deepseek,Eastern,hybrid,Yes,deepseek-v3.2,alias,2025-12-01,exact,no,published announcement / dataset,547,79.4027,79.2219,,
 33,Qwen-Plus,qwen,Eastern,hybrid,No,qwen-plus,alias,2025-12-01,alias_unresolved,no,latest pinned snapshot qwen-plus-2025-12-01 at collection,500,77.8874,76.2128,,
 34,GPT-5.2,openai,Western,hybrid,Yes,gpt-5.2-2025-12-11,pinned,2025-12-09,exact,yes,openai /v1/models created,500,79.5105,77.2364,,
-35,Qwen4-Max,qwen,Eastern,hybrid,Yes,qwen3-max-2026-01-23,pinned,2026-01-23,exact,no,date encoded in the api id actually called: qwen3-max-2026-01-23,532,76.4485,75.7165,"NAME MISMATCH: collected via qwen3-max-2026-01-23, a Qwen3-Max snapshot, not a Qwen4 model",
+35,Qwen3-Max,qwen,Eastern,hybrid,Yes,qwen3-max-2026-01-23,pinned,2026-01-23,exact,no,api id actually called: qwen3-max-2026-01-23 (pinned snapshot; renamed from 'Qwen4-Max' 2026-07-29 to match what answered),532,76.4485,75.7165,,
 36,Kimi-K2.5,moonshot,Eastern,all-rounder,No,kimi-k2.5,alias,2026-01-27,exact,no,zdnet.com/article/moonshot-kimi-k2-5-model + Baidu Baike (2026-01-27),519,79.4300,78.6861,,
 37,MiniMax-M2.5,minimax,Eastern,reasoning,Yes,minimax-m2.5,alias,2026-02-12,exact,no,minimax.io/blog/minimax-m25 (announcement 2026-02-12),500,75.5865,75.7759,,
 38,Qwen3.5-Plus,qwen,Eastern,hybrid,No,qwen3.5-plus,alias,2026-02-15,exact,no,earliest pinned DashScope snapshot qwen3.5-plus-2026-02-15,500,72.8309,75.5748,,

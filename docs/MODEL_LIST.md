@@ -31,7 +31,7 @@ Human baselines: DAT **78.45** (n=11,597), between-person **80.11** (n=11,531).
 | 18 | GPT-4.1-mini | openai | Western | Efficient | No | `gpt-4.1-mini-2025-04-14` | pinned | 2025-04-10 | exact | yes | 500 | 76.77 | 75.15 | down 1.62 |
 | 19 | GPT-4.1-nano | openai | Western | Efficient | No | `gpt-4.1-nano-2025-04-14` | pinned | 2025-04-10 | exact | yes | 496 | 78.65 | 77.31 | down 1.34 |
 | 20 | Claude-Sonnet-4 | anthropic | Western | Hybrid | Yes | — | none | 2025-05-22 | exact | — | 515 | 77.90 | 76.28 | down 1.62 |
-| 21 | Kimi-K2 | moonshot | Eastern | All-rounder | No | `moonshot-v1-32k` | alias | 2025-07-11 | exact | — | 515 | 80.91 | 79.05 | down 1.86 |
+| 21 | Kimi-K2 | moonshot | Eastern | All-rounder | No | — | none | 2025-07-11 | exact | — | 515 | 80.91 | 79.05 | down 1.86 |
 | 22 | Qwen3-235B-Instruct | qwen | Eastern | All-rounder | No | `qwen3-235b-a22b-instruct-2507` | pinned | 2025-07-21 | exact | — | 530 | 75.13 | 75.33 | up 0.20 |
 | 23 | GPT-5 | openai | Western | Hybrid | Yes | `gpt-5-2025-08-07` | pinned | 2025-08-01 | exact | yes | 1,054 | 78.84 | 77.48 | down 1.35 |
 | 24 | Claude-Opus-4.1 | anthropic | Western | Hybrid | Yes | `claude-opus-4-1-20250805` | pinned | 2025-08-05 | exact | yes | 535 | 84.76 | 79.92 | down 4.84 |
@@ -45,7 +45,7 @@ Human baselines: DAT **78.45** (n=11,597), between-person **80.11** (n=11,531).
 | 32 | DeepSeek-V3.2 | deepseek | Eastern | Hybrid | Yes | `deepseek-v3.2` | alias | 2025-12-01 | exact | — | 547 | 79.40 | 79.22 | down 0.18 |
 | 33 | Qwen-Plus | qwen | Eastern | Hybrid | No | `qwen-plus` | alias | 2025-12-01 | alias_unresolved | — | 500 | 77.89 | 76.21 | down 1.67 |
 | 34 | GPT-5.2 | openai | Western | Hybrid | Yes | `gpt-5.2-2025-12-11` | pinned | 2025-12-09 | exact | yes | 500 | 79.51 | 77.24 | down 2.27 |
-| 35 | Qwen4-Max | qwen | Eastern | Hybrid | Yes | `qwen3-max-2026-01-23` | pinned | 2026-01-23 | exact | — | 532 | 76.45 | 75.72 | down 0.73 |
+| 35 | Qwen3-Max | qwen | Eastern | Hybrid | Yes | `qwen3-max-2026-01-23` | pinned | 2026-01-23 | exact | — | 532 | 76.45 | 75.72 | down 0.73 |
 | 36 | Kimi-K2.5 | moonshot | Eastern | All-rounder | No | `kimi-k2.5` | alias | 2026-01-27 | exact | — | 519 | 79.43 | 78.69 | down 0.74 |
 | 37 | MiniMax-M2.5 | minimax | Eastern | Reasoning | Yes | `minimax-m2.5` | alias | 2026-02-12 | exact | — | 500 | 75.59 | 75.78 | up 0.19 |
 | 38 | Qwen3.5-Plus | qwen | Eastern | Hybrid | No | `qwen3.5-plus` | alias | 2026-02-15 | exact | — | 500 | 72.83 | 75.57 | up 2.74 |
@@ -70,13 +70,6 @@ Human baselines: DAT **78.45** (n=11,597), between-person **80.11** (n=11,531).
 | 57 | Hunyuan-Hy3 | tencent | Eastern | Hybrid | No | `hy3` | alias | 2026-07-06 | exact | — | 542 | 77.52 | 74.93 | down 2.59 |
 | 58 | Kimi-K3 | moonshot | Eastern | Reasoning | Yes | `kimi-k3` | alias | 2026-07-16 | exact | — | 508 | 77.56 | 77.10 | down 0.45 |
 | 59 | Claude-Opus-5 | anthropic | Western | Hybrid | Yes | `claude-opus-5` | alias | 2026-07-24 | exact | yes | 508 | 84.30 | 81.44 | down 2.86 |
-
-## Flagged identities — need a decision
-
-| Model | Issue |
-|---|---|
-| Kimi-K2 | ID MISMATCH: collected via moonshot-v1-32k, not a kimi-k2 endpoint; label and date need confirmation |
-| Qwen4-Max | NAME MISMATCH: collected via qwen3-max-2026-01-23, a Qwen3-Max snapshot, not a Qwen4 model |
 
 ## Ranked by DAT (within-person)
 
@@ -122,7 +115,7 @@ Human baselines: DAT **78.45** (n=11,597), between-person **80.11** (n=11,531).
 | 38 | GPT-3.5-Turbo | 76.73 | below 1.72 |
 | 39 | Grok-4.3 | 76.55 | below 1.90 |
 | 40 | DeepSeek-R1 | 76.49 | below 1.96 |
-| 41 | Qwen4-Max | 76.45 | below 2.01 |
+| 41 | Qwen3-Max | 76.45 | below 2.01 |
 | 42 | GPT-4o | 76.20 | below 2.26 |
 | 43 | o4-mini | 76.14 | below 2.32 |
 | 44 | Ernie-4.0-8k | 76.12 | below 2.33 |
@@ -187,7 +180,7 @@ Human baselines: DAT **78.45** (n=11,597), between-person **80.11** (n=11,531).
 | 39 | Llama-2-70b | 76.11 | below 3.99 |
 | 40 | Grok-4.20-nonreason | 75.92 | below 4.19 |
 | 41 | MiniMax-M2.5 | 75.78 | below 4.33 |
-| 42 | Qwen4-Max | 75.72 | below 4.39 |
+| 42 | Qwen3-Max | 75.72 | below 4.39 |
 | 43 | GPT-3.5-Turbo | 75.69 | below 4.42 |
 | 44 | DeepSeek-V4-Flash | 75.59 | below 4.52 |
 | 45 | Qwen3.5-Plus | 75.57 | below 4.53 |
@@ -245,7 +238,7 @@ Human baselines: DAT **78.45** (n=11,597), between-person **80.11** (n=11,531).
 | GPT-4.1-mini | 2025-04-10 | openai /v1/models created |
 | GPT-4.1-nano | 2025-04-10 | openai /v1/models created |
 | Claude-Sonnet-4 | 2025-05-22 | published announcement / dataset |
-| Kimi-K2 | 2025-07-11 | published announcement / dataset |
+| Kimi-K2 | 2025-07-11 | Kimi K2 announced release 2025-07-11; inherited legacy rows carry no recorded api id (the previous 'moonshot-v1-32k' was a planning-sheet artifact, not observed) |
 | Qwen3-235B-Instruct | 2025-07-21 | published announcement / dataset |
 | GPT-5 | 2025-08-01 | openai /v1/models created |
 | Claude-Opus-4.1 | 2025-08-05 | anthropic /v1/models created_at |
@@ -259,7 +252,7 @@ Human baselines: DAT **78.45** (n=11,597), between-person **80.11** (n=11,531).
 | DeepSeek-V3.2 | 2025-12-01 | published announcement / dataset |
 | Qwen-Plus | 2025-12-01 | latest pinned snapshot qwen-plus-2025-12-01 at collection |
 | GPT-5.2 | 2025-12-09 | openai /v1/models created |
-| Qwen4-Max | 2026-01-23 | date encoded in the api id actually called: qwen3-max-2026-01-23 |
+| Qwen3-Max | 2026-01-23 | api id actually called: qwen3-max-2026-01-23 (pinned snapshot; renamed from 'Qwen4-Max' 2026-07-29 to match what answered) |
 | Kimi-K2.5 | 2026-01-27 | zdnet.com/article/moonshot-kimi-k2-5-model + Baidu Baike (2026-01-27) |
 | MiniMax-M2.5 | 2026-02-12 | minimax.io/blog/minimax-m25 (announcement 2026-02-12) |
 | Qwen3.5-Plus | 2026-02-15 | earliest pinned DashScope snapshot qwen3.5-plus-2026-02-15 |

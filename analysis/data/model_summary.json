@@ -560,7 +560,7 @@
   "btw_sd": 1.2066754639944877
  },
  {
-  "model": "Qwen4-Max",
+  "model": "Qwen3-Max",
   "prov": "qwen",
   "intel": "hybrid",
   "y": 2026,
