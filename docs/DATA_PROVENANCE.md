@@ -21,7 +21,7 @@ One baseline, in `machine_data/human_avg_baselines.json`: DAT 78.45 (n=11,597), 
 
 A second, conflicting figure of 78.69 previously circulated. That was the legacy `word_dat_score` column, which used a different vocabulary filter. It has been superseded. Use 78.45 for anything where humans and machines are compared, because only that value is produced by the same scorer as the machine numbers.
 
-Collection-year assignment for the year-wise baseline: olson_pnas2021 → 2022, zunyi and zunyi2024 → 2024, btb and hsbc2025 → 2025. The zunyi and btb assignments are inferred, not documented in the source files, and remain unconfirmed.
+Collection-year assignment for the year-wise baseline: olson_pnas2021 → 2022, zunyi and zunyi2024 → 2024, btb and hsbc2025 → 2025. The zunyi and btb assignments were inferred rather than read from the source files. **Reviewed and accepted as the project convention on 2026-07-29; treat them as settled, not as an open question.** They set only the x-position of the year-wise human baseline markers and enter no score: the headline human baselines (DAT 78.45, between-person 80.11) are pooled across all sources and are unaffected by year assignment.
 
 ## Release dates
 

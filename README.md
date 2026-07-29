@@ -95,5 +95,7 @@ baselines, and asserts that DAT and between-person are scored on identical rows.
 - 78% of machine rows predate the locked collector, so their `parse_status` is unverifiable.
 - No usable reasoning traces: Anthropic returns encrypted thinking blocks, OpenAI does not
   expose reasoning on the completions endpoint.
-- Human collection-year assignments (zunyi→2024, btb→2025) are inferred, not documented.
+- Human collection-year assignments (zunyi→2024, btb→2025) were inferred rather than read from the
+  source files. Reviewed 2026-07-29 and accepted as the project convention; they affect only the
+  x-position of the year-wise human baseline markers, not any score.
 - Two unresolved model identity mismatches, flagged in the registry.
