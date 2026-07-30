@@ -55,6 +55,30 @@ def bpa(cells):
         if len(seq)==7: break
     return float(np.mean([fs(c,k) for k,c in enumerate(seq)])) if len(seq)==7 else None
 
+# ---- PRIMARY uniqueness measure: position-agnostic, HUMAN-ONLY reference ----
+# Design decision (2026-07-29): the reference contains only human words and is pooled across
+# positions. This makes the measure invariant to which models are in the dataset and gives it
+# one clean meaning - how unlike the human population a response is. The balanced half-machine
+# per-rank pools are retained as `bpa` for comparison only.
+UPOOL=f"{ROOT}/machine_data/between_unit_references/human_agnostic_5000words.txt"
+_uc=np.mean(np.vstack([nvec(w) for w in (x.strip() for x in open(UPOOL)) if w and nvec(w) is not None]),axis=0)
+_ucache={}
+def _us(c):
+    s=_ucache.get(c)
+    if s is None: s=100*(1-float(_uc@nvec(c))); _ucache[c]=s
+    return s
+def uniq(cells):
+    seq=[]
+    for w in cells:
+        c=cln(w)
+        if c: seq.append(c)
+        if len(seq)==7: break
+    return float(np.mean([_us(c) for c in seq])) if len(seq)==7 else None
+
+# rows used to BUILD the pool -> excluded from the human baseline (no self-inclusion)
+UREF_ROWS=set(int(x) for x in open(f"{ROOT}/human_data/processed/uniqueness_reference_rows.txt")
+              if x.strip() and not x.startswith("#"))
+
 def rd(f):
     with open(f,newline='',encoding='utf-8',errors='replace') as fh: return list(csv.DictReader(fh))
 
@@ -107,44 +131,54 @@ print(f"[P2/P3] models assembled: {len(resp)}  (name-casing merged, 3 new models
 out=[]; drops=Counter()
 per=open("/home/user/fix/canonical_responses.csv","w",newline='')
 wtr=csv.writer(per); wtr.writerow(["model_name","provider","intelligence","region","reasoning",
-  "release_date","date_precision"]+[f"noun_{i}" for i in range(10)]+["dat_score","between_unit_posaware"])
+  "release_date","date_precision"]+[f"noun_{i}" for i in range(10)]+["dat_score","between_unit_posaware","uniqueness_human_agnostic"])
 for n,rows in resp.items():
     m=meta[n]; ds=f"{m['y']:04d}-{m['mo']:02d}-{m['d']:02d}"
-    dv=[]; bv=[]
+    dv=[]; bv=[]; uv=[]
     for nouns in rows:
-        a=dat(nouns); b=bpa(nouns)
-        if a is None or b is None:
+        a=dat(nouns); b=bpa(nouns); u=uniq(nouns)
+        if a is None or b is None or u is None:
             drops[n]+=1; continue          # P7: explicit, symmetric drop
-        dv.append(a); bv.append(b)
-        wtr.writerow([n,m['prov'],m['intel'],m['reg'],m['reas'],ds,m['prec']]+list(nouns)+[f"{a:.6f}",f"{b:.6f}"])
+        dv.append(a); bv.append(b); uv.append(u)
+        wtr.writerow([n,m['prov'],m['intel'],m['reg'],m['reas'],ds,m['prec']]+list(nouns)+[f"{a:.6f}",f"{b:.6f}",f"{u:.6f}"])
     out.append(dict(model=n,prov=m['prov'],intel=m['intel'],y=m['y'],mo=m['mo'],d=m['d'],prec=m['prec'],
-                    n=len(dv),dat=float(np.mean(dv)),btw=float(np.mean(bv)),
-                    dat_sd=float(np.std(dv,ddof=1)),btw_sd=float(np.std(bv,ddof=1))))
+                    n=len(dv),dat=float(np.mean(dv)),btw=float(np.mean(bv)),uniq=float(np.mean(uv)),
+                    dat_sd=float(np.std(dv,ddof=1)),btw_sd=float(np.std(bv,ddof=1)),uniq_sd=float(np.std(uv,ddof=1))))
 per.close()
 print(f"[P4] DAT and between-unit now computed on identical rows for all {len(out)} models")
 print(f"[P7] rows dropped for failing the 7-valid-noun rule: {sum(drops.values())} -> {dict(drops)}")
 
 # ---------------- P5: one human baseline, same scorer ----------------
-hd=[];hb=[];hy=defaultdict(list)
+hd=[];hb=[];hu=[];hy=defaultdict(list);huy=defaultdict(list)
 YR={'olson_pnas2021':2022,'zunyi':2024,'zunyi2024':2024,'btb':2025,'hsbc2025':2025}
-for r in rd(HUMAN):
+for ri,r in enumerate(rd(HUMAN)):
     nouns=[r[f'word_{i}'] for i in range(1,11)]
     a=dat(nouns); b=bpa(nouns)
     if a is not None: hd.append(a); hy[YR[r['source']]].append(a)
     if b is not None: hb.append(b)
+    if ri not in UREF_ROWS:                     # exclude pool-building rows
+        u=uniq(nouns)
+        if u is not None: hu.append(u); huy[YR[r['source']]].append(u)
 human=dict(human_dat_mean=float(np.mean(hd)),human_between_mean=float(np.mean(hb)),
-           n_dat=len(hd),n_btw=len(hb),
-           human_year={str(k):float(np.mean(v)) for k,v in sorted(hy.items())})
+           human_uniq_mean=float(np.mean(hu)),n_dat=len(hd),n_btw=len(hb),n_uniq=len(hu),
+           human_year={str(k):float(np.mean(v)) for k,v in sorted(hy.items())},
+           human_uniq_year={str(k):float(np.mean(v)) for k,v in sorted(huy.items())})
+print(f"[uniqueness] human-only position-agnostic baseline {human['human_uniq_mean']:.2f} "
+      f"(n={len(hu)}, pool-building rows excluded)")
 print(f"[P5] single human baseline: DAT {human['human_dat_mean']:.2f} (n={len(hd)}), between {human['human_between_mean']:.2f} (n={len(hb)})")
 
 # ---------------- emit figure inputs ----------------
 def frac(y,mo,d): return y+((mo-1)*30.44+d)/365.0
 recs_d=[[frac(r['y'],r['mo'],r['d']),r['y'],r['mo'],r['d'],r['prov'],r['intel'],r['model'],r['dat'],r['prec']] for r in out]
 recs_b=[[frac(r['y'],r['mo'],r['d']),r['y'],r['mo'],r['d'],r['prov'],r['intel'],r['model'],r['btw'],r['prec']] for r in out]
+recs_u=[[frac(r['y'],r['mo'],r['d']),r['y'],r['mo'],r['d'],r['prov'],r['intel'],r['model'],r['uniq'],r['prec']] for r in out]
 hyr={str(k):v for k,v in human['human_year'].items()}
 json.dump({"recs":recs_d,"human_year":hyr},open("/home/user/fix/permonth_data.json","w"))
 json.dump({"recs":recs_b,"human_year":hyr},open("/home/user/fix/between_data.json","w"))
-json.dump({"human_dat_mean":human['human_dat_mean'],"human_between_mean":human['human_between_mean']},
+json.dump({"recs":recs_u,"human_year":{str(k):v for k,v in human['human_uniq_year'].items()}},
+          open("/home/user/fix/uniqueness_data.json","w"))
+json.dump({"human_dat_mean":human['human_dat_mean'],"human_between_mean":human['human_between_mean'],
+           "human_uniq_mean":human['human_uniq_mean']},
           open("/home/user/fix/human_avg.json","w"))
 json.dump(human,open("/home/user/fix/human_baselines_canonical.json","w"),indent=1)
 json.dump(sorted(out,key=lambda r:-r['dat']),open("/home/user/fix/model_summary.json","w"),indent=1)

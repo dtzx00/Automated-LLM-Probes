@@ -7,9 +7,10 @@ Two measures are computed on every response:
 
 - **Within-person divergence (DAT)** — mean pairwise semantic distance among the first 7
   valid nouns of a single response. How varied one response is internally.
-- **Between-person divergence** (`between_unit_posaware`, also called *uniqueness*) — mean
-  distance from each noun to a rank-matched reference pool drawn equally from humans and
-  machines. How unlike everyone else a response is.
+- **Uniqueness** (`uniqueness_human_agnostic`) — mean distance from each noun to a single
+  reference pool of 5,000 human words, pooled across word positions. How unlike the human
+  population a response is. This is the primary between-person measure as of 2026-07-29; see
+  `docs/DATA_PROVENANCE.md` for why the earlier balanced, position-specific pool was retired.
 
 Scoring follows Olson et al. (2021): GloVe 840B/300d filtered to the Olson vocabulary,
 first 7 unique in-vocabulary nouns, mean pairwise cosine distance ×100.
@@ -19,12 +20,13 @@ first 7 unique in-vocabulary nouns, mean pairwise cosine distance ×100.
 | | Human mean | Models beating the human mean |
 |---|---|---|
 | Within-person (DAT) | 78.45 | 24 of 59 |
-| Between-person | 80.11 | 3 of 59 |
+| Uniqueness | 80.62 | 16 of 59 |
 
-Models are individually varied but collectively narrow: many match or exceed a human on
-within-person diversity, while almost none match humans on between-person diversity. The
-ceiling is collective, not individual. Claude-Opus-5 (81.44) is the only model clearly
-above the human between-person baseline.
+Models match humans on average but not in the tail. On within-person divergence they equal
+the human mean (d = −0.06) while compressing the distribution: better than humans in the
+bottom decile, worse in the top. On uniqueness the same shape appears — level with humans at
+the 10th percentile and progressively behind toward the 99th. The mechanism is vocabulary:
+674 distinct words against 5,559 for humans on matched samples.
 
 ## Canonical data
 
@@ -59,11 +61,11 @@ true 16:9 (3200×1800) with identical x and y ranges so they are directly compar
 | Figure | Script | Output |
 |---|---|---|
 | Within-person DAT alone | `analysis/fig1_dat_by_release.py` | `results/fig1_dat_by_release.png` |
-| DAT → between-person, with shift arrows | `analysis/fig2_dat_to_uniqueness_by_release.py` | `results/fig2_dat_to_uniqueness_by_release.png` |
-| Between-person alone | `analysis/fig3_uniqueness_by_release.py` | `results/fig3_uniqueness_by_release.png` |
+| Uniqueness with the DAT reference and shift arrows | `analysis/fig2_uniqueness_with_dat.py` | `results/fig2_uniqueness_with_dat.png` |
+| Uniqueness alone | `analysis/fig3_uniqueness_only.py` | `results/fig3_uniqueness_only.png` |
 
-Conventions: within-person is drawn solid with filled markers, between-person dotted with
-open markers. Marker shape encodes intelligence class (efficient ▽, all-rounder ○, hybrid
+Conventions: within-person is drawn solid with filled markers, uniqueness dotted with open
+markers. Marker shape encodes intelligence class (efficient ▽, all-rounder ○, hybrid
 ◇, reasoning ★), colour encodes provider, purple is the human baseline. Version-evolution
 lines are drawn for the OpenAI and Claude lineages only.
 

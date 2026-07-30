@@ -25,26 +25,42 @@ PROV_LABEL={'openai':'OpenAI','anthropic':'Anthropic','qwen':'Qwen','deepseek':'
             'moonshot':'Moonshot','xai':'xAI','baidu':'Baidu','meta':'Meta',
             'minimax':'MiniMax','tencent':'Tencent'}
 HUMAN_PURPLE='#5E348B'
+BTW_LABEL='Human uniqueness'   # set by the figure script if a different measure is plotted
 MARK={'efficient':'v','all-rounder':'o','hybrid':'D','reasoning':'*'}
 SIZE={'efficient':170,'all-rounder':190,'hybrid':150,'reasoning':320}
 INTEL_LABEL={'efficient':'Efficient','all-rounder':'All-rounder','hybrid':'Hybrid','reasoning':'Reasoning'}
 LINEAGES=[("claude",PROV_COLOR['anthropic']),("gpt",PROV_COLOR['openai'])]  # OpenAI + Claude ONLY
 
 DATA_DIR="data"
+def _l(fn):
+    j=json.load(open(f"{DATA_DIR}/{fn}")); return {r[6]:r for r in j["recs"]}
+
 def load_all():
-    def _l(fn):
-        j=json.load(open(f"{DATA_DIR}/{fn}")); return {r[6]:r for r in j["recs"]}
+    """Legacy loader: DAT + the balanced half-machine per-rank between-person measure."""
     dat=_l("permonth_data.json"); btw=_l("between_data.json")
     hav=json.load(open(f"{DATA_DIR}/human_avg.json"))
     models=[m for m in dat if m in btw]
     models.sort(key=lambda m: dat[m][0])
     return dat,btw,hav["human_dat_mean"],hav["human_between_mean"],models
 
+def load_uniq():
+    """PRIMARY loader: DAT + uniqueness against a position-agnostic, HUMAN-ONLY reference.
+
+    Design set 2026-07-29. The reference pool contains only human words and is pooled across
+    word positions, so the measure is invariant to which models are in the dataset and means
+    one thing: how unlike the human population a response is.
+    """
+    dat=_l("permonth_data.json"); uniq=_l("uniqueness_data.json")
+    hav=json.load(open(f"{DATA_DIR}/human_avg.json"))
+    models=[m for m in dat if m in uniq]
+    models.sort(key=lambda m: dat[m][0])
+    return dat,uniq,hav["human_dat_mean"],hav["human_uniq_mean"],models
+
 # ---- SHARED AXES: identical on all three figures ----
 def limits(dat,models):
     ax_=[dat[m][0] for m in models]
     return min(ax_)-2.6/12, max(ax_)+0.6/12
-YLIM=(70.6,86.3)          # covers DAT 71.3-85.9, between 74.0-81.4 and both human baselines
+YLIM=(70.6,86.3)          # covers DAT 71.3-85.9 and uniqueness 77.0-83.4, plus both human baselines
 FIGSIZE=(16,9); DPI=200   # saved WITHOUT tight bbox -> exactly 3200x1800 = true 16:9
 
 def new_fig():
@@ -86,7 +102,9 @@ def shift_arrows(ax,dat,btw,models):
                      arrowstyle='-|>',mutation_scale=17,color=c,alpha=0.50,lw=2.4,
                      shrinkA=9,shrinkB=9,zorder=4))
 
-def human_lines(ax,xmin,xmax,h_dat,h_btw,show_dat,show_btw,dat_alpha=1.0,band=False):
+LBL_BOX=dict(facecolor='white',alpha=0.78,edgecolor='none',boxstyle='round,pad=0.25')
+def human_lines(ax,xmin,xmax,h_dat,h_btw,show_dat,show_btw,dat_alpha=1.0,band=False,
+                dat_label_x=2024.75,btw_label_x=2023.02):
     xL,xR=tx(xmin),tx(xmax)
     if show_dat:
         ax.plot([xL,xR],[h_dat]*2,'-',color=HUMAN_PURPLE,lw=2.4,alpha=dat_alpha,zorder=5)
@@ -94,13 +112,14 @@ def human_lines(ax,xmin,xmax,h_dat,h_btw,show_dat,show_btw,dat_alpha=1.0,band=Fa
         ax.plot([xL,xR],[h_btw]*2,':',color=HUMAN_PURPLE,lw=2.4,alpha=1.0,zorder=5)
     if band and show_dat and show_btw:
         ax.fill_between([xL,xR],[h_dat]*2,[h_btw]*2,color=HUMAN_PURPLE,alpha=0.10,zorder=2,linewidth=0)
-    lx=tx(2024.35)
     if show_dat:
-        ax.annotate(f"Human DAT (avg {h_dat:.1f})",(lx,h_dat),textcoords="offset points",
-                    xytext=(0,-15),ha='center',fontsize=12,weight='bold',color=HUMAN_PURPLE)
+        ax.annotate(f"Human DAT (avg {h_dat:.1f})",(tx(dat_label_x),h_dat),textcoords="offset points",
+                    xytext=(0,-17),ha='center',fontsize=12,weight='bold',color=HUMAN_PURPLE,
+                    bbox=LBL_BOX,zorder=9)
     if show_btw:
-        ax.annotate(f"Human between-person (avg {h_btw:.1f})",(lx,h_btw),textcoords="offset points",
-                    xytext=(0,7),ha='center',fontsize=12,weight='bold',color=HUMAN_PURPLE)
+        ax.annotate(f"{BTW_LABEL} (avg {h_btw:.1f})",(tx(btw_label_x),h_btw),textcoords="offset points",
+                    xytext=(2,9),ha='left',fontsize=12,weight='bold',color=HUMAN_PURPLE,
+                    bbox=LBL_BOX,zorder=9)
 
 def lineages(ax,dat,btw,models,mode):
     """mode: 'dat' | 'between' | 'both' (both adds the 10% gap shading)"""

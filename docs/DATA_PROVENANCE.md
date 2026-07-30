@@ -235,3 +235,55 @@ recorded. The 2025-07-11 Kimi K2 release date stands.
 Distinguish observed values (`api_model_requested` in the response rows) from intended ones
 (the planning registry) before concluding which field is wrong. Scores of known sibling
 models are a useful independent check on identity.
+
+## Uniqueness redesigned: position-agnostic, human-only reference (2026-07-29)
+
+The primary between-person measure is now `uniqueness_human_agnostic`: mean distance from each
+of a response's first 7 valid nouns to a **single** reference pool of 5,000 **human** word
+tokens, frequency-weighted, pooled across word positions.
+
+Committed artefacts:
+- `machine_data/between_unit_references/human_agnostic_5000words.txt` — the pool, 5,000 tokens,
+  1,774 distinct, sampled with frequency weighting to match the existing pool convention.
+- `human_data/processed/uniqueness_reference_rows.txt` — the 5,765 human rows used to build the
+  pool. The human baseline is computed on the complementary 5,766 rows, so no response is ever
+  scored against a pool containing its own words.
+
+Human baseline **80.62**. Machine overall 79.64. Per-model range 77.02 to 83.41. **16 of 59
+models exceed the human baseline**, against 3 under the retired measure.
+
+### Why the previous measure was retired
+
+The old `between_unit_posaware` used seven position-specific pools, each half human and half
+machine words. Two problems:
+
+1. **It was not invariant to our own dataset.** Because the score depends only on the pool
+   centroid, and half the pool was machine words, adding differently-behaved models moved every
+   existing model's score. Holding the design fixed and drawing the machine half from the ten
+   highest-DAT models instead of all 59 changed the count of models beating humans from 4 to 0,
+   with no model changing behaviour.
+2. **It penalised machines by self-reference.** Machines cluster on a small vocabulary, so
+   machine words sat close to the machine half of their own yardstick. Solving for the effective
+   machine share of the committed pools by projecting their centroids onto the human-to-machine
+   axis gave 0.497 — a genuine 50/50. Sweeping that share from 0 to 1 moved the effect from
+   d = −0.37 to −1.83, so the headline depended on an unargued design choice.
+
+The retired measure is preserved as the `between_unit_posaware` column and the `bpa` function
+for comparison.
+
+### Position-agnostic rather than position-specific
+
+The two variants agreed closely (response-level r = 0.966, model-level Spearman 0.947), and the
+entire difference sat at word position 1, where opening words are stereotyped. Position-specific
+scoring inflated the machine deficit at that position (machines 5.00 below humans at position 1,
+against 2.3 to 3.1 from position 4 onward). Pooling positions removes a nuisance parameter and
+costs nothing. The position-1 effect is a substantive finding in its own right — models share a
+small set of openers — and belongs in the results, not in the measure.
+
+### Figures
+
+`results/fig2_uniqueness_with_dat.png` shows uniqueness with the DAT reference (transparent
+filled DAT markers, open uniqueness markers, an arrow per model showing the direction of the
+shift, and gap shading for the OpenAI and Claude lineages).
+`results/fig3_uniqueness_only.png` shows uniqueness alone.
+Both keep the shared y range 70.6 to 86.3 so they stay directly comparable with figure 1.
