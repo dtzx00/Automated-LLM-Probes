@@ -43,6 +43,7 @@ def load_all():
     models.sort(key=lambda m: dat[m][0])
     return dat,btw,hav["human_dat_mean"],hav["human_between_mean"],models
 
+CHURN_YLIM=(55.5,87.0)   # churn spans 56.5-72.3 and must also show the DAT range 71.3-85.9
 def load_uniq():
     """PRIMARY loader: DAT + uniqueness against a position-agnostic, HUMAN-ONLY reference.
 
@@ -56,6 +57,20 @@ def load_uniq():
     models.sort(key=lambda m: dat[m][0])
     return dat,uniq,hav["human_dat_mean"],hav["human_uniq_mean"],models
 
+
+def load_churn():
+    """DAT + repetition/churn: rarity of a response's words within its OWN population.
+
+    Each group is scored against itself (humans vs the human corpus, machines vs the pooled
+    machine corpus), then put on the DAT scale by matching the human mean and sd. This is the
+    only way a per-response score can see self-repetition.
+    """
+    dat=_l("permonth_data.json"); ch=_l("churn_data.json")
+    hav=json.load(open(f"{DATA_DIR}/human_avg.json"))
+    models=[m for m in dat if m in ch]
+    models.sort(key=lambda m: dat[m][0])
+    return dat,ch,hav["human_dat_mean"],hav["human_churn_mean"],models
+
 # ---- SHARED AXES: identical on all three figures ----
 def limits(dat,models):
     ax_=[dat[m][0] for m in models]
@@ -68,13 +83,14 @@ def new_fig():
     fig.subplots_adjust(left=0.055,right=0.987,top=0.902,bottom=0.185)
     return fig,ax
 
-def frame(ax,xmin,xmax,title):
-    ax.set_xlim(tx(xmin),tx(xmax)); ax.set_ylim(*YLIM)
+def frame(ax,xmin,xmax,title,ylim=None,ystep=2):
+    ax.set_xlim(tx(xmin),tx(xmax)); ax.set_ylim(*(ylim or YLIM))
     yr=[2023,2024,2025,2026]
     ax.set_xticks([tx(y) for y in yr]); ax.set_xticklabels([str(y) for y in yr])
     months=[y+mn/12 for y in range(2023,2028) for mn in range(12)]
     ax.set_xticks([tx(m) for m in months if xmin<=m<=xmax],minor=True)
-    ax.set_yticks(np.arange(72,87,2))
+    lo,hi=(ylim or YLIM)
+    ax.set_yticks(np.arange(int(np.ceil(lo/ystep))*ystep,hi,ystep))
     ax.grid(which='major',color='#dcdcdc',lw=1.0,zorder=0)
     ax.grid(which='minor',axis='x',color='#f2f2f2',lw=0.6,zorder=0)
     ax.set_axisbelow(True); ax.spines[['top','right']].set_visible(False)
@@ -104,7 +120,7 @@ def shift_arrows(ax,dat,btw,models):
 
 LBL_BOX=dict(facecolor='white',alpha=0.78,edgecolor='none',boxstyle='round,pad=0.25')
 def human_lines(ax,xmin,xmax,h_dat,h_btw,show_dat,show_btw,dat_alpha=1.0,band=False,
-                dat_label_x=2024.75,btw_label_x=2023.02):
+                dat_label_x=2024.75,btw_label_x=2023.02,dat_label=None):
     xL,xR=tx(xmin),tx(xmax)
     if show_dat:
         ax.plot([xL,xR],[h_dat]*2,'-',color=HUMAN_PURPLE,lw=2.4,alpha=dat_alpha,zorder=5)
@@ -113,7 +129,7 @@ def human_lines(ax,xmin,xmax,h_dat,h_btw,show_dat,show_btw,dat_alpha=1.0,band=Fa
     if band and show_dat and show_btw:
         ax.fill_between([xL,xR],[h_dat]*2,[h_btw]*2,color=HUMAN_PURPLE,alpha=0.10,zorder=2,linewidth=0)
     if show_dat:
-        ax.annotate(f"Human DAT (avg {h_dat:.1f})",(tx(dat_label_x),h_dat),textcoords="offset points",
+        ax.annotate(dat_label or f"Human DAT (avg {h_dat:.1f})",(tx(dat_label_x),h_dat),textcoords="offset points",
                     xytext=(0,-17),ha='center',fontsize=12,weight='bold',color=HUMAN_PURPLE,
                     bbox=LBL_BOX,zorder=9)
     if show_btw:

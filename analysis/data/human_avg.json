@@ -1,1 +1,1 @@
-{"human_dat_mean": 78.45375061035156, "human_between_mean": 80.10896539945341, "human_uniq_mean": 80.62000159100533}
+{"human_dat_mean": 78.45375061035156, "human_between_mean": 80.10896539945341, "human_uniq_mean": 80.62000159100533, "human_churn_mean": 78.45375061035156, "churn_calibration": {"human_raw_mean": 2.3011467938661085, "human_raw_sd": 0.5057224741249179, "dat_mean": 78.45375061035156, "dat_sd": 6.75645112991333}}

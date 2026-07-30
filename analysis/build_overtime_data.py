@@ -4,7 +4,7 @@ P4 (DAT + between-unit on the SAME rows), P5 (single human baseline),
 P6 (provider-authoritative release dates), P7 (explicit parse-failure drops)."""
 import csv, os, json, pickle, re, itertools, sys
 import numpy as np, scipy.spatial.distance as ssd
-from collections import defaultdict, Counter
+from collections import defaultdict, Counter, Counter
 csv.field_size_limit(10**9)
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "/home/user/cn"
 MID   = f"{ROOT}/machine_data/processed/machine_final_baseline_midpoint.csv"
@@ -75,6 +75,27 @@ def uniq(cells):
         if len(seq)==7: break
     return float(np.mean([_us(c) for c in seq])) if len(seq)==7 else None
 
+# ---- SECOND measure: repetition ("churn") = rarity of your words in your OWN population ----
+# A per-response score against a FIXED EXTERNAL reference cannot see self-repetition: two
+# identical responses get identical scores no matter how many models produced them. To capture
+# "the models churn out the same words", each group is scored against its own population.
+# uniqueness_churn = mean over the 7 nouns of -log10(share of own-population responses using it).
+# Symmetric by construction: humans vs the human corpus, machines vs the pooled machine corpus.
+def churn_scorer(word_sets):
+    df=Counter()
+    for ws in word_sets: df.update(set(ws))
+    n=len(word_sets)
+    def f(seq):
+        return float(np.mean([-np.log10(max(df.get(c,0),0.5)/n) for c in seq])) if len(seq)==7 else None
+    return f
+def seq7(cells):
+    seq=[]
+    for w in cells:
+        c=cln(w)
+        if c: seq.append(c)
+        if len(seq)==7: break
+    return seq if len(seq)==7 else None
+
 # rows used to BUILD the pool -> excluded from the human baseline (no self-inclusion)
 UREF_ROWS=set(int(x) for x in open(f"{ROOT}/human_data/processed/uniqueness_reference_rows.txt")
               if x.strip() and not x.startswith("#"))
@@ -134,22 +155,23 @@ wtr=csv.writer(per); wtr.writerow(["model_name","provider","intelligence","regio
   "release_date","date_precision"]+[f"noun_{i}" for i in range(10)]+["dat_score","between_unit_posaware","uniqueness_human_agnostic"])
 for n,rows in resp.items():
     m=meta[n]; ds=f"{m['y']:04d}-{m['mo']:02d}-{m['d']:02d}"
-    dv=[]; bv=[]; uv=[]
+    dv=[]; bv=[]; uv=[]; cv=[]
     for nouns in rows:
-        a=dat(nouns); b=bpa(nouns); u=uniq(nouns)
-        if a is None or b is None or u is None:
+        a=dat(nouns); b=bpa(nouns); u=uniq(nouns); q=seq7(nouns)
+        if a is None or b is None or u is None or q is None:
             drops[n]+=1; continue          # P7: explicit, symmetric drop
-        dv.append(a); bv.append(b); uv.append(u)
+        dv.append(a); bv.append(b); uv.append(u); cv.append(q)
         wtr.writerow([n,m['prov'],m['intel'],m['reg'],m['reas'],ds,m['prec']]+list(nouns)+[f"{a:.6f}",f"{b:.6f}",f"{u:.6f}"])
     out.append(dict(model=n,prov=m['prov'],intel=m['intel'],y=m['y'],mo=m['mo'],d=m['d'],prec=m['prec'],
                     n=len(dv),dat=float(np.mean(dv)),btw=float(np.mean(bv)),uniq=float(np.mean(uv)),
-                    dat_sd=float(np.std(dv,ddof=1)),btw_sd=float(np.std(bv,ddof=1)),uniq_sd=float(np.std(uv,ddof=1))))
+                    dat_sd=float(np.std(dv,ddof=1)),btw_sd=float(np.std(bv,ddof=1)),uniq_sd=float(np.std(uv,ddof=1)),
+                    _seqs=cv))
 per.close()
 print(f"[P4] DAT and between-unit now computed on identical rows for all {len(out)} models")
 print(f"[P7] rows dropped for failing the 7-valid-noun rule: {sum(drops.values())} -> {dict(drops)}")
 
 # ---------------- P5: one human baseline, same scorer ----------------
-hd=[];hb=[];hu=[];hy=defaultdict(list);huy=defaultdict(list)
+hd=[];hb=[];hu=[];hseq=[];hy=defaultdict(list);huy=defaultdict(list)
 YR={'olson_pnas2021':2022,'zunyi':2024,'zunyi2024':2024,'btb':2025,'hsbc2025':2025}
 for ri,r in enumerate(rd(HUMAN)):
     nouns=[r[f'word_{i}'] for i in range(1,11)]
@@ -159,12 +181,37 @@ for ri,r in enumerate(rd(HUMAN)):
     if ri not in UREF_ROWS:                     # exclude pool-building rows
         u=uniq(nouns)
         if u is not None: hu.append(u); huy[YR[r['source']]].append(u)
+    q=seq7(nouns)
+    if q is not None: hseq.append(q)
 human=dict(human_dat_mean=float(np.mean(hd)),human_between_mean=float(np.mean(hb)),
            human_uniq_mean=float(np.mean(hu)),n_dat=len(hd),n_btw=len(hb),n_uniq=len(hu),
            human_year={str(k):float(np.mean(v)) for k,v in sorted(hy.items())},
            human_uniq_year={str(k):float(np.mean(v)) for k,v in sorted(huy.items())})
 print(f"[uniqueness] human-only position-agnostic baseline {human['human_uniq_mean']:.2f} "
       f"(n={len(hu)}, pool-building rows excluded)")
+
+# ---- churn: each population scored against ITSELF, then put on the DAT scale ----
+h_churn_f=churn_scorer(hseq)
+h_churn=np.array([v for v in (h_churn_f(q) for q in hseq) if v is not None])
+m_seqs=[q for r in out for q in r['_seqs']]
+m_churn_f=churn_scorer(m_seqs)
+HC_M,HC_S=float(h_churn.mean()),float(h_churn.std(ddof=1))
+DAT_M,DAT_S=float(np.mean(hd)),float(np.std(hd,ddof=1))
+def to_dat_scale(v):        # match the HUMAN mean and sd to the human DAT distribution
+    return DAT_M+((v-HC_M)/HC_S)*DAT_S
+for r in out:
+    vals=[m_churn_f(q) for q in r['_seqs']]
+    vals=[v for v in vals if v is not None]
+    r['churn_raw']=float(np.mean(vals)); r['churn']=to_dat_scale(r['churn_raw'])
+    del r['_seqs']
+m_churn=np.array([v for v in (m_churn_f(q) for q in m_seqs) if v is not None])
+human['human_churn_raw']=HC_M
+human['human_churn']=to_dat_scale(HC_M)
+human['churn_calibration']={'human_raw_mean':HC_M,'human_raw_sd':HC_S,'dat_mean':DAT_M,'dat_sd':DAT_S}
+print(f"[churn] own-population rarity, on the DAT scale: human {human['human_churn']:.2f} "
+      f"(raw {HC_M:.4f}), machine {to_dat_scale(float(m_churn.mean())):.2f} (raw {m_churn.mean():.4f})")
+print(f"[churn] distinct words used: human {len(set(w for q in hseq for w in q))}, "
+      f"machine {len(set(w for q in m_seqs for w in q))}")
 print(f"[P5] single human baseline: DAT {human['human_dat_mean']:.2f} (n={len(hd)}), between {human['human_between_mean']:.2f} (n={len(hb)})")
 
 # ---------------- emit figure inputs ----------------
@@ -172,13 +219,16 @@ def frac(y,mo,d): return y+((mo-1)*30.44+d)/365.0
 recs_d=[[frac(r['y'],r['mo'],r['d']),r['y'],r['mo'],r['d'],r['prov'],r['intel'],r['model'],r['dat'],r['prec']] for r in out]
 recs_b=[[frac(r['y'],r['mo'],r['d']),r['y'],r['mo'],r['d'],r['prov'],r['intel'],r['model'],r['btw'],r['prec']] for r in out]
 recs_u=[[frac(r['y'],r['mo'],r['d']),r['y'],r['mo'],r['d'],r['prov'],r['intel'],r['model'],r['uniq'],r['prec']] for r in out]
+recs_c=[[frac(r['y'],r['mo'],r['d']),r['y'],r['mo'],r['d'],r['prov'],r['intel'],r['model'],r['churn'],r['prec']] for r in out]
 hyr={str(k):v for k,v in human['human_year'].items()}
 json.dump({"recs":recs_d,"human_year":hyr},open("/home/user/fix/permonth_data.json","w"))
 json.dump({"recs":recs_b,"human_year":hyr},open("/home/user/fix/between_data.json","w"))
 json.dump({"recs":recs_u,"human_year":{str(k):v for k,v in human['human_uniq_year'].items()}},
           open("/home/user/fix/uniqueness_data.json","w"))
+json.dump({"recs":recs_c,"human_year":{}},open("/home/user/fix/churn_data.json","w"))
 json.dump({"human_dat_mean":human['human_dat_mean'],"human_between_mean":human['human_between_mean'],
-           "human_uniq_mean":human['human_uniq_mean']},
+           "human_uniq_mean":human['human_uniq_mean'],"human_churn_mean":human['human_churn'],
+           "churn_calibration":human['churn_calibration']},
           open("/home/user/fix/human_avg.json","w"))
 json.dump(human,open("/home/user/fix/human_baselines_canonical.json","w"),indent=1)
 json.dump(sorted(out,key=lambda r:-r['dat']),open("/home/user/fix/model_summary.json","w"),indent=1)

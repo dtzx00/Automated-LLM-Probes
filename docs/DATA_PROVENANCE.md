@@ -287,3 +287,73 @@ filled DAT markers, open uniqueness markers, an arrow per model showing the dire
 shift, and gap shading for the OpenAI and Claude lineages).
 `results/fig3_uniqueness_only.png` shows uniqueness alone.
 Both keep the shared y range 70.6 to 86.3 so they stay directly comparable with figure 1.
+
+## Second uniqueness measure: repetition within one's own population (2026-07-29)
+
+Added because the reference-based measure cannot detect repetition, which is the thing we most
+want to claim about models.
+
+### The defect it fixes
+
+`uniqueness_human_agnostic` is mean distance to the centroid of a human reference pool. Distance
+to a fixed point is **blind to how often a word is used**. Worked examples from our own data:
+
+| Word | Share of machine tokens | Share of human tokens | Reference-based uniqueness |
+|---|---|---|---|
+| freedom | 3.41% | 0.05% | 82.31 (above the human mean of 80.59) |
+| mountain | 5.81% | 0.50% | 76.58 |
+| chair | 5.01% | 0.82% | 78.31 |
+| ocean | 3.53% | 0.47% | 76.55 |
+
+"freedom" is 68 times over-represented in machine output and still scores above the human
+average, because it happens to sit far from the average human word. The measure rewards being
+atypical, not being rare.
+
+More generally: **any per-response score against a fixed external reference is mathematically
+incapable of seeing self-repetition.** Two identical responses receive identical scores whether
+one model or ten thousand produced them. Repetition is a property of the population, not of a
+response in isolation.
+
+### The measure
+
+`uniqueness_own_population` = mean over the 7 nouns of −log10(share of that population's
+responses containing the word), then placed on the DAT scale by matching the human mean and
+standard deviation to the human DAT distribution.
+
+Each group is scored against itself — humans against the human corpus, machines against the
+pooled 59-model corpus — so the design is symmetric and does not reintroduce the contaminated
+reference problem, where machines were scored against a pool whose machine half depended on
+which models we happened to collect.
+
+The calibration means human uniqueness equals human DAT (78.45) by construction, so any machine
+value is read directly as a departure from the human relationship between the two measures.
+
+### Result
+
+| Measure, on the DAT scale | Human | Machine | Difference | d |
+|---|---|---|---|---|
+| Within-person DAT | 78.45 | 78.01 | 0.32 lower | −0.058 |
+| Uniqueness vs human reference | 78.45 | 76.26 | 2.07 lower | −0.364 |
+| **Uniqueness within own population** | **78.45** | **62.96** | **15.5 lower** | **−2.646** |
+
+**All 59 models fall below the human level**, range 56.53 to 72.41. Most repetitive:
+GPT-4.1-mini 56.5, Grok-4.20-nonreason 58.4, Hunyuan-Hy3 58.5. Least: DeepSeek-V3.2 72.4,
+Qwen3.7-Max 69.9, Claude-Opus-5 69.6.
+
+Not a sample-size artefact: subsampling the machine corpus to the human n of 11,529 five times
+gave 62.86 to 62.92 against 62.96 for the full corpus.
+
+### Honest caveat
+
+This is closely related to the vocabulary result — humans use 8,418 distinct words across all
+responses against 1,118 for machines — and should be presented as the per-response expression of
+that fact, not as independent evidence. It also depends on defining the machine population as the
+pooled corpus. A within-model variant, scoring each model's 500 responses against only itself,
+answers a different question (does a single model repeat itself) and has not been computed.
+
+### Figures
+
+- `results/fig4_repetition_with_dat.png` — DAT and this measure together, with a drop arrow per
+  model. The human baselines coincide by construction, so one line is drawn.
+- `results/fig5_repetition_only.png` — this measure alone.
+Both use y range 55.5 to 87.0, which must cover the churn range and the DAT range together.
