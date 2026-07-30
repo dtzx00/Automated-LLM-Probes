@@ -357,3 +357,48 @@ answers a different question (does a single model repeat itself) and has not bee
   model. The human baselines coincide by construction, so one line is drawn.
 - `results/fig5_repetition_only.png` — this measure alone.
 Both use y range 55.5 to 87.0, which must cover the churn range and the DAT range together.
+
+## Unit of analysis: a model is not a person (settled 2026-07-29)
+
+Each human contributed one response, so 11,529 humans are 11,529 independent sources. A model's
+~500 responses are 500 draws from one generator, not one individual answering repeatedly.
+Treating a model as a person is not a compatible comparison, so the machine population is the
+**pooled 59-model corpus** and the unit of analysis is the response. A within-model repetition
+variant was considered and deliberately not built.
+
+### Pre-empting the obvious objection: "you only had 59 generators"
+
+Vocabulary diversity grows with the number of independent sources, so part of the machine
+narrowness could in principle be source count rather than narrowness per source. It is not.
+Holding total responses constant at 2,000 and varying only how many models supply them:
+
+| Sources | Distinct words |
+|---|---|
+| 1 model | 141 |
+| 2 models | 157 |
+| 5 models | 341 |
+| 10 models | 379 |
+| 20 models | 422 |
+| 40 models | 478 |
+| 59 models | 484 |
+| 2,000 humans | 3,351 |
+
+Machine vocabulary **saturates**: five models already deliver 70% of what all 59 deliver, and
+going from 40 to 59 adds 1%. Twelve times more generators buys 43% more vocabulary. All 59
+models together reach 14% of what 2,000 people produce. Adding models would not close the gap,
+which is the strong form of the collective-narrowness claim and is now measured rather than
+asserted.
+
+### A nuance that should shape the wording
+
+Mean pairwise Jaccard overlap between two models' vocabularies is **0.225**. The same statistic
+for 59 equal-sized groups of humans is **0.217** — effectively identical. No word is used by all
+59 models.
+
+So "models churn out the same words as each other" is too strong. Relative to how much each one
+says, models are no more redundant with each other than human subgroups are. The difference is
+scale: mean per-model vocabulary is 129 distinct words, and the union across all 59 models is
+1,131 against 8,418 for humans.
+
+The accurate claim is therefore: **each generator draws from a small vocabulary, and pooling
+generators does not recover the human range.** Not: models are copies of one another.
