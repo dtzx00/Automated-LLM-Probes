@@ -55,8 +55,8 @@ carry an `identity_flag` where the label and the endpoint disagree. See
 
 ## Figures
 
-Three figures, all rendered from the shared style module `analysis/overtime_style.py` at
-true 16:9 (3200×1800) with identical x and y ranges so they are directly comparable.
+All figures render from the shared style module `analysis/overtime_style.py` at true 16:9
+(3200×1800) on one shared y range of 56 to 86, so any two are directly comparable.
 
 | Figure | Script | Output |
 |---|---|---|

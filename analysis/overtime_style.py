@@ -43,7 +43,6 @@ def load_all():
     models.sort(key=lambda m: dat[m][0])
     return dat,btw,hav["human_dat_mean"],hav["human_between_mean"],models
 
-CHURN_YLIM=(55.5,87.0)   # churn spans 56.5-72.3 and must also show the DAT range 71.3-85.9
 def load_uniq():
     """PRIMARY loader: DAT + uniqueness against a position-agnostic, HUMAN-ONLY reference.
 
@@ -75,7 +74,9 @@ def load_churn():
 def limits(dat,models):
     ax_=[dat[m][0] for m in models]
     return min(ax_)-2.6/12, max(ax_)+0.6/12
-YLIM=(70.6,86.3)          # covers DAT 71.3-85.9 and uniqueness 77.0-83.4, plus both human baselines
+YLIM=(56.0,86.0)          # one shared range for EVERY figure: covers DAT 71.3-85.9,
+                          # uniqueness-vs-human 77.0-83.4 and own-population uniqueness 56.5-72.4
+CHURN_YLIM=YLIM           # alias kept so older figure scripts stay valid
 FIGSIZE=(16,9); DPI=200   # saved WITHOUT tight bbox -> exactly 3200x1800 = true 16:9
 
 def new_fig():
@@ -83,7 +84,7 @@ def new_fig():
     fig.subplots_adjust(left=0.055,right=0.987,top=0.902,bottom=0.185)
     return fig,ax
 
-def frame(ax,xmin,xmax,title,ylim=None,ystep=2):
+def frame(ax,xmin,xmax,title,ylim=None,ystep=4):
     ax.set_xlim(tx(xmin),tx(xmax)); ax.set_ylim(*(ylim or YLIM))
     yr=[2023,2024,2025,2026]
     ax.set_xticks([tx(y) for y in yr]); ax.set_xticklabels([str(y) for y in yr])
