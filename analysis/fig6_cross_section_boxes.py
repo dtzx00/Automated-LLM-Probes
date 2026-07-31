@@ -17,6 +17,11 @@ ROOT = sys.argv[1] if len(sys.argv) > 1 else "/home/user/verify"
 DATA = os.environ.get("FIG_DATA", f"{ROOT}/analysis/data")
 OUT  = os.environ.get("FIG_OUT",  f"{ROOT}/results")
 SHOW_TITLE = os.environ.get("FIG_TITLE", "1") == "1"
+# One shared y range on both panels so the two measures are read on the same scale
+# (set by Dawei 2026-07-31). The human DAT tail runs below 50, so any series whose range
+# falls outside the window gets its true bound labelled at the axis rather than hidden.
+BOX_YLIM = tuple(float(x) for x in os.environ.get("FIG_BOX_YLIM", "50,100").split(","))
+BOX_YSTEP = float(os.environ.get("FIG_BOX_YSTEP", "5"))
 
 HUMAN, MACHINE = "#5E348B", "#3CB7B0"        # human purple / machine teal
 INK, MUTED, GRID = "#1a1420", "#6b6470", "#cccccc"
@@ -41,9 +46,18 @@ def stats(v):
                 p5=p5, p95=p95, lo=v.min(), hi=v.max())
 
 def box(ax, x, s, color, W=0.40):
-    ax.plot([x, x], [s['lo'], s['hi']], color=color, lw=1.7, alpha=0.32, zorder=2)
-    for y in (s['lo'], s['hi']):
-        ax.plot([x - 0.055, x + 0.055], [y, y], color=color, lw=1.7, alpha=0.32, zorder=2)
+    ylo, yhi = ax.get_ylim()
+    lo, hi = max(s['lo'], ylo), min(s['hi'], yhi)
+    ax.plot([x, x], [lo, hi], color=color, lw=1.7, alpha=0.32, zorder=2)
+    for y, true_v, out in ((lo, s['lo'], s['lo'] < ylo), (hi, s['hi'], s['hi'] > yhi)):
+        if out:      # range continues past the axis: caret plus the true bound
+            ax.scatter([x], [y], marker='v' if true_v == s['lo'] else '^', s=95, color=color,
+                       alpha=0.55, zorder=3, clip_on=False)
+            ax.annotate(f"min {true_v:.1f}" if true_v == s['lo'] else f"max {true_v:.1f}",
+                        xy=(x + 0.085, y), ha='left', va='center', fontsize=16.5,
+                        color=color, alpha=0.85, zorder=7)
+        else:
+            ax.plot([x - 0.055, x + 0.055], [y, y], color=color, lw=1.7, alpha=0.32, zorder=2)
     ax.plot([x, x], [s['p5'], s['q1']], color=color, lw=2.7, zorder=3)
     ax.plot([x, x], [s['q3'], s['p95']], color=color, lw=2.7, zorder=3)
     for y in (s['p5'], s['p95']):
@@ -84,8 +98,8 @@ def render(hv, mv, ylab, title, sub, fname):
     d = (ms['mean'] - hs['mean']) / np.sqrt(((hs['n']-1)*hs['sd']**2 + (ms['n']-1)*ms['sd']**2) / (hs['n']+ms['n']-2))
     fig = plt.figure(figsize=(16, 9))
     ax = fig.add_axes([0.088, 0.135, 0.45, 0.735])
-    lo = min(hs['lo'], ms['lo']); hi = max(hs['hi'], ms['hi']); pad = (hi - lo) * 0.045
-    ax.set_ylim(lo - pad, hi + pad); ax.set_xlim(0.40, 2.60)
+    ax.set_ylim(*BOX_YLIM); ax.set_xlim(0.40, 2.60)
+    ax.set_yticks(np.arange(BOX_YLIM[0], BOX_YLIM[1] + 0.01, BOX_YSTEP))
     ax.grid(axis='y', color=GRID, lw=0.7, alpha=0.8, zorder=0); ax.set_axisbelow(True)
     ax.axhline(hs['mean'], color=HUMAN, lw=1.6, ls=':', alpha=0.55, zorder=1)
     box(ax, 1.0, hs, HUMAN, W=0.50)
