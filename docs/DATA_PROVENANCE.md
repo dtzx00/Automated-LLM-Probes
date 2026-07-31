@@ -444,3 +444,55 @@ DAT average stay at 24 of 59. Models above the human uniqueness average go from 
 Kimi-K2.5 scores 80.599 and now clears the 80.593 line, by 0.006. That model is on a knife edge and
 no argument should rest on it.
 
+---
+
+## 2026-07-31 (second change) — uniqueness is scored against a fresh random draw, not a fixed pool
+
+**Change.** No reference pool is kept. Every uniqueness score is now measured against **500
+reference responses drawn at random for that score**, and a response is never included in its own
+reference. Both humans and machines are scored this way. The reference population stays the human
+sample (11,531 responses with seven valid words): uniqueness means "unlike the people", so a
+reference containing machine words would move whenever the model line-up changed.
+
+`machine_data/between_unit_references/human_agnostic_5000words.txt` and
+`human_data/processed/uniqueness_reference_rows.txt` are retained for provenance but are **no
+longer used for scoring**. The legacy fixed-pool score is kept alongside the new one as
+`uniqueness_fixed_pool_legacy` in `analysis/data/response_scores_*.csv`.
+
+**Implementation.** All vectors are unit-norm and every response contributes exactly seven of them,
+so the centroid of a draw of responses equals the mean of those responses' own mean-vectors, and
+
+    score(i) = 100 * (1 - centroid(draw) . mean_vector(i))
+
+A redraw is therefore a 500-row gather and a dot product rather than rebuilding a word pool 45,010
+times. Seed 20260731, so the run is reproducible.
+
+**Is it biased? No. Is it noisy? Barely.** Measured on the human sample:
+
+| | mean | sd |
+|---|---|---|
+| full-population centroid (the estimand) | 80.5643 | 2.8945 |
+| 500 redrawn per response | 80.5646 | 2.8971 |
+
+Rescoring 400 responses 25 times with independent draws: per-response sd across redraws **0.150**,
+against a between-response sd of **2.88**. The group mean moves by sd **0.008** across redraws. So
+the draw adds about 5% of the signal sd as noise to an individual score and essentially nothing to
+any aggregate. Model means, over roughly 500 responses each, are stable to about 0.007.
+
+**Effect on the numbers.** The human line moves from 80.593 to **80.566**, and every score shifts
+slightly because the reference is now the whole human population rather than a 5,000-token
+subsample of it.
+
+| | fixed 5,000-token pool | resampled 500 responses |
+|---|---|---|
+| human uniqueness | 80.593 | **80.566** |
+| machine mean | 79.70 | **79.64** |
+| model range | 77.02–83.41 | **76.96–83.39** |
+| models above the human line | 17 of 59 | **15 of 59** |
+
+**Read the count as soft.** Models cluster at the line: the two nearest sit 0.02 and 0.03 away, and
+five are within 0.13. Across the three defensible reference constructions we have used, the count
+has been 15, 16 and 17. What does not move is the contrast — 24 of 59 clear the human line on
+within-person divergence, roughly 15 on uniqueness — and the 6.4-point band containing all 59
+models. Do not build an argument on the exact count.
+

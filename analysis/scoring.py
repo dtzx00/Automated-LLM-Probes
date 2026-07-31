@@ -94,3 +94,40 @@ def churn_scorer(word_sets):
     def f(seq):
         return float(np.mean([-np.log10(max(df.get(c, 0), 0.5) / n) for c in seq])) if len(seq) == 7 else None
     return f
+
+
+def make_resampled_uniq(ref_seqs, n_ref=500, seed=20260731):
+    """Uniqueness against a FRESH random draw of `n_ref` reference responses, per response.
+
+    No fixed reference pool is kept. Every score is a distance to a new random sample of the
+    reference population, and a response is never scored against itself.
+
+    Exact identity this uses: all vectors are unit-norm and every response contributes exactly
+    seven of them, so the centroid of a draw of responses is the mean of those responses' own
+    mean-vectors, and
+
+        score(i) = 100 * (1 - centroid(draw) . mean_vector(i))
+
+    That makes a per-response redraw cheap instead of rebuilding a word pool 45,000 times.
+
+    Returns (scorer, R) where scorer(seq, self_idx=None) -> score and R is the matrix of
+    reference mean-vectors, one row per reference response.
+    """
+    R = np.vstack([np.mean([nvec(w) for w in s], axis=0) for s in ref_seqs])
+    N = R.shape[0]
+    rng = np.random.default_rng(seed)
+
+    def mean_vec(seq):
+        return np.mean([nvec(w) for w in seq], axis=0)
+
+    def scorer(seq, self_idx=None):
+        if seq is None: return None
+        pick = rng.choice(N, n_ref + 1, replace=False)
+        if self_idx is not None:
+            pick = pick[pick != self_idx][:n_ref]
+        else:
+            pick = pick[:n_ref]
+        c = R[pick].mean(axis=0)
+        return 100.0 * (1.0 - float(c @ mean_vec(seq)))
+
+    return scorer, R
