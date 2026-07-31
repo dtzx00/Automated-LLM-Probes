@@ -124,9 +124,10 @@ def render(hv, mv, ylab, title, sub, fname):
 
 BOXNOTE = ("box = IQR  \u00b7  line = median  \u00b7  diamond = mean  \u00b7  "
            "whisker caps = 5th/95th percentile  \u00b7  thin line = full range")
-render(col(H, 'dat_score'), col(M, 'dat_score'), "Divergence score",
+MATCHED = lambda r: r['matched'] == '1'
+render(col(H, 'dat_score', MATCHED), col(M, 'dat_score'), "Divergence score",
        "Within-person divergence", BOXNOTE, "fig6_box_within_person.png")
-# uniqueness: human rows that BUILT the reference pool are excluded (no self-inclusion)
-render(col(H, 'uniqueness_human_agnostic', lambda r: r['in_reference_pool'] == '0'),
+# both panels use the identical matched human sample
+render(col(H, 'uniqueness_human_agnostic', MATCHED),
        col(M, 'uniqueness_human_agnostic'), "Uniqueness score",
        "Between-person uniqueness", BOXNOTE, "fig7_box_between_person.png")

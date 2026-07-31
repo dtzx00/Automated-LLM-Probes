@@ -17,11 +17,11 @@ Both measures are computed on **identical rows**. Earlier versions computed DAT 
 
 ## Human baseline
 
-One baseline, in `machine_data/human_avg_baselines.json`: DAT 78.45 (n=11,597), between-unit 80.11 (n=11,531), from 12,147 respondents across 5 sources (olson_pnas2021, btb, zunyi, zunyi2024, hsbc2025).
+One baseline, in `machine_data/human_avg_baselines.json`: DAT 78.42 (n=11,529), between-unit 80.11 (n=11,531), from 12,147 respondents across 5 sources (olson_pnas2021, btb, zunyi, zunyi2024, hsbc2025).
 
 A second, conflicting figure of 78.69 previously circulated. That was the legacy `word_dat_score` column, which used a different vocabulary filter. It has been superseded. Use 78.45 for anything where humans and machines are compared, because only that value is produced by the same scorer as the machine numbers.
 
-Collection-year assignment for the year-wise baseline: olson_pnas2021 → 2022, zunyi and zunyi2024 → 2024, btb and hsbc2025 → 2025. The zunyi and btb assignments were inferred rather than read from the source files. **Reviewed and accepted as the project convention on 2026-07-29; treat them as settled, not as an open question.** They set only the x-position of the year-wise human baseline markers and enter no score: the headline human baselines (DAT 78.45, between-person 80.11) are pooled across all sources and are unaffected by year assignment.
+Collection-year assignment for the year-wise baseline: olson_pnas2021 → 2022, zunyi and zunyi2024 → 2024, btb and hsbc2025 → 2025. The zunyi and btb assignments were inferred rather than read from the source files. **Reviewed and accepted as the project convention on 2026-07-29; treat them as settled, not as an open question.** They set only the x-position of the year-wise human baseline markers and enter no score: the headline human baselines (DAT 78.42, between-person 80.11; see the 2026-07-31 entry) are pooled across all sources and are unaffected by year assignment.
 
 ## Release dates
 
@@ -402,3 +402,45 @@ scale: mean per-model vocabulary is 129 distinct words, and the union across all
 
 The accurate claim is therefore: **each generator draws from a small vocabulary, and pooling
 generators does not recover the human range.** Not: models are copies of one another.
+
+---
+
+## 2026-07-31 — one matched human sample across every measure
+
+**Problem.** The human n differed by measure. DAT used all 11,597 scoreable responses, while the
+uniqueness baseline used only the 5,766 responses that did *not* help build the 5,000-token
+reference pool. A within-person figure and a between-person figure therefore described different
+halves of the human sample, which is not a defensible pairing.
+
+**Why the exclusion existed, and why it was not worth its cost.** The concern was self-inclusion:
+a response being scored against a pool it contributed to. Measured, that concern is negligible.
+The pool acts only through its centroid, so one response contributes 7 word tokens out of 5,000,
+about 0.14% of the yardstick. Empirically:
+
+| | n | mean |
+|---|---|---|
+| held-out half (the old baseline) | 5,766 | 80.620 |
+| pool-building half, scored against its own pool | 5,765 | 80.567 |
+| every human response | 11,531 | 80.594 |
+
+A 0.026 shift in the mean was being bought with a 50% loss of the human sample.
+
+**Change.** A human response is now included only if *every* measure can be computed on it, and all
+measures use that one set. The pool itself is unchanged — it is still built from the rows listed in
+`human_data/processed/uniqueness_reference_rows.txt`, which are now also scored.
+`analysis/data/response_scores_human.csv` carries a `matched` column so the sample is inspectable.
+Machine responses were already all-or-nothing on the same rows (33,481).
+
+**Effect on the baselines.**
+
+| baseline | before | after |
+|---|---|---|
+| human DAT | 78.45 (n=11,597) | **78.42** (n=11,529) |
+| human uniqueness | 80.62 (n=5,766) | **80.59** (n=11,529) |
+| human between-person (retired measure) | 80.11 (n=11,531) | **80.11** (n=11,529) |
+
+**Effect on results.** Model scores are untouched; only the human line moves. Models above the human
+DAT average stay at 24 of 59. Models above the human uniqueness average go from 16 to **17 of 59**:
+Kimi-K2.5 scores 80.599 and now clears the 80.593 line, by 0.006. That model is on a knife edge and
+no argument should rest on it.
+

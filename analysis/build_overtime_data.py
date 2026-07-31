@@ -99,27 +99,35 @@ hd=[];hb=[];hu=[];hseq=[];hy=defaultdict(list);huy=defaultdict(list)
 YR={'olson_pnas2021':2022,'zunyi':2024,'zunyi2024':2024,'btb':2025,'hsbc2025':2025}
 hslim=open("/home/user/fix/response_scores_human.csv","w",newline='')
 hwtr=csv.writer(hslim); hwtr.writerow(["row_index","source","year","dat_score","between_unit_posaware",
-                                       "uniqueness_human_agnostic","in_reference_pool"])
+                                       "uniqueness_human_agnostic","in_reference_pool","matched"])
+# ONE MATCHED HUMAN SAMPLE (2026-07-31). A response counts only if every measure can be
+# computed on it, so the within-person and between-person figures compare exactly the same
+# people. Two things changed here:
+#  1. Pool-building rows are no longer excluded from the uniqueness baseline. The pool acts
+#     only through its centroid of 5,000 word tokens, so a response contributes 7 tokens
+#     (0.14%) to the yardstick it is measured against. Measured bias: the pool-building half
+#     scores 80.567 against 80.620 for the held-out half, and scoring everyone moves the mean
+#     by 0.026. Discarding half the human sample to avoid that was not a good trade.
+#  2. All measures now use the same rows, so n is identical across figures.
 for ri,r in enumerate(rd(HUMAN)):
     nouns=[r[f'word_{i}'] for i in range(1,11)]
-    a=dat(nouns); b=bpa(nouns); u=None
-    if a is not None: hd.append(a); hy[YR[r['source']]].append(a)
-    if b is not None: hb.append(b)
-    if ri not in UREF_ROWS:                     # exclude pool-building rows
-        u=uniq(nouns)
-        if u is not None: hu.append(u); huy[YR[r['source']]].append(u)
-    q=seq7(nouns)
-    if q is not None: hseq.append(q)
+    a=dat(nouns); b=bpa(nouns); u=uniq(nouns); q=seq7(nouns)
+    keep = None not in (a,b,u,q)
+    if keep:
+        hd.append(a); hy[YR[r['source']]].append(a)
+        hb.append(b)
+        hu.append(u); huy[YR[r['source']]].append(u)
+        hseq.append(q)
     hwtr.writerow([ri,r['source'],YR[r['source']],
                    "" if a is None else f"{a:.6f}", "" if b is None else f"{b:.6f}",
-                   "" if u is None else f"{u:.6f}", int(ri in UREF_ROWS)])
+                   "" if u is None else f"{u:.6f}", int(ri in UREF_ROWS), int(keep)])
 hslim.close()
 human=dict(human_dat_mean=float(np.mean(hd)),human_between_mean=float(np.mean(hb)),
            human_uniq_mean=float(np.mean(hu)),n_dat=len(hd),n_btw=len(hb),n_uniq=len(hu),
            human_year={str(k):float(np.mean(v)) for k,v in sorted(hy.items())},
            human_uniq_year={str(k):float(np.mean(v)) for k,v in sorted(huy.items())})
 print(f"[uniqueness] human-only position-agnostic baseline {human['human_uniq_mean']:.2f} "
-      f"(n={len(hu)}, pool-building rows excluded)")
+      f"(n={len(hu)}, one matched human sample across all measures)")
 
 # ---- churn: each population scored against ITSELF, then put on the DAT scale ----
 h_churn_f=churn_scorer(hseq)

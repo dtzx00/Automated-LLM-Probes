@@ -4,7 +4,7 @@ Generated from `machine_data/models.csv`, the single source of truth. `analysis/
 
 Scores from `machine_data/processed/machine_analysis_canonical.csv` (33,481 responses), DAT and between-person on identical rows per model.
 
-Human baselines: DAT **78.45** (n=11,597), between-person **80.11** (n=11,531).
+Human baselines: DAT **78.42**, uniqueness **80.59**, between-person **80.11** — all on the same matched sample of **n=11,529** (see DATA_PROVENANCE.md, 2026-07-31).
 
 **Shift** = between-person relative to DAT (arrow direction in figure 2). **id type**: *pinned* = api id names a fixed dated snapshot; *alias* = rolling name whose target can change; *none* = not recorded. **Precision**: *exact* = announced or provider-verified date; *alias_unresolved* = a rolling alias was called and the answering build cannot be established.
 
