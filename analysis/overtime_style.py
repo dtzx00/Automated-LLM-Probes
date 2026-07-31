@@ -5,6 +5,7 @@ One module so the three figures cannot drift apart. Conventions:
   between-person       -> dotted lines, OPEN thick provider-edged markers
 Both figures share identical x and y limits so they are directly comparable.
 """
+import os
 import json, numpy as np
 import matplotlib; matplotlib.use('Agg')
 import matplotlib as mpl
@@ -74,14 +75,20 @@ def load_churn():
 def limits(dat,models):
     ax_=[dat[m][0] for m in models]
     return min(ax_)-2.6/12, max(ax_)+0.6/12
-YLIM=(56.0,86.0)          # one shared range for EVERY figure: covers DAT 71.3-85.9,
+# Presentation overrides, so a slide render is reproducible from this repo instead of a one-off
+# script: FIG_YLIM narrows the shared y range, FIG_NOTITLE drops the in-figure title (a deck sets
+# its own headline and reclaims the reserved space), FIG_OUT redirects the output directory.
+_YL=os.environ.get("FIG_YLIM")
+YLIM=tuple(float(x) for x in _YL.split(",")) if _YL else (56.0,86.0)
+                          # default: one shared range for EVERY figure: covers DAT 71.3-85.9,
                           # uniqueness-vs-human 77.0-83.4 and own-population uniqueness 56.5-72.4
+NOTITLE=os.environ.get("FIG_NOTITLE","0")=="1"
 CHURN_YLIM=YLIM           # alias kept so older figure scripts stay valid
 FIGSIZE=(16,9); DPI=200   # saved WITHOUT tight bbox -> exactly 3200x1800 = true 16:9
 
 def new_fig():
     fig,ax=plt.subplots(figsize=FIGSIZE)
-    fig.subplots_adjust(left=0.055,right=0.987,top=0.902,bottom=0.185)
+    fig.subplots_adjust(left=0.055,right=0.987,top=0.965 if NOTITLE else 0.902,bottom=0.185)
     return fig,ax
 
 def frame(ax,xmin,xmax,title,ylim=None,ystep=4):
@@ -97,7 +104,7 @@ def frame(ax,xmin,xmax,title,ylim=None,ystep=4):
     ax.set_axisbelow(True); ax.spines[['top','right']].set_visible(False)
     ax.set_xlabel("Model API release date (year, by month and day) / human collection year",fontsize=17)
     ax.set_ylabel("Divergence score",fontsize=17)
-    ax.set_title(title,fontsize=15,weight='bold')
+    if not NOTITLE: ax.set_title(title,fontsize=15,weight='bold')
 
 # ---- drawing primitives ----
 def dat_markers(ax,dat,models,alpha):
@@ -167,6 +174,8 @@ def legend(ax,dat,models,extra,open_style=False):
               fontsize=10,framealpha=0.95,handletextpad=0.5,columnspacing=1.2,borderpad=0.8)
 
 def save(fig,path):
+    _o=os.environ.get("FIG_OUT")
+    if _o: path=os.path.join(_o,os.path.basename(path))
     fig.savefig(path,dpi=DPI)   # no bbox_inches -> canvas stays exactly 16:9
     plt.close(fig)
     from PIL import Image

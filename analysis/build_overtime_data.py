@@ -12,89 +12,10 @@ MAST  = f"{ROOT}/machine_data/processed/machine_all_merged.csv"
 HUMAN = f"{ROOT}/human_data/processed/human_dat_all.csv"
 REFD  = f"{ROOT}/machine_data/between_unit_references"
 NEWF  = {"Kimi-K3":"topup_moonshot_k3","Claude-Opus-5":"topup_anthropic_opus5","GPT-5.6-Sol":"topup_openai_gpt56sol"}
-V = pickle.load(open("/home/user/repro/models/glove_olson.pickle","rb"))
-
-# ---------------- scorers (Olson 2021 exact) ----------------
-def validate(w):
-    c=re.sub(r"[^a-zA-Z- ]+","",str(w)).strip().lower()
-    if len(c)<=1: return None
-    cands=[re.sub(r" +","-",c),re.sub(r" +","",c)] if " " in c else [c]+([re.sub(r"-+","",c)] if "-" in c else [])
-    for x in cands:
-        if x in V: return x
-    return None
-def dat(words,minimum=7):
-    u=[]
-    for w in words:
-        v=validate(w)
-        if v and v not in u: u.append(v)
-    if len(u)<minimum: return None
-    s=u[:minimum]
-    return sum(ssd.cosine(V[a],V[b]) for a,b in itertools.combinations(s,2))/(minimum*(minimum-1)/2)*100
-_n={}
-def nvec(w):
-    v=_n.get(w)
-    if v is None:
-        r=V.get(w)
-        if r is None: return None
-        v=np.asarray(r,float); v/= (np.linalg.norm(v)+1e-12); _n[w]=v
-    return v
-def cln(w):
-    c=re.sub(r'[^a-zA-Z- ]+','',str(w)).strip().lower()
-    return c if (c and len(c.split(' '))==1 and c in V) else None
-refm=[np.vstack([nvec(w) for w in (x.strip() for x in open(f"{REFD}/rank{k}_ref.txt")) if w and nvec(w) is not None]) for k in range(1,8)]
-_fc=[dict() for _ in range(7)]
-def fs(c,k):
-    s=_fc[k].get(c)
-    if s is None: s=float(np.mean(1-(refm[k]@nvec(c))))*100; _fc[k][c]=s
-    return s
-def bpa(cells):
-    seq=[]
-    for w in cells:
-        c=cln(w)
-        if c: seq.append(c)
-        if len(seq)==7: break
-    return float(np.mean([fs(c,k) for k,c in enumerate(seq)])) if len(seq)==7 else None
-
-# ---- PRIMARY uniqueness measure: position-agnostic, HUMAN-ONLY reference ----
-# Design decision (2026-07-29): the reference contains only human words and is pooled across
-# positions. This makes the measure invariant to which models are in the dataset and gives it
-# one clean meaning - how unlike the human population a response is. The balanced half-machine
-# per-rank pools are retained as `bpa` for comparison only.
-UPOOL=f"{ROOT}/machine_data/between_unit_references/human_agnostic_5000words.txt"
-_uc=np.mean(np.vstack([nvec(w) for w in (x.strip() for x in open(UPOOL)) if w and nvec(w) is not None]),axis=0)
-_ucache={}
-def _us(c):
-    s=_ucache.get(c)
-    if s is None: s=100*(1-float(_uc@nvec(c))); _ucache[c]=s
-    return s
-def uniq(cells):
-    seq=[]
-    for w in cells:
-        c=cln(w)
-        if c: seq.append(c)
-        if len(seq)==7: break
-    return float(np.mean([_us(c) for c in seq])) if len(seq)==7 else None
-
-# ---- SECOND measure: repetition ("churn") = rarity of your words in your OWN population ----
-# A per-response score against a FIXED EXTERNAL reference cannot see self-repetition: two
-# identical responses get identical scores no matter how many models produced them. To capture
-# "the models churn out the same words", each group is scored against its own population.
-# uniqueness_churn = mean over the 7 nouns of -log10(share of own-population responses using it).
-# Symmetric by construction: humans vs the human corpus, machines vs the pooled machine corpus.
-def churn_scorer(word_sets):
-    df=Counter()
-    for ws in word_sets: df.update(set(ws))
-    n=len(word_sets)
-    def f(seq):
-        return float(np.mean([-np.log10(max(df.get(c,0),0.5)/n) for c in seq])) if len(seq)==7 else None
-    return f
-def seq7(cells):
-    seq=[]
-    for w in cells:
-        c=cln(w)
-        if c: seq.append(c)
-        if len(seq)==7: break
-    return seq if len(seq)==7 else None
+# ---------------- scorers: single source of truth in analysis/scoring.py ----------------
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from scoring import init as _scoring_init, validate, dat, cln, seq7, bpa, uniq, churn_scorer
+V = _scoring_init(ROOT)
 
 # rows used to BUILD the pool -> excluded from the human baseline (no self-inclusion)
 UREF_ROWS=set(int(x) for x in open(f"{ROOT}/human_data/processed/uniqueness_reference_rows.txt")
@@ -151,6 +72,8 @@ print(f"[P2/P3] models assembled: {len(resp)}  (name-casing merged, 3 new models
 # ---------------- P4/P7: score DAT + between-unit on the SAME rows ----------------
 out=[]; drops=Counter()
 per=open("/home/user/fix/canonical_responses.csv","w",newline='')
+slim=open("/home/user/fix/response_scores_machine.csv","w",newline='')
+swtr=csv.writer(slim); swtr.writerow(["model_name","provider","intelligence","dat_score","between_unit_posaware","uniqueness_human_agnostic"])
 wtr=csv.writer(per); wtr.writerow(["model_name","provider","intelligence","region","reasoning",
   "release_date","date_precision"]+[f"noun_{i}" for i in range(10)]+["dat_score","between_unit_posaware","uniqueness_human_agnostic"])
 for n,rows in resp.items():
@@ -162,20 +85,24 @@ for n,rows in resp.items():
             drops[n]+=1; continue          # P7: explicit, symmetric drop
         dv.append(a); bv.append(b); uv.append(u); cv.append(q)
         wtr.writerow([n,m['prov'],m['intel'],m['reg'],m['reas'],ds,m['prec']]+list(nouns)+[f"{a:.6f}",f"{b:.6f}",f"{u:.6f}"])
+        swtr.writerow([n,m['prov'],m['intel'],f"{a:.6f}",f"{b:.6f}",f"{u:.6f}"])
     out.append(dict(model=n,prov=m['prov'],intel=m['intel'],y=m['y'],mo=m['mo'],d=m['d'],prec=m['prec'],
                     n=len(dv),dat=float(np.mean(dv)),btw=float(np.mean(bv)),uniq=float(np.mean(uv)),
                     dat_sd=float(np.std(dv,ddof=1)),btw_sd=float(np.std(bv,ddof=1)),uniq_sd=float(np.std(uv,ddof=1)),
                     _seqs=cv))
-per.close()
+per.close(); slim.close()
 print(f"[P4] DAT and between-unit now computed on identical rows for all {len(out)} models")
 print(f"[P7] rows dropped for failing the 7-valid-noun rule: {sum(drops.values())} -> {dict(drops)}")
 
 # ---------------- P5: one human baseline, same scorer ----------------
 hd=[];hb=[];hu=[];hseq=[];hy=defaultdict(list);huy=defaultdict(list)
 YR={'olson_pnas2021':2022,'zunyi':2024,'zunyi2024':2024,'btb':2025,'hsbc2025':2025}
+hslim=open("/home/user/fix/response_scores_human.csv","w",newline='')
+hwtr=csv.writer(hslim); hwtr.writerow(["row_index","source","year","dat_score","between_unit_posaware",
+                                       "uniqueness_human_agnostic","in_reference_pool"])
 for ri,r in enumerate(rd(HUMAN)):
     nouns=[r[f'word_{i}'] for i in range(1,11)]
-    a=dat(nouns); b=bpa(nouns)
+    a=dat(nouns); b=bpa(nouns); u=None
     if a is not None: hd.append(a); hy[YR[r['source']]].append(a)
     if b is not None: hb.append(b)
     if ri not in UREF_ROWS:                     # exclude pool-building rows
@@ -183,6 +110,10 @@ for ri,r in enumerate(rd(HUMAN)):
         if u is not None: hu.append(u); huy[YR[r['source']]].append(u)
     q=seq7(nouns)
     if q is not None: hseq.append(q)
+    hwtr.writerow([ri,r['source'],YR[r['source']],
+                   "" if a is None else f"{a:.6f}", "" if b is None else f"{b:.6f}",
+                   "" if u is None else f"{u:.6f}", int(ri in UREF_ROWS)])
+hslim.close()
 human=dict(human_dat_mean=float(np.mean(hd)),human_between_mean=float(np.mean(hb)),
            human_uniq_mean=float(np.mean(hu)),n_dat=len(hd),n_btw=len(hb),n_uniq=len(hu),
            human_year={str(k):float(np.mean(v)) for k,v in sorted(hy.items())},
