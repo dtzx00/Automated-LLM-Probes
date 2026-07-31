@@ -173,9 +173,12 @@ def legend(ax,dat,models,extra,open_style=False):
     ax.legend(handles=ph+ih+extra,loc='upper center',bbox_to_anchor=(0.5,-0.125),ncol=10,
               fontsize=10,framealpha=0.95,handletextpad=0.5,columnspacing=1.2,borderpad=0.8)
 
+RESULTS=os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"..","results"))
+
 def save(fig,path):
-    _o=os.environ.get("FIG_OUT")
-    if _o: path=os.path.join(_o,os.path.basename(path))
+    """Figures always land in <repo>/results unless FIG_OUT redirects them, so running a figure
+    script from anywhere updates the committed PNG instead of dropping a copy elsewhere."""
+    path=os.path.join(os.environ.get("FIG_OUT") or RESULTS, os.path.basename(path))
     fig.savefig(path,dpi=DPI)   # no bbox_inches -> canvas stays exactly 16:9
     plt.close(fig)
     from PIL import Image

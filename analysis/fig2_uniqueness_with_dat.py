@@ -20,4 +20,4 @@ legend(ax,dat,models,[
     Line2D([0],[0],color='#555',lw=2.4,alpha=0.50,label='Shift DAT to uniqueness'),
     Patch(facecolor='#555',alpha=0.10,label='Gap of scores'),
     Line2D([0],[0],color=HUMAN_PURPLE,lw=3,marker='o',ms=12,label='Human')])
-save(fig,"/home/user/fig2_uniqueness_with_dat.png")
+save(fig,"fig2_uniqueness_with_dat.png")

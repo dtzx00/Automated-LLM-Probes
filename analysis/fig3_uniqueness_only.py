@@ -14,4 +14,4 @@ legend(ax,dat,models,[Line2D([0],[0],marker='o',ls='none',markerfacecolor='white
                              markeredgewidth=2.6,ms=12,label='Uniqueness'),
                       Line2D([0],[0],color=HUMAN_PURPLE,lw=3,ls=':',marker='o',ms=12,label='Human')],
        open_style=True)
-save(fig,"/home/user/fig3_uniqueness_only.png")
+save(fig,"fig3_uniqueness_only.png")
