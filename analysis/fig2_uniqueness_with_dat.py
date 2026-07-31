@@ -13,7 +13,7 @@ shift_arrows(ax,dat,uniq,models)
 dat_markers(ax,dat,models,alpha=0.50)
 between_markers(ax,dat,uniq,models)
 frame(ax,xmin,xmax,"From Within-Person Divergence (DAT) to Uniqueness by Model Release Date\n"
-                   "Uniqueness measured against 500 human responses redrawn per score; arrow = direction of shift")
+                   "Uniqueness measured against 500 human responses redrawn per score; arrow = direction of shift",ylabel="Divergence / uniqueness score")
 legend(ax,dat,models,[
     Line2D([0],[0],marker='o',ls='none',color='#555',alpha=0.50,ms=12,label='Within-person (DAT)'),
     Line2D([0],[0],marker='o',ls='none',markerfacecolor='white',markeredgecolor='#555',markeredgewidth=2.6,ms=12,label='Uniqueness'),

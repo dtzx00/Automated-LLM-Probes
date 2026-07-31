@@ -92,7 +92,7 @@ def new_fig():
     fig.subplots_adjust(left=0.055,right=0.987,top=0.965 if NOTITLE else 0.902,bottom=0.185)
     return fig,ax
 
-def frame(ax,xmin,xmax,title,ylim=None,ystep=4):
+def frame(ax,xmin,xmax,title,ylim=None,ystep=4,ylabel="Divergence score"):
     ax.set_xlim(tx(xmin),tx(xmax)); ax.set_ylim(*(ylim or YLIM))
     yr=[2023,2024,2025,2026]
     ax.set_xticks([tx(y) for y in yr]); ax.set_xticklabels([str(y) for y in yr])
@@ -104,7 +104,7 @@ def frame(ax,xmin,xmax,title,ylim=None,ystep=4):
     ax.grid(which='minor',axis='x',color='#f2f2f2',lw=0.6,zorder=0)
     ax.set_axisbelow(True); ax.spines[['top','right']].set_visible(False)
     ax.set_xlabel("Model API release date (year, by month and day) / human collection year",fontsize=17)
-    ax.set_ylabel("Divergence score",fontsize=17)
+    ax.set_ylabel(ylabel,fontsize=17)
     if not NOTITLE: ax.set_title(title,fontsize=15,weight='bold')
 
 # ---- drawing primitives ----

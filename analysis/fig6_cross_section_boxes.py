@@ -78,7 +78,7 @@ def panel(ax, hv, mv, ylab, label):
     ax.set_xticklabels([f"Humans\n(n = {hs['n']:,})",
                         f"LLMs, {N_MODELS} models\n(n = {ms['n']:,})"], fontsize=16)
     ax.set_ylabel(ylab, fontsize=17)
-    if SHOW_TITLE: ax.set_title(label, fontsize=15, weight='bold')
+    ax.set_title(label, fontsize=15, weight='bold')   # panel label always shown
     d = (ms['mean'] - hs['mean']) / np.sqrt(((hs['n']-1)*hs['sd']**2 + (ms['n']-1)*ms['sd']**2)
                                             / (hs['n']+ms['n']-2))
     print(f"  {label:26} human {hs['mean']:.2f}/{hs['sd']:.2f} n={hs['n']}   "
@@ -86,7 +86,7 @@ def panel(ax, hv, mv, ylab, label):
           f"sd ratio {ms['sd']/hs['sd']:.3f}")
 
 fig, axes = plt.subplots(1, 2, figsize=FIGSIZE)
-fig.subplots_adjust(left=0.055, right=0.987, top=0.855 if SHOW_TITLE else 0.965,
+fig.subplots_adjust(left=0.055, right=0.987, top=0.855 if SHOW_TITLE else 0.935,
                     bottom=0.115, wspace=0.155)
 if SHOW_TITLE:
     fig.suptitle("Divergence and Uniqueness: Humans vs LLMs\nBox = IQR; line = median; "
