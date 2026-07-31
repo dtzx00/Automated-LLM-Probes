@@ -79,11 +79,12 @@ def limits(dat,models):
 # script: FIG_YLIM narrows the shared y range, FIG_NOTITLE drops the in-figure title (a deck sets
 # its own headline and reclaims the reserved space), FIG_OUT redirects the output directory.
 _YL=os.environ.get("FIG_YLIM")
-YLIM=tuple(float(x) for x in _YL.split(",")) if _YL else (56.0,86.0)
-                          # default: one shared range for EVERY figure: covers DAT 71.3-85.9,
-                          # uniqueness-vs-human 77.0-83.4 and own-population uniqueness 56.5-72.4
+YLIM=tuple(float(x) for x in _YL.split(",")) if _YL else (68.0,88.0)
+                          # 68-88 is shared by the three headline over-time figures (set by Dawei
+                          # 2026-07-31). Covers DAT 71.3-85.9 and uniqueness 77.0-83.4.
+CHURN_YLIM=(56.0,86.0)    # own-population uniqueness runs 56.5-72.4, so those two figures keep
+                          # their own range and pass it to frame() explicitly.
 NOTITLE=os.environ.get("FIG_NOTITLE","0")=="1"
-CHURN_YLIM=YLIM           # alias kept so older figure scripts stay valid
 FIGSIZE=(16,9); DPI=200   # saved WITHOUT tight bbox -> exactly 3200x1800 = true 16:9
 
 def new_fig():

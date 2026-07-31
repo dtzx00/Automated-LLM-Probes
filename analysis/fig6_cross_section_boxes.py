@@ -20,7 +20,7 @@ SHOW_TITLE = os.environ.get("FIG_TITLE", "1") == "1"
 # One shared y range on both panels so the two measures are read on the same scale
 # (set by Dawei 2026-07-31). The human DAT tail runs below 50, so any series whose range
 # falls outside the window gets its true bound labelled at the axis rather than hidden.
-BOX_YLIM = tuple(float(x) for x in os.environ.get("FIG_BOX_YLIM", "50,100").split(","))
+BOX_YLIM = tuple(float(x) for x in os.environ.get("FIG_BOX_YLIM", "60,100").split(","))
 BOX_YSTEP = float(os.environ.get("FIG_BOX_YSTEP", "5"))
 
 HUMAN, MACHINE = "#5E348B", "#3CB7B0"        # human purple / machine teal
