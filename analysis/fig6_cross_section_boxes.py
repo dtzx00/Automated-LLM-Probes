@@ -13,7 +13,7 @@ Env: FIG_BOX_YLIM (default "65,100"), FIG_BOX_YSTEP, FIG_NOTITLE / FIG_TITLE=0, 
 import os, sys, csv
 import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from overtime_style import HUMAN_PURPLE, LBL_BOX, FIGSIZE, save, plt, NOTITLE
+from overtime_style import HUMAN_PURPLE, LBL_BOX, FIGSIZE, save, plt, NOTITLE, vmargins
 from matplotlib.patches import Rectangle
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "/home/user/verify"
@@ -86,12 +86,12 @@ def panel(ax, hv, mv, ylab, label):
           f"sd ratio {ms['sd']/hs['sd']:.3f}")
 
 fig, axes = plt.subplots(1, 2, figsize=FIGSIZE)
-fig.subplots_adjust(left=0.055, right=0.987, top=0.855 if SHOW_TITLE else 0.935,
-                    bottom=0.115, wspace=0.155)
+_V = vmargins(top_in=1.305 if SHOW_TITLE else 0.585, bot_in=1.035)  # inches, so 16:7 crops the plot
+fig.subplots_adjust(left=0.055, right=0.987, top=_V["top"], bottom=_V["bottom"], wspace=0.155)
 if SHOW_TITLE:
     fig.suptitle("Divergence and Uniqueness: Humans vs LLMs\nBox = IQR; line = median; "
                  "diamond = mean; whiskers = 5th/95th percentile; thin line = full range",
-                 fontsize=15, weight='bold', y=0.965)
+                 fontsize=15, weight='bold', y=1-0.315/FIGSIZE[1])
 panel(axes[0], col(H, 'dat_score', MATCHED), col(M, 'dat_score'),
       "Divergence score", "Within a response")
 panel(axes[1], col(H, 'uniqueness_human_agnostic', MATCHED), col(M, 'uniqueness_human_agnostic'),

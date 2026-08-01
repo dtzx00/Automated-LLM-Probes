@@ -85,11 +85,24 @@ YLIM=tuple(float(x) for x in _YL.split(",")) if _YL else (68.0,88.0)
 CHURN_YLIM=(56.0,86.0)    # own-population uniqueness runs 56.5-72.4, so those two figures keep
                           # their own range and pass it to frame() explicitly.
 NOTITLE=os.environ.get("FIG_NOTITLE","0")=="1"
-FIGSIZE=(16,9); DPI=200   # saved WITHOUT tight bbox -> exactly 3200x1800 = true 16:9
+_SZ=os.environ.get("FIG_SIZE")     # "16,7" for the wide crop; default stays true 16:9
+FIGSIZE=tuple(float(x) for x in _SZ.split(",")) if _SZ else (16.0,9.0)
+DPI=int(os.environ.get("FIG_DPI","200"))   # no tight bbox -> 16x9@200 = 3200x1800, 16x7@300 = 4800x2100
+
+# Vertical space is reserved in INCHES, not in figure fractions, so shortening the canvas takes
+# the room out of the plot area and never out of the axis labels or the legend. The numbers below
+# reproduce the original 16:9 fractions exactly (top 0.902/0.965, bottom 0.185).
+TOP_IN=0.315 if NOTITLE else 0.882
+BOT_IN=1.665
+def vmargins(H=None,top_in=None,bot_in=None):
+    H=H or FIGSIZE[1]; t=TOP_IN if top_in is None else top_in; b=BOT_IN if bot_in is None else bot_in
+    return dict(top=1-t/H, bottom=b/H, axes_h=H-t-b)
+_LEG_GAP_IN=0.125*(9-TOP_IN-BOT_IN)   # the old -0.125 anchor, expressed in inches
 
 def new_fig():
+    v=vmargins()
     fig,ax=plt.subplots(figsize=FIGSIZE)
-    fig.subplots_adjust(left=0.055,right=0.987,top=0.965 if NOTITLE else 0.902,bottom=0.185)
+    fig.subplots_adjust(left=0.055,right=0.987,top=v["top"],bottom=v["bottom"])
     return fig,ax
 
 def frame(ax,xmin,xmax,title,ylim=None,ystep=4,ylabel="Divergence score"):
@@ -171,7 +184,8 @@ def legend(ax,dat,models,extra,open_style=False):
         ph=[Line2D([0],[0],marker='o',ls='none',color=PROV_COLOR.get(p,'#888'),ms=12,
                    label=PROV_LABEL.get(p,p)) for p in provs]
         ih=[Line2D([0],[0],marker=MARK[t],ls='none',color='#555',ms=13,label=INTEL_LABEL[t]) for t in MARK]
-    ax.legend(handles=ph+ih+extra,loc='upper center',bbox_to_anchor=(0.5,-0.125),ncol=10,
+    ax.legend(handles=ph+ih+extra,loc='upper center',
+              bbox_to_anchor=(0.5,-_LEG_GAP_IN/vmargins()["axes_h"]),ncol=10,
               fontsize=10,framealpha=0.95,handletextpad=0.5,columnspacing=1.2,borderpad=0.8)
 
 RESULTS=os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"..","results"))
@@ -180,7 +194,7 @@ def save(fig,path):
     """Figures always land in <repo>/results unless FIG_OUT redirects them, so running a figure
     script from anywhere updates the committed PNG instead of dropping a copy elsewhere."""
     path=os.path.join(os.environ.get("FIG_OUT") or RESULTS, os.path.basename(path))
-    fig.savefig(path,dpi=DPI)   # no bbox_inches -> canvas stays exactly 16:9
+    fig.savefig(path,dpi=DPI)   # no bbox_inches -> canvas keeps the exact FIGSIZE ratio
     plt.close(fig)
     from PIL import Image
     w,h=Image.open(path).size
