@@ -4,16 +4,22 @@
     left  - within-person divergence (DAT)
     right - between-person uniqueness
 
+The newest model from Moonshot, OpenAI and Anthropic is overlaid on the LLM box in each panel,
+in that lab's time-series colour and its intelligence-class marker, so the three flagships can be
+read against the distribution they came from. "Newest" is taken from the release dates, so the
+overlay follows the data instead of a hard-coded list.
+
 Styling is imported from overtime_style, not copied, so this cannot drift from the three
 over-time figures: same 16:9 canvas, same outer margins, same grid, same spines, same title and
 axis-label sizes. Reads the response-level scores written by build_overtime_data.py.
 
 Env: FIG_BOX_YLIM (default "65,100"), FIG_BOX_YSTEP, FIG_NOTITLE / FIG_TITLE=0, FIG_OUT.
 """
-import os, sys, csv
+import os, sys, csv, json
 import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from overtime_style import HUMAN_PURPLE, LBL_BOX, FIGSIZE, save, plt, NOTITLE, vmargins
+from overtime_style import (HUMAN_PURPLE, LBL_BOX, FIGSIZE, save, plt, NOTITLE, vmargins,
+                            PROV_COLOR, MARK, SIZE)
 from matplotlib.patches import Rectangle
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "/home/user/verify"
@@ -35,6 +41,53 @@ def col(path, field, where=None):
         if where and not where(r): continue
         if r[field] != "": out.append(float(r[field]))
     return np.array(out)
+
+FLAG_PROVS = ("moonshot", "openai", "anthropic")
+def latest_flagships():
+    """Newest released model per lab, from the same release dates the time-series figures use."""
+    best = {}
+    for r in json.load(open(f"{DATA}/permonth_data.json"))["recs"]:
+        fy, prov, intel, name = r[0], r[4], r[5], r[6]
+        if prov in FLAG_PROVS and (prov not in best or fy > best[prov][0]):
+            best[prov] = (fy, prov, name, intel)
+    return [best[p] for p in FLAG_PROVS if p in best]
+
+FLAGSHIPS = latest_flagships()
+MROWS = list(csv.DictReader(open(M, newline='')))
+def model_mean(name, field):
+    v = [float(r[field]) for r in MROWS if r['model_name'] == name and r[field] != ""]
+    return sum(v) / len(v)
+
+def flagships(ax, field, x=2.21, min_gap=23):
+    """Marker convention follows the MEASURE, as everywhere else: divergence is a filled marker,
+    uniqueness is an open one. x sits on the shoulder of the box so the median, mean and whisker
+    caps at the centre line stay readable.
+
+    Markers always sit at the true score. Only the LABELS are pushed apart, by min_gap points,
+    and the pushed stack is re-centred so it does not drift off the group it describes. On the
+    uniqueness panel the three flagships fall within 3.9 points of each other, so without this
+    the labels overlap.
+    """
+    filled = field == 'dat_score'
+    items = sorted(((model_mean(n, field), p, n, i) for _f, p, n, i in FLAGSHIPS),
+                   key=lambda t: t[0])
+    dpi = ax.figure.dpi
+    true_pt = [ax.transData.transform((x, y))[1] / dpi * 72 for y, *_ in items]
+    lab_pt = list(true_pt)
+    for k in range(1, len(lab_pt)):
+        lab_pt[k] = max(lab_pt[k], lab_pt[k-1] + min_gap)
+    drift = (sum(true_pt) - sum(lab_pt)) / len(lab_pt)
+    for (y, prov, name, intel), t, l in zip(items, true_pt, lab_pt):
+        c = PROV_COLOR[prov]
+        if filled:
+            ax.scatter([x], [y], marker=MARK[intel], s=SIZE[intel], color=c,
+                       edgecolors='white', linewidths=1.6, zorder=8)
+        else:
+            ax.scatter([x], [y], marker=MARK[intel], s=SIZE[intel]*0.855, facecolors='white',
+                       edgecolors=c, linewidths=3.2, zorder=8)
+        ax.annotate(name, (x, y), textcoords="offset points", xytext=(17, l + drift - t),
+                    ha='left', va='center', fontsize=13, weight='bold', color=c,
+                    bbox=LBL_BOX, zorder=9)
 
 def stats(v):
     q1, med, q3 = np.percentile(v, [25, 50, 75])
@@ -66,9 +119,9 @@ def box(ax, x, s, color, W=0.34):
     ax.scatter([x], [s['mean']], marker='D', s=175, facecolors='white', edgecolors=color,
                linewidths=2.8, zorder=6)
 
-def panel(ax, hv, mv, ylab, label):
+def panel(ax, hv, mv, ylab, label, field):
     hs, ms = stats(hv), stats(mv)
-    ax.set_xlim(0.35, 2.65); ax.set_ylim(*YLIM)
+    ax.set_xlim(0.35, 2.98); ax.set_ylim(*YLIM)   # right lane holds the flagship labels
     ax.set_yticks(np.arange(YLIM[0], YLIM[1] + 0.01, YSTEP))
     ax.grid(which='major', axis='y', color='#dcdcdc', lw=1.0, zorder=0)
     ax.set_axisbelow(True); ax.spines[['top', 'right']].set_visible(False)
@@ -79,6 +132,7 @@ def panel(ax, hv, mv, ylab, label):
                         f"LLMs, {N_MODELS} models\n(n = {ms['n']:,})"], fontsize=16)
     ax.set_ylabel(ylab, fontsize=17)
     ax.set_title(label, fontsize=15, weight='bold')   # panel label always shown
+    flagships(ax, field)
     d = (ms['mean'] - hs['mean']) / np.sqrt(((hs['n']-1)*hs['sd']**2 + (ms['n']-1)*ms['sd']**2)
                                             / (hs['n']+ms['n']-2))
     print(f"  {label:26} human {hs['mean']:.2f}/{hs['sd']:.2f} n={hs['n']}   "
@@ -93,7 +147,10 @@ if SHOW_TITLE:
                  "diamond = mean; whiskers = 5th/95th percentile; thin line = full range",
                  fontsize=15, weight='bold', y=1-0.315/FIGSIZE[1])
 panel(axes[0], col(H, 'dat_score', MATCHED), col(M, 'dat_score'),
-      "Divergence score", "Within a response")
+      "Divergence score", "Within a response", 'dat_score')
 panel(axes[1], col(H, 'uniqueness_human_agnostic', MATCHED), col(M, 'uniqueness_human_agnostic'),
-      "Uniqueness score", "Against the population")
+      "Uniqueness score", "Against the population", 'uniqueness_human_agnostic')
+for _fy, _p, _n, _i in FLAGSHIPS:
+    print(f"  flagship {_n:16} {_p:10} divergence {model_mean(_n,'dat_score'):.2f}  "
+          f"uniqueness {model_mean(_n,'uniqueness_human_agnostic'):.2f}")
 save(fig, "fig6_cross_section_boxes.png")
