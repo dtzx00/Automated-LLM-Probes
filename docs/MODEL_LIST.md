@@ -266,7 +266,7 @@ Human baselines: DAT **78.42**, uniqueness **80.57**, between-person **80.11** â
 | Kimi-K2.6 | 2026-04-21 | forum.moonshot.ai/t/meet-kimi-k2-6 (2026-04-21) |
 | GPT-5.5 | 2026-04-22 | openai /v1/models created |
 | DeepSeek-V4-Flash | 2026-04-24 | api-docs.deepseek.com/updates (2026-04-24) |
-| DeepSeek-V4-Flash-TH | 2026-04-24 | api-docs.deepseek.com/updates (2026-04-24; thinking mode of v4-flash) |
+| DeepSeek-V4-Flash-TH | 2026-04-24 | api-docs.deepseek.com/updates (2026-04-24); TH = TokenHub gateway, not thinking mode |
 | DeepSeek-V4-Pro | 2026-04-24 | api-docs.deepseek.com/updates (2026-04-24) |
 | Qwen3.7-Max | 2026-05-17 | earliest pinned DashScope snapshot qwen3.7-max-2026-05-17 |
 | MiniMax-M3 | 2026-06-01 | platform.minimax.io/docs/release-notes/models (Jun 1 2026) |

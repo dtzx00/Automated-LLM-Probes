@@ -47,7 +47,7 @@
 46,Kimi-K2.6,moonshot,Eastern,reasoning,Yes,kimi-k2.6,alias,2026-04-21,exact,no,forum.moonshot.ai/t/meet-kimi-k2-6 (2026-04-21),502,78.5548,80.0068,69.0254,78.2691,,
 47,GPT-5.5,openai,Western,hybrid,Yes,gpt-5.5-2026-04-23,pinned,2026-04-22,exact,yes,openai /v1/models created,500,78.1195,79.2750,59.9360,76.4060,,
 48,DeepSeek-V4-Flash,deepseek,Eastern,efficient,No,deepseek-v4-flash,alias,2026-04-24,exact,no,api-docs.deepseek.com/updates (2026-04-24),500,73.9544,77.9998,63.4024,75.5901,,
-49,DeepSeek-V4-Flash-TH,deepseek,Eastern,efficient,No,deepseek-v4-flash,alias,2026-04-24,exact,no,api-docs.deepseek.com/updates (2026-04-24; thinking mode of v4-flash),500,73.5894,77.7391,63.5650,75.3789,,
+49,DeepSeek-V4-Flash-TH,deepseek,Eastern,efficient,No,deepseek-v4-flash,alias,2026-04-24,exact,no,"api-docs.deepseek.com/updates (2026-04-24); TH = TokenHub gateway, not thinking mode",500,73.5894,77.7391,63.5650,75.3789,,
 50,DeepSeek-V4-Pro,deepseek,Eastern,reasoning,Yes,deepseek-v4-pro,alias,2026-04-24,exact,no,api-docs.deepseek.com/updates (2026-04-24),536,77.3413,79.6996,64.9873,77.2236,,
 51,Qwen3.7-Max,qwen,Eastern,hybrid,Yes,qwen3.7-max,alias,2026-05-17,exact,no,earliest pinned DashScope snapshot qwen3.7-max-2026-05-17,520,77.5067,78.6715,70.0196,78.0669,,
 52,MiniMax-M3,minimax,Eastern,reasoning,Yes,minimax-m3,alias,2026-06-01,exact,no,platform.minimax.io/docs/release-notes/models (Jun 1 2026),500,78.4807,79.6947,62.5532,77.5726,,
