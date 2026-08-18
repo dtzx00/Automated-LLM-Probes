@@ -1,15 +1,5 @@
-"""
-Minimal LLM API collection runner.
-All probe logic lives in Automated-Intelligence-Tests (AIT).
-"""
 from __future__ import annotations
-import csv
-import hashlib
-import importlib
-import os
-import pickle
-import re
-import time
+import csv,hashlib,importlib,os,pickle,re,time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -77,8 +67,7 @@ def get_probe(test_name):
     except ImportError:
         raise ImportError(
             "AIT is required for probe definitions. "
-            "Install Automated-Intelligence-Tests or place it on PYTHONPATH."
-        )
+            "Install Automated-Intelligence-Tests or place it on PYTHONPATH.")
 
 def collect(test_name, models=None, n_per_model=250):
     models = models or ready_models()
