@@ -1,0 +1,12 @@
+name,vendor,api,model_id,base_url,temperature
+GPT-3.5-Turbo,openai,openai,gpt-3.5-turbo,,0.5
+GPT-4o,openai,openai,gpt-4o-2024-11-20,,0.5
+GPT-4o-mini,openai,openai,gpt-4o-mini-2024-07-18,,0.5
+GPT-4-Turbo,openai,openai,gpt-4-turbo,,0.5
+Claude Haiku 4.5,anthropic,claude,claude-haiku-4-5-20251001,,0.5
+Claude Opus 4.5,anthropic,claude,claude-opus-4-5-20251101,,0.5
+Claude Sonnet 4.5,anthropic,claude,claude-sonnet-4-5-20250929,,0.5
+Grok 4.2,xai,spacexai,grok-4.20-0309-non-reasoning,,0.5
+Grok 4.5,xai,spacexai,grok-4.5,,0.5
+DeepSeek-Chat,deepseek,openrouter,deepseek/deepseek-chat,,0.5
+Llama-4 Scout,meta,openrouter,meta-llama/llama-4-scout,,0.5
