@@ -1,18 +1,13 @@
-"""OpenAI chat completions (also base for openrouter / spacexai)."""
-import json
-import urllib.request
+"""OpenAI client (also used by every OpenAI-compatible provider via base_url)."""
+from openai import OpenAI
 
 DEFAULT_BASE = "https://api.openai.com/v1"
 KEY_ENV = "OPENAI_API_KEY"
 
 def call(api_key, model_id, messages, base_url=None, temperature=None, timeout=60):
-    base = (base_url or DEFAULT_BASE).rstrip("/")
-    url = f"{base}/chat/completions"
-    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
-    body = {"model": model_id, "messages": messages}
+    client = OpenAI(api_key=api_key, base_url=base_url or DEFAULT_BASE, timeout=timeout)
+    kw = {"model": model_id, "messages": messages}
     if temperature is not None:
-        body["temperature"] = temperature
-    req = urllib.request.Request(url, data=json.dumps(body).encode(), headers=headers)
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        d = json.loads(r.read())
-    return (d.get("choices") or [{}])[0].get("message", {}).get("content", "").strip()
+        kw["temperature"] = temperature
+    resp = client.chat.completions.create(**kw)
+    return (resp.choices[0].message.content or "").strip()

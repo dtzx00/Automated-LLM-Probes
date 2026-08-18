@@ -1,6 +1,6 @@
 """
 Minimal LLM API collection runner.
-All probe logic (prompts, sampling, parsing) lives in Automated-Intelligence-Tests (AIT).
+All probe logic lives in Automated-Intelligence-Tests (AIT).
 """
 from __future__ import annotations
 import csv
@@ -13,9 +13,6 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-# ---------------------------------------------------------------------------
-# Config (matches the reference notebook)
-# ---------------------------------------------------------------------------
 TEMPERATURE_STD = 0.5
 MAX_RETRIES = 3
 MAX_CONSECUTIVE_FAILURES = 3
@@ -23,43 +20,32 @@ SLEEP_BETWEEN_CALLS = 0.2
 REQUEST_TIMEOUT = 60
 DATA_ROOT = Path("data")
 
-# ---------------------------------------------------------------------------
-# Models registry
-# ---------------------------------------------------------------------------
+KEY_ENV = {
+    "openai": "OPENAI_API_KEY",
+    "claude": "ANTHROPIC_API_KEY",
+    "openrouter": "OPENROUTER_API_KEY",
+    "spacexai": "XAI_API_KEY",
+    "deepseek": "DEEPSEEK_API_KEY",
+    "qwen": "QWEN_API_KEY",
+    "hunyuan": "HUNYUAN_API_KEY",
+    "moonshot": "MOONSHOT_API_KEY",
+    "doubao": "DOUBAO_API_KEY",
+}
+
 def load_models(path="models.csv"):
     with open(path, newline="", encoding="utf-8") as f:
         return list(csv.DictReader(f))
 
 def ready_models(models=None):
     models = models or load_models()
-    key_map = {
-        "openai": "OPENAI_API_KEY",
-        "claude": "ANTHROPIC_API_KEY",
-        "openrouter": "OPENROUTER_API_KEY",
-        "spacexai": "XAI_API_KEY",
-    }
-    ready = []
-    for m in models:
-        env = key_map.get(m["api"])
-        if env and os.environ.get(env, "").strip():
-            ready.append(m)
-    return ready
+    return [m for m in models if os.environ.get(KEY_ENV.get(m["api"], ""), "").strip()]
 
-# ---------------------------------------------------------------------------
-# API dispatch
-# ---------------------------------------------------------------------------
 def get_api_module(api_name):
     return importlib.import_module(f"api.{api_name}")
 
 def call_model(model_row, messages):
     mod = get_api_module(model_row["api"])
-    key_env = {
-        "openai": "OPENAI_API_KEY",
-        "claude": "ANTHROPIC_API_KEY",
-        "openrouter": "OPENROUTER_API_KEY",
-        "spacexai": "XAI_API_KEY",
-    }[model_row["api"]]
-    key = os.environ[key_env]
+    key = os.environ[KEY_ENV[model_row["api"]]]
     temp = model_row.get("temperature")
     temp = float(temp) if temp not in (None, "") else None
     base = model_row.get("base_url") or None
@@ -73,9 +59,6 @@ def call_model(model_row, messages):
             time.sleep(min(2 ** attempt, 20))
     raise RuntimeError(f"{model_row['name']} failed after {MAX_RETRIES} tries: {last_err}")
 
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
 def _model_dir(task, name, temp):
     slug = re.sub(r"[^\w\-.]+", "-", name.strip()).strip("-").lower()
     t = str(temp).rstrip("0").rstrip(".") if temp is not None else "default"
@@ -87,13 +70,8 @@ def _hash(*parts, n=16):
 def _now():
     return datetime.now(timezone.utc).isoformat()
 
-# ---------------------------------------------------------------------------
-# AIT probe contract (imported at runtime)
-# ---------------------------------------------------------------------------
 def get_probe(test_name):
-    """Expect AIT to expose sample / build_prompt / parse for the named test."""
     try:
-        # Adjust the import path once AIT is packaged
         from automated_intelligence_tests import get_probe as _gp
         return _gp(test_name)
     except ImportError:
@@ -102,9 +80,6 @@ def get_probe(test_name):
             "Install Automated-Intelligence-Tests or place it on PYTHONPATH."
         )
 
-# ---------------------------------------------------------------------------
-# collect
-# ---------------------------------------------------------------------------
 def collect(test_name, models=None, n_per_model=250):
     models = models or ready_models()
     probe = get_probe(test_name)
@@ -155,9 +130,6 @@ def collect(test_name, models=None, n_per_model=250):
             time.sleep(SLEEP_BETWEEN_CALLS)
     print(f"DONE {test_name}")
 
-# ---------------------------------------------------------------------------
-# parse_and_merge
-# ---------------------------------------------------------------------------
 def parse_and_merge(test_name):
     probe = get_probe(test_name)
     task_dir = DATA_ROOT / test_name.lower()
@@ -171,14 +143,16 @@ def parse_and_merge(test_name):
             if row.get("error") or not row.get("raw"):
                 continue
             parsed = probe.parse(row["raw"], **(row.get("kwargs") or {}))
-            row.update(parsed if isinstance(parsed, dict) else {"response_clean": parsed})
+            if isinstance(parsed, dict):
+                row.update(parsed)
+            else:
+                row["response_clean"] = parsed
             rows.append(row)
         except Exception:
             pass
     if not rows:
         print("No valid rows")
         return
-    # Write a simple CSV of the collected fields
     out = DATA_ROOT / f"{test_name.lower()}.csv"
     keys = sorted({k for r in rows for k in r if k != "raw"})
     with open(out, "w", newline="", encoding="utf-8") as f:
