@@ -14034,6 +14034,116 @@ DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,249,0.5,,,,,,,,,,,"Generate 10 nouns that
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","apple, chair, love, book, sun, happiness, mountain, cloud, music, bicycle",2026-08-18T17:46:19.012940+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,250,0.5,,,,,,,,,,,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, sky, happiness, book, hammer, ocean, chair, love, apple, time",2026-08-19T17:18:40.847142+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,251,0.5,,,,,,,,,,,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, happiness, mountain, book, ocean, chair, love, computer, tree, music",2026-08-19T17:21:38.370760+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,252,0.5,,,,,,,,,,,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","1 dog, 2 moon, 3 happiness, 4 chair, 5 time, 6 ocean, 7 love, 8 tree, 9 money, 10 music",2026-08-19T17:21:42.812368+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,253,0.5,,,,,,,,,,,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, apple, love, chair, freedom, book, happiness, mountain, music, time",2026-08-19T17:21:44.469555+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,254,0.5,,,,,,,,,,,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, apple, happiness, chair, ocean, freedom, book, mountain, music, love",2026-08-19T17:21:45.430027+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,255,0.5,,,,,,,,,,,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, happiness, chair, ocean, freedom, apple, time, love, mountain, music",2026-08-19T17:22:58.093812+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,256,0.5,,,,,,,,,,,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, happiness, book, ocean, chair, freedom, apple, music, mountain, time",2026-08-19T17:22:59.437658+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,257,0.5,,,,,,,,,,,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, happiness, ocean, chair, freedom, banana, time, love, mountain, computer",2026-08-19T17:23:00.231714+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,258,0.5,,,,,,,,,,,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, banana, love, car, mountain, happiness, book, computer, freedom, music",2026-08-19T17:23:02.673413+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,259,0.5,,,,,,,,,,,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, banana, love, chair, freedom, galaxy, happiness, book, mountain, music",2026-08-19T17:23:03.495436+00:00
 DAT,GPT-4-Turbo,gpt-4-turbo,openai,0,0.5,,,,,,,,,,,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.

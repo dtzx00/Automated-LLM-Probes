@@ -83,7 +83,7 @@ def collect(test_name, models=None, n_per_model=250):
         need = n_per_model - have
         print(f"  {m['name']}: {have} have, {need} to collect")
         fails = 0
-        for k in range(need):
+        for k in tqdm(list(range(need)), desc=test_name):
             i = have + k
             kw = probe.sample(i)
             messages = probe.build_prompt(**kw)

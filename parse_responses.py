@@ -42,8 +42,9 @@ def load_task(task: str) -> pd.DataFrame:
     cols = ["task", "model_name", "model_id", "provider", "rep", "temperature_std"] + extra + ["prompt", "response_clean", "ts_utc", "hash"]
     return df[[c for c in cols if c in df.columns]].sort_values(["model_name", "rep"]).reset_index(drop=True)
 
-for task in ("dat", "aut", "wrt"):
-    print(f"Parsing {task.upper()}...")
-    df = load_task(task)
-    print(df.shape)
-    df.to_csv(f"./data/{task}.csv", index=False)
+def load_tasks():
+    for task in ("dat", "aut", "wrt"):
+        print(f"Parsing {task.upper()}...")
+        df = load_task(task)
+        print(df.shape)
+        df.to_csv(f"./data/{task}.csv", index=False)
