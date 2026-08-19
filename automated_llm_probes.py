@@ -1,5 +1,6 @@
 from __future__ import annotations
-import csv,hashlib,importlib,os,pickle,re,time
+import automated_intelligence_tests as ait
+import csv,hashlib,importlib,os,pickle,re,time,sys
 from datetime import datetime, timezone
 from pathlib import Path
 from tqdm import tqdm
@@ -61,19 +62,12 @@ def _hash(*parts, n=16):
 def _now():
     return datetime.now(timezone.utc).isoformat()
 
-def get_probe(test_name):
-    try:
-        from automated_intelligence_tests import get_probe as _gp
-        return _gp(test_name)
-    except ImportError:
-        raise ImportError(
-            "AIT is required for probe definitions. "
-            "Install Automated-Intelligence-Tests or place it on PYTHONPATH.")
-
 def collect(test_name, models=None, n_per_model=250):
+    
     models = models or ready_models()
-    probe = get_probe(test_name)
+    
     for m in models:
+        
         mdir = _model_dir(test_name, m["name"], m.get("temperature") or TEMPERATURE_STD)
         mdir.mkdir(parents=True, exist_ok=True)
         have = sum(1 for p in mdir.glob("*.pickle") if p.is_file())
@@ -81,17 +75,17 @@ def collect(test_name, models=None, n_per_model=250):
             print(f"  {m['name']}: {have}/{n_per_model} done — skip")
             continue
         need = n_per_model - have
-        print(f"  {m['name']}: {have} have, {need} to collect")
+        print(f"  {m['name']}: {have} collected, {need} to collect")
+        
         fails = 0
-        for k in tqdm(list(range(need)), desc=test_name):
+        for k in tqdm(range(need), desc=test_name):
+            
             i = have + k
-            kw = probe.sample(i)
-            messages = probe.build_prompt(**kw)
-            if isinstance(messages, str):
-                messages = [{"role": "user", "content": messages}]
-            prompt = messages[0]["content"] if messages else ""
+            stim = ait.instruct(test_name.lower())
+            instructions = stim["instructions"]
+            
             ts = _now()
-            h = _hash(test_name, m["name"], m["model_id"], i, ts, prompt[:80])
+            h = _hash(test_name, m["name"], m["model_id"], i, ts, instructions[:40])
             row = {
                 "task": test_name.strip().upper(),
                 "model_name": m["name"],
@@ -99,13 +93,13 @@ def collect(test_name, models=None, n_per_model=250):
                 "provider": m["api"],
                 "rep": i,
                 "temperature_std": m.get("temperature") or TEMPERATURE_STD,
-                "kwargs": kw,
-                "prompt": prompt,
+                "kwargs": stim,
+                "prompt": instructions,
                 "ts_utc": ts,
-                "hash": h,
-            }
+                "hash": h}
+            
             try:
-                raw = call_model(m, messages)
+                raw = call_model(m, [{"role": "user", "content": instructions}])
                 row.update(raw=raw, error="")
                 fails = 0
                 with open(mdir / f"{h}.pickle", "wb") as f:
@@ -118,8 +112,7 @@ def collect(test_name, models=None, n_per_model=250):
                     print(f"  >> {m['name']}: {fails} consecutive fails — skip rest")
                     break
             time.sleep(SLEEP_BETWEEN_CALLS)
-    print(f"DONE {test_name}")
-
+    
 def parse_and_merge(test_name: str) -> dict:
     """
     Load valid pickle rows for a task.
@@ -151,16 +144,12 @@ def parse_and_merge(test_name: str) -> dict:
     return rows
 
 if __name__ == "__main__":
-    import sys
     if len(sys.argv) < 2:
-        print("Usage: python automated-llm-probes.py collect|parse <test_name> [n]")
+        print("Usage: python automated_llm_probes.py <test_name> <sample_size> <model_name(s)>")
         sys.exit(1)
-    cmd = sys.argv[1]
-    test = sys.argv[2] if len(sys.argv) > 2 else "DAT"
-    n = int(sys.argv[3]) if len(sys.argv) > 3 else 250
-    if cmd == "collect":
-        collect(test, n_per_model=n)
-    elif cmd == "parse":
-        parse_and_merge(test)
-    else:
-        print("Unknown command")
+
+    test = sys.argv[1]
+    n_per_model = int(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2].isdigit() else 250
+    names = [a for a in sys.argv[2:] if not a.isdigit()]
+    models = [m for m in ready_models() if m["name"] in names] if names else None
+    collect(test, models=models, n_per_model=n_per_model)
