@@ -2,6 +2,7 @@ from __future__ import annotations
 import csv,hashlib,importlib,os,pickle,re,time
 from datetime import datetime, timezone
 from pathlib import Path
+from tqdm import tqdm
 
 TEMPERATURE_STD = 0.5
 MAX_RETRIES = 3
@@ -92,7 +93,7 @@ def collect(test_name, models=None, n_per_model=250):
             ts = _now()
             h = _hash(test_name, m["name"], m["model_id"], i, ts, prompt[:80])
             row = {
-                "task": test_name,
+                "task": test_name.strip().upper(),
                 "model_name": m["name"],
                 "model_id": m["model_id"],
                 "provider": m["api"],
@@ -119,36 +120,35 @@ def collect(test_name, models=None, n_per_model=250):
             time.sleep(SLEEP_BETWEEN_CALLS)
     print(f"DONE {test_name}")
 
-def parse_and_merge(test_name):
-    probe = get_probe(test_name)
+def parse_and_merge(test_name: str) -> dict:
+    """
+    Load valid pickle rows for a task.
+    Returns dict {hash: row} containing metadata + raw
+    """
     task_dir = DATA_ROOT / test_name.lower()
     if not task_dir.is_dir():
         raise FileNotFoundError(task_dir)
-    rows = []
-    for p in task_dir.rglob("*.pickle"):
+
+    files = list(task_dir.rglob("*.pickle"))
+    rows = {}
+
+    for p in tqdm(files, desc=test_name):
         try:
-            with open(p, "rb") as f:
+            with p.open("rb") as f:
                 row = pickle.load(f)
+
             if row.get("error") or not row.get("raw"):
                 continue
-            parsed = probe.parse(row["raw"], **(row.get("kwargs") or {}))
-            if isinstance(parsed, dict):
-                row.update(parsed)
-            else:
-                row["response_clean"] = parsed
-            rows.append(row)
+
+            h = row.pop("hash", None)
+            if h is not None:
+                rows[h] = row
+
         except Exception:
-            pass
-    if not rows:
-        print("No valid rows")
-        return
-    out = DATA_ROOT / f"{test_name.lower()}.csv"
-    keys = sorted({k for r in rows for k in r if k != "raw"})
-    with open(out, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=keys, extrasaction="ignore")
-        w.writeheader()
-        w.writerows(rows)
-    print(f"Wrote {len(rows)} rows -> {out}")
+            continue
+
+    if not rows: print("No valid rows")
+    return rows
 
 if __name__ == "__main__":
     import sys
