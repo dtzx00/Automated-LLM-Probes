@@ -1,59 +1,66 @@
-name,vendor,api,model_id,base_url,temperature,speed_per_call
-GPT-3.5-Turbo,openai,openai,gpt-3.5-turbo,,0.5,1463
-Ernie-4.0-8k,baidu,baidu,ernie-4.0-8k,,0.5,
-GPT-4.0-Turbo,openai,openai,gpt-4-turbo-2024-04-09,,0.5,2425
-Moonshot-v1-8k,moonshot,moonshot,moonshot-v1-8k,,0.5,
-Moonshot-v1-128k,moonshot,moonshot,moonshot-v1-128k,,0.5,
-Claude-3.5-Sonnet,anthropic,claude,claude-3.5-sonnet,,0.5,
-GPT-4o,openai,openai,gpt-4o-2024-08-06,,0.5,1229
-DeepSeek-R1,deepseek,deepseek,deepseek-r1,,0.5,20694
-Qwen-Turbo,qwen,qwen,qwen-turbo,,0.5,1201
-o4-mini,openai,openai,o4-mini-2025-04-16,,0.5,5321
-GPT-4.1,openai,openai,gpt-4.1-2025-04-14,,0.5,774
-GPT-4.1-mini,openai,openai,gpt-4.1-mini-2025-04-14,,0.5,
-GPT-4.1-nano,openai,openai,gpt-4.1-nano-2025-04-14,,0.5,
-Kimi-K2,moonshot,moonshot,moonshot-v1-32k,,0.5,
-Qwen3-235B-Instruct,qwen,qwen,qwen3-235b-a22b-instruct-2507,,0.5,
-GPT-5,openai,openai,gpt-5-2025-08-07,,0.5,19854
-GPT-5-mini,openai,openai,gpt-5-mini-2025-08-07,,0.5,9131
-Claude-Opus-4.1,anthropic,claude,claude-opus-4-1-20250805,,0.5,2773
-Grok-Code-Fast,xai,spacexai,grok-code-fast,,0.5,
-Qwen-Max,qwen,qwen,qwen-max,,0.5,1612
-Qwen-Plus,qwen,qwen,qwen-plus,,0.5,
-Claude-Sonnet-4.5,anthropic,claude,claude-sonnet-4-5-20250929,,0.5,1774
-MiniMax-M2.5,minimax,openrouter,minimax-m2.5,,0.5,
-Claude-Haiku-4.5,anthropic,claude,claude-haiku-4-5-20251001,,0.5,
-GPT-5.1,openai,openai,gpt-5.1-2025-11-13,,0.5,
-Claude-Opus-4.5,anthropic,claude,claude-opus-4-5-20251101,,0.5,
-DeepSeek-V3.2,deepseek,deepseek,deepseek-v3.2,,0.5,
-MiniMax-M2.7,minimax,openrouter,minimax-m2.7,,0.5,
-Qwen3.7-Max,qwen,qwen,qwen3.7-max,,0.5,47527
-GPT-5.2,openai,openai,gpt-5.2-2025-12-11,,0.5,
-Kimi-K2.5,moonshot,moonshot,kimi-k2.5,,0.5,
-MiniMax-M3,minimax,openrouter,minimax-m3,,0.5,
-Hunyuan-Hy3,tencent,hunyuan,hy3,,0.5,1867
-Qwen3.5-Plus,qwen,qwen,qwen3.5-plus,,0.5,
-DeepSeek-V4-Pro,deepseek,deepseek,deepseek-v4-pro,,0.5,6569
-DeepSeek-V4-Flash-TH,deepseek,deepseek,deepseek-v4-flash,,0.5,
-Kimi-K2.6,moonshot,moonshot,kimi-k2.6,,0.5,2604
-Claude-Sonnet-4.6,anthropic,claude,claude-sonnet-4-6,,0.5,
-DeepSeek-V4-Flash,deepseek,deepseek,deepseek-v4-flash,,0.5,
-GPT-5.4,openai,openai,gpt-5.4-2026-03-05,,0.5,1143
-Grok 4.2,xai,spacexai,grok-4.20-0309-non-reasoning,,0.5,
-Grok-4.20-reason,xai,spacexai,grok-4.20-0309-reasoning,,0.5,
-Qwen4-Max,qwen,qwen,qwen3-max-2026-01-23,,0.5,2727
-Claude-Opus-4.7,anthropic,claude,claude-opus-4-7,,0.5,2700
-Grok-4.3,xai,spacexai,grok-4.3,,0.5,
-GPT-5.5,openai,openai,gpt-5.5-2026-04-23,,0.5,3590
-Claude-Fable-5,anthropic,claude,claude-fable-5,,0.5,5478
-GPT-5.6-Sol,openai,openai,gpt-5.6-sol,,0.5,4190
-Claude-Sonnet-5,anthropic,claude,claude-sonnet-5,,0.5,2026
-Grok-4.5,xai,spacexai,grok-4.5,,0.5,6454
-Kimi-K3,moonshot,moonshot,kimi-k3,,0.5,
-Claude-Opus-5,anthropic,claude,claude-opus-5,,0.5,
-GPT-4o-mini,openai,openai,gpt-4o-mini-2024-07-18,,0.5,
-GPT-4-Turbo,openai,openai,gpt-4-turbo,,0.5,2425
-DeepSeek-Chat (OR),deepseek,openrouter,deepseek/deepseek-chat,,0.5,2002
-Doubao,bytedance,doubao,doubao-pro-32k,,0.5,
-Hunyuan,tencent,hunyuan,hunyuan-lite,,0.5,1867
-Llama-4 Scout,meta,openrouter,meta-llama/llama-4-scout,,0.5,
+name,vendor,api,model_id,base_url,temperature,speed_per_call,status
+GPT-3.5-Turbo,openai,openai,gpt-3.5-turbo,,0.5,1463,ok
+Ernie-4.0-8k,baidu,baidu,ernie-4.0-8k,,0.5,,unverified
+GPT-4.0-Turbo,openai,openai,gpt-4-turbo-2024-04-09,,0.5,2425,duplicate-of-GPT-4-Turbo
+Moonshot-v1-8k,moonshot,moonshot,moonshot-v1-8k,,0.5,,unverified
+Moonshot-v1-128k,moonshot,moonshot,moonshot-v1-128k,,0.5,,unverified
+Claude-3.5-Sonnet,anthropic,claude,claude-3-5-sonnet-20241022,,0.5,,RETIRED-2025-10-28
+GPT-4o,openai,openai,gpt-4o-2024-08-06,,0.5,1229,ok
+DeepSeek-R1,deepseek,deepseek,deepseek-r1,,0.5,20694,BAD-ID-use-deepseek-v4-pro
+Qwen-Turbo,qwen,qwen,qwen-turbo,,0.5,1201,unverified
+o4-mini,openai,openai,o4-mini-2025-04-16,,,5321,temp-omitted-reasoning-model
+GPT-4.1,openai,openai,gpt-4.1-2025-04-14,,0.5,774,ok
+GPT-4.1-mini,openai,openai,gpt-4.1-mini-2025-04-14,,0.5,,ok
+GPT-4.1-nano,openai,openai,gpt-4.1-nano-2025-04-14,,0.5,,ok
+Kimi-K2,moonshot,moonshot,moonshot-v1-32k,,0.5,,NAME-ID-MISMATCH
+Qwen3-235B-Instruct,qwen,qwen,qwen3-235b-a22b-instruct-2507,,0.5,,unverified
+GPT-5,openai,openai,gpt-5-2025-08-07,,,19854,temp-omitted-verify
+GPT-5-mini,openai,openai,gpt-5-mini-2025-08-07,,,9131,temp-omitted-verify
+Claude-Opus-4.1,anthropic,claude,claude-opus-4-1-20250805,,0.5,2773,RETIRED-2026-08-05
+Grok-Code-Fast,xai,spacexai,grok-code-fast,,0.5,,ALIASES-TO-grok-4.5
+Qwen-Max,qwen,qwen,qwen-max,,0.5,1612,unverified
+Qwen-Plus,qwen,qwen,qwen-plus,,0.5,,unverified
+Claude Sonnet 4.5,anthropic,claude,claude-sonnet-4-5-20250929,,0.5,1774,ok
+MiniMax-M2.5,minimax,openrouter,minimax/minimax-m2.5,,0.5,,FIXED-prefix
+Claude Haiku 4.5,anthropic,claude,claude-haiku-4-5-20251001,,0.5,,ok
+GPT-5.1,openai,openai,gpt-5.1-2025-11-13,,,,temp-omitted-verify
+Claude Opus 4.5,anthropic,claude,claude-opus-4-5-20251101,,0.5,,ok
+DeepSeek-3.2,deepseek,deepseek,deepseek-v3.2,,0.5,,DEAD-migrate-to-v4
+MiniMax-M2.7,minimax,openrouter,minimax/minimax-m2.7,,0.5,,FIXED-prefix
+Qwen3.7-Max,qwen,qwen,qwen3.7-max,,0.5,47527,unverified
+GPT-5.2,openai,openai,gpt-5.2-2025-12-11,,,,temp-omitted-verify
+Kimi-K2.5,moonshot,moonshot,kimi-k2.5,,0.5,,unverified
+MiniMax-M3,minimax,openrouter,minimax/minimax-m3,,0.5,,FIXED-prefix
+Hunyuan-Hy3,tencent,hunyuan,hy3,,0.5,1867,unverified
+Qwen3.5-Plus,qwen,qwen,qwen3.5-plus,,0.5,,unverified
+DeepSeek-V4-Pro,deepseek,deepseek,deepseek-v4-pro,,0.5,6569,temp-inert-in-thinking-mode
+DeepSeek-V4-Flash-TH,deepseek,deepseek,deepseek-v4-flash,,0.5,,DUPLICATE-ID-needs-thinking-flag
+Kimi-K2.6,moonshot,moonshot,kimi-k2.6,,0.5,2604,unverified
+Claude-Sonnet-4.6,anthropic,claude,claude-sonnet-4-6,,0.5,,ok
+DeepSeek-V4-Flash,deepseek,deepseek,deepseek-v4-flash,,0.5,,temp-inert-in-thinking-mode
+GPT-5.4,openai,openai,gpt-5.4-2026-03-05,,0.5,1143,ok
+Grok 4.2,xai,spacexai,grok-4.20-0309-non-reasoning,,0.5,,ok
+Grok-4.20-reason,xai,spacexai,grok-4.20-0309-reasoning,,0.5,,ok
+Qwen4-Max,qwen,qwen,qwen3-max-2026-01-23,,0.5,2727,NAME-ID-MISMATCH
+Claude Opus 4.7,anthropic,claude,claude-opus-4-7,,,2700,FIXED-temp-omitted
+Grok 4.3,xai,spacexai,grok-4.3,,0.5,,ok
+GPT-5.5,openai,openai,gpt-5.5-2026-04-23,,0.5,3590,ok
+Claude-Fable-5,anthropic,claude,claude-fable-5,,,5478,FIXED-temp-omitted
+GPT-5.6-Sol,openai,openai,gpt-5.6-sol,,0.5,4190,ok
+Claude-Sonnet-5,anthropic,claude,claude-sonnet-5,,,2026,FIXED-temp-omitted
+Grok 4.5,xai,spacexai,grok-4.5,,0.5,6454,ok
+Kimi-K3,moonshot,moonshot,kimi-k3,,0.5,,unverified
+Claude Opus 5,anthropic,claude,claude-opus-5,,,,FIXED-temp-omitted
+GPT-4o-mini,openai,openai,gpt-4o-mini-2024-07-18,,0.5,,ok
+GPT-4-Turbo,openai,openai,gpt-4-turbo,,0.5,2425,ok
+DeepSeek-Chat,deepseek,openrouter,deepseek/deepseek-chat,,0.5,2002,upstream-alias-retired
+Doubao,bytedance,doubao,doubao-pro-32k,,0.5,,unverified
+Hunyuan,tencent,hunyuan,hunyuan-lite,,0.5,1867,unverified
+Llama-4 Scout,meta,openrouter,meta-llama/llama-4-scout,,0.5,,ok
+Grok Build 0.1,xai,spacexai,grok-build-0.1,,0.5,,ok
+Llama-4 Maverick,meta,openrouter,meta-llama/llama-4-maverick,,0.5,,ok
+Llama-3.2 3b,meta,openrouter,meta-llama/llama-3.2-3b-instruct,,0.5,,ok
+Llama-3.1 8b,meta,openrouter,meta-llama/llama-3.1-8b-instruct,,0.5,,ok
+Claude Opus 4.6,anthropic,claude,claude-opus-4-6,,0.5,,ADDED-missing
+Claude Opus 4.8,anthropic,claude,claude-opus-4-8,,,,ADDED-missing-temp-omitted
+Grok 4.6,xai,spacexai,grok-4.6,,0.5,,ADDED-missing
