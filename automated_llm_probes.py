@@ -11,6 +11,7 @@ MAX_CONSECUTIVE_FAILURES = 3
 SLEEP_BETWEEN_CALLS = 0.2
 REQUEST_TIMEOUT = 60
 DATA_ROOT = Path("data")
+DEAD_PREFIXES = ("RETIRED", "DEAD", "BAD-ID", "DUPLICATE", "UPSTREAM-ALIAS", "ALIASES")
 
 KEY_ENV = {
     "openai": "OPENAI_API_KEY",
@@ -30,7 +31,9 @@ def load_models(path="models.csv"):
 
 def ready_models(models=None):
     models = models or load_models()
-    return [m for m in models if os.environ.get(KEY_ENV.get(m["api"], ""), "").strip()]
+    return [m for m in models
+            if os.environ.get(KEY_ENV.get(m["api"], ""), "").strip()
+            and not m.get("status", "").upper().startswith(DEAD_PREFIXES)]
 
 def get_api_module(api_name):
     return importlib.import_module(f"api.{api_name}")
@@ -68,7 +71,7 @@ def collect(test_name, models=None, n_per_model=250):
     
     for m in models:
         
-        mdir = _model_dir(test_name, m["name"], m.get("temperature") or TEMPERATURE_STD)
+        mdir = _model_dir(test_name, m["name"], m.get("temperature") or None)
         mdir.mkdir(parents=True, exist_ok=True)
         have = sum(1 for p in mdir.glob("*.pickle") if p.is_file())
         if have >= n_per_model:
@@ -92,7 +95,7 @@ def collect(test_name, models=None, n_per_model=250):
                 "model_id": m["model_id"],
                 "provider": m["api"],
                 "rep": i,
-                "temperature_std": m.get("temperature") or TEMPERATURE_STD,
+                "temperature_std": m.get("temperature") or None,
                 "kwargs": stim,
                 "prompt": instructions,
                 "ts_utc": ts,
