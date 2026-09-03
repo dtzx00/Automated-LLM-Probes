@@ -16230,6 +16230,281 @@ DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,249,0.5,rainbow,democracy,whi
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","rainbow, democracy, whisper, volcano, paradox, feather, echo, infinity, labyrinth, spark",2026-08-19T01:09:46.091627+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,250,0.5,chaos,love,rock,algorithm,dream,justice,cloud,time,window,silence,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","chaos, love, rock, algorithm, dream, justice, cloud, time, window, silence",2026-09-03T22:23:58.144549+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,251,0.5,love,rock,time,freedom,dream,machine,shadow,symphony,paradox,wilderness,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","love, rock, time, freedom, dream, machine, shadow, symphony, paradox, wilderness",2026-09-03T22:24:05.573392+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,252,0.5,chaos,love,rock,dream,law,fire,time,machine,freedom,window,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","chaos, love, rock, dream, law, fire, time, machine, freedom, window",2026-09-03T22:24:07.623249+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,253,0.5,chaos,love,chair,number,dream,justice,cloud,time,silence,window,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","chaos, love, chair, number, dream, justice, cloud, time, silence, window",2026-09-03T22:24:13.843952+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,254,0.5,chaos,love,electron,algorithm,justice,dream,quark,paradox,art,infinity,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","chaos, love, electron, algorithm, justice, dream, quark, paradox, art, infinity",2026-09-03T22:24:17.038259+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,255,0.5,chaos,love,mountain,algorithm,whisper,justice,galaxy,dream,engine,paradox,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","chaos, love, mountain, algorithm, whisper, justice, galaxy, dream, engine, paradox",2026-09-03T22:24:19.247974+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,256,0.5,chaos,love,electron,dream,justice,cloud,time,silence,algorithm,paradox,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","chaos, love, electron, dream, justice, cloud, time, silence, algorithm, paradox",2026-09-03T22:24:21.340934+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,257,0.5,whale,quark,cloud,justice,pyramid,echo,labyrinth,spark,void,oasis,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","whale, quark, cloud, justice, pyramid, echo, labyrinth, spark, void, oasis",2026-09-03T22:24:23.288303+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,258,0.5,chaos,quilt,quark,zenith,nostalgia,whimsy,vortex,inkling,oasis,relic,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","chaos, quilt, quark, zenith, nostalgia, whimsy, vortex, inkling, oasis, relic",2026-09-03T22:24:25.811290+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,259,0.5,chaos,love,gravity,dream,justice,infinity,silence,paradox,time,void,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","chaos, love, gravity, dream, justice, infinity, silence, paradox, time, void",2026-09-03T22:24:28.811448+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,260,0.5,abyss,whimsy,quantum,paradox,fossil,zenith,labyrinth,ether,nostalgia,vortex,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","abyss, whimsy, quantum, paradox, fossil, zenith, labyrinth, ether, nostalgia, vortex",2026-09-03T22:24:30.741327+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,261,0.5,chaos,love,quantum,time,dream,infinity,silence,paradox,void,faith,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","chaos, love, quantum, time, dream, infinity, silence, paradox, void, faith",2026-09-03T22:24:33.206854+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,262,0.5,chaos,love,rock,algorithm,justice,silence,dream,infinity,window,paradox,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","chaos, love, rock, algorithm, justice, silence, dream, infinity, window, paradox",2026-09-03T22:24:35.155455+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,263,0.5,love,quantum,void,paradox,infinity,silence,chaos,dream,threshold,echo,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","love, quantum, void, paradox, infinity, silence, chaos, dream, threshold, echo",2026-09-03T22:24:36.310587+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,264,0.5,love,rocket,justice,cloud,key,whisper,infinity,shadow,clock,paradox,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","love, rocket, justice, cloud, key, whisper, infinity, shadow, clock, paradox",2026-09-03T22:24:37.107295+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,265,0.5,chaos,democracy,hydrogen,silence,paradox,velocity,nostalgia,quantum,labyrinth,entropy,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","chaos, democracy, hydrogen, silence, paradox, velocity, nostalgia, quantum, labyrinth, entropy",2026-09-03T22:24:38.404348+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,266,0.5,chaos,oxygen,democracy,symphony,quantum,nostalgia,labyrinth,entropy,paradox,infinity,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","chaos, oxygen, democracy, symphony, quantum, nostalgia, labyrinth, entropy, paradox, infinity",2026-09-03T22:24:39.184276+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,267,0.5,chaos,infinity,paperclip,whisper,glacier,paradox,laughter,dust,symphony,algorithm,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","chaos, infinity, paperclip, whisper, glacier, paradox, laughter, dust, symphony, algorithm",2026-09-03T22:24:40.064381+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,268,0.5,chaos,infinity,paperclip,empathy,glacier,paradox,whisper,galaxy,nostalgia,quark,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","chaos, infinity, paperclip, empathy, glacier, paradox, whisper, galaxy, nostalgia, quark",2026-09-03T22:24:40.858931+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,269,0.5,chaos,love,rock,democracy,cloud,justice,spoon,infinity,dream,oxygen,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","chaos, love, rock, democracy, cloud, justice, spoon, infinity, dream, oxygen",2026-09-03T22:24:42.222358+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,270,0.5,love,quantum,silence,infinity,chaos,door,algorithm,dream,paradox,dust,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","love, quantum, silence, infinity, chaos, door, algorithm, dream, paradox, dust",2026-09-03T22:24:43.016249+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,271,0.5,love,rocket,algorithm,quilt,neutron,metaphor,galaxy,whisper,paradox,enzyme,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","love, rocket, algorithm, quilt, neutron, metaphor, galaxy, whisper, paradox, enzyme",2026-09-03T22:24:43.858393+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,272,0.5,love,quantum,sandpaper,democracy,cloud,silence,paradox,window,infinity,echo,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","love, quantum, sandpaper, democracy, cloud, silence, paradox, window, infinity, echo",2026-09-03T22:24:49.606714+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,273,0.5,love,quantum,entropy,democracy,paradox,void,serendipity,algorithm,myth,symphony,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","love, quantum, entropy, democracy, paradox, void, serendipity, algorithm, myth, symphony",2026-09-03T22:24:50.730324+00:00
+DAT,DeepSeek-3.2,deepseek/deepseek-v3.2,openrouter,274,0.5,chaos,love,quark,justice,eternity,dream,algorithm,paradox,silence,gravity,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","chaos, love, quark, justice, eternity, dream, algorithm, paradox, silence, gravity",2026-09-03T22:24:51.544812+00:00
 DAT,DeepSeek-Chat,deepseek/deepseek-chat,openrouter,0,0.5,mountain,laughter,pillow,silence,candle,curiosity,waterfall,shadow,compass,melody,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
