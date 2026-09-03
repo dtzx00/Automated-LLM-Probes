@@ -64,3 +64,4 @@ Llama-3.1 8b,meta,openrouter,meta-llama/llama-3.1-8b-instruct,,0.5,,ok
 Claude Opus 4.6,anthropic,claude,claude-opus-4-6,,0.5,,ADDED-missing
 Claude Opus 4.8,anthropic,claude,claude-opus-4-8,,,,ADDED-missing-temp-omitted
 Grok 4.6,xai,spacexai,grok-4.6,,0.5,,ADDED-missing
+DeepSeek-3.2,deepseek,openrouter,deepseek/deepseek-v3.2,,0.5,,ok
