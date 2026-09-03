@@ -20062,7 +20062,7 @@ Think of the words on your own.
 
 Notes:
 Return words as comma-separated list. Do not return anything else.","dog, happiness, mountain, book, ocean, chair, love, computer, tree, music",2026-08-19T17:21:38.370760+00:00
-DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,252,0.5,1 dog,2 moon,3 happiness,4 chair,5 time,6 ocean,7 love,8 tree,9 money,10 music,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,252,0.5,1dog,2moon,3happiness,4chair,5time,6ocean,7love,8tree,9money,10music,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
 
 Rules:
 Only single words in English.
@@ -20072,7 +20072,7 @@ No specialised vocabulary or technical terms.
 Think of the words on your own.
 
 Notes:
-Return words as comma-separated list. Do not return anything else.","1 dog, 2 moon, 3 happiness, 4 chair, 5 time, 6 ocean, 7 love, 8 tree, 9 money, 10 music",2026-08-19T17:21:42.812368+00:00
+Return words as comma-separated list. Do not return anything else.","1dog, 2moon, 3happiness, 4chair, 5time, 6ocean, 7love, 8tree, 9money, 10music",2026-08-19T17:21:42.812368+00:00
 DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,253,0.5,dog,apple,love,chair,freedom,book,happiness,mountain,music,time,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
 
 Rules:
@@ -20150,7 +20150,7 @@ Think of the words on your own.
 
 Notes:
 Return words as comma-separated list. Do not return anything else.","dog, banana, love, chair, freedom, galaxy, happiness, book, mountain, music",2026-08-19T17:23:03.495436+00:00
-DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,260,0.5,1 dog,2 moon,3 happiness,4 chair,5 love,6 ocean,7 book,8 money,9 music,10 time,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,260,0.5,1dog,2moon,3happiness,4chair,5love,6ocean,7book,8money,9music,10time,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
 
 Rules:
 Only single words in English.
@@ -20160,7 +20160,7 @@ No specialised vocabulary or technical terms.
 Think of the words on your own.
 
 Notes:
-Return words as comma-separated list. Do not return anything else.","1 dog, 2 moon, 3 happiness, 4 chair, 5 love, 6 ocean, 7 book, 8 money, 9 music, 10 time",2026-08-19T17:25:45.499697+00:00
+Return words as comma-separated list. Do not return anything else.","1dog, 2moon, 3happiness, 4chair, 5love, 6ocean, 7book, 8money, 9music, 10time",2026-08-19T17:25:45.499697+00:00
 DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,261,0.5,dog,sky,love,book,chair,happiness,banana,computer,freedom,music,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
 
 Rules:
@@ -20315,7 +20315,7 @@ Think of the words on your own.
 
 Notes:
 Return words as comma-separated list. Do not return anything else.","dog, happiness, ocean, computer, love, mountain, book, music, tree, freedom",2026-08-19T21:18:35.076090+00:00
-DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,275,0.5,1 dog,2 sun,3 love,4 chair,5 freedom,6 apple,7 music,8 money,9 water,10 time,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,275,0.5,1dog,2sun,3love,4chair,5freedom,6apple,7music,8money,9water,10time,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
 
 Rules:
 Only single words in English.
@@ -20325,7 +20325,7 @@ No specialised vocabulary or technical terms.
 Think of the words on your own.
 
 Notes:
-Return words as comma-separated list. Do not return anything else.","1 dog, 2 sun, 3 love, 4 chair, 5 freedom, 6 apple, 7 music, 8 money, 9 water, 10 time",2026-08-19T23:46:31.731474+00:00
+Return words as comma-separated list. Do not return anything else.","1dog, 2sun, 3love, 4chair, 5freedom, 6apple, 7music, 8money, 9water, 10time",2026-08-19T23:46:31.731474+00:00
 DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,276,0.5,dog,happiness,book,ocean,chair,freedom,apple,music,mountain,love,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
 
 Rules:
@@ -20348,7 +20348,7 @@ Think of the words on your own.
 
 Notes:
 Return words as comma-separated list. Do not return anything else.","dog, happiness, chair, ocean, freedom, book, music, mountain, computer, love",2026-08-19T23:46:39.282282+00:00
-DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,278,0.5,1 apple,2 chair,3 love,4 cloud,5 elephant,6 freedom,7 guitar,8 moon,9 pizza,10 time,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,278,0.5,1apple,2chair,3love,4cloud,5elephant,6freedom,7guitar,8moon,9pizza,10time,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
 
 Rules:
 Only single words in English.
@@ -20358,7 +20358,7 @@ No specialised vocabulary or technical terms.
 Think of the words on your own.
 
 Notes:
-Return words as comma-separated list. Do not return anything else.","1 apple, 2 chair, 3 love, 4 cloud, 5 elephant, 6 freedom, 7 guitar, 8 moon, 9 pizza, 10 time",2026-08-19T23:46:42.003782+00:00
+Return words as comma-separated list. Do not return anything else.","1apple, 2chair, 3love, 4cloud, 5elephant, 6freedom, 7guitar, 8moon, 9pizza, 10time",2026-08-19T23:46:42.003782+00:00
 DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,279,0.5,dog,happiness,guitar,ocean,chair,freedom,apple,car,book,love,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
 
 Rules:
@@ -20403,7 +20403,7 @@ Think of the words on your own.
 
 Notes:
 Return words as comma-separated list. Do not return anything else.","dog, happiness, computer, ocean, freedom, book, mountain, love, car, music",2026-08-19T23:46:48.848253+00:00
-DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,283,0.5,1 dog,2 moon,3 happiness,4 chair,5 freedom,6 apple,7 love,8 car,9 time,10 music,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,283,0.5,1dog,2moon,3happiness,4chair,5freedom,6apple,7love,8car,9time,10music,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
 
 Rules:
 Only single words in English.
@@ -20413,7 +20413,7 @@ No specialised vocabulary or technical terms.
 Think of the words on your own.
 
 Notes:
-Return words as comma-separated list. Do not return anything else.","1 dog, 2 moon, 3 happiness, 4 chair, 5 freedom, 6 apple, 7 love, 8 car, 9 time, 10 music",2026-08-19T23:46:50.300814+00:00
+Return words as comma-separated list. Do not return anything else.","1dog, 2moon, 3happiness, 4chair, 5freedom, 6apple, 7love, 8car, 9time, 10music",2026-08-19T23:46:50.300814+00:00
 DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,284,0.5,dog,happiness,ocean,chair,freedom,apple,time,love,mountain,money,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
 
 Rules:
@@ -20436,7 +20436,7 @@ Think of the words on your own.
 
 Notes:
 Return words as comma-separated list. Do not return anything else.","dog, happiness, chair, ocean, love, apple, freedom, book, money, mountain",2026-08-19T23:46:53.512219+00:00
-DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,286,0.5,1 dog,2 moon,3 happiness,4 chair,5 love,6 ocean,7 banana,8 time,9 mountain,10 music,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,286,0.5,1dog,2moon,3happiness,4chair,5love,6ocean,7banana,8time,9mountain,10music,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
 
 Rules:
 Only single words in English.
@@ -20446,7 +20446,7 @@ No specialised vocabulary or technical terms.
 Think of the words on your own.
 
 Notes:
-Return words as comma-separated list. Do not return anything else.","1 dog, 2 moon, 3 happiness, 4 chair, 5 love, 6 ocean, 7 banana, 8 time, 9 mountain, 10 music",2026-08-19T23:46:55.626419+00:00
+Return words as comma-separated list. Do not return anything else.","1dog, 2moon, 3happiness, 4chair, 5love, 6ocean, 7banana, 8time, 9mountain, 10music",2026-08-19T23:46:55.626419+00:00
 DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,287,0.5,dog,happiness,chair,freedom,apple,love,mountain,time,music,water,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
 
 Rules:
@@ -43296,7 +43296,7 @@ Think of the words on your own.
 
 Notes:
 Return words as comma-separated list. Do not return anything else.","cloud, piano, glacier, perfume, bicycle, library, volcano, pineapple, spaceship, typewriter",2026-08-19T21:45:48.583202+00:00
-DAT,Llama-3.2 3b,meta-llama/llama-3.2-3b-instruct,openrouter,251,0.5,cloud,piano,snowflake,bicycle,tornado,pineapple,galaxy,harmonica,postage stamp,fossil,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+DAT,Llama-3.2 3b,meta-llama/llama-3.2-3b-instruct,openrouter,251,0.5,cloud,piano,snowflake,bicycle,tornado,pineapple,galaxy,harmonica,postagestamp,fossil,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
 
 Rules:
 Only single words in English.
@@ -43306,7 +43306,7 @@ No specialised vocabulary or technical terms.
 Think of the words on your own.
 
 Notes:
-Return words as comma-separated list. Do not return anything else.","cloud, piano, snowflake, bicycle, tornado, pineapple, galaxy, harmonica, postage stamp, fossil",2026-08-19T21:45:49.283704+00:00
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snowflake, bicycle, tornado, pineapple, galaxy, harmonica, postagestamp, fossil",2026-08-19T21:45:49.283704+00:00
 DAT,Llama-3.2 3b,meta-llama/llama-3.2-3b-instruct,openrouter,252,0.5,cloud,piano,glacier,computer,perfume,volcano,pineapple,library,submarine,bicycle,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
 
 Rules:
@@ -43898,13 +43898,13 @@ DAT,Llama-4 Maverick,llama4-maverick-instruct-basic,openrouter,8,0.5,cloud,piano
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snowflake, perfume, microscope, library, butterfly, volcano, keyboard, fragrance",2026-08-14T22:46:49.815678+00:00
-DAT,Llama-4 Maverick,llama4-maverick-instruct-basic,openrouter,9,0.5,cloud,piano,snake,library,perfume,bicycle,galaxy,mirror,fragrance replaced keep list diverse not repetitive,so becomes cloud,"Generate 10 nouns that are as different from each other as possible using the instructions below:
+DAT,Llama-4 Maverick,llama4-maverick-instruct-basic,openrouter,9,0.5,cloud,piano,snake,library,perfume,bicycle,galaxy,mirror,fragrancereplacedkeeplistdiversenotrepetitive,sobecomescloud,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
 3. Do not use proper nouns such as people or places.
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
-6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snake, library, perfume, bicycle, galaxy, mirror, fragrance replaced keep list diverse not repetitive, so becomes cloud",2026-08-14T22:46:51.338639+00:00
+6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snake, library, perfume, bicycle, galaxy, mirror, fragrancereplacedkeeplistdiversenotrepetitive, sobecomescloud",2026-08-14T22:46:51.338639+00:00
 DAT,Llama-4 Maverick,llama4-maverick-instruct-basic,openrouter,10,0.5,cloud,piano,sandwich,library,snowflake,perfume,microscope,feather,volcano,harmonica,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -43926,13 +43926,13 @@ DAT,Llama-4 Maverick,llama4-maverick-instruct-basic,openrouter,12,0.5,cloud,pian
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snake, perfume, galaxy, mirror, feather, stamp, laboratory, sandwich",2026-08-14T22:46:55.207215+00:00
-DAT,Llama-4 Maverick,llama4-maverick-instruct-basic,openrouter,13,0.5,cloud,piano,butterfly,snowflake,perfume,microscope,library,fragrance replaced maintain variety cloud,piano,butterfly,"Generate 10 nouns that are as different from each other as possible using the instructions below:
+DAT,Llama-4 Maverick,llama4-maverick-instruct-basic,openrouter,13,0.5,cloud,piano,butterfly,snowflake,perfume,microscope,library,fragrancereplacedmaintainvarietycloud,piano,butterfly,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
 3. Do not use proper nouns such as people or places.
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
-6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, butterfly, snowflake, perfume, microscope, library, fragrance replaced maintain variety cloud, piano, butterfly",2026-08-14T22:46:56.056375+00:00
+6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, butterfly, snowflake, perfume, microscope, library, fragrancereplacedmaintainvarietycloud, piano, butterfly",2026-08-14T22:46:56.056375+00:00
 DAT,Llama-4 Maverick,llama4-maverick-instruct-basic,openrouter,14,0.5,cloud,piano,snake,perfume,galaxy,stamp,mirror,fungus,bicycle,fragrance,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -43947,13 +43947,13 @@ DAT,Llama-4 Maverick,llama4-maverick-instruct-basic,openrouter,15,0.5,cloud,pian
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, sandwich, snowflake, microscope, perfume, galaxy, keyboard, waterfall, sculpture",2026-08-14T22:46:58.127814+00:00
-DAT,Llama-4 Maverick,llama4-maverick-instruct-basic,openrouter,16,0.5,cloud,piano,butterfly,snowflake,perfume,microscope,library,fragrance replaced keep instruction,so cloud,piano,"Generate 10 nouns that are as different from each other as possible using the instructions below:
+DAT,Llama-4 Maverick,llama4-maverick-instruct-basic,openrouter,16,0.5,cloud,piano,butterfly,snowflake,perfume,microscope,library,fragrancereplacedkeepinstruction,soiscloud,piano,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
 3. Do not use proper nouns such as people or places.
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
-6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, butterfly, snowflake, perfume, microscope, library, fragrance replaced keep instruction, so cloud, piano",2026-08-14T22:46:59.126165+00:00
+6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, butterfly, snowflake, perfume, microscope, library, fragrancereplacedkeepinstruction, soiscloud, piano",2026-08-14T22:46:59.126165+00:00
 DAT,Llama-4 Maverick,llama4-maverick-instruct-basic,openrouter,17,0.5,cloud,piano,snowflake,perfume,galaxy,microscope,feather,volcano,library,necklace,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -43989,13 +43989,13 @@ DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,21,0.5,cloud,piano,f
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, fragrance, snowflake, library, microscope, butterfly, galaxy, perfume, furnace",2026-08-17T11:50:56.594242+00:00
-DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,22,0.5,cloud,piano,snake,perfume,galaxy,mirror,fungus,bicycle,fragrance replaced new noun maintain diversity stamp,library replaced more diverse noun bread not diverse enough,"Generate 10 nouns that are as different from each other as possible using the instructions below:
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,22,0.5,cloud,piano,snake,perfume,galaxy,mirror,fungus,bicycle,fragrancereplacednewnounmaintaindiversitystamp,libraryreplacedmorediversenounbreadnotdiverseenough,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
 3. Do not use proper nouns such as people or places.
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
-6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snake, perfume, galaxy, mirror, fungus, bicycle, fragrance replaced new noun maintain diversity stamp, library replaced more diverse noun bread not diverse enough",2026-08-17T11:50:59.737746+00:00
+6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snake, perfume, galaxy, mirror, fungus, bicycle, fragrancereplacednewnounmaintaindiversitystamp, libraryreplacedmorediversenounbreadnotdiverseenough",2026-08-17T11:50:59.737746+00:00
 DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,23,0.5,cloud,piano,sandwich,galaxy,microscope,feather,perfume,volcano,keyboard,snowflake,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -44038,13 +44038,13 @@ DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,28,0.5,cloud,piano,s
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snake, perfume, galaxy, stamp, mirror, fungus, bicycle, fragrance",2026-08-17T11:51:08.649658+00:00
-DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,29,0.5,cloud,piano,fragrance,snowflake,laboratory,fragrance replaced new noun maintain diversity laboratory somewhat specific,so replaced shelf,book,bubble,galaxy,"Generate 10 nouns that are as different from each other as possible using the instructions below:
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,29,0.5,cloud,piano,fragrance,snowflake,laboratory,fragrancereplacednewnounmaintaindiversitylaboratorysomewhatspecific,soitsreplacedshelf,book,bubble,galaxy,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
 3. Do not use proper nouns such as people or places.
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
-6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, fragrance, snowflake, laboratory, fragrance replaced new noun maintain diversity laboratory somewhat specific, so replaced shelf, book, bubble, galaxy",2026-08-17T11:51:09.270732+00:00
+6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, fragrance, snowflake, laboratory, fragrancereplacednewnounmaintaindiversitylaboratorysomewhatspecific, soitsreplacedshelf, book, bubble, galaxy",2026-08-17T11:51:09.270732+00:00
 DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,30,0.5,cloud,piano,snake,perfume,galaxy,stamp,microscope,feather,volcano,harmonica,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -44087,13 +44087,13 @@ DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,35,0.5,cloud,piano,s
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, sandwich, galaxy, kitten, snowflake, microscope, perfume, labyrinth, harmonica",2026-08-17T11:51:36.921386+00:00
-DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,36,0.5,cloud,piano,snowflake,library,perfume,galaxy,microscope,butterfly,fragrance replaced follow rule scent,stamp,"Generate 10 nouns that are as different from each other as possible using the instructions below:
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,36,0.5,cloud,piano,snowflake,library,perfume,galaxy,microscope,butterfly,fragrancereplacedfollowrulescent,stamp,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
 3. Do not use proper nouns such as people or places.
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
-6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snowflake, library, perfume, galaxy, microscope, butterfly, fragrance replaced follow rule scent, stamp",2026-08-17T11:51:37.789044+00:00
+6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snowflake, library, perfume, galaxy, microscope, butterfly, fragrancereplacedfollowrulescent, stamp",2026-08-17T11:51:37.789044+00:00
 DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,37,0.5,cloud,piano,snowflake,perfume,galaxy,microscope,feather,volcano,library,sandwich,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -44283,13 +44283,13 @@ DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,63,0.5,cloud,piano,f
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, fragrance, snowflake, library, microscope, feather, galaxy, sandwich, tambourine",2026-08-17T11:52:28.451164+00:00
-DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,64,0.5,cloud,piano,snake,perfume,galaxy,stamp,mirror,fragrance replaced maintain variety cloud,piano,snake,"Generate 10 nouns that are as different from each other as possible using the instructions below:
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,64,0.5,cloud,piano,snake,perfume,galaxy,stamp,mirror,fragrancereplacedmaintainvarietycloud,piano,snake,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
 3. Do not use proper nouns such as people or places.
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
-6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snake, perfume, galaxy, stamp, mirror, fragrance replaced maintain variety cloud, piano, snake",2026-08-17T11:52:29.312207+00:00
+6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snake, perfume, galaxy, stamp, mirror, fragrancereplacedmaintainvarietycloud, piano, snake",2026-08-17T11:52:29.312207+00:00
 DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,65,0.5,cloud,piano,snowflake,library,perfume,volcano,microscope,feather,galaxy,necklace,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -44416,13 +44416,13 @@ DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,82,0.5,cloud,piano,s
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snake, perfume, galaxy, mirror, bread, feather, volcano, keyboard",2026-08-17T11:52:45.422061+00:00
-DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,83,0.5,cloud,piano,butterfly,snowflake,perfume,galaxy,microscope,library,fragrance replaced maintain variety cloud,piano,"Generate 10 nouns that are as different from each other as possible using the instructions below:
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,83,0.5,cloud,piano,butterfly,snowflake,perfume,galaxy,microscope,library,fragrancereplacedmaintainvarietycloud,piano,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
 3. Do not use proper nouns such as people or places.
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
-6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, butterfly, snowflake, perfume, galaxy, microscope, library, fragrance replaced maintain variety cloud, piano",2026-08-17T11:52:46.309649+00:00
+6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, butterfly, snowflake, perfume, galaxy, microscope, library, fragrancereplacedmaintainvarietycloud, piano",2026-08-17T11:52:46.309649+00:00
 DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,84,0.5,cloud,piano,butterfly,snowflake,library,fragrance,galaxy,microscope,narrative,pebble,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -44535,13 +44535,13 @@ DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,99,0.5,cloud,piano,s
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snowflake, library, perfume, galaxy, microscope, feather, volcano, necklace",2026-08-17T11:52:59.797166+00:00
-DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,100,0.5,cloud,piano,sandwich,library,snowflake,perfume,microscope,bicycle,galaxy,fragrance not used avoid repetition perfume,"Generate 10 nouns that are as different from each other as possible using the instructions below:
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,100,0.5,cloud,piano,sandwich,library,snowflake,perfume,microscope,bicycle,galaxy,fragrancenotusedavoidrepetitionperfume,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
 3. Do not use proper nouns such as people or places.
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
-6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, sandwich, library, snowflake, perfume, microscope, bicycle, galaxy, fragrance not used avoid repetition perfume",2026-08-17T23:12:27.091142+00:00
+6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, sandwich, library, snowflake, perfume, microscope, bicycle, galaxy, fragrancenotusedavoidrepetitionperfume",2026-08-17T23:12:27.091142+00:00
 DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,101,0.5,cloud,piano,fragrance,snowflake,microscope,library,butterfly,volcano,keyboard,galaxy,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -44549,13 +44549,13 @@ DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,101,0.5,cloud,piano,
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, fragrance, snowflake, microscope, library, butterfly, volcano, keyboard, galaxy",2026-08-17T23:12:28.303379+00:00
-DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,102,0.5,cloud,piano,fragrance,galaxy,kitten,snowflake,laboratory,perfume not used similar fragrance,so replacing stamp,tornado,"Generate 10 nouns that are as different from each other as possible using the instructions below:
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,102,0.5,cloud,piano,fragrance,galaxy,kitten,snowflake,laboratory,perfumenotusedsimilarfragrance,soreplacingwithstamp,tornado,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
 3. Do not use proper nouns such as people or places.
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
-6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, fragrance, galaxy, kitten, snowflake, laboratory, perfume not used similar fragrance, so replacing stamp, tornado",2026-08-17T23:12:29.776630+00:00
+6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, fragrance, galaxy, kitten, snowflake, laboratory, perfumenotusedsimilarfragrance, soreplacingwithstamp, tornado",2026-08-17T23:12:29.776630+00:00
 DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,102,0.5,cloud,piano,fragrance,galaxy,snowflake,laboratory,melody,fungus,silhouette,parchment,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -44612,13 +44612,13 @@ DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,106,0.5,cloud,piano,
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, sandwich, library, snowflake, perfume, microscope, bicycle, volcano, fragrance",2026-08-17T23:12:50.071449+00:00
-DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,106,0.5,cloud,piano,snake,perfume,galaxy,mirror,stamp,forest,laboratory,fragrance not valid due similarity perfume,"Generate 10 nouns that are as different from each other as possible using the instructions below:
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,106,0.5,cloud,piano,snake,perfume,galaxy,mirror,stamp,forest,laboratory,fragrancenotvalidduesimilarityperfume,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
 3. Do not use proper nouns such as people or places.
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
-6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snake, perfume, galaxy, mirror, stamp, forest, laboratory, fragrance not valid due similarity perfume",2026-08-17T23:12:44.238805+00:00
+6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snake, perfume, galaxy, mirror, stamp, forest, laboratory, fragrancenotvalidduesimilarityperfume",2026-08-17T23:12:44.238805+00:00
 DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,107,0.5,cloud,piano,fragrance,snowflake,microscope,novel,galaxy,feather,labyrinth,perfume,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -44703,13 +44703,13 @@ DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,112,0.5,cloud,piano,
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, fragrance, snowflake, library, microscope, feather, galaxy, perfume, furniture",2026-08-17T23:13:07.218707+00:00
-DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,113,0.5,cloud,piano,fragrance,snowflake,laboratory,fragrance replaced new noun perfume also considered finally kitchen not chosen,however furniture considered then sculpture,finally cloud,piano,fragrance followed snowflake,"Generate 10 nouns that are as different from each other as possible using the instructions below:
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,113,0.5,cloud,piano,fragrance,snowflake,laboratory,fragrancereplacednewnounperfumealsoconsideredfinallykitchennotchosen,howeverfurnitureconsideredthensculpture,finallycloud,piano,fragrancefollowedsnowflake,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
 3. Do not use proper nouns such as people or places.
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
-6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, fragrance, snowflake, laboratory, fragrance replaced new noun perfume also considered finally kitchen not chosen, however furniture considered then sculpture, finally cloud, piano, fragrance followed snowflake",2026-08-17T23:13:07.366939+00:00
+6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, fragrance, snowflake, laboratory, fragrancereplacednewnounperfumealsoconsideredfinallykitchennotchosen, howeverfurnitureconsideredthensculpture, finallycloud, piano, fragrancefollowedsnowflake",2026-08-17T23:13:07.366939+00:00
 DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,113,0.5,cloud,piano,fragrance,snowflake,laboratory,dictionary,butterfly,galaxy,sculpture,silence,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -44738,13 +44738,13 @@ DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,115,0.5,cloud,piano,
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snowflake, perfume, galaxy, microscope, feather, volcano, library, sandwich",2026-08-17T23:13:22.652776+00:00
-DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,115,0.5,cloud,piano,butterfly,snowflake,perfume,microscope,library,fragrance replaced keep list diverse not repetitive,so cloud,piano,"Generate 10 nouns that are as different from each other as possible using the instructions below:
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,115,0.5,cloud,piano,butterfly,snowflake,perfume,microscope,library,fragrancereplacedkeeplistdiversenotrepetitive,socloud,piano,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
 3. Do not use proper nouns such as people or places.
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
-6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, butterfly, snowflake, perfume, microscope, library, fragrance replaced keep list diverse not repetitive, so cloud, piano",2026-08-17T23:13:28.171172+00:00
+6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, butterfly, snowflake, perfume, microscope, library, fragrancereplacedkeeplistdiversenotrepetitive, socloud, piano",2026-08-17T23:13:28.171172+00:00
 DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,116,0.5,cloud,piano,sandwich,galaxy,snowflake,microscope,perfume,volcano,keyboard,library,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -44892,13 +44892,13 @@ DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,126,0.5,cloud,piano,
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snowflake, perfume, galaxy, microscope, feather, laboratory, silence, furniture",2026-08-17T23:13:37.799067+00:00
-DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,126,0.5,cloud,piano,butterfly,snowflake,perfume,microscope,library,fragrance replaced maintain variety cloud,piano,butterfly,"Generate 10 nouns that are as different from each other as possible using the instructions below:
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,126,0.5,cloud,piano,butterfly,snowflake,perfume,microscope,library,fragrancereplacedmaintainvarietycloud,piano,butterfly,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
 3. Do not use proper nouns such as people or places.
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
-6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, butterfly, snowflake, perfume, microscope, library, fragrance replaced maintain variety cloud, piano, butterfly",2026-08-17T23:13:40.628503+00:00
+6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, butterfly, snowflake, perfume, microscope, library, fragrancereplacedmaintainvarietycloud, piano, butterfly",2026-08-17T23:13:40.628503+00:00
 DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,127,0.5,cloud,piano,snowflake,library,perfume,microscope,galaxy,butterfly,dictionary,furnace,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -45074,13 +45074,13 @@ DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,139,0.5,cloud,piano,
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snowflake, library, fragrance, galaxy, microscope, butterfly, silence, furnace",2026-08-17T23:13:49.881344+00:00
-DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,139,0.5,cloud,piano,snowflake,perfume,galaxy,feather,microscope,library,fragrance replaced maintain variety cloud,piano,"Generate 10 nouns that are as different from each other as possible using the instructions below:
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,139,0.5,cloud,piano,snowflake,perfume,galaxy,feather,microscope,library,fragrancereplacedmaintainvarietycloud,piano,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
 3. Do not use proper nouns such as people or places.
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
-6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snowflake, perfume, galaxy, feather, microscope, library, fragrance replaced maintain variety cloud, piano",2026-08-17T23:13:52.808832+00:00
+6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snowflake, perfume, galaxy, feather, microscope, library, fragrancereplacedmaintainvarietycloud, piano",2026-08-17T23:13:52.808832+00:00
 DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,140,0.5,cloud,piano,snowflake,perfume,galaxy,stamp,microscope,feather,volcano,harmonica,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -45473,13 +45473,13 @@ DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,233,0.5,cloud,piano,
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
 6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snowflake, library, perfume, volcano, microscope, feather, labyrinth, galaxy",2026-08-19T01:11:58.195514+00:00
-DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,234,0.5,cloud,piano,snowflake,perfume,galaxy,feather,microscope,library,fragrance replaced follow rule fragrance similar perfume,so replaced kitchen,"Generate 10 nouns that are as different from each other as possible using the instructions below:
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,234,0.5,cloud,piano,snowflake,perfume,galaxy,feather,microscope,library,fragrancereplacedfollowrulefragrancesimilarperfume,soreplacedkitchen,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
 3. Do not use proper nouns such as people or places.
 4. Do not use specialized vocabulary or technical terms.
 5. Return response as a string with each noun separated by commas: ""noun1, noun2, … noun10"".
-6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snowflake, perfume, galaxy, feather, microscope, library, fragrance replaced follow rule fragrance similar perfume, so replaced kitchen",2026-08-19T01:11:59.399505+00:00
+6. Do not return anything else other than the comma-separated string of nouns.","cloud, piano, snowflake, perfume, galaxy, feather, microscope, library, fragrancereplacedfollowrulefragrancesimilarperfume, soreplacedkitchen",2026-08-19T01:11:59.399505+00:00
 DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,235,0.5,cloud,piano,snowflake,library,perfume,microscope,volcano,necklace,carousel,fragrance,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -46135,6 +46135,556 @@ Think of the words on your own.
 
 Notes:
 Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, kitten, snowflake, library, perfume, volcano, necklace, microscope",2026-08-20T15:29:39.777873+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,300,0.5,cloud,piano,snowflake,sandwich,library,kitten,volcano,perfume,bicycle,galaxy,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snowflake, sandwich, library, kitten, volcano, perfume, bicycle, galaxy",2026-09-03T13:48:11.719065+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,301,0.5,cloud,piano,sandwich,snowflake,library,perfume,microscope,bicycle,kitten,galaxy,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, library, perfume, microscope, bicycle, kitten, galaxy",2026-09-03T13:48:13.114652+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,302,0.5,cloud,piano,sandwich,snowflake,library,volcano,perfume,microscope,bicycle,galaxy,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, library, volcano, perfume, microscope, bicycle, galaxy",2026-09-03T13:48:13.985333+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,303,0.5,cloud,piano,snake,bread,ocean,chair,feather,mirror,storm,fungus,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, feather, mirror, storm, fungus",2026-09-03T13:48:19.856398+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,304,0.5,cloud,piano,snake,bread,ocean,chair,feather,storm,mirror,book,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, feather, storm, mirror, book",2026-09-03T13:48:20.664669+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,305,0.5,cloud,piano,sandwich,snowflake,library,perfume,volcano,keyboard,butterfly,galaxy,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, library, perfume, volcano, keyboard, butterfly, galaxy",2026-09-03T13:48:23.476599+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,306,0.5,cloud,piano,snake,bread,ocean,chair,egg,storm,necklace,forest,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, egg, storm, necklace, forest",2026-09-03T13:48:24.318346+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,307,0.5,cloud,piano,snake,bread,ocean,chair,feather,storm,mirror,fungus,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, feather, storm, mirror, fungus",2026-09-03T13:48:27.893218+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,308,0.5,cloud,piano,sandwich,snowflake,library,volcano,perfume,microscope,carousel,galaxy,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, library, volcano, perfume, microscope, carousel, galaxy",2026-09-03T13:48:30.050431+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,309,0.5,cloud,piano,snake,bread,ocean,chair,flower,mirror,storm,book,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, flower, mirror, storm, book",2026-09-03T13:48:34.526084+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,310,0.5,cloud,piano,sandwich,snowflake,library,perfume,volcano,kitten,microscope,galaxy,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, library, perfume, volcano, kitten, microscope, galaxy",2026-09-03T13:48:37.264590+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,311,0.5,cloud,piano,sandwich,snowflake,microscope,perfume,bicycle,library,volcano,fungus,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, microscope, perfume, bicycle, library, volcano, fungus",2026-09-03T13:48:39.021478+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,312,0.5,cloud,piano,kitten,snowflake,library,fragrance,pebble,narrative,galaxy,sandwich,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, kitten, snowflake, library, fragrance, pebble, narrative, galaxy, sandwich",2026-09-03T13:48:39.872832+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,313,0.5,cloud,piano,sandwich,snowflake,library,perfume,volcano,keyboard,butterfly,tombstone,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, library, perfume, volcano, keyboard, butterfly, tombstone",2026-09-03T13:48:41.959938+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,314,0.5,cloud,piano,snake,bread,ocean,chair,flower,book,mirror,sand,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, flower, book, mirror, sand",2026-09-03T13:48:43.914334+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,315,0.5,cloud,piano,snake,bread,ocean,chair,feather,mirror,storm,fungus,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, feather, mirror, storm, fungus",2026-09-03T13:48:45.971064+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,316,0.5,cloud,piano,sandwich,snowflake,library,fragrance,bubble,volcano,narrative,furniture,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, library, fragrance, bubble, volcano, narrative, furniture",2026-09-03T13:48:47.164203+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,317,0.5,cloud,piano,sandwich,butterfly,snowflake,library,fragrance,microscope,ocean,furniture,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, butterfly, snowflake, library, fragrance, microscope, ocean, furniture",2026-09-03T13:48:49.566788+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,318,0.5,cloud,piano,sandwich,snowflake,microscope,perfume,volcano,feather,library,galaxy,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, microscope, perfume, volcano, feather, library, galaxy",2026-09-03T13:48:52.953814+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,319,0.5,cloud,piano,snake,bread,ocean,chair,flower,mirror,storm,book,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, flower, mirror, storm, book",2026-09-03T13:48:55.724290+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,320,0.5,cloud,piano,snake,bread,ocean,chair,feather,storm,mirror,book,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, feather, storm, mirror, book",2026-09-03T13:49:43.811293+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,321,0.5,cloud,piano,snake,bread,ocean,chair,feather,storm,mirror,garden,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, feather, storm, mirror, garden",2026-09-03T13:49:47.039790+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,322,0.5,cloud,piano,sandwich,snowflake,library,perfume,volcano,keyboard,butterfly,tombstone,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, library, perfume, volcano, keyboard, butterfly, tombstone",2026-09-03T13:49:49.506695+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,323,0.5,cloud,piano,sandwich,snowflake,library,perfume,volcano,kitten,microscope,galaxy,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, library, perfume, volcano, kitten, microscope, galaxy",2026-09-03T13:49:50.323484+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,324,0.5,cloud,piano,sandwich,snowflake,library,perfume,volcano,feather,microscope,galaxy,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, library, perfume, volcano, feather, microscope, galaxy",2026-09-03T13:49:51.180449+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,325,0.5,cloud,piano,sandwich,snowflake,library,perfume,volcano,feather,mirror,galaxy,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, library, perfume, volcano, feather, mirror, galaxy",2026-09-03T13:49:52.019905+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,326,0.5,cloud,piano,sandwich,kitten,snowflake,library,perfume,volcano,necklace,microscope,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, kitten, snowflake, library, perfume, volcano, necklace, microscope",2026-09-03T13:49:54.670058+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,327,0.5,cloud,piano,snowflake,sandwich,microscope,feather,perfume,volcano,library,bicycle,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snowflake, sandwich, microscope, feather, perfume, volcano, library, bicycle",2026-09-03T13:49:55.507371+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,328,0.5,cloud,piano,snake,bread,ocean,chair,feather,storm,mirror,book,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, feather, storm, mirror, book",2026-09-03T13:49:56.411111+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,329,0.5,cloud,piano,snake,bread,ocean,chair,flower,mirror,storm,book,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, flower, mirror, storm, book",2026-09-03T13:49:58.413988+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,330,0.5,cloud,piano,sandwich,kitten,snowflake,library,perfume,volcano,bicycle,galaxy,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, kitten, snowflake, library, perfume, volcano, bicycle, galaxy",2026-09-03T13:50:01.995805+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,331,0.5,cloud,piano,sandwich,snowflake,library,perfume,volcano,kitten,microscope,galaxy,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, library, perfume, volcano, kitten, microscope, galaxy",2026-09-03T13:50:02.961486+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,332,0.5,cloud,piano,sandwich,snowflake,microscope,perfume,bicycle,library,volcano,fungus,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, microscope, perfume, bicycle, library, volcano, fungus",2026-09-03T13:50:03.901430+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,333,0.5,cloud,piano,sandwich,snowflake,library,perfume,volcano,kitten,mirror,galaxy,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, library, perfume, volcano, kitten, mirror, galaxy",2026-09-03T13:50:04.841489+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,334,0.5,cloud,piano,snake,bread,ocean,chair,flower,book,mirror,sand,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, flower, book, mirror, sand",2026-09-03T13:50:05.602274+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,335,0.5,cloud,piano,snake,bread,ocean,chair,feather,storm,mirror,garden,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, feather, storm, mirror, garden",2026-09-03T13:50:07.831007+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,336,0.5,cloud,piano,snake,bread,ocean,chair,feather,storm,mirror,fungus,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, feather, storm, mirror, fungus",2026-09-03T13:50:10.968546+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,337,0.5,cloud,piano,snake,bread,ocean,chair,flower,book,mirror,sand,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, flower, book, mirror, sand",2026-09-03T13:50:13.702438+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,338,0.5,cloud,piano,snowflake,sandwich,library,bicycle,perfume,galaxy,kitten,volcano,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snowflake, sandwich, library, bicycle, perfume, galaxy, kitten, volcano",2026-09-03T13:50:17.168571+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,339,0.5,cloud,piano,sandwich,butterfly,snowflake,library,perfume,volcano,keyboard,pebble,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, butterfly, snowflake, library, perfume, volcano, keyboard, pebble",2026-09-03T13:50:20.285124+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,340,0.5,cloud,piano,sandwich,snowflake,microscope,kitten,perfume,galaxy,whisper,brick,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, microscope, kitten, perfume, galaxy, whisper, brick",2026-09-03T13:50:21.089744+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,341,0.5,cloud,piano,snake,bread,ocean,chair,feather,storm,mirror,fungus,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, feather, storm, mirror, fungus",2026-09-03T13:50:22.215415+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,342,0.5,cloud,piano,snake,bread,ocean,chair,feather,storm,mirror,fungus,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, feather, storm, mirror, fungus",2026-09-03T13:50:25.493814+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,343,0.5,cloud,piano,sandwich,snowflake,microscope,perfume,volcano,feather,library,guitar,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, microscope, perfume, volcano, feather, library, guitar",2026-09-03T13:50:28.787693+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,344,0.5,cloud,piano,snake,bread,ocean,chair,melody,storm,kitten,library,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, melody, storm, kitten, library",2026-09-03T13:50:29.617811+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,345,0.5,cloud,piano,sandwich,snowflake,library,perfume,volcano,kitten,microscope,galaxy,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, library, perfume, volcano, kitten, microscope, galaxy",2026-09-03T13:50:32.021037+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,346,0.5,cloud,piano,sandwich,snowflake,microscope,perfume,galaxy,feather,volcano,library,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, microscope, perfume, galaxy, feather, volcano, library",2026-09-03T13:50:32.904360+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,347,0.5,cloud,piano,snake,bread,ocean,chair,feather,storm,mirror,fungus,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, feather, storm, mirror, fungus",2026-09-03T13:50:33.686568+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,348,0.5,cloud,piano,snake,bread,ocean,chair,feather,storm,mirror,fungus,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, snake, bread, ocean, chair, feather, storm, mirror, fungus",2026-09-03T13:50:35.865777+00:00
+DAT,Llama-4 Maverick,meta-llama/llama-4-maverick,openrouter,349,0.5,cloud,piano,sandwich,snowflake,library,fragrance,volcano,kitten,mirror,galaxy,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, snowflake, library, fragrance, volcano, kitten, mirror, galaxy",2026-09-03T13:50:36.654325+00:00
 DAT,Llama-4 Scout,meta-llama/llama-4-scout,openrouter,0,0.5,cloud,chair,river,fungus,piano,sandwich,storm,library,bicycle,pillow,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -48435,3 +48985,36 @@ Think of the words on your own.
 
 Notes:
 Return words as comma-separated list. Do not return anything else.","cloud, chair, happiness, mountain, ocean, book, fungus, piano, sandwich, galaxy",2026-08-20T00:02:25.575129+00:00
+DAT,Qwen-Turbo,qwen-turbo,qwen,20,0.5,apple,bicycle,ocean,happiness,mountain,clock,language,fire,tree,universe,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","apple, bicycle, ocean, happiness, mountain, clock, language, fire, tree, universe",2026-09-03T13:47:35.963626+00:00
+DAT,Qwen-Turbo,qwen-turbo,qwen,21,0.5,apple,river,music,chair,oxygen,shadow,mountain,idea,keyboard,laughter,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","apple, river, music, chair, oxygen, shadow, mountain, idea, keyboard, laughter",2026-09-03T13:47:37.984622+00:00
+DAT,Qwen-Turbo,qwen-turbo,qwen,22,0.5,apple,river,music,chair,oxygen,shadow,mountain,idea,keyboard,happiness,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","apple, river, music, chair, oxygen, shadow, mountain, idea, keyboard, happiness",2026-09-03T13:47:39.704035+00:00
