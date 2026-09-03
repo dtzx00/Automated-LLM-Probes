@@ -11,7 +11,7 @@ All probe definitions live in [Automated-Intelligence-Tests](https://github.com/
 ## Layout
 
 ```
-api/                    # one file per provider family
+api/                     # one file per provider family
   openai.py
   claude.py
   openrouter.py
@@ -21,10 +21,10 @@ api/                    # one file per provider family
   hunyuan.py
   moonshot.py
   doubao.py
-data/                   # responses land here (gitignored contents)
-models.csv              # calling registry (name, vendor, api, model_id, ...)
-automated-llm-probes.py # collect() + parse_and_merge()
-requirements.txt        # openai, anthropic
+data/                    # responses land here (gitignored contents)
+models.csv               # calling registry (name, vendor, api, model_id, ...)
+automated-llm-probes.py  # collect() + parse_and_merge()
+requirements.txt         # openai, anthropic
 ```
 
 ## Setup
@@ -58,9 +58,14 @@ python automated-llm-probes.py parse DAT
 Responses are stored as pickles under `data/<task>/<model>/<temp>/`. <br>
 Data are then merged into `data/<task>.csv`. Data folder is gitignored.
 
-## models.csv
+## Models
 
-One row per model + lane. Columns:
+```bash
+# check what models are available in the package
+python automated_llm_probes.py list_models
+```
+
+Models all put under models.csv. One row per model + lane. Columns:
 
 | column      | meaning |
 |-------------|---------|
@@ -73,9 +78,8 @@ One row per model + lane. Columns:
 
 Edit this file (or filter the loaded list in code) to choose which models are probed.
 
-## Design notes
+## Requirements
 
-- Python 3.9+
-- Only two external packages: `openai` and `anthropic`
+- Python 3.9+ and required package: [Automated-Intelligence-Tests](https://github.com/dtzx00/Automated-Intelligence-Tests)
+- Only two external packages for model API: `openai` and `anthropic`
 - All other providers are OpenAI-compatible and reuse the same client with a different base URL
-- Pure and minimal — no over-engineering
