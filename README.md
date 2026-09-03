@@ -35,13 +35,18 @@ pip install -r requirements.txt
 source /Users/daweiwang/.config/llm_api_keys.sh   # or your own key file
 ```
 
-Make sure Automated-Intelligence-Tests is on `PYTHONPATH` (or installed) so the probe functions can be imported.
+Make sure Automated-Intelligence-Tests is installed to your environment.<br>
+If not, simply install it using `pip3 install automated-intelligence-tests`.<br>
+After installing, all probe functions can be imported.
 
 ## Usage
 
 ```bash
-# collect responses (default = all models that have keys)
+# collect responses using all models that have keys
 python automated-llm-probes.py collect DAT 250
+
+# collect specific models such as Llama-4 Maverick
+python automated_llm_probes.py collect DAT 250 "Llama-4 Maverick"
 
 # restrict to a subset by editing the call or filtering models.csv
 python automated-llm-probes.py collect DAT 50
@@ -50,7 +55,8 @@ python automated-llm-probes.py collect DAT 50
 python automated-llm-probes.py parse DAT
 ```
 
-Responses are stored as pickles under `data/<task>/<model>/<temp>/` and then merged into `data/<task>.csv`.
+Responses are stored as pickles under `data/<task>/<model>/<temp>/`. <br>
+Data are then merged into `data/<task>.csv`. Data folder is gitignored.
 
 ## models.csv
 

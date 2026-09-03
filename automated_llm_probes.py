@@ -151,6 +151,11 @@ if __name__ == "__main__":
         print("Usage: python automated_llm_probes.py <test_name> <sample_size> <model_name(s)>")
         sys.exit(1)
 
+    if sys.argv[1] == "list_models":
+        for m in ready_models():
+            print(f"{m['name']:25s} {m['vendor']:12s} {m['api']:10s} {m['model_id']}")
+        sys.exit(0)
+
     test = sys.argv[1]
     n_per_model = int(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2].isdigit() else 250
     names = [a for a in sys.argv[2:] if not a.isdigit()]
