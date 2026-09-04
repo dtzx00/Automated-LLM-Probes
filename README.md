@@ -2,11 +2,12 @@
 
 Minimal package that calls LLM APIs and saves the responses.
 It contains **no probe logic** (no prompts, no item sampling, no answer parsing).
-All probe definitions live in [Automated-Intelligence-Tests](https://github.com/dtzx00/Automated-Intelligence-Tests) and are imported as three functions:
+All probe definitions live in [Automated-Intelligence-Tests](https://github.com/dtzx00/Automated-Intelligence-Tests) and are imported as:
 
-- `sample(i)` → parameters for repetition *i*
-- `build_prompt(**kwargs)` → the instruction text
-- `parse(raw, **kwargs)` → structured fields from a response
+- `ait.instruct(test, cue=None, seed=None, **kwargs)` → stimulus + instruction text
+- `ait.evaluate(test, responses, **kwargs)` → score (used outside this repo)
+
+This package only calls `instruct()`. It stores the raw model response.
 
 ## Layout
 
@@ -43,16 +44,25 @@ After installing, all probe functions can be imported.
 
 ```bash
 # collect responses using all models that have keys
-python automated-llm-probes.py collect DAT 250
+python automated_llm_probes.py collect DAT 250
 
-# collect specific models such as Llama-4 Maverick
+# collect specific models (quote names that contain spaces)
 python automated_llm_probes.py collect DAT 250 "Llama-4 Maverick"
 
-# restrict to a subset by editing the call or filtering models.csv
-python automated-llm-probes.py collect DAT 50
+# collect with a pinned cue
+python automated_llm_probes.py collect AUT 260 --cue brick
+python automated_llm_probes.py collect CWT 100 --cue stamp,letter,send
+python automated_llm_probes.py collect CAT 50 --cue television,lake --single-item
+python automated_llm_probes.py collect CAT 50 --cue television:lake --single-item
 
-# merge / parse the pickles into a CSV
-python automated-llm-probes.py parse DAT
+# still random if --cue is omitted
+python automated_llm_probes.py collect AUT 250
+
+# load valid pickles for a task (does not write CSV)
+python automated_llm_probes.py parse DAT
+
+# models that have keys and are not marked dead
+python automated_llm_probes.py list_models
 ```
 
 Responses are stored as pickles under `data/<task>/<model>/<temp>/`. <br>
