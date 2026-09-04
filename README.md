@@ -30,17 +30,17 @@ requirements.txt         # openai, anthropic
 
 ## Setup
 
+Make sure Automated-Intelligence-Tests is installed to your environment. If not, simply install it using `pip3 install automated-intelligence-tests`. After installing, all probe functions can be imported.
+
 ```bash
 git pull origin main
 pip install -r requirements.txt
 source /Users/daweiwang/.config/llm_api_keys.sh   # or your own key file
 ```
 
-Make sure Automated-Intelligence-Tests is installed to your environment.<br>
-If not, simply install it using `pip3 install automated-intelligence-tests`.<br>
-After installing, all probe functions can be imported.
-
 ## Usage
+
+Responses are stored as pickles under `data/<task>/<model>/<temp>/`. Data are then merged into `data/<task>.csv`. Data folder is gitignored.
 
 ```bash
 # collect responses using all models that have keys
@@ -65,8 +65,41 @@ python automated_llm_probes.py parse DAT
 python automated_llm_probes.py list_models
 ```
 
-Responses are stored as pickles under `data/<task>/<model>/<temp>/`. <br>
-Data are then merged into `data/<task>.csv`. Data folder is gitignored.
+## Output
+
+Each successful `collect` call writes one pickle and dumped to data folder as output:
+
+- `<task>` — lowercased test name (`dat`, `aut`, `cat`, `cwt`)
+- `<model-slug>` — `name` from `models.csv`, lowercased, non-word characters turned into `-`
+- `<temp>` — the model's temperature, or `default` if blank
+- `<hash>` — first 16 hex chars of SHA-256 over `test`, model `name`, `model_id`, rep index, UTC timestamp, and the first 40 characters of the prompt
+
+Failed calls are printed and skipped. They are not written.
+
+| key | type | meaning |
+| --- | --- | --- |
+| `task` | str | uppercased test name (`AUT`, `DAT`, …) |
+| `model_name` | str | `name` from `models.csv` |
+| `model_id` | str | string sent to the API |
+| `provider` | str | `api` column (which `api/*.py` file was used) |
+| `rep` | int | repetition index, 0-based |
+| `temperature_std` | str or None | temperature from `models.csv`, or `None` if blank |
+| `kwargs` | dict | full return value of `ait.instruct()` |
+| `prompt` | str | `kwargs["instructions"]` — the exact text sent to the model |
+| `ts_utc` | str | UTC ISO-8601 timestamp |
+| `hash` | str | same 16-char hash as the filename |
+| `raw` | str | model text (stripped). Not a dict. |
+| `error` | str | empty string on success |
+
+`kwargs` always includes at least:
+
+```python
+{"test": "aut",            # cat / dat / aut / cwt
+ "cue": "brick",           # str for AUT/DAT; list[str] for CWT; list[tuple] for CAT
+ "n_words": None,
+ "instructions": "...",    # same string as prompt
+ "response_format": {...}}
+```
 
 ## Models
 
