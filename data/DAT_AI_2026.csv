@@ -26134,6 +26134,226 @@ Think of the words on your own.
 
 Notes:
 Return words as comma-separated list. Do not return anything else.","dog, happiness, ocean, chair, freedom, apple, music, mountain, love, book",2026-08-19T23:47:16.476179+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,300,0.5,dog,happiness,chair,ocean,freedom,apple,love,mountain,time,money,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, happiness, chair, ocean, freedom, apple, love, mountain, time, money",2026-09-05T18:40:48.622118+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,301,0.5,dog,happiness,computer,ocean,freedom,chair,love,mountain,money,music,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, happiness, computer, ocean, freedom, chair, love, mountain, money, music",2026-09-05T18:40:55.707168+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,302,0.5,dog,moon,happiness,chair,love,apple,freedom,book,water,time,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, moon, happiness, chair, love, apple, freedom, book, water, time",2026-09-05T18:40:57.071439+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,303,0.5,dog,happiness,chair,mountain,banana,love,computer,freedom,book,ocean,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, happiness, chair, mountain, banana, love, computer, freedom, book, ocean",2026-09-05T18:40:57.844178+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,304,0.5,dog,mountain,love,computer,banana,freedom,book,happiness,hammer,ocean,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, mountain, love, computer, banana, freedom, book, happiness, hammer, ocean",2026-09-05T18:40:59.177294+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,305,0.5,dog,umbrella,happiness,mountain,computer,love,banana,chair,freedom,book,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, umbrella, happiness, mountain, computer, love, banana, chair, freedom, book",2026-09-05T18:41:00.227231+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,306,0.5,dog,happiness,airplane,ocean,book,hammer,love,mountain,computer,tree,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, happiness, airplane, ocean, book, hammer, love, mountain, computer, tree",2026-09-05T18:41:01.268575+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,307,0.5,1apple,2chair,3love,4mountain,5book,6happiness,7car,8freedom,9ocean,10music,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","1apple, 2chair, 3love, 4mountain, 5book, 6happiness, 7car, 8freedom, 9ocean, 10music",2026-09-05T18:41:02.725556+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,308,0.5,dog,banana,happiness,chair,ocean,freedom,book,mountain,love,computer,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, banana, happiness, chair, ocean, freedom, book, mountain, love, computer",2026-09-05T18:41:03.764082+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,309,0.5,1apple,2chair,3love,4mountain,5music,6freedom,7elephant,8time,9water,10book,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","1apple, 2chair, 3love, 4mountain, 5music, 6freedom, 7elephant, 8time, 9water, 10book",2026-09-05T18:41:05.214856+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,310,0.5,dog,mountain,happiness,computer,banana,love,chair,freedom,book,music,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, mountain, happiness, computer, banana, love, chair, freedom, book, music",2026-09-05T18:41:06.696920+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,311,0.5,dog,happiness,book,ocean,chair,freedom,apple,music,hammer,love,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, happiness, book, ocean, chair, freedom, apple, music, hammer, love",2026-09-05T18:41:07.571430+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,312,0.5,dog,happiness,ocean,chair,freedom,apple,love,mountain,book,time,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, happiness, ocean, chair, freedom, apple, love, mountain, book, time",2026-09-05T18:41:08.870119+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,313,0.5,1dog,2sun,3love,4book,5chair,6freedom,7tree,8money,9time,10water,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","1dog, 2sun, 3love, 4book, 5chair, 6freedom, 7tree, 8money, 9time, 10water",2026-09-05T18:41:09.794448+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,314,0.5,dog,chair,love,banana,freedom,computer,happiness,mountain,justice,music,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, chair, love, banana, freedom, computer, happiness, mountain, justice, music",2026-09-05T18:41:11.036825+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,315,0.5,dog,happiness,book,mountain,apple,love,chair,freedom,ocean,time,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, happiness, book, mountain, apple, love, chair, freedom, ocean, time",2026-09-05T18:41:12.543843+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,316,0.5,dog,book,happiness,ocean,chair,freedom,apple,love,mountain,car,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, book, happiness, ocean, chair, freedom, apple, love, mountain, car",2026-09-05T18:41:13.883773+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,317,0.5,dog,chair,love,banana,freedom,computer,happiness,mountain,music,book,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, chair, love, banana, freedom, computer, happiness, mountain, music, book",2026-09-05T18:41:14.973786+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,318,0.5,dog,happiness,chair,ocean,freedom,apple,music,book,love,hammer,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, happiness, chair, ocean, freedom, apple, music, book, love, hammer",2026-09-05T18:41:16.473090+00:00
+DAT,GPT-3.5-Turbo,gpt-3.5-turbo,openai,319,0.5,dog,moon,happiness,chair,ocean,freedom,music,mountain,love,computer,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","dog, moon, happiness, chair, ocean, freedom, music, mountain, love, computer",2026-09-05T18:41:18.043745+00:00
 DAT,GPT-4-Turbo,gpt-4-turbo,openai,0,0.5,apple,freedom,chair,mountain,truth,violin,ocean,shadow,joy,robot,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
@@ -51479,6 +51699,226 @@ Think of the words on your own.
 
 Notes:
 Return words as comma-separated list. Do not return anything else.","cloud, pineapple, piano, galaxy, submarine, tornado, diamond, bicycle, volcano, harmonica",2026-08-20T15:30:36.381936+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,300,0.5,cloud,piano,galaxy,pineapple,submarine,harmonica,tornado,dictionary,pineapple,glacier,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, galaxy, pineapple, submarine, harmonica, tornado, dictionary, pineapple, glacier",2026-09-05T18:41:53.471477+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,301,0.5,cloud,galaxy,pineapple,harmonica,piano,submarine,pineapple,microphone,tornado,typewriter,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, galaxy, pineapple, harmonica, piano, submarine, pineapple, microphone, tornado, typewriter",2026-09-05T18:41:55.487004+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,302,0.5,cloud,diamond,pineapple,library,submarine,guitar,tornado,bicycle,refrigerator,harmonica,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, diamond, pineapple, library, submarine, guitar, tornado, bicycle, refrigerator, harmonica",2026-09-05T18:41:56.407147+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,303,0.5,cloud,pineapple,submarine,piano,galaxy,toaster,diamond,compass,harmonica,typewriter,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, pineapple, submarine, piano, galaxy, toaster, diamond, compass, harmonica, typewriter",2026-09-05T18:41:56.840736+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,304,0.5,cloud,pineapple,submarine,galaxy,harmonica,fossil,compass,tornado,violin,dictionary,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, pineapple, submarine, galaxy, harmonica, fossil, compass, tornado, violin, dictionary",2026-09-05T18:41:57.665889+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,305,0.5,cloud,pineapple,submarine,galaxy,harmonica,bicycle,dictionary,volcano,parachute,compass,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, pineapple, submarine, galaxy, harmonica, bicycle, dictionary, volcano, parachute, compass",2026-09-05T18:41:58.668589+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,306,0.5,cloud,pineapple,bicycle,galaxy,perfume,submarine,harmonica,dictionary,waterfall,microphone,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, pineapple, bicycle, galaxy, perfume, submarine, harmonica, dictionary, waterfall, microphone",2026-09-05T18:41:59.990232+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,307,0.5,cloud,piano,diamond,tornado,bubble,river,galaxy,accordion,submarine,microscope,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, diamond, tornado, bubble, river, galaxy, accordion, submarine, microscope",2026-09-05T18:42:00.391363+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,308,0.5,cloud,pineapple,bicycle,galaxy,fingerprint,violin,snowflake,compass,tornado,microscope,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, pineapple, bicycle, galaxy, fingerprint, violin, snowflake, compass, tornado, microscope",2026-09-05T18:42:01.176105+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,309,0.5,cloud,pineapple,fingerprint,piano,hurricane,galaxy,submarine,harmonica,waterfall,microscope,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, pineapple, fingerprint, piano, hurricane, galaxy, submarine, harmonica, waterfall, microscope",2026-09-05T18:42:02.663595+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,310,0.5,cloud,pineapple,piano,galaxy,harmonica,submarine,tornado,guitar,microscope,iceberg,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, pineapple, piano, galaxy, harmonica, submarine, tornado, guitar, microscope, iceberg",2026-09-05T18:42:04.701876+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,311,0.5,cloud,piano,sandwich,spaceship,diamond,pineapple,submarine,guitar,tornado,harmonica,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, sandwich, spaceship, diamond, pineapple, submarine, guitar, tornado, harmonica",2026-09-05T18:42:05.617312+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,312,0.5,cloud,pineapple,submarine,galaxy,violin,dictionary,fingerprint,hurricane,compass,harmonica,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, pineapple, submarine, galaxy, violin, dictionary, fingerprint, hurricane, compass, harmonica",2026-09-05T18:42:06.480623+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,313,0.5,cloud,mountain,piano,computer,sunset,perfume,bicycle,library,violin,tornado,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, mountain, piano, computer, sunset, perfume, bicycle, library, violin, tornado",2026-09-05T18:42:08.002710+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,314,0.5,cloud,pineapple,submarine,harmonica,galaxy,bicycle,piano,volcano,compass,fingerprint,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, pineapple, submarine, harmonica, galaxy, bicycle, piano, volcano, compass, fingerprint",2026-09-05T18:42:09.241512+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,315,0.5,cloud,piano,galaxy,bubble,silence,mountain,rainbow,hurricane,diamond,fountain,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, piano, galaxy, bubble, silence, mountain, rainbow, hurricane, diamond, fountain",2026-09-05T18:42:10.349642+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,316,0.5,cloud,pineapple,piano,galaxy,bubble,compass,sunset,harmonica,tornado,violin,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, pineapple, piano, galaxy, bubble, compass, sunset, harmonica, tornado, violin",2026-09-05T18:42:12.081897+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,317,0.5,cloud,pineapple,piano,galaxy,submarine,harmonica,volcano,library,compass,bicycle,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, pineapple, piano, galaxy, submarine, harmonica, volcano, library, compass, bicycle",2026-09-05T18:42:13.191358+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,318,0.5,cloud,pineapple,submarine,galaxy,harmonica,fingerprint,tornado,violin,compass,glacier,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, pineapple, submarine, galaxy, harmonica, fingerprint, tornado, violin, compass, glacier",2026-09-05T18:42:13.631258+00:00
+DAT,Llama-3.1 8b,meta-llama/llama-3.1-8b-instruct,openrouter,319,0.5,cloud,pineapple,submarine,galaxy,harmonica,fingerprint,volcano,perfume,piano,tornado,"Please enter 10 words that are as different from each other as possible, in all meanings and uses of the words.
+
+Rules:
+Only single words in English.
+Only nouns (things, objects, concepts).
+No proper nouns (no specific people or places).
+No specialised vocabulary or technical terms.
+Think of the words on your own.
+
+Notes:
+Return words as comma-separated list. Do not return anything else.","cloud, pineapple, submarine, galaxy, harmonica, fingerprint, volcano, perfume, piano, tornado",2026-09-05T18:42:15.046846+00:00
 DAT,Llama-3.2 3b,meta-llama/llama-3.2-3b-instruct,openrouter,0,0.5,cloud,piano,snowflake,harmonica,galaxy,bicycle,cookbook,submarine,typewriter,fossil,"Generate 10 nouns that are as different from each other as possible using the instructions below:
 1. Generate only single-word nouns in English.
 2. Generate only nouns such as things, objects and concepts.
