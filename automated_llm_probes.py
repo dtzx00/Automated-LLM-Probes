@@ -11,7 +11,9 @@ MAX_CONSECUTIVE_FAILURES = 3
 SLEEP_BETWEEN_CALLS = 0.2
 REQUEST_TIMEOUT = 60
 DATA_ROOT = Path("data")
-DEAD_PREFIXES = ("RETIRED", "DEAD", "BAD-ID", "DUPLICATE", "UPSTREAM-ALIAS", "ALIASES")
+DEAD_PREFIXES = ("RETIRED", "DEAD", "BAD-ID", "ID",
+                 "DUPLICATE", "UPSTREAM-ALIAS", 
+                 "ALIASES", "NAME", "unverified",)
 
 KEY_ENV = {
     "openai": "OPENAI_API_KEY",
@@ -22,8 +24,7 @@ KEY_ENV = {
     "qwen": "QWEN_API_KEY",
     "hunyuan": "HUNYUAN_API_KEY",
     "moonshot": "MOONSHOT_API_KEY",
-    "doubao": "DOUBAO_API_KEY",
-}
+    "doubao": "DOUBAO_API_KEY",}
 
 def load_models(path="models.csv"):
     with open(path, newline="", encoding="utf-8") as f:
