@@ -108,7 +108,7 @@ Failed calls are printed and skipped. They are not written.
 python automated_llm_probes.py list_models
 ```
 
-Models all put under models.csv. One row per model + lane. Columns:
+Models all put under models.csv. One row per model + lane. Model naming conventions: lowercase, family-tier-version, hyphens between words (kebab-case), dots kept inside version numbers. Model list column conventions:
 
 | column      | meaning |
 |-------------|---------|
@@ -116,8 +116,12 @@ Models all put under models.csv. One row per model + lane. Columns:
 | vendor      | who built the model |
 | api         | which `api/*.py` file to use |
 | model_id    | exact string sent to the API |
-| base_url    | optional override |
+| release_date | date model was released to public |
 | temperature | blank = omit, otherwise the value to send |
+| speed_per_call | speed to return "ok" |
+| status | status ok or not |
+| reply | reply when asked about "ok" |
+| errors | errors message if any |
 
 Edit this file (or filter the loaded list in code) to choose which models are probed.
 
