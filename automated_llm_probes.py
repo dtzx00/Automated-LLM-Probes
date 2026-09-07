@@ -13,7 +13,7 @@ REQUEST_TIMEOUT = 60
 DATA_ROOT = Path("data")
 DEAD_PREFIXES = ("RETIRED", "DEAD", "BAD-ID", "ID",
                  "DUPLICATE", "UPSTREAM-ALIAS", 
-                 "ALIASES", "NAME", "unverified",)
+                 "ALIASES", "NAME", "unverified","unverified;")
 
 KEY_ENV = {
     "openai": "OPENAI_API_KEY",
@@ -34,7 +34,8 @@ def ready_models(models=None):
     models = models or load_models()
     return [m for m in models
             if os.environ.get(KEY_ENV.get(m["api"], ""), "").strip()
-            and not m.get("status", "").upper().startswith(DEAD_PREFIXES)]
+            and not m.get(
+                "status","").upper().strip().startswith(DEAD_PREFIXES)]
 
 def get_api_module(api_name):
     return importlib.import_module(f"api.{api_name}")
