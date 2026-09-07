@@ -1,84 +1,84 @@
-name,vendor,api,model_id,base_url,temperature,speed_per_call,status
-Grok-Code-Fast,xai,spacexai,grok-code-fast,,0.5,,ALIASES-TO-grok-4.5
-Grok 4.2,xai,spacexai,grok-4.20-0309-non-reasoning,,0.5,,ok
-Grok-4.20-reason,xai,spacexai,grok-4.20-0309-reasoning,,0.5,,ok
-Grok 4.3,xai,spacexai,grok-4.3,,0.5,,ok
-Grok 4.5,xai,spacexai,grok-4.5,,0.5,6454,ok
-Grok Build 0.1,xai,spacexai,grok-build-0.1,,0.5,,ok
-Grok 4.6,xai,spacexai,grok-4.6,,0.5,,ok
-Grok-4.2-multi-agent,xai,spacexai,grok-4.20-multi-agent-0309,,,,unverified
-Hunyuan-Hy3,tencent,hunyuan,hy3,,0.5,1867,unverified
-Hunyuan,tencent,hunyuan,hunyuan-lite,,0.5,1867,unverified
-Qwen-Turbo,qwen,qwen,qwen-turbo,,0.5,1201,unverified
-Qwen3-235B-Instruct,qwen,qwen,qwen3-235b-a22b-instruct-2507,,0.5,,unverified
-Qwen-Max,qwen,qwen,qwen-max,,0.5,1612,unverified
-Qwen-Plus,qwen,qwen,qwen-plus,,0.5,,unverified
-Qwen3.7-Max,qwen,qwen,qwen3.7-max,,0.5,47527,unverified
-Qwen3.5-Plus,qwen,qwen,qwen3.5-plus,,0.5,,unverified
-Qwen4-Max,qwen,qwen,qwen3-max-2026-01-23,,0.5,2727,NAME-ID-MISMATCH
-GPT-3.5-Turbo,openai,openai,gpt-3.5-turbo,,0.5,1463,ok
-GPT-4.0-Turbo,openai,openai,gpt-4-turbo-2024-04-09,,0.5,2425,duplicate-of-GPT-4-Turbo
-GPT-4o,openai,openai,gpt-4o-2024-08-06,,0.5,1229,ok
-o4-mini,openai,openai,o4-mini-2025-04-16,,,5321,temp-omitted-reasoning-model
-GPT-4.1,openai,openai,gpt-4.1-2025-04-14,,0.5,774,ok
-GPT-4.1-mini,openai,openai,gpt-4.1-mini-2025-04-14,,0.5,,ok
-GPT-4.1-nano,openai,openai,gpt-4.1-nano-2025-04-14,,0.5,,ok
-GPT-5,openai,openai,gpt-5-2025-08-07,,,19854,temp-omitted-verify
-GPT-5-mini,openai,openai,gpt-5-mini-2025-08-07,,,9131,temp-omitted-verify
-GPT-5.1,openai,openai,gpt-5.1-2025-11-13,,,,temp-omitted-verify
-GPT-5.2,openai,openai,gpt-5.2-2025-12-11,,,,temp-omitted-verify
-GPT-5.4,openai,openai,gpt-5.4-2026-03-05,,0.5,1143,ok
-GPT-5.5,openai,openai,gpt-5.5-2026-04-23,,0.5,3590,ok
-GPT-5.6-Sol,openai,openai,gpt-5.6-sol,,,4190,ok
-GPT-4o-mini,openai,openai,gpt-4o-mini-2024-07-18,,0.5,,ok
-GPT-4-Turbo,openai,openai,gpt-4-turbo,,0.5,2425,ok
-Moonshot-v1-8k,moonshot,moonshot,moonshot-v1-8k,,0.5,,unverified
-Moonshot-v1-128k,moonshot,moonshot,moonshot-v1-128k,,0.5,,unverified
-Kimi-K2,moonshot,moonshot,moonshot-v1-32k,,0.5,,NAME-ID-MISMATCH
-Kimi-K2.5,moonshot,moonshot,kimi-k2.5,,0.5,,unverified
-Kimi-K2.6,moonshot,moonshot,kimi-k2.6,,0.5,2604,unverified
-Kimi-K3,moonshot,moonshot,kimi-k3,,0.5,,unverified
-MiniMax-M2.5,minimax,openrouter,minimax/minimax-m2.5,,0.5,,FIXED-prefix
-MiniMax-M2.5,minimax,openrouter,minimax/minimax-m2.7,,0.5,,FIXED-prefix
-MiniMax-M3,minimax,openrouter,minimax/minimax-m3,,0.5,,FIXED-prefix
-Llama-4 Guard,meta,openrouter,meta-llama/llama-guard-4-12b,,0.5,,unverified
-Llama-4 Scout,meta,openrouter,meta-llama/llama-4-scout,,0.5,,ok
-Llama-4 Maverick,meta,openrouter,meta-llama/llama-4-maverick,,0.5,,ok
-Llama-3.2 3b,meta,openrouter,meta-llama/llama-3.2-3b-instruct,,0.5,,ok
-Llama-3.3 8b,meta,openrouter,meta-llama/llama-3.3-8b-instruct,,0.5,,unverified
-Llama-3.1 8b,meta,openrouter,meta-llama/llama-3.1-8b-instruct,,0.5,,ok
-DeepSeek-R1,deepseek,deepseek,deepseek-r1,,0.5,20694,BAD-ID-use-deepseek-v4-pro
-DeepSeek-V4-Pro,deepseek,deepseek,deepseek-v4-pro,,0.5,6569,temp-inert-in-thinking-mode
-DeepSeek-V4-Flash-TH,deepseek,deepseek,deepseek-v4-flash,,0.5,,DUPLICATE-ID-needs-thinking-flag
-DeepSeek-V4-Flash,deepseek,deepseek,deepseek-v4-flash,,0.5,,temp-inert-in-thinking-mode
-DeepSeek-V4-Flash-OR,deepseek,openrouter,deepseek/deepseek-v4-flash-0731,,0.5,,unverified
-DeepSeek-V4-Pro-OR,deepseek,openrouter,deepseek/deepseek-v4-pro-0813,,0.5,,unverified
-DeepSeek-3.1-Terminus-OR,deepseek,openrouter,deepseek/deepseek-v3.1-terminus,,0.5,,unverified
-DeepSeek-3.1-Base-OR,deepseek,openrouter,deepseek/deepseek-v3.1-base,,0.5,,unverified
-DeepSeek-V3-Chat-OR,deepseek,openrouter,deepseek/deepseek-chat-v3-0324,,0.5,,unverified
-DeepSeek-V2.5-Chat-OR,deepseek,openrouter,deepseek/deepseek-chat-v2.5,,0.5,,unverified
-DeepSeek-3.2-OR,deepseek,openrouter,deepseek/deepseek-v3.2,,0.5,20000,unverified
-Doubao,bytedance,doubao,doubao-pro-32k,,0.5,,unverified
-Ernie-4.0-8k,baidu,baidu,ernie-4.0-8k,,0.5,,unverified
-Claude-3.5-Sonnet,anthropic,claude,claude-3-5-sonnet-20241022,,0.5,,RETIRED-2025-10-28
-Claude-Opus-4.1,anthropic,claude,claude-opus-4-1-20250805,,0.5,2773,RETIRED-2026-08-05
-Claude Sonnet 4.5,anthropic,claude,claude-sonnet-4-5-20250929,,0.5,1774,ok
-Claude Haiku 4.5,anthropic,claude,claude-haiku-4-5-20251001,,0.5,,ok
-Claude Opus 4.5,anthropic,claude,claude-opus-4-5-20251101,,0.5,,ok
-Claude-Sonnet-4.6,anthropic,claude,claude-sonnet-4-6,,0.5,,ok
-Claude Opus 4.7,anthropic,claude,claude-opus-4-7,,,2700,FIXED-temp-omitted
-Claude-Fable-5,anthropic,claude,claude-fable-5,,,5478,FIXED-temp-omitted
-Claude-Sonnet-5,anthropic,claude,claude-sonnet-5,,,2026,FIXED-temp-omitted
-Claude Opus 5,anthropic,claude,claude-opus-5,,,,FIXED-temp-omitted
-Claude Opus 4.6,anthropic,claude,claude-opus-4-6,,0.5,,ADDED-missing
-Claude Opus 4.8,anthropic,claude,claude-opus-4-8,,,,ADDED-missing-temp-omitted
-Gemini-3.8-Flash-OR,google,openrouter,google/gemini-3.8-flash,,0.5,,unverified
-Gemini-3.7-Flash-OR,google,openrouter,google/gemini-3.7-flash,,0.5,,unverified
-Gemini-3.6-Flash-OR,google,openrouter,google/gemini-3.6-flash,,0.5,,unverified
-Gemini-3.5-Flash-OR,google,openrouter,google/gemini-3.5-flash,,0.5,,unverified
-Gemini-3-Pro-OR,google,openrouter,google/gemini-3-pro-preview,,0.5,,unverified
-Gemini-3.1-Flash-OR,google,openrouter,google/gemini-3.1-flash-lite,,0.5,,unverified
-Gemini-1.5-Flash-OR,google,openrouter,google/gemini-flash-1.5,,0.5,,unverified
-Gemini-2.5-Flash-OR,google,openrouter,google/gemini-2.5-flash-lite,,0.5,,unverified
-Gemini-3.1-Pro-OR,google,openrouter,google/gemini-3.1-pro-preview,,0.5,,unverified
-Gemini-2.5-Pro-OR,google,openrouter,google/gemini-2.5-pro,,0.5,,unverified
+name,vendor,api,model_id,release_date,base_url,temperature,speed_per_call,status
+grok-code-fast,xai,spacexai,grok-code-fast,26-Aug-25,,0.5,,ALIASES-TO-grok-4.5
+grok-4.20-non-reasoning,xai,spacexai,grok-4.20-0309-non-reasoning,9-Mar-26,,0.5,,ok;date-from-id-snapshot
+grok-4.20-reasoning,xai,spacexai,grok-4.20-0309-reasoning,9-Mar-26,,0.5,,ok;date-from-id-snapshot
+grok-4.3,xai,spacexai,grok-4.3,30-Apr-26,,0.5,,ok
+grok-4.5,xai,spacexai,grok-4.5,8-Jul-26,,0.5,6454,ok
+grok-build-0.1,xai,spacexai,grok-build-0.1,20-May-26,,0.5,,ok
+grok-4.6,xai,spacexai,grok-4.6,12-Aug-26,,0.5,,ok
+grok-4.20-multi-agent,xai,spacexai,grok-4.20-multi-agent-0309,9-Mar-26,,,,unverified;date-from-id-snapshot
+hunyuan-3,tencent,hunyuan,hy3,6-Jul-26,,0.5,1867,unverified
+hunyuan-lite,tencent,hunyuan,hunyuan-lite,25-Apr-24,,0.5,1867,unverified;date-from-vendor-release-notes
+qwen-turbo,qwen,qwen,qwen-turbo,1-Feb-25,,0.5,1201,unverified;openrouter-listing-date
+qwen-3-235b-instruct,qwen,qwen,qwen3-235b-a22b-instruct-2507,21-Jul-25,,0.5,,unverified
+qwen-max,qwen,qwen,qwen-max,1-Feb-25,,0.5,1612,unverified;openrouter-listing-date
+qwen-plus,qwen,qwen,qwen-plus,1-Feb-25,,0.5,,unverified;openrouter-listing-date
+qwen-3.7-max,qwen,qwen,qwen3.7-max,21-May-26,,0.5,47527,unverified
+qwen-3.5-plus,qwen,qwen,qwen3.5-plus,16-Feb-26,,0.5,,unverified;rolling-alias-first-snapshot
+qwen-3-max,qwen,qwen,qwen3-max-2026-01-23,23-Jan-26,,0.5,2727,NAME-ID-MISMATCH;date-from-id-snapshot
+gpt-3.5-turbo,openai,openai,gpt-3.5-turbo,1-Mar-23,,0.5,1463,ok;date-from-vendor-launch
+gpt-4-turbo,openai,openai,gpt-4-turbo-2024-04-09,9-Apr-24,,0.5,2425,duplicate-of-GPT-4-Turbo
+gpt-4o,openai,openai,gpt-4o-2024-08-06,6-Aug-24,,0.5,1229,ok;date-from-id-snapshot
+o4-mini,openai,openai,o4-mini-2025-04-16,16-Apr-25,,,5321,temp-omitted-reasoning-model
+gpt-4.1,openai,openai,gpt-4.1-2025-04-14,14-Apr-25,,0.5,774,ok
+gpt-4.1-mini,openai,openai,gpt-4.1-mini-2025-04-14,14-Apr-25,,0.5,,ok
+gpt-4.1-nano,openai,openai,gpt-4.1-nano-2025-04-14,14-Apr-25,,0.5,,ok
+gpt-5,openai,openai,gpt-5-2025-08-07,7-Aug-25,,,19854,temp-omitted-verify
+gpt-5-mini,openai,openai,gpt-5-mini-2025-08-07,7-Aug-25,,,9131,temp-omitted-verify
+gpt-5.1,openai,openai,gpt-5.1-2025-11-13,13-Nov-25,,,,temp-omitted-verify
+gpt-5.2,openai,openai,gpt-5.2-2025-12-11,10-Dec-25,,,,temp-omitted-verify;openrouter-date-1d-before-id
+gpt-5.4,openai,openai,gpt-5.4-2026-03-05,5-Mar-26,,0.5,1143,ok
+gpt-5.5,openai,openai,gpt-5.5-2026-04-23,24-Apr-26,,0.5,3590,ok;openrouter-date-1d-after-id
+gpt-5.6-sol,openai,openai,gpt-5.6-sol,9-Jul-26,,,4190,ok
+gpt-4o-mini,openai,openai,gpt-4o-mini-2024-07-18,18-Jul-24,,0.5,,ok
+gpt-4-turbo,openai,openai,gpt-4-turbo,9-Apr-24,,0.5,2425,ok;alias-resolves-to-ga-snapshot
+moonshot-v1-8k,moonshot,moonshot,moonshot-v1-8k,7-Feb-24,,0.5,,unverified;date-from-vendor-launch
+moonshot-v1-128k,moonshot,moonshot,moonshot-v1-128k,7-Feb-24,,0.5,,unverified;date-from-vendor-launch
+moonshot-v1-32k,moonshot,moonshot,moonshot-v1-32k,7-Feb-24,,0.5,,NAME-ID-MISMATCH;date-from-vendor-launch
+kimi-k2.5,moonshot,moonshot,kimi-k2.5,27-Jan-26,,0.5,,unverified
+kimi-k2.6,moonshot,moonshot,kimi-k2.6,20-Apr-26,,0.5,2604,unverified
+kimi-k3,moonshot,moonshot,kimi-k3,16-Jul-26,,0.5,,unverified
+minimax-m2.5,minimax,openrouter,minimax/minimax-m2.5,12-Feb-26,,0.5,,FIXED-prefix
+minimax-m2.7,minimax,openrouter,minimax/minimax-m2.7,18-Mar-26,,0.5,,FIXED-prefix
+minimax-m3,minimax,openrouter,minimax/minimax-m3,31-May-26,,0.5,,FIXED-prefix
+llama-4-guard-12b,meta,openrouter,meta-llama/llama-guard-4-12b,30-Apr-25,,0.5,,unverified
+llama-4-scout,meta,openrouter,meta-llama/llama-4-scout,5-Apr-25,,0.5,,ok
+llama-4-maverick,meta,openrouter,meta-llama/llama-4-maverick,5-Apr-25,,0.5,,ok
+llama-3.2-3b,meta,openrouter,meta-llama/llama-3.2-3b-instruct,25-Sep-24,,0.5,,ok
+llama-3.3-8b,meta,openrouter,meta-llama/llama-3.3-8b-instruct,14-May-25,,0.5,,unverified
+llama-3.1-8b,meta,openrouter,meta-llama/llama-3.1-8b-instruct,23-Jul-24,,0.5,,ok
+deepseek-r1,deepseek,deepseek,deepseek-r1,20-Jan-25,,0.5,20694,BAD-ID-use-deepseek-v4-pro
+deepseek-v4-pro,deepseek,deepseek,deepseek-v4-pro,12-Aug-26,,0.5,6569,temp-inert-in-thinking-mode;date-from-openrouter-0813-listing
+deepseek-v4-flash-thinking,deepseek,deepseek,deepseek-v4-flash,31-Jul-26,,0.5,,DUPLICATE-ID-needs-thinking-flag;date-from-openrouter-0731-listing
+deepseek-v4-flash,deepseek,deepseek,deepseek-v4-flash,31-Jul-26,,0.5,,temp-inert-in-thinking-mode;date-from-openrouter-0731-listing
+deepseek-v4-flash-0731,deepseek,openrouter,deepseek/deepseek-v4-flash-0731,31-Jul-26,,0.5,,unverified
+deepseek-v4-pro-0813,deepseek,openrouter,deepseek/deepseek-v4-pro-0813,12-Aug-26,,0.5,,unverified
+deepseek-v3.1-terminus,deepseek,openrouter,deepseek/deepseek-v3.1-terminus,22-Sep-25,,0.5,,unverified
+deepseek-v3.1-base,deepseek,openrouter,deepseek/deepseek-v3.1-base,20-Aug-25,,0.5,,unverified
+deepseek-v3-chat-0324,deepseek,openrouter,deepseek/deepseek-chat-v3-0324,24-Mar-25,,0.5,,unverified
+deepseek-v2.5-chat,deepseek,openrouter,deepseek/deepseek-chat-v2.5,14-May-24,,0.5,,unverified;openrouter-listing-date-verify
+deepseek-v3.2,deepseek,openrouter,deepseek/deepseek-v3.2,1-Dec-25,,0.5,20000,unverified
+doubao-pro-32k,bytedance,doubao,doubao-pro-32k,15-May-24,,0.5,,unverified;date-from-vendor-launch
+ernie-4.0-8k,baidu,baidu,ernie-4.0-8k,17-Oct-23,,0.5,,unverified;date-from-vendor-launch
+claude-3.5-sonnet,anthropic,claude,claude-3-5-sonnet-20241022,22-Oct-24,,0.5,,RETIRED-2025-10-28
+claude-opus-4.1,anthropic,claude,claude-opus-4-1-20250805,5-Aug-25,,0.5,2773,RETIRED-2026-08-05
+claude-sonnet-4.5,anthropic,claude,claude-sonnet-4-5-20250929,29-Sep-25,,0.5,1774,ok
+claude-haiku-4.5,anthropic,claude,claude-haiku-4-5-20251001,15-Oct-25,,0.5,,ok;release-date-not-id-snapshot-date
+claude-opus-4.5,anthropic,claude,claude-opus-4-5-20251101,24-Nov-25,,0.5,,ok;release-date-not-id-snapshot-date
+claude-sonnet-4.6,anthropic,claude,claude-sonnet-4-6,17-Feb-26,,0.5,,ok
+claude-opus-4.7,anthropic,claude,claude-opus-4-7,16-Apr-26,,,2700,FIXED-temp-omitted
+claude-fable-5,anthropic,claude,claude-fable-5,9-Jun-26,,,5478,FIXED-temp-omitted
+claude-sonnet-5,anthropic,claude,claude-sonnet-5,30-Jun-26,,,2026,FIXED-temp-omitted
+claude-opus-5,anthropic,claude,claude-opus-5,24-Jul-26,,,,FIXED-temp-omitted
+claude-opus-4.6,anthropic,claude,claude-opus-4-6,4-Feb-26,,0.5,,ADDED-missing
+claude-opus-4.8,anthropic,claude,claude-opus-4-8,27-May-26,,,,ADDED-missing-temp-omitted
+gemini-3.8-flash,google,openrouter,google/gemini-3.8-flash,2-Sep-26,,0.5,,unverified
+gemini-3.7-flash,google,openrouter,google/gemini-3.7-flash,13-Aug-26,,0.5,,unverified
+gemini-3.6-flash,google,openrouter,google/gemini-3.6-flash,21-Jul-26,,0.5,,unverified
+gemini-3.5-flash,google,openrouter,google/gemini-3.5-flash,19-May-26,,0.5,,unverified
+gemini-3-pro-preview,google,openrouter,google/gemini-3-pro-preview,18-Nov-25,,0.5,,unverified
+gemini-3.1-flash-lite,google,openrouter,google/gemini-3.1-flash-lite,7-May-26,,0.5,,unverified
+gemini-1.5-flash,google,openrouter,google/gemini-flash-1.5,14-May-24,,0.5,,unverified
+gemini-2.5-flash-lite,google,openrouter,google/gemini-2.5-flash-lite,22-Jul-25,,0.5,,unverified
+gemini-3.1-pro-preview,google,openrouter,google/gemini-3.1-pro-preview,19-Feb-26,,0.5,,unverified
+gemini-2.5-pro,google,openrouter,google/gemini-2.5-pro,17-Jun-25,,0.5,,unverified
