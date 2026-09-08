@@ -148,6 +148,7 @@ def parse_and_merge(test_name: str) -> dict:
                 continue
 
             h = row.pop("hash", None)
+            
             if h is not None:
                 rows[h] = row
 
