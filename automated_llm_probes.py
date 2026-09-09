@@ -130,35 +130,26 @@ def collect(test_name, models=None, n_per_model=250, cue=None,
             time.sleep(SLEEP_BETWEEN_CALLS)
     
 def parse_and_merge(test_name: str) -> dict:
-    """
-    Load valid pickle rows for a task.
-    Returns dict {hash: row} containing metadata + raw
-    """
     task_dir = DATA_ROOT / test_name.lower()
     if not task_dir.is_dir():
         raise FileNotFoundError(task_dir)
-
-    files = list(task_dir.rglob("*.pickle"))
     rows = {}
-
-    for p in tqdm(files, desc=test_name):
+    for p in tqdm(list(task_dir.rglob("*.pickle")), desc=test_name):
         try:
             with p.open("rb") as f:
                 row = pickle.load(f)
-
-            if row.get("error") or not row.get("raw"):
-                continue
-
-            h = row.pop("hash", None)
-            
-            if h is not None:
-                rows[h] = row
-
-        except Exception:
+        except Exception as e:
+            print(f"SKIP {p}: {e}")
             continue
-
-    if not rows: print("No valid rows")
+        if row.get("error") or not row.get("raw"):
+            continue
+        row["cue"] = (row.get("kwargs") or {}).get("cue")
+        h = row.get("hash") or p.stem
+        rows[h] = row
+    if not rows:
+        print("No valid rows")
     return rows
+
 
 def _parse_cli_cue(test_name, cue_args):
     """Turn --cue values into the object ait.instruct() expects."""

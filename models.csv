@@ -1,96 +1,92 @@
 name,vendor,api,model_id,release_date,temperature,speed_per_call,status,reply,errors
-grok-code-fast,xai,spacexai,grok-code-fast,26-Aug-25,0.5,6.31 seconds,ok,ok,
-grok-2,xai,spacexai,grok-2,13-Aug-24,,,,,
-grok-4,xai,spacexai,grok-4,9-Jul-25,0.5,2.55 seconds,ok,ok,
-grok-4.2,xai,spacexai,grok-4.20-0309-non-reasoning,9-Mar-26,0.5,1.54 seconds,ok,ok,
-grok-4.2-reasoning,xai,spacexai,grok-4.20-0309-reasoning,9-Mar-26,0.5,1.72 seconds,ok,ok,
-grok-4.3,xai,spacexai,grok-4.3,30-Apr-26,0.5,2.19 seconds,ok,ok,
-grok-4.5,xai,spacexai,grok-4.5,8-Jul-26,0.5,0.93 seconds,ok,ok,
-grok-build-0.1,xai,spacexai,grok-build-0.1,20-May-26,0.5,2.85 seconds,ok,ok,
-grok-4.6,xai,spacexai,grok-4.6,12-Aug-26,0.5,1.96 seconds,ok,ok,
-grok-4.2-multi-agent,xai,spacexai,grok-4.20-multi-agent-0309,9-Mar-26,,2.1 seconds,failed,,grok-4.2-multi-agent failed after 1 tries: error code: 400 - multi agent requests are not allowed on chat completions
-hunyuan-3,tencent,hunyuan,hy3,6-Jul-26,0.5,2.41 seconds,ok,ok,
-hunyuan-lite,tencent,hunyuan,hunyuan-lite,25-Apr-24,0.5,2.84 seconds,failed,,"hunyuan-lite failed after 1 tries: error code: 400 - {'error': {'type': 'gateway_error', 'code': '400004', 'message': 'the model or service id hunyuan-lite does not exist. please check whether the service id is correct. service ids are available in the online inference service list in the console. see: https://cloud.tencent.com/document/product/1823/130079', 'message_zh': '请求中的模型或服务 id hunyuan-lite 不存在，请检查服务 id 是否正确。服务 id 可在控制台的在线推理服务列表中查看，查看链接：https://cloud.tencent.com/document/product/1823/130079', 'request_id': 'c1e0c27d-b2ab-481a-8049-96e1d34ba64d'}}"
-qwen-turbo,qwen,qwen,qwen-turbo,1-Feb-25,0.5,1.32 seconds,ok,Okay! How can I assist you today? 😊,
-qwen-3-235b-instruct,qwen,qwen,qwen3-235b-a22b-instruct-2507,21-Jul-25,0.5,2.24 seconds,ok,OK,
-qwen-max,qwen,qwen,qwen-max,1-Feb-25,0.5,2.06 seconds,ok,Ok,
-qwen-plus,qwen,qwen,qwen-plus,1-Feb-25,0.5,1.3 seconds,ok,OK,
-qwen-3.7-max,qwen,qwen,qwen3.7-max,21-May-26,0.5,3.13 seconds,ok,ok,
-qwen-3.5-plus,qwen,qwen,qwen3.5-plus,16-Feb-26,0.5,7.9 seconds,ok,OK,
-qwen-3-max,qwen,qwen,qwen3-max-2026-01-23,23-Jan-26,0.5,1.69 seconds,ok,OK!,
-gpt-3.5-turbo,openai,openai,gpt-3.5-turbo,1-Mar-23,0.5,1.86 seconds,ok,"Great, thank you! Let me know if you need any further assistance.",
-gpt-4-turbo,openai,openai,gpt-4-turbo-2024-04-09,9-Apr-24,0.5,1.57 seconds,ok,Ok,
-gpt-4o,openai,openai,gpt-4o-2024-08-06,6-Aug-24,0.5,0.59 seconds,ok,OK.,
-gpt-o4-mini,openai,openai,o4-mini-2025-04-16,16-Apr-25,,1.44 seconds,ok,ok,
-gpt-4.1,openai,openai,gpt-4.1-2025-04-14,14-Apr-25,0.5,0.83 seconds,ok,Ok,
-gpt-4.1-mini,openai,openai,gpt-4.1-mini-2025-04-14,14-Apr-25,0.5,0.77 seconds,ok,Ok!,
-gpt-4.1-nano,openai,openai,gpt-4.1-nano-2025-04-14,14-Apr-25,0.5,0.55 seconds,ok,Ok,
-gpt-5,openai,openai,gpt-5-2025-08-07,7-Aug-25,,1.06 seconds,ok,ok,
-gpt-5-mini,openai,openai,gpt-5-mini-2025-08-07,7-Aug-25,,1.34 seconds,ok,ok,
-gpt-5.1,openai,openai,gpt-5.1-2025-11-13,13-Nov-25,,0.83 seconds,ok,ok,
-gpt-5.2,openai,openai,gpt-5.2-2025-12-11,10-Dec-25,,0.78 seconds,ok,ok,
-gpt-5.4,openai,openai,gpt-5.4-2026-03-05,5-Mar-26,0.5,0.97 seconds,ok,ok,
-gpt-5.5,openai,openai,gpt-5.5-2026-04-23,24-Apr-26,,0.76 seconds,ok,ok,
-gpt-5.6-sol,openai,openai,gpt-5.6-sol,9-Jul-26,,0.99 seconds,ok,ok,
-gpt-4o-mini,openai,openai,gpt-4o-mini-2024-07-18,18-Jul-24,0.5,0.82 seconds,ok,Ok! How can I assist you today?,
-gpt-4-turbo,openai,openai,gpt-4-turbo,9-Apr-24,0.5,1.05 seconds,ok,Ok.,
-moonshot-v1-8k,moonshot,moonshot,moonshot-v1-8k,7-Feb-24,0.5,2.4 seconds,failed,,"moonshot-v1-8k failed after 1 tries: error code: 404 - {'error': {'message': 'not found the model moonshot-v1-8k or permission denied', 'type': 'resource_not_found_error'}}"
-moonshot-v1-128k,moonshot,moonshot,moonshot-v1-128k,7-Feb-24,0.5,2.42 seconds,failed,,"moonshot-v1-128k failed after 1 tries: error code: 404 - {'error': {'message': 'not found the model moonshot-v1-128k or permission denied', 'type': 'resource_not_found_error'}}"
-moonshot-v1-32k,moonshot,moonshot,moonshot-v1-32k,7-Feb-24,0.5,2.42 seconds,failed,,"moonshot-v1-32k failed after 1 tries: error code: 404 - {'error': {'message': 'not found the model moonshot-v1-32k or permission denied', 'type': 'resource_not_found_error'}}"
-kimi-k2.5,moonshot,moonshot,kimi-k2.5,27-Jan-26,,2.35 seconds,failed,,"kimi-k2.5 failed after 1 tries: error code: 404 - {'error': {'message': 'not found the model kimi-k2.5 or permission denied', 'type': 'resource_not_found_error'}}"
-kimi-k2.6,moonshot,moonshot,kimi-k2.6,20-Apr-26,,2.98 seconds,ok,OK.,
-kimi-k2,moonshot,moonshot,kimi-k2-0905-preview,5-Sep-25,,2.33 seconds,failed,,"kimi-k2 failed after 1 tries: error code: 404 - {'error': {'message': 'not found the model kimi-k2-0905-preview or permission denied', 'type': 'resource_not_found_error'}}"
-kimi-k3,moonshot,moonshot,kimi-k3,16-Jul-26,,5.77 seconds,ok,ok,
-minimax-m2.5,minimax,openrouter,minimax/minimax-m2.5,12-Feb-26,0.5,1.38 seconds,ok,Ok! How can I help you today?,
-minimax-m2.7,minimax,openrouter,minimax/minimax-m2.7,18-Mar-26,0.5,3.6 seconds,ok,OK,
-minimax-m3,minimax,openrouter,minimax/minimax-m3,31-May-26,0.5,3.14 seconds,ok,ok,
-llama-4-guard-12b,meta,openrouter,meta-llama/llama-guard-4-12b,30-Apr-25,0.5,0.53 seconds,ok,safe,
-llama-4-scout,meta,openrouter,meta-llama/llama-4-scout,5-Apr-25,0.5,1.04 seconds,ok,ok,
-llama-4-maverick,meta,openrouter,meta-llama/llama-4-maverick,5-Apr-25,0.5,0.8 seconds,ok,ok,
-llama-3.2-3b,meta,openrouter,meta-llama/llama-3.2-3b-instruct,25-Sep-24,0.5,0.55 seconds,ok,How can I assist you today?,
-llama-3.3-8b,meta,openrouter,meta-llama/llama-3.3-8b-instruct,14-May-25,0.5,2.12 seconds,failed,,"llama-3.3-8b failed after 1 tries: error code: 404 - {'error': {'message': 'no endpoints found for meta-llama/llama-3.3-8b-instruct.', 'code': 404}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
-llama-3.3-70b,meta,openrouter,meta-llama/llama-3.3-70b-instruct,6-Dec-24,0.5,0.5 seconds,ok,ok,
-llama-3.1-8b,meta,openrouter,meta-llama/llama-3.1-8b-instruct,23-Jul-24,0.5,3.73 seconds,ok,OK,
-deepseek-r1,deepseek,deepseek,deepseek-r1,20-Jan-25,0.5,2.71 seconds,failed,,"deepseek-r1 failed after 1 tries: error code: 400 - {'error': {'message': 'the supported api model names are deepseek-v4-pro, deepseek-v4-flash, and deepseek-v4-flash-vision-exp, but you passed deepseek-r1.', 'type': 'invalid_request_error', 'param': none, 'code': 'invalid_request_error'}}"
-deepseek-4-pro,deepseek,deepseek,deepseek-v4-pro,12-Aug-26,0.5,1.37 seconds,ok,ok,
-deepseek-4-flash-thinking,deepseek,deepseek,deepseek-v4-flash,31-Jul-26,0.5,1.33 seconds,ok,ok,
-deepseek-4-flash,deepseek,deepseek,deepseek-v4-flash,31-Jul-26,0.5,1.63 seconds,ok,Okay! Let me know if you need anything.,
-deepseek-4-flash-0731,deepseek,openrouter,deepseek/deepseek-v4-flash-0731,31-Jul-26,0.5,1.02 seconds,ok,ok,
-deepseek-4-pro-0813,deepseek,openrouter,deepseek/deepseek-v4-pro-0813,12-Aug-26,0.5,3.16 seconds,ok,ok,
-deepseek-3.1-terminus,deepseek,openrouter,deepseek/deepseek-v3.1-terminus,22-Sep-25,0.5,2.0 seconds,ok,"好的，收到您的回复！ 😊
-
-有什么我可以帮您做的吗？请随时告诉我！",
+grok-code-fast,xai,spacexai,grok-code-fast,26-Aug-25,0.5,11.25 seconds,ok,ok,
+grok-2,xai,spacexai,grok-2,13-Aug-24,default,2.15 seconds,failed,,"grok-2 failed after 1 tries: error code: 400 - {'code': 'invalid-argument', 'error': 'model not found: grok-2'}"
+grok-4,xai,spacexai,grok-4,9-Jul-25,0.5,1.97 seconds,ok,ok,
+grok-4.2,xai,spacexai,grok-4.20-0309-non-reasoning,9-Mar-26,0.5,0.52 seconds,ok,ok,
+grok-4.2-reasoning,xai,spacexai,grok-4.20-0309-reasoning,9-Mar-26,0.5,1.57 seconds,ok,ok,
+grok-4.3,xai,spacexai,grok-4.3,30-Apr-26,0.5,2.1 seconds,ok,ok,
+grok-4.5,xai,spacexai,grok-4.5,8-Jul-26,0.5,1.11 seconds,ok,ok,
+grok-build-0.1,xai,spacexai,grok-build-0.1,20-May-26,0.5,2.89 seconds,ok,ok,
+grok-4.6,xai,spacexai,grok-4.6,12-Aug-26,0.5,3.18 seconds,ok,ok,
+grok-4.2-multi-agent,xai,spacexai,grok-4.20-multi-agent-0309,9-Mar-26,default,2.19 seconds,failed,,grok-4.2-multi-agent failed after 1 tries: error code: 400 - multi agent requests are not allowed on chat completions
+hunyuan-3,tencent,hunyuan,hy3,6-Jul-26,0.5,2.17 seconds,ok,ok,
+hunyuan-lite,tencent,hunyuan,hunyuan-lite,25-Apr-24,0.5,3.44 seconds,failed,,"hunyuan-lite failed after 1 tries: error code: 400 - {'error': {'type': 'gateway_error', 'code': '400004', 'message': 'the model or service id hunyuan-lite does not exist. please check whether the service id is correct. service ids are available in the online inference service list in the console. see: https://cloud.tencent.com/document/product/1823/130079', 'message_zh': '请求中的模型或服务 id hunyuan-lite 不存在，请检查服务 id 是否正确。服务 id 可在控制台的在线推理服务列表中查看，查看链接：https://cloud.tencent.com/document/product/1823/130079', 'request_id': '452f339b-0784-487f-a60c-0cacb7378634'}}"
+qwen-turbo,qwen,qwen,qwen-turbo,1-Feb-25,0.5,1.26 seconds,ok,Okay! How can I assist you today? 😊,
+qwen-3-235b-instruct,qwen,qwen,qwen3-235b-a22b-instruct-2507,21-Jul-25,0.5,1.1 seconds,ok,OK,
+qwen-max,qwen,qwen,qwen-max,1-Feb-25,0.5,1.95 seconds,ok,Ok,
+qwen-plus,qwen,qwen,qwen-plus,1-Feb-25,0.5,1.22 seconds,ok,OK,
+qwen-3.7-max,qwen,qwen,qwen3.7-max,21-May-26,0.5,4.97 seconds,ok,ok,
+qwen-3.5-plus,qwen,qwen,qwen3.5-plus,16-Feb-26,0.5,13.75 seconds,ok,OK,
+qwen-3-max,qwen,qwen,qwen3-max-2026-01-23,23-Jan-26,0.5,1.28 seconds,ok,OK!,
+gpt-3.5-turbo,openai,openai,gpt-3.5-turbo,1-Mar-23,0.5,2.46 seconds,ok,"Great, let me know if you need any further assistance.",
+gpt-4-turbo,openai,openai,gpt-4-turbo-2024-04-09,9-Apr-24,0.5,3.18 seconds,ok,Ok.,
+gpt-4o,openai,openai,gpt-4o-2024-08-06,6-Aug-24,0.5,1.03 seconds,ok,OK.,
+gpt-o4-mini,openai,openai,o4-mini-2025-04-16,16-Apr-25,default,2.94 seconds,ok,ok,
+gpt-4.1,openai,openai,gpt-4.1-2025-04-14,14-Apr-25,0.5,0.5 seconds,ok,ok,
+gpt-4.1-mini,openai,openai,gpt-4.1-mini-2025-04-14,14-Apr-25,0.5,0.57 seconds,ok,Ok!,
+gpt-4.1-nano,openai,openai,gpt-4.1-nano-2025-04-14,14-Apr-25,0.5,0.63 seconds,ok,Ok.,
+gpt-5,openai,openai,gpt-5-2025-08-07,7-Aug-25,default,1.98 seconds,ok,ok,
+gpt-5-mini,openai,openai,gpt-5-mini-2025-08-07,7-Aug-25,default,2.78 seconds,ok,ok,
+gpt-5.1,openai,openai,gpt-5.1-2025-11-13,13-Nov-25,default,0.73 seconds,ok,ok,
+gpt-5.2,openai,openai,gpt-5.2-2025-12-11,10-Dec-25,default,1.17 seconds,ok,ok,
+gpt-5.4,openai,openai,gpt-5.4-2026-03-05,5-Mar-26,0.5,0.94 seconds,ok,ok,
+gpt-5.5,openai,openai,gpt-5.5-2026-04-23,24-Apr-26,default,1.29 seconds,ok,ok,
+gpt-5.6-sol,openai,openai,gpt-5.6-sol,9-Jul-26,default,1.01 seconds,ok,ok,
+gpt-4o-mini,openai,openai,gpt-4o-mini-2024-07-18,18-Jul-24,0.5,0.98 seconds,ok,Ok! How can I assist you today?,
+gpt-4-turbo,openai,openai,gpt-4-turbo,9-Apr-24,0.5,0.76 seconds,ok,Ok.,
+moonshot-v1-8k,moonshot,moonshot,moonshot-v1-8k,7-Feb-24,0.5,2.86 seconds,failed,,"moonshot-v1-8k failed after 1 tries: error code: 404 - {'error': {'message': 'not found the model moonshot-v1-8k or permission denied', 'type': 'resource_not_found_error'}}"
+moonshot-v1-128k,moonshot,moonshot,moonshot-v1-128k,7-Feb-24,0.5,2.32 seconds,failed,,"moonshot-v1-128k failed after 1 tries: error code: 404 - {'error': {'message': 'not found the model moonshot-v1-128k or permission denied', 'type': 'resource_not_found_error'}}"
+moonshot-v1-32k,moonshot,moonshot,moonshot-v1-32k,7-Feb-24,0.5,2.31 seconds,failed,,"moonshot-v1-32k failed after 1 tries: error code: 404 - {'error': {'message': 'not found the model moonshot-v1-32k or permission denied', 'type': 'resource_not_found_error'}}"
+kimi-k2.5,moonshot,moonshot,kimi-k2.5,27-Jan-26,default,2.64 seconds,failed,,"kimi-k2.5 failed after 1 tries: error code: 404 - {'error': {'message': 'not found the model kimi-k2.5 or permission denied', 'type': 'resource_not_found_error'}}"
+kimi-k2.6,moonshot,moonshot,kimi-k2.6,20-Apr-26,default,2.26 seconds,ok,OK,
+kimi-k2,moonshot,moonshot,kimi-k2-0905-preview,5-Sep-25,default,2.36 seconds,failed,,"kimi-k2 failed after 1 tries: error code: 404 - {'error': {'message': 'not found the model kimi-k2-0905-preview or permission denied', 'type': 'resource_not_found_error'}}"
+kimi-k3,moonshot,moonshot,kimi-k3,16-Jul-26,default,6.71 seconds,ok,ok,
+minimax-m2.5,minimax,openrouter,minimax/minimax-m2.5,12-Feb-26,0.5,2.97 seconds,ok,Hello! I'm working properly and ready to help you. What can I assist you with today?,
+minimax-m2.7,minimax,openrouter,minimax/minimax-m2.7,18-Mar-26,0.5,1.99 seconds,ok,Ok.,
+minimax-m3,minimax,openrouter,minimax/minimax-m3,31-May-26,0.5,0.8 seconds,ok,ok,
+llama-4-guard-12b,meta,openrouter,meta-llama/llama-guard-4-12b,30-Apr-25,0.5,1.05 seconds,ok,safe,
+llama-4-scout,meta,openrouter,meta-llama/llama-4-scout,5-Apr-25,0.5,2.34 seconds,ok,ok,
+llama-4-maverick,meta,openrouter,meta-llama/llama-4-maverick,5-Apr-25,0.5,0.62 seconds,ok,ok,
+llama-3.2-3b,meta,openrouter,meta-llama/llama-3.2-3b-instruct,25-Sep-24,0.5,0.45 seconds,ok,How can I assist you today?,
+llama-3.3-8b,meta,openrouter,meta-llama/llama-3.3-8b-instruct,14-May-25,0.5,2.1 seconds,failed,,"llama-3.3-8b failed after 1 tries: error code: 404 - {'error': {'message': 'no endpoints found for meta-llama/llama-3.3-8b-instruct.', 'code': 404}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
+llama-3.3-70b,meta,openrouter,meta-llama/llama-3.3-70b-instruct,6-Dec-24,0.5,0.87 seconds,ok,ok,
+llama-3.1-8b,meta,openrouter,meta-llama/llama-3.1-8b-instruct,23-Jul-24,0.5,0.47 seconds,ok,OK,
+deepseek-r1,deepseek,deepseek,deepseek-r1,20-Jan-25,0.5,2.48 seconds,failed,,"deepseek-r1 failed after 1 tries: error code: 400 - {'error': {'message': 'the supported api model names are deepseek-v4-pro, deepseek-v4-flash, and deepseek-v4-flash-vision-exp, but you passed deepseek-r1.', 'type': 'invalid_request_error', 'param': none, 'code': 'invalid_request_error'}}"
+deepseek-4-pro,deepseek,deepseek,deepseek-v4-pro,12-Aug-26,0.5,1.55 seconds,ok,ok,
+deepseek-4-flash-thinking,deepseek,deepseek,deepseek-v4-flash,31-Jul-26,0.5,1.44 seconds,ok,ok,
+deepseek-4-flash,deepseek,deepseek,deepseek-v4-flash,31-Jul-26,0.5,0.87 seconds,ok,ok,
+deepseek-4-flash-0731,deepseek,openrouter,deepseek/deepseek-v4-flash-0731,31-Jul-26,0.5,27.08 seconds,ok,ok,
+deepseek-4-pro-0813,deepseek,openrouter,deepseek/deepseek-v4-pro-0813,12-Aug-26,0.5,2.23 seconds,ok,ok,
+deepseek-3.1-terminus,deepseek,openrouter,deepseek/deepseek-v3.1-terminus,22-Sep-25,0.5,1.75 seconds,ok,OK! How can I help you today? 😊,
 deepseek-3.1-base,deepseek,openrouter,deepseek/deepseek-v3.1-base,20-Aug-25,0.5,2.12 seconds,failed,,"deepseek-3.1-base failed after 1 tries: error code: 404 - {'error': {'message': 'no endpoints found for deepseek/deepseek-v3.1-base.', 'code': 404}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
-deepseek-3-chat-0324,deepseek,openrouter,deepseek/deepseek-chat-v3-0324,24-Mar-25,0.5,2.11 seconds,ok,"Got it! If you need anything else, just let me know. 😊",
-deepseek-2.5-chat,deepseek,openrouter,deepseek/deepseek-chat-v2.5,14-May-24,0.5,2.11 seconds,failed,,"deepseek-2.5-chat failed after 1 tries: error code: 404 - {'error': {'message': 'no endpoints found for deepseek/deepseek-chat-v2.5.', 'code': 404}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
-deepseek-3.2,deepseek,openrouter,deepseek/deepseek-v3.2,1-Dec-25,0.5,5.77 seconds,ok,Ok! 😊,
-doubao-pro-32k,bytedance,doubao,doubao-pro-32k,15-May-24,0.5,2.98 seconds,failed,,"doubao-pro-32k failed after 1 tries: error code: 404 - {'error': {'code': 'invalidendpointormodel.notfound', 'message': 'the model or endpoint doubao-pro-32k does not exist or you do not have access to it. request id: 021788830086906e2e425e7482a92db97bab17cb602abe880ff9a', 'param': '', 'type': 'not found'}}"
+deepseek-3-chat-0324,deepseek,openrouter,deepseek/deepseek-chat-v3-0324,24-Mar-25,0.5,1.86 seconds,ok,"Got it! If you need anything else, just let me know. 😊👍",
+deepseek-2.5-chat,deepseek,openrouter,deepseek/deepseek-chat-v2.5,14-May-24,0.5,2.1 seconds,failed,,"deepseek-2.5-chat failed after 1 tries: error code: 404 - {'error': {'message': 'no endpoints found for deepseek/deepseek-chat-v2.5.', 'code': 404}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
+deepseek-3.2,deepseek,openrouter,deepseek/deepseek-v3.2,1-Dec-25,0.5,0.37 seconds,ok,Ok! 👍,
+doubao-pro-32k,bytedance,doubao,doubao-pro-32k,15-May-24,0.5,2.9 seconds,failed,,"doubao-pro-32k failed after 1 tries: error code: 404 - {'error': {'code': 'invalidendpointormodel.notfound', 'message': 'the model or endpoint doubao-pro-32k does not exist or you do not have access to it. request id: 021788985506976dceccb6eac83fbed179ddd9eacafd80e8eb301', 'param': '', 'type': 'not found'}}"
 ernie-4.0-8k,baidu,baidu,ernie-4.0-8k,17-Oct-23,0.5,0.0 seconds,failed,,no module named 'api.baidu'
-claude-haiku-3,anthropic,claude,claude-3-haiku,3-Mar-24,0.5,2.26 seconds,failed,,"claude-haiku-3 failed after 1 tries: error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-haiku'}, 'request_id': 'req_011ceq5yz4lhkd9yiz9yyg2m'}"
-claude-haiku-3.5,anthropic,claude,claude-3-5-haiku-20241022,22-Oct-24,0.5,2.19 seconds,failed,,"claude-haiku-3.5 failed after 1 tries: error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011ceq5z9z65ihmlzkpx7mo8'}"
-claude-sonnet-4,anthropic,claude,laude-sonnet-4,22-May-25,,2.54 seconds,failed,,"claude-sonnet-4 failed after 1 tries: error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: laude-sonnet-4'}, 'request_id': 'req_011ceq5zjverscecfwlf4sgj'}"
-claude-sonnet-3.5,anthropic,claude,claude-3-5-sonnet-20241022,22-Oct-24,0.5,2.43 seconds,failed,,"claude-sonnet-3.5 failed after 1 tries: error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011ceq5zvxbbfve5ksutxdyc'}"
-claude-opus-4.1,anthropic,claude,claude-opus-4-1-20250805,5-Aug-25,0.5,2.37 seconds,failed,,"claude-opus-4.1 failed after 1 tries: error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-opus-4-1-20250805'}, 'request_id': 'req_011ceq5zgezef2jucbnfepb5'}"
-claude-sonnet-4.5,anthropic,claude,claude-sonnet-4-5-20250929,29-Sep-25,0.5,1.48 seconds,ok,ok,
-claude-haiku-4.5,anthropic,claude,claude-haiku-4-5-20251001,15-Oct-25,0.5,0.59 seconds,ok,ok,
-claude-opus-3,anthropic,claude,claude-3-opus-20240229,29-Feb-24,,2.36 seconds,failed,,"claude-opus-3 failed after 1 tries: error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-opus-20240229'}, 'request_id': 'req_011ceq611gyc5vjpzv8kbpri'}"
-claude-opus-4.5,anthropic,claude,claude-opus-4-5-20251101,24-Nov-25,0.5,0.88 seconds,ok,ok,
-claude-sonnet-4.6,anthropic,claude,claude-sonnet-4-6,17-Feb-26,0.5,3.93 seconds,ok,ok,
-claude-opus-4.7,anthropic,claude,claude-opus-4-7,16-Apr-26,,1.24 seconds,ok,Ok,
-claude-fable-5,anthropic,claude,claude-fable-5,9-Jun-26,,4.58 seconds,ok,"Ok! 👍
-
-Is there something I can help you with?",
-claude-sonnet-5,anthropic,claude,claude-sonnet-5,30-Jun-26,,1.35 seconds,ok,Okay! What would you like to talk about?,
-claude-opus-5,anthropic,claude,claude-opus-5,24-Jul-26,,1.64 seconds,ok,ok,
-claude-opus-4.6,anthropic,claude,claude-opus-4-6,4-Feb-26,0.5,1.3 seconds,ok,ok,
-claude-opus-4.8,anthropic,claude,claude-opus-4-8,27-May-26,,1.06 seconds,ok,ok,
-gemini-3.8-flash,google,openrouter,google/gemini-3.8-flash,2-Sep-26,0.5,2.11 seconds,failed,,"gemini-3.8-flash failed after 1 tries: error code: 403 - {'error': {'message': 'the request is prohibited due to a violation of provider terms of service.', 'code': 403, 'metadata': {'provider_name': none, 'previous_errors': [{'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}]}}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
+claude-haiku-3,anthropic,claude,claude-3-haiku,3-Mar-24,0.5,4.18 seconds,failed,,"claude-haiku-3 failed after 1 tries: error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-haiku'}, 'request_id': 'req_011cetvwndo9uttbhae5smtt'}"
+claude-haiku-3.5,anthropic,claude,claude-3-5-haiku-20241022,22-Oct-24,0.5,2.25 seconds,failed,,"claude-haiku-3.5 failed after 1 tries: error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-haiku-20241022'}, 'request_id': 'req_011cetvwy8pbwqgqnv8jz6uz'}"
+claude-sonnet-4,anthropic,claude,laude-sonnet-4,22-May-25,default,2.27 seconds,failed,,"claude-sonnet-4 failed after 1 tries: error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: laude-sonnet-4'}, 'request_id': 'req_011cetvx8tcyehcf3maggcn9'}"
+claude-sonnet-3.5,anthropic,claude,claude-3-5-sonnet-20241022,22-Oct-24,0.5,2.2 seconds,failed,,"claude-sonnet-3.5 failed after 1 tries: error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011cetvxjcr3vruwjqeksogm'}"
+claude-opus-4.1,anthropic,claude,claude-opus-4-1-20250805,5-Aug-25,0.5,2.2 seconds,failed,,"claude-opus-4.1 failed after 1 tries: error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-opus-4-1-20250805'}, 'request_id': 'req_011cetvxu1thwrevsggpsbae'}"
+claude-sonnet-4.5,anthropic,claude,claude-sonnet-4-5-20250929,29-Sep-25,0.5,1.42 seconds,ok,ok,
+claude-haiku-4.5,anthropic,claude,claude-haiku-4-5-20251001,15-Oct-25,0.5,0.62 seconds,ok,Ok,
+claude-opus-3,anthropic,claude,claude-3-opus-20240229,29-Feb-24,default,2.19 seconds,failed,,"claude-opus-3 failed after 1 tries: error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-opus-20240229'}, 'request_id': 'req_011cetvxn37nnealxondrmci'}"
+claude-opus-4.5,anthropic,claude,claude-opus-4-5-20251101,24-Nov-25,0.5,1.57 seconds,ok,ok,
+claude-sonnet-4.6,anthropic,claude,claude-sonnet-4-6,17-Feb-26,0.5,1.4 seconds,ok,ok,
+claude-opus-4.7,anthropic,claude,claude-opus-4-7,16-Apr-26,default,0.82 seconds,ok,Ok,
+claude-fable-5,anthropic,claude,claude-fable-5,9-Jun-26,default,10.01 seconds,ok,Ok! Is there something I can help you with?,
+claude-sonnet-5,anthropic,claude,claude-sonnet-5,30-Jun-26,default,1.52 seconds,ok,Okay! What would you like to talk about or work on?,
+claude-opus-5,anthropic,claude,claude-opus-5,24-Jul-26,default,2.32 seconds,ok,Ok!,
+claude-opus-4.6,anthropic,claude,claude-opus-4-6,4-Feb-26,0.5,1.56 seconds,ok,ok,
+claude-opus-4.8,anthropic,claude,claude-opus-4-8,27-May-26,default,1.06 seconds,ok,ok,
+gemini-3.8-flash,google,openrouter,google/gemini-3.8-flash,2-Sep-26,0.5,2.13 seconds,failed,,"gemini-3.8-flash failed after 1 tries: error code: 403 - {'error': {'message': 'the request is prohibited due to a violation of provider terms of service.', 'code': 403, 'metadata': {'provider_name': none, 'previous_errors': [{'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}]}}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
 gemini-3.7-flash,google,openrouter,google/gemini-3.7-flash,13-Aug-26,0.5,2.11 seconds,failed,,"gemini-3.7-flash failed after 1 tries: error code: 403 - {'error': {'message': 'the request is prohibited due to a violation of provider terms of service.', 'code': 403, 'metadata': {'provider_name': none, 'previous_errors': [{'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}]}}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
-gemini-3.6-flash,google,openrouter,google/gemini-3.6-flash,21-Jul-26,0.5,2.09 seconds,failed,,"gemini-3.6-flash failed after 1 tries: error code: 403 - {'error': {'message': 'the request is prohibited due to a violation of provider terms of service.', 'code': 403, 'metadata': {'provider_name': none, 'previous_errors': [{'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}]}}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
-gemini-3.5-flash,google,openrouter,google/gemini-3.5-flash,19-May-26,0.5,2.1 seconds,failed,,"gemini-3.5-flash failed after 1 tries: error code: 403 - {'error': {'message': 'the request is prohibited due to a violation of provider terms of service.', 'code': 403, 'metadata': {'provider_name': none, 'previous_errors': [{'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}]}}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
-gemini-3-pro-preview,google,openrouter,google/gemini-3-pro-preview,18-Nov-25,0.5,2.08 seconds,failed,,"gemini-3-pro-preview failed after 1 tries: error code: 404 - {'error': {'message': 'no endpoints found for google/gemini-3-pro-preview.', 'code': 404}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
-gemini-3.1-flash-lite,google,openrouter,google/gemini-3.1-flash-lite,7-May-26,0.5,2.11 seconds,failed,,"gemini-3.1-flash-lite failed after 1 tries: error code: 403 - {'error': {'message': 'the request is prohibited due to a violation of provider terms of service.', 'code': 403, 'metadata': {'provider_name': none, 'previous_errors': [{'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}]}}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
-gemini-1.5-flash,google,openrouter,google/gemini-flash-1.5,14-May-24,0.5,2.11 seconds,failed,,"gemini-1.5-flash failed after 1 tries: error code: 404 - {'error': {'message': 'no endpoints found for google/gemini-flash-1.5.', 'code': 404}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
-gemini-2.5-flash-lite,google,openrouter,google/gemini-2.5-flash-lite,22-Jul-25,0.5,2.13 seconds,failed,,"gemini-2.5-flash-lite failed after 1 tries: error code: 403 - {'error': {'message': 'the request is prohibited due to a violation of provider terms of service.', 'code': 403, 'metadata': {'provider_name': none, 'previous_errors': [{'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}, {'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}]}}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
-gemini-3.1-pro-preview,google,openrouter,google/gemini-3.1-pro-preview,19-Feb-26,0.5,2.12 seconds,failed,,"gemini-3.1-pro-preview failed after 1 tries: error code: 403 - {'error': {'message': 'the request is prohibited due to a violation of provider terms of service.', 'code': 403, 'metadata': {'provider_name': none, 'previous_errors': [{'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}]}}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
-gemini-2.5-pro,google,openrouter,google/gemini-2.5-pro,17-Jun-25,0.5,2.23 seconds,failed,,"gemini-2.5-pro failed after 1 tries: error code: 403 - {'error': {'message': 'the request is prohibited due to a violation of provider terms of service.', 'code': 403, 'metadata': {'provider_name': none, 'previous_errors': [{'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}, {'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}, {'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}]}}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
+gemini-3.6-flash,google,openrouter,google/gemini-3.6-flash,21-Jul-26,0.5,2.13 seconds,failed,,"gemini-3.6-flash failed after 1 tries: error code: 403 - {'error': {'message': 'the request is prohibited due to a violation of provider terms of service.', 'code': 403, 'metadata': {'provider_name': none, 'previous_errors': [{'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}]}}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
+gemini-3.5-flash,google,openrouter,google/gemini-3.5-flash,19-May-26,0.5,2.11 seconds,failed,,"gemini-3.5-flash failed after 1 tries: error code: 403 - {'error': {'message': 'the request is prohibited due to a violation of provider terms of service.', 'code': 403, 'metadata': {'provider_name': none, 'previous_errors': [{'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}]}}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
+gemini-3-pro-preview,google,openrouter,google/gemini-3-pro-preview,18-Nov-25,0.5,2.1 seconds,failed,,"gemini-3-pro-preview failed after 1 tries: error code: 404 - {'error': {'message': 'no endpoints found for google/gemini-3-pro-preview.', 'code': 404}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
+gemini-3.1-flash-lite,google,openrouter,google/gemini-3.1-flash-lite,7-May-26,0.5,2.12 seconds,failed,,"gemini-3.1-flash-lite failed after 1 tries: error code: 403 - {'error': {'message': 'the request is prohibited due to a violation of provider terms of service.', 'code': 403, 'metadata': {'provider_name': none, 'previous_errors': [{'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}]}}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
+gemini-1.5-flash,google,openrouter,google/gemini-flash-1.5,14-May-24,0.5,2.38 seconds,failed,,"gemini-1.5-flash failed after 1 tries: error code: 404 - {'error': {'message': 'no endpoints found for google/gemini-flash-1.5.', 'code': 404}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
+gemini-2.5-flash-lite,google,openrouter,google/gemini-2.5-flash-lite,22-Jul-25,0.5,2.16 seconds,failed,,"gemini-2.5-flash-lite failed after 1 tries: error code: 403 - {'error': {'message': 'the request is prohibited due to a violation of provider terms of service.', 'code': 403, 'metadata': {'provider_name': none, 'previous_errors': [{'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}, {'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}]}}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
+gemini-3.1-pro-preview,google,openrouter,google/gemini-3.1-pro-preview,19-Feb-26,0.5,2.11 seconds,failed,,"gemini-3.1-pro-preview failed after 1 tries: error code: 403 - {'error': {'message': 'the request is prohibited due to a violation of provider terms of service.', 'code': 403, 'metadata': {'provider_name': none, 'previous_errors': [{'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}]}}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
+gemini-2.5-pro,google,openrouter,google/gemini-2.5-pro,17-Jun-25,0.5,2.13 seconds,failed,,"gemini-2.5-pro failed after 1 tries: error code: 403 - {'error': {'message': 'the request is prohibited due to a violation of provider terms of service.', 'code': 403, 'metadata': {'provider_name': none, 'previous_errors': [{'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}, {'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}, {'code': 403, 'message': 'the request is prohibited due to a violation of provider terms of service.'}]}}, 'user_id': 'user_3fekgpd5c5ipecszvsannrgbjus'}"
