@@ -5,7 +5,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 from tqdm import tqdm
 
-TEMPERATURE_STD = 0.5
 MAX_RETRIES = 3
 MAX_CONSECUTIVE_FAILURES = 3
 SLEEP_BETWEEN_CALLS = 0.2
@@ -109,7 +108,7 @@ def collect(test_name, models=None, n_per_model=250, cue=None,
                 "model_id": m["model_id"],
                 "provider": m["api"],
                 "rep": i,
-                "temperature_std": m.get("temperature") or None,
+                "temperature": m.get("temperature") or None,
                 "kwargs": stim,
                 "prompt": instructions,
                 "ts_utc": ts,
