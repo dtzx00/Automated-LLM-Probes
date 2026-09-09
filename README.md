@@ -1,8 +1,6 @@
 # Automated-LLM-Probes
 
-Minimal package that calls LLM APIs and saves the responses.
-It contains **no probe logic** (no prompts, no item sampling, no answer parsing).
-All probe definitions live in [Automated-Intelligence-Tests](https://github.com/dtzx00/Automated-Intelligence-Tests) and are imported as:
+Minimal package that calls LLM APIs and saves the responses. It contains **no probe logic** (no prompts, no item sampling, no answer parsing). All probe definitions live in [Automated-Intelligence-Tests](https://github.com/dtzx00/Automated-Intelligence-Tests) and are imported as:
 
 - `ait.instruct(test, cue=None, seed=None, **kwargs)` → stimulus + instruction text
 - `ait.evaluate(test, responses, **kwargs)` → score (used outside this repo)
