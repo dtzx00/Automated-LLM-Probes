@@ -67,11 +67,14 @@ def _hash(*parts, n=16):
 def _now():
     return datetime.now(timezone.utc).isoformat()
 
-def collect(test_name, models=None, n_per_model=250, cue=None, seed=None, **instruct_kwargs):
+def collect(test_name, models=None, n_per_model=250, cue=None, 
+            seed=None, n_to_topup=True, **instruct_kwargs):
     """Collect model responses for a test.
     cue, seed, and any other kwargs are forwarded to ait.instruct().
     cue=None keeps the current randomized-stimulus behavior.
     The same cue/seed is used for every rep in this run.
+    n_to_topup=True always collects n_per_model new samples.
+    n_to_topup=False only fills the shortfall (n_per_model - have).
     """
     models = models or ready_models()
 
@@ -80,10 +83,10 @@ def collect(test_name, models=None, n_per_model=250, cue=None, seed=None, **inst
         mdir = _model_dir(test_name, m["name"], m.get("temperature") or None)
         mdir.mkdir(parents=True, exist_ok=True)
         have = sum(1 for p in mdir.glob("*.pickle") if p.is_file())
-        if have >= n_per_model:
+        need = n_per_model if n_to_topup else n_per_model - have
+        if need <= 0:
             print(f"  {m['name']}: {have}/{n_per_model} done — skip")
             continue
-        need = n_per_model - have
         print(f"  {m['name']}: {have} collected, {need} to collect")
 
         fails = 0
