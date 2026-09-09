@@ -42,8 +42,8 @@ def get_api_module(api_name):
 def call_model(model_row, messages):
     mod = get_api_module(model_row["api"])
     key = os.environ[KEY_ENV[model_row["api"]]]
-    temp = model_row.get("temperature")
-    temp = float(temp) if temp not in (None, "") else None
+    t = (model_row.get("temperature") or "").strip()
+    temp = None if t.lower() == "default" or t == "" else float(t)
     base = model_row.get("base_url") or None
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
