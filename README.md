@@ -24,7 +24,7 @@ api/                     # one file per provider family
   doubao.py
 data/                    # responses land here (gitignored contents)
 models.csv               # calling registry (name, vendor, api, model_id, ...)
-automated-llm-probes.py  # collect() + parse_and_merge()
+automated_llm_probes.py  # collect() + parse_and_merge()
 requirements.txt         # openai, anthropic
 ```
 
@@ -65,9 +65,18 @@ python automated_llm_probes.py parse DAT
 python automated_llm_probes.py list_models
 ```
 
+`collect()` defaults to `n_to_topup=True`: `n_per_model` is how many **new** samples to add, even if the folder is already full. Pass `n_to_topup=False` to only fill the shortfall. The CLI has no flag for this, so CLI collect always tops up.
+
+```python
+from automated_llm_probes import collect
+
+collect("DAT", n_per_model=50)                       # add 50 new per model
+collect("DAT", n_per_model=250, n_to_topup=False)    # fill until 250 exist
+```
+
 ## Output
 
-Each successful `collect` call writes one pickle and dumped to data folder as output:
+Each successful `collect` call writes one pickle under `data/<task>/<model-slug>/<temp>/<hash>.pickle`:
 
 - `<task>` — lowercased test name (`dat`, `aut`, `cat`, `cwt`)
 - `<model-slug>` — `name` from `models.csv`, lowercased, non-word characters turned into `-`
@@ -83,13 +92,15 @@ Failed calls are printed and skipped. They are not written.
 | `model_id` | str | string sent to the API |
 | `provider` | str | `api` column (which `api/*.py` file was used) |
 | `rep` | int | repetition index, 0-based |
-| `temperature_std` | str or None | temperature from `models.csv`, or `None` if blank |
+| `temperature` | str or None | temperature from `models.csv`, or `None` if blank |
 | `kwargs` | dict | full return value of `ait.instruct()` |
 | `prompt` | str | `kwargs["instructions"]` — the exact text sent to the model |
 | `ts_utc` | str | UTC ISO-8601 timestamp |
 | `hash` | str | same 16-char hash as the filename |
 | `raw` | str | model text (stripped). Not a dict. |
 | `error` | str | empty string on success |
+
+`parse_and_merge()` also copies `kwargs["cue"]` onto each row as `cue`.
 
 `kwargs` always includes at least:
 
@@ -111,7 +122,7 @@ python automated_llm_probes.py list_models
 Models all put under models.csv. One row per model + lane. Model naming conventions: lowercase, family-tier-version, hyphens between words (kebab-case), dots kept inside version numbers. Model list column conventions:
 
 | column      | meaning |
-|-------------|---------|
+|-------------|---------| 
 | name        | unique label |
 | vendor      | who built the model |
 | api         | which `api/*.py` file to use |
