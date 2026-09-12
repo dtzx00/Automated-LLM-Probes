@@ -142,8 +142,7 @@ def collect(test_name, models=None, n_per_model=250, cue=None,
             try:
                 raw = call_model(m, [{"role": "user", "content": instructions}])
                 parsed, score = _parse_and_score(test_name, raw, stim, scoring)
-                error="scoring failed" if (not score) and scoring==True else ""
-                row.update(raw=raw, error=error, parsed=parsed, score=score)
+                row.update(raw=raw, error="", parsed=parsed, score=score)
                 fails = 0
                 with open(mdir / f"{h}.pickle", "wb") as f:
                     pickle.dump(row, f, protocol=pickle.HIGHEST_PROTOCOL)
@@ -155,8 +154,10 @@ def collect(test_name, models=None, n_per_model=250, cue=None,
                     print(f"  >> {m['name']}: {fails} consecutive fails — skip rest")
                     break
             time.sleep(SLEEP_BETWEEN_CALLS)
-    
-def parse_and_merge(test_name: str) -> dict:
+
+            
+def load_pickles(test_name: str) -> dict:
+    """Load task pickles into {hash: row}. Skips empty raw."""
     task_dir = DATA_ROOT / test_name.lower()
     if not task_dir.is_dir():
         raise FileNotFoundError(task_dir)
@@ -171,8 +172,7 @@ def parse_and_merge(test_name: str) -> dict:
         if row.get("error") or not row.get("raw"):
             continue
         row["cue"] = (row.get("kwargs") or {}).get("cue")
-        h = row.get("hash") or p.stem
-        rows[h] = row
+        rows[row.get("hash") or p.stem] = row
     if not rows:
         print("No valid rows")
     return rows
@@ -257,7 +257,7 @@ if __name__ == "__main__":
         print("Usage:\n"
               "  python automated_llm_probes.py collect <test> [n] [model ...] "
               "[--cue ...] [--seed N] [--n-words N] [--single-item] [--no-scoring]\n"
-              "  python automated_llm_probes.py parse <test>\n"
+              "  python automated_llm_probes.py load <test>\n"
               "  python automated_llm_probes.py list_models\n")
         sys.exit(0 if len(sys.argv) > 1 else 1)
 
@@ -268,12 +268,15 @@ if __name__ == "__main__":
             print(f"{m['name']:25s} {m['vendor']:12s} {m['api']:10s} {m['model_id']}")
         sys.exit(0)
 
-    if cmd == "parse":
+    if cmd in ("load", "parse"):
         if len(sys.argv) < 3:
-            sys.exit("Usage: python automated_llm_probes.py parse <test>")
-        rows = parse_and_merge(sys.argv[2])
+            sys.exit("Usage: python automated_llm_probes.py load <test>")
+        rows = load_pickles(sys.argv[2])
         print(f"{sys.argv[2]}: {len(rows)} rows")
         sys.exit(0)
+
+    if cmd != "collect":
+        sys.exit(f"Unknown command {cmd!r}. Use collect, load, or list_models.")
 
     if cmd != "collect":
         sys.exit(f"Unknown command {cmd!r}. Use collect, parse, or list_models.")

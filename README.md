@@ -58,7 +58,7 @@ python automated_llm_probes.py collect CAT 50 --cue television:lake --single-ite
 python automated_llm_probes.py collect AUT 250
 
 # load valid pickles for a task (does not write CSV)
-python automated_llm_probes.py parse DAT
+python automated_llm_probes.py load DAT
 
 # models that have keys and are not marked dead
 python automated_llm_probes.py list_models
@@ -102,7 +102,7 @@ Failed calls are printed and skipped. They are not written.
 | `parsed` | list / dict / None | `ait.parse(test, raw, stim=kwargs)` output. |
 | `score`  | float / None       | `ait.evaluate(...)["score"]` when worked. |
 
-`parse_and_merge()` also copies `kwargs["cue"]` onto each row as `cue`.
+`load_pickles()` also copies `kwargs["cue"]` onto each row as `cue`.
 
 `kwargs` always includes at least:
 
