@@ -4,9 +4,9 @@ Minimal package that calls LLM APIs and saves the responses. It contains **no pr
 
 - `ait.instruct(...)` → stimulus + instruction text
 - `ait.parse(...)`    → parsing is always enforced
-- `ait.evaluate(...)` → scoring is set by default 
+- `ait.evaluate(...)` → scoring is set by default
 
-Successful `collect()` calls `ait.parse` then `ait.evaluate` and writes `parsed` + `score` on every pickle (`scoring=True` by default). Pass `scoring=False` or `--no-scoring` to skip evaluate; `parsed` is still written. Existing pickles are backfilled.
+Successful `collect()` calls `ait.parse` then `ait.evaluate` and writes `parsed` + `score` on every pickle (`scoring=True` by default). Pass `scoring=False` or `--no-scoring` to skip evaluate; `parsed` is still written. Existing pickles are not rewritten by `collect()` but backfilled already.
 
 ## Layout
 
@@ -23,7 +23,7 @@ api/                     # one file per provider family
   doubao.py
 data/                    # responses land here (gitignored contents)
 models.csv               # calling registry (name, vendor, api, model_id, ...)
-automated_llm_probes.py  # collect() + parse_and_merge()
+automated_llm_probes.py  # collect() + load_pickles()
 requirements.txt         # openai, anthropic
 ```
 

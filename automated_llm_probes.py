@@ -278,9 +278,6 @@ if __name__ == "__main__":
     if cmd != "collect":
         sys.exit(f"Unknown command {cmd!r}. Use collect, load, or list_models.")
 
-    if cmd != "collect":
-        sys.exit(f"Unknown command {cmd!r}. Use collect, parse, or list_models.")
-
     positional, cue_args, seed, n_words, single_item, scoring = _split_collect_args(sys.argv[2:])
     
     if not positional:
