@@ -66,12 +66,37 @@ def _hash(*parts, n=16):
 def _now():
     return datetime.now(timezone.utc).isoformat()
 
-def collect(test_name, models=None, n_per_model=250, cue=None, 
-            seed=None, n_to_topup=True, **instruct_kwargs):
-    """Collect model responses for a test.
-    cue, seed, and any other kwargs are forwarded to ait.instruct().
-    cue=None keeps the current randomized-stimulus behavior.
+def _parse_and_score(test_name, raw, stim, scoring=True):
+    """Always parse by default. Score only when scoring=True and parse worked.
+    Never raises. parse/evaluate failure → parsed and/or score stay None.
+    """
+    parsed, score = None, None
+    try:
+        parsed = ait.parse(str(test_name).strip().lower(), raw, stim=stim)
+    except Exception:
+        parsed = None
+    if scoring and parsed is not None:
+        try:
+            out = ait.evaluate(str(test_name).strip().lower(), parsed)
+            score = None if not isinstance(out, dict) else out.get("score")
+            if score is not None:
+                score = float(score)
+        except Exception:
+            score = None
+    return parsed, score
+
+def collect(test_name, models=None, n_per_model=250, cue=None,
+            seed=None, n_to_topup=True, scoring=True, **instruct_kwargs):
+    """Collect model responses for using an automated intelligence test. 
+    Cue, seed, and any other kwargs are forwarded to ait.instruct().
+    
+    Always attempts parsing after collection, but only scores if scoring=True.
+    When set True, scores with ait.evaluate. Parsed and score are always written
+    (score is None when scoring=False or parse/evaluate fails).
+    
+    For cue behaviors: cue=None keeps the current randomized-stimulus.
     The same cue/seed is used for every rep in this run.
+    
     n_to_topup=True always collects n_per_model new samples.
     n_to_topup=False only fills the shortfall (n_per_model - have).
     """
@@ -116,7 +141,9 @@ def collect(test_name, models=None, n_per_model=250, cue=None,
 
             try:
                 raw = call_model(m, [{"role": "user", "content": instructions}])
-                row.update(raw=raw, error="")
+                parsed, score = _parse_and_score(test_name, raw, stim, scoring)
+                error="scoring failed" if (not score) and scoring==True else ""
+                row.update(raw=raw, error=error, parsed=parsed, score=score)
                 fails = 0
                 with open(mdir / f"{h}.pickle", "wb") as f:
                     pickle.dump(row, f, protocol=pickle.HIGHEST_PROTOCOL)
@@ -192,7 +219,7 @@ def _parse_cli_cue(test_name, cue_args):
 
 
 def _split_collect_args(argv):
-    cue_args, seed, n_words, single_item, positional = [], None, None, False, []
+    cue_args, seed, n_words, single_item, scoring, positional = [], None, None, False, True, []
     i = 0
     while i < len(argv):
         a = argv[i]
@@ -215,23 +242,23 @@ def _split_collect_args(argv):
             n_words = int(a.split("=", 1)[1])
         elif a in ("--single-item", "--single_item"):
             single_item = True
+        elif a in ("--no-scoring", "--no_scoring"):
+            scoring = False
         elif a.startswith("-"):
             sys.exit(f"Unknown flag: {a}")
         else:
             positional.append(a)
         i += 1
-    return positional, cue_args, seed, n_words, single_item
+    return positional, cue_args, seed, n_words, single_item, scoring
 
 
 if __name__ == "__main__":
     if len(sys.argv) < 2 or sys.argv[1] in ("-h", "--help"):
-        print(
-            "Usage:\n"
-            "  python automated_llm_probes.py collect <test> [n] [model ...] "
-            "[--cue ...] [--seed N] [--n-words N] [--single-item]\n"
-            "  python automated_llm_probes.py parse <test>\n"
-            "  python automated_llm_probes.py list_models"
-        )
+        print("Usage:\n"
+              "  python automated_llm_probes.py collect <test> [n] [model ...] "
+              "[--cue ...] [--seed N] [--n-words N] [--single-item] [--no-scoring]\n"
+              "  python automated_llm_probes.py parse <test>\n"
+              "  python automated_llm_probes.py list_models\n")
         sys.exit(0 if len(sys.argv) > 1 else 1)
 
     cmd = sys.argv[1].lower()
@@ -251,7 +278,8 @@ if __name__ == "__main__":
     if cmd != "collect":
         sys.exit(f"Unknown command {cmd!r}. Use collect, parse, or list_models.")
 
-    positional, cue_args, seed, n_words, single_item = _split_collect_args(sys.argv[2:])
+    positional, cue_args, seed, n_words, single_item, scoring = _split_collect_args(sys.argv[2:])
+    
     if not positional:
         sys.exit("Usage: python automated_llm_probes.py collect <test> [n] [model ...]")
 
@@ -272,4 +300,5 @@ if __name__ == "__main__":
         n_per_model=n_per_model,
         cue=_parse_cli_cue(test, cue_args),
         seed=seed,
+        scoring=scoring,
         **instruct_kwargs,)

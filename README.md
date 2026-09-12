@@ -2,10 +2,11 @@
 
 Minimal package that calls LLM APIs and saves the responses. It contains **no probe logic** (no prompts, no item sampling, no answer parsing). All probe definitions live in [Automated-Intelligence-Tests](https://github.com/dtzx00/Automated-Intelligence-Tests) and are imported as:
 
-- `ait.instruct(test, cue=None, seed=None, **kwargs)` → stimulus + instruction text
-- `ait.evaluate(test, responses, **kwargs)` → score (used outside this repo)
+- `ait.instruct(...)` → stimulus + instruction text
+- `ait.parse(...)`    → parsing is always enforced
+- `ait.evaluate(...)` → scoring is set by default 
 
-This package only calls `instruct()`. It stores the raw model response.
+Successful `collect()` calls `ait.parse` then `ait.evaluate` and writes `parsed` + `score` on every pickle (`scoring=True` by default). Pass `scoring=False` or `--no-scoring` to skip evaluate; `parsed` is still written. Existing pickles are backfilled.
 
 ## Layout
 
@@ -70,6 +71,7 @@ from automated_llm_probes import collect
 
 collect("DAT", n_per_model=50)                       # add 50 new per model
 collect("DAT", n_per_model=250, n_to_topup=False)    # fill until 250 exist
+collect("DAT", n_per_model=50, scoring=False)        # parsed only, score=None
 ```
 
 ## Output
@@ -97,6 +99,8 @@ Failed calls are printed and skipped. They are not written.
 | `hash` | str | same 16-char hash as the filename |
 | `raw` | str | model text (stripped). Not a dict. |
 | `error` | str | empty string on success |
+| `parsed` | list / dict / None | `ait.parse(test, raw, stim=kwargs)` output. |
+| `score`  | float / None       | `ait.evaluate(...)["score"]` when worked. |
 
 `parse_and_merge()` also copies `kwargs["cue"]` onto each row as `cue`.
 
