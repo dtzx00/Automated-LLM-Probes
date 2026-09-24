@@ -1,6 +1,6 @@
 # Automated-LLM-Probes
 
-This is a library that calls LLM APIs at scale to conduct special benchmarking using the [Automated-Intelligence-Tests](https://github.com/dtzx00/Automated-Intelligence-Tests) package. It contains **no probe logic** (no prompts, no item sampling, no answer parsing). All probe definitions live in [Automated-Intelligence-Tests](https://github.com/dtzx00/Automated-Intelligence-Tests) and are imported as:
+This is a library that calls LLM APIs at scale to conduct special benchmarking using the [Automated-Intelligence-Tests](https://github.com/dtzx00/Automated-Intelligence-Tests) package. It is **no probe**, all probes are from [Automated-Intelligence-Tests](https://github.com/dtzx00/Automated-Intelligence-Tests) and are imported as:
 
 - `ait.instruct(...)` → stimulus + instruction text
 - `ait.parse(...)`    → parsing is always enforced
